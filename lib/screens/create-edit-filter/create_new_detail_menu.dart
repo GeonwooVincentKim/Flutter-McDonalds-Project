@@ -6,6 +6,8 @@ import 'package:myTestApp/shared/helpers/icomoon.dart';
 import 'package:myTestApp/shared/style/style.dart';
 import 'package:provider/provider.dart';
 
+import 'package:myTestApp/widget/list_tile/edit_user_card_tile.dart';
+
 
 class CreateNewDetailMenu extends StatefulWidget {
   @override
@@ -40,7 +42,7 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
           icon: Icon(
             IconMoon.iadd,
             color: Colors.white,
-          ), onPressed: () => _buildDetailCreate(),
+          ), onPressed: () => _buildDetailMenuForm(),
         )
       ],
     );
@@ -59,15 +61,69 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // _buildMenuTitle(),
-                // _buildImage(),
-                // _buildPrices(),
-                // _buildReleaseDate(),
+                _buildMenuTitle(),
+                _buildImage(),
+                _buildPrices(),
+                _buildReleaseDate(),
               ]
             )
           )
         ),
       ),
+    );
+  }
+  
+  Widget _buildMenuTitle(){
+    return CardTile(
+      child: Column(
+        children: [
+          Text("FirstName"),
+          _buildAddInfo(newDetailMenu[1], 1)
+        ],
+      )
+    );
+  }
+
+  Widget _buildImage(){
+    return CardTile(
+      child: Column(
+        children: [
+          Text("Image"),
+          _buildAddInfo(newDetailMenu[2], 2)
+        ],
+      )
+    );
+  }
+
+  Widget _buildPrices(){
+    return CardTile(
+      child: Column(
+        children: [
+          Text("Prices"),
+          _buildAddInfo(newDetailMenu[3], 3)
+        ],
+      )
+    );
+  }
+
+  Widget _buildReleaseDate(){
+    return CardTile(
+      child: Column(
+        children: [
+          Text("Release Date"),
+          _buildAddInfo(newDetailMenu[4], 4)
+        ],
+      )
+    );
+  }
+
+  Widget _buildAddInfo(String text, int index){
+    return TextFormField(
+      initialValue: text,
+      validator: (value){
+        if(value.isEmpty) return 'Please fill the ${'text'} in your blank';
+        return null;
+      }, onSaved: (value) => newDetailMenu[index] = value,
     );
   }
   
@@ -81,7 +137,10 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
     );
   }
 
-  void _buildDetailCreate(){
-
+  void _buildDetailMenuForm(){
+    if(!_formDetailKey.currentState.validate()) return;
+    _formDetailKey.currentState.save();
+    Provider.of<MenuProvider>(context).createSubMenu(newDetailMenu);
+    Navigator.pushNamed(context, "/");
   }
 }
