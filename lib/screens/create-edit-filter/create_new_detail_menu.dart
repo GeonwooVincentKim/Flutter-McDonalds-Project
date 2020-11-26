@@ -61,6 +61,7 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                _buildMainMenuSelect(),
                 _buildMenuTitle(),
                 _buildImage(),
                 _buildPrices(),
@@ -70,6 +71,12 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
           )
         ),
       ),
+    );
+  }
+
+  Widget _buildMainMenuSelect(){
+    return DropdownMenuItem(
+      
     );
   }
   
