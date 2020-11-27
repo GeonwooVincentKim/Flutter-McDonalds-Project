@@ -61,7 +61,7 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                _buildMainMenuSelect(),
+                // _buildMainMenuSelect(),
                 _buildMenuTitle(),
                 _buildImage(),
                 _buildPrices(),
