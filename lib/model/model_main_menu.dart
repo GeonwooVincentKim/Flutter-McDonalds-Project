@@ -19,16 +19,16 @@ class MainMenuModel{
       id: mainMenu.id ?? '',
       foodName: mainMenu.foodName ?? '',
       mainImage: mainMenu.mainImage ?? '',
-      type: mainMenu.type ?? ''
+      type: mainMenu.type ?? 0
     );
   }
 
   factory MainMenuModel.fromMainMenuMap(Map<String, dynamic> mainMenu){
     return MainMenuModel(
-      id: mainMenu['id'],
-      foodName: mainMenu['foodName'],
-      mainImage: mainMenu['mainImage'],
-      type: mainMenu['type']
+      id: mainMenu['id'] ?? '',
+      foodName: mainMenu['foodName'] ?? '',
+      mainImage: mainMenu['mainImage'] ?? '',
+      type: mainMenu['type'] ?? 0
     );
   }
 

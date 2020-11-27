@@ -19,6 +19,10 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
   final _formNewMainKey = GlobalKey<FormState>();
   List<String> newDetailMenu = ['menuTitle', 'image', 'prices'];
   List<String> newMenu = ['', '', ''];
+  final Map<String, dynamic> newMenuForms = {
+    'foodName': '',
+    'mainImage': '',
+  };
 
   @override
   void initState(){
@@ -76,6 +80,13 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
       child: Column(
         children: [
           Text("FirstName"),
+          // TextFormField(
+          //   validator: (value){
+          //     if(value.isEmpty) return 'Please fill the menu-title';
+          //     return null;
+          //   },
+          //   onSaved: (String value) => newMenuForms['foodName'] = value,
+          // )
           _buildAddInfo(newMenu[1], 1)
         ]
       )
@@ -87,6 +98,9 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
       child: Column(
         children: [
           Text("MainImage"),
+          // TextFormField(
+          //   onSaved: (String value) => newMenuForms['mainImage'] = value,
+          // )
           _buildAddInfo(newMenu[2], 2)
         ],
       )
@@ -116,7 +130,8 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
   void _buildNewMenuForm(){
     if(!_formNewMainKey.currentState.validate()) return;
     _formNewMainKey.currentState.save();
-    Provider.of<MainMenuProvider>(context).createMain(newMenu);
+    Provider.of<MainMenuProvider>(context, listen: false).createMain(newMenu);
+    // Provider.of<MainMenuProvider>(context, listen: false).createMainMenu(newMenuForms);
     Navigator.pushNamed(context, "/");
   }
 }

@@ -61,5 +61,13 @@ class MainMenuListTile extends StatelessWidget{
       ),
     );
   }
+
+  Widget _displayMedia(String media) {
+    if(media == null || media == "") {
+        return Image.asset('assets/basicimages/McDonaldsLogo.jpg', fit : BoxFit.fill);
+    } else {
+      return Image.asset(media, fit : BoxFit.fill);
+    }
+  }  
   
 }

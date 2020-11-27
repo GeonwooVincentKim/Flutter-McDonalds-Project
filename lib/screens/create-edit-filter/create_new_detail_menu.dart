@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:myTestApp/model/model_main_menu.dart';
 import 'package:myTestApp/model/model_menu.dart';
+import 'package:myTestApp/providers/provider_main_menu.dart';
 import 'package:myTestApp/providers/provider_menu.dart';
+import 'package:myTestApp/screens/create-edit-filter/create_new_detail_menu_form.dart';
 import 'package:myTestApp/screens/sidemenu.dart';
 import 'package:myTestApp/shared/helpers/icomoon.dart';
 import 'package:myTestApp/shared/style/style.dart';
+import 'package:myTestApp/widget/drop_down_widget/drop_down_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'package:myTestApp/widget/list_tile/edit_user_card_tile.dart';
@@ -16,7 +20,18 @@ class CreateNewDetailMenu extends StatefulWidget {
 
 class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
   final _formDetailKey = GlobalKey<FormState>();
-  List<String> newDetailMenu = ['', '', '', '', '', ''];
+  List<MainMenuModel> mainMenuList = [];
+  List<String> mainMenuName = [];
+  String image = '';
+  final Map<String, dynamic> newDetailMenu = {
+    'selectMenu': '',
+    'menuTitle': '',
+    'image': '',
+    'prices': '',
+    'releaseDateYear': '',
+    'releaseDateMonth': '',
+  };
+  // List<String> newDetailMenu = ['', '', '', '', '', '', '']; // for form of DetailMenu
 
   @override
   void initState(){
@@ -28,6 +43,10 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
     //   newDetailMenu[3] = detailMenu.prices.toString();
     //   newDetailMenu[4] = detailMenu.releaseDate.toString();
     // }
+    mainMenuList = Provider.of<MainMenuProvider>(context, listen: false).mainMenuItems;
+    print(mainMenuList);
+    mainMenuName = mainMenuList.map((mainMenu) => mainMenu.foodName).toList();
+    print(mainMenuName);
     super.initState();
   }
 
@@ -61,11 +80,16 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // _buildMainMenuSelect(),
-                _buildMenuTitle(),
-                _buildImage(),
-                _buildPrices(),
-                _buildReleaseDate(),
+                // id -> [0]
+                // _buildMainMenuSelect(), // [1]
+                _buildMenuTitle(), // [2]
+                _buildImage(), // [3]
+                _buildPrices(), // [4]
+                CreateNewDetailMenuForm(
+                  formData: newDetailMenu,
+                  formKey: _formDetailKey,
+                ),
+               // _buildReleaseDate(), // [5] ~ [6]
               ]
             )
           )
@@ -75,8 +99,14 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
   }
 
   Widget _buildMainMenuSelect(){
-    return DropdownMenuItem(
-      
+    return DropDownWidget(
+      value: newDetailMenu[1],
+      items: mainMenuName,
+      onChanged: (String value){
+        setState(() {
+          newDetailMenu['selectMenu'] = value;
+        });
+      },
     );
   }
   
@@ -85,7 +115,14 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
       child: Column(
         children: [
           Text("FirstName"),
-          _buildAddInfo(newDetailMenu[1], 1)
+          TextFormField(
+            initialValue: newDetailMenu['menuTitle'],
+            validator: (value){
+              if(value.isEmpty) return 'Please fill the ${'menuTitle'} in your blank';
+              return null;
+            }, onSaved: (value) => newDetailMenu['menuTitle'] = value,
+          )
+          // _buildAddInfo(newDetailMenu[2], 2)
         ],
       )
     );
@@ -96,7 +133,10 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
       child: Column(
         children: [
           Text("Image"),
-          _buildAddInfo(newDetailMenu[2], 2)
+          TextFormField(
+            initialValue: newDetailMenu['image'],
+            onSaved: (value) => newDetailMenu['image'] = value,
+          )
         ],
       )
     );
@@ -107,7 +147,14 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
       child: Column(
         children: [
           Text("Prices"),
-          _buildAddInfo(newDetailMenu[3], 3)
+          TextFormField(
+            initialValue: newDetailMenu['prices'],
+            
+            validator: (value){
+              if(value.isEmpty) return 'Please fill the ${'prices'} in your blank';
+              return null;
+            }, onSaved: (value) => newDetailMenu['prices'] = value,
+          )
         ],
       )
     );
@@ -118,21 +165,27 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
       child: Column(
         children: [
           Text("Release Date"),
-          _buildAddInfo(newDetailMenu[4], 4)
+          TextFormField(
+            initialValue: newDetailMenu['menuTitle'],
+            validator: (value){
+              if(value.isEmpty) return 'Please fill the ${'menuTitle'} in your blank';
+              return null;
+            }, onSaved: (value) => newDetailMenu['menuTitle'] = value,
+          )
         ],
       )
     );
   }
 
-  Widget _buildAddInfo(String text, int index){
-    return TextFormField(
-      initialValue: text,
-      validator: (value){
-        if(value.isEmpty) return 'Please fill the ${'text'} in your blank';
-        return null;
-      }, onSaved: (value) => newDetailMenu[index] = value,
-    );
-  }
+  // Widget _buildAddInfo(String text, int index){
+  //   return TextFormField(
+  //     initialValue: text,
+  //     validator: (value){
+  //       if(value.isEmpty) return 'Please fill the ${'text'} in your blank';
+  //       return null;
+  //     }, onSaved: (value) => newDetailMenu[index] = value,
+  //   );
+  // }
   
   @override
   Widget build(BuildContext context) {
@@ -147,7 +200,10 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
   void _buildDetailMenuForm(){
     if(!_formDetailKey.currentState.validate()) return;
     _formDetailKey.currentState.save();
-    Provider.of<MenuProvider>(context).createSubMenu(newDetailMenu);
+    final MainMenuModel mainMenu = mainMenuList.singleWhere((mainMenu) => mainMenu.foodName == newDetailMenu[1]);
+    newDetailMenu['selectMenu'] = mainMenu.id;
+
+    Provider.of<MenuProvider>(context).createDetailMenu(newDetailMenu);
     Navigator.pushNamed(context, "/");
   }
 }
