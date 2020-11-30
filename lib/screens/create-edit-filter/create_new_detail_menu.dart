@@ -100,8 +100,7 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
   Widget _buildMainMenuSelect(){
     return DropDownWidget(
       // value: newDetailMenu['selectMenu'],
-      value: mainMenuList[0],
-      // value: newDetailMenu[1],
+      value: newDetailMenu.menuTitle,
       items: mainMenuList,
       onChanged: (String value){
         setState(() {
