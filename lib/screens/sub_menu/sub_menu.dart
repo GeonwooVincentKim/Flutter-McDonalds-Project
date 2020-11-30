@@ -80,7 +80,7 @@ class _SubMenuState extends State<SubMenu> {
             
             // subMenuList = submenuPage.subMenuItems.where((menuList) => mainMenu.type == index).toList();
             if(mainMenu.id == 'ham'){
-              subMenuList = submenuPage.subMenuItems;
+              subMenuList = submenuPage.hamburgerItems;
             }else if (mainMenu.id == 'dessert' ){
               subMenuList = submenuPage.dessertItems;
             }else if (mainMenu.id == 'cafe'){
@@ -99,7 +99,7 @@ class _SubMenuState extends State<SubMenu> {
               itemCount: subMenu.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 0.8,
+                childAspectRatio: 0.75,
                 crossAxisSpacing: 30.0,
                 mainAxisSpacing: 30.0,
               ),

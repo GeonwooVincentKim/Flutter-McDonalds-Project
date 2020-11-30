@@ -40,18 +40,19 @@ class MenuProvider with ChangeNotifier{
   }
   // _items.add(MenuModel('ham', '23'));
   
-  void createSubMenu(List<String> _subMenu){
-    // _subMenu.id = getRandomString(2);
-    // final MenuModel subMenu = MenuModel.fromMenuModelInfo(_subMenu);
+  void createSubMenu(MenuModel _subMenu){
+    _subMenu.id = getRandomString(2);
+    final MenuModel subMenu = MenuModel.fromMenuModelInfo(_subMenu);
     // _addCartItems.add(subMenu);
-    MenuModel detailMenu = MenuModel(
-      id: _subMenu[0] = getRandomString(2),
-      menuTitle: _subMenu[1],
-      image: _subMenu[2],
-      prices: int.parse(_subMenu[3]),
-      releaseDate: _subMenu[4]
-    );
-    _addCartItems.add(detailMenu);
+    // MenuModel detailMenu = MenuModel(
+    //   id: _subMenu[0] = getRandomString(2),
+    //   menuTitle: _subMenu[1],
+    //   image: _subMenu[2],
+    //   prices: int.parse(_subMenu[3]),
+    //   releaseDate: _subMenu[4]
+    // );
+    _MenuItems.add(subMenu);
+    notifyListeners();
   }
 
   void createMainMenu(Map<String, dynamic> mainMenu){

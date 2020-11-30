@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 
 class MenuModel{
-  final String id;
-  final String menuTitle;
-  final String image;
-  final int prices;
-  final int type;
-  final String releaseDate;
+  String id;
+  String menuTitle;
+  String image;
+  int prices;
+  int type;
+  String releaseDate;
   bool isInCart;
 
   MenuModel({
