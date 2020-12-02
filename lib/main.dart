@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:myTestApp/provider/provider_user.dart';
 import 'package:myTestApp/screens/body.dart';
+import 'package:myTestApp/screens/create-edit-filter/create_category.dart';
+import 'package:myTestApp/screens/create-edit-filter/create_new_menu.dart';
+import 'package:myTestApp/screens/create-edit-filter/edit_user.dart';
+import 'package:myTestApp/screens/main_screen/orders.dart';
+import 'package:myTestApp/screens/main_screen/settings.dart';
+import 'package:myTestApp/shared/style/style.dart';
 import 'package:provider/provider.dart';
 
 
@@ -10,13 +17,19 @@ class myApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-
+        ChangeNotifierProvider(create: (_) => UserProvider()),
       ],
       child: MaterialApp(
         title: "McDonaldsApp",
         initialRoute: "/",
         routes: {
           "/": (context) => Body(),
+          '/settings': (context) => Settings(),
+          '/settings/modify': (context) => EditUser(),
+          // '/cart': (context) => Cart(title: "Cart", cartColor: BasicAppBarColor),
+          '/orders': (context) => Orders(title: "Orders", ordersColor: BasicAppBarColor),
+          '/createCategory': (context) => CreateCategory(),
+          '/mainMenu/createMenu': (context) => CreateNewMenu(),
         },
         onGenerateRoute: (settings) {
           final List<String> pathElements = settings.name.split("/");

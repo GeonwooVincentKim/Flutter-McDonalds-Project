@@ -31,7 +31,7 @@ class Settings extends StatelessWidget {
       actions: [
         IconButton(
           icon: Icon(
-            IconMoon.iedit,
+            Icons.edit,
             color: Colors.white,
           ), onPressed: () => Navigator.pushNamed(context, "/settings/modify")
         )

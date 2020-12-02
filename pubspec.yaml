@@ -48,9 +48,54 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/basicimages/McDonaldsLogo.jpg
+
+    - assets/img/burger/1955Burger.png
+    - assets/img/burger/1955HashBrown.png
+    - assets/img/burger/BigMac.png
+    - assets/img/burger/BulgogiBurger.png
+    - assets/img/burger/Double1955Burger.png
+    - assets/img/burger/DoubleBulgogiBurger.png
+    - assets/img/burger/EggBulgogiBurger.png
+    - assets/img/burger/McChicken.png
+    - assets/img/burger/McChickenMozzarella.png
+    - assets/img/burger/McSpicyShanghaiBurger.png
+    - assets/img/burger/ShrimpBeefBurger.png
+    - assets/img/burger/SupremeShrimpBurger.png
+
+    - assets/img/McCafe_and_beverages/Americano.png
+    - assets/img/McCafe_and_beverages/CafeLatte.png
+    - assets/img/McCafe_and_beverages/Cappuchino.png
+    - assets/img/McCafe_and_beverages/DecaffeineAmericano.jpg
+    - assets/img/McCafe_and_beverages/DecaffeineCafeLatte.jpg
+    - assets/img/McCafe_and_beverages/DecaffeineIcedAmericano.jpg
+    - assets/img/McCafe_and_beverages/DecaffeineIcedCafeLatte.jpg
+    - assets/img/McCafe_and_beverages/DecaffeineCappuchino.jpg
+    - assets/img/McCafe_and_beverages/IcedAmericano.jpg
+    - assets/img/McCafe_and_beverages/IcedCaffeLatte.png
+    - assets/img/McCafe_and_beverages/PearChiller.png
+    - assets/img/McCafe_and_beverages/StrawberryChiller.jpg
+
+    - assets/img/McMorning/BaconEggMcMuffin.png
+    - assets/img/McMorning/BLTMuffin.png
+    - assets/img/McMorning/ChickenAndCheeseMuffin.png
+    - assets/img/McMorning/DeluxeBreakfast.png
+    - assets/img/McMorning/EggMcMuffin.png
+    - assets/img/McMorning/Hotcakes2pcs.png
+    - assets/img/McMorning/Hotcakes3pcs.jpg
+    - assets/img/McMorning/McSpicyShanghaiChickenSnackWrap.png
+    - assets/img/McMorning/SausageEggMcMuffin.png
+    - assets/img/McMorning/SausageMcMuffin.png
+
+    - assets/img/sides_and_desserts/ApplePie.png
+    - assets/img/sides_and_desserts/FrenchFries.png
+    - assets/img/sides_and_desserts/GoldenMozzarellaCheeseSticks.png
+    - assets/img/sides_and_desserts/HashBrown.jpg
+    - assets/img/sides_and_desserts/McNuggets.jpg
+    - assets/img/sides_and_desserts/McSpicyChickenTenders.png
+    - assets/img/sides_and_desserts/StringCheese.png
+    - assets/img/sides_and_desserts/TaroPie.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

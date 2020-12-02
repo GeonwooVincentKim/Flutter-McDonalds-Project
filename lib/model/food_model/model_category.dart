@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 
 class Category{
-  final String id;
-  final String foodName;
-  final String mainImage;
-  final int type;
+  String id;
+  String foodName;
+  String mainImage;
+  int type;
   
   Category({
     @required this.id,
