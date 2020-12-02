@@ -51,7 +51,7 @@ class MenuProvider with ChangeNotifier{
     //   prices: int.parse(_subMenu[3]),
     //   releaseDate: _subMenu[4]
     // );
-    _MenuItems.add(subMenu);
+    _hamburgerItems.add(subMenu);
     notifyListeners();
   }
 

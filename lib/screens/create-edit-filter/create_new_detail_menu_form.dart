@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp/model/model_main_menu.dart';
+import 'package:myTestApp/model/model_menu.dart';
 import 'package:myTestApp/shared/style/style.dart';
 import 'package:myTestApp/widget/drop_down_widget/drop_down_screen.dart';
 
 
 class CreateNewDetailMenuForm extends StatefulWidget {
   final Map<String, dynamic> formData;
+  MenuModel menuData;
   final String image;
   final GlobalKey<FormState> formKey;
 
   CreateNewDetailMenuForm({
     @required this.formData,
+    this.menuData,
     this.image,
     @required this.formKey 
   });
@@ -35,8 +38,11 @@ class _CreateNewDetailMenuFormState extends State<CreateNewDetailMenuForm> {
     for(int i = 1940; i <= today.year; i++){
       listYear.add(i.toString());
     }
-    if(widget.formData['releaseDateYear'] == ''){
-      widget.formData['releaseDateYear'] = listYear[listYear.length - 1];
+    // if(widget.formData['releaseDateYear'] == ''){
+    //   widget.formData['releaseDateYear'] = listYear[listYear.length - 1];
+    // }
+    if(widget.menuData.releaseYear == ''){
+      widget.menuData.releaseYear = listYear[listYear.length - 1];
     }
 
     for(int i = 1; i <= today.month; i++){

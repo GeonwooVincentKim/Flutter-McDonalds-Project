@@ -21,6 +21,7 @@ class CreateNewDetailMenu extends StatefulWidget {
 class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
   final _formDetailKey = GlobalKey<FormState>();
   List<MainMenuModel> mainMenuName = [];
+  List<MenuModel> menuName = [];
   List<String> mainMenuList = [];
   String image = '';
   // final Map<String, dynamic> newDetailMenu = {
@@ -46,6 +47,10 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
     // }
     mainMenuName = Provider.of<MainMenuProvider>(context, listen: false).mainMenuItems;
     mainMenuList = mainMenuName.map((mainMenu) => mainMenu.foodName).toList();
+    MainMenuModel mainMenu = Provider.of<MainMenuProvider>(context, listen: false).menu;
+    // if(mainMenu.id == 'ham'){
+    //   mainMenuList = 
+    // }
     super.initState();
   }
 
@@ -208,10 +213,13 @@ class _CreateNewDetailMenuState extends State<CreateNewDetailMenu> {
   void _buildDetailMenuForm(){
     if(!_formDetailKey.currentState.validate()) return;
     _formDetailKey.currentState.save();
-    // final MainMenuModel mainMenu = mainMenuList.singleWhere((mainMenu) => mainMenu.foodName == newDetailMenu[1]);
+    // final MainMenuModel mainMenu = mainMenuName.singleWhere((menu) => menu.id == newDetailMenu.id);
     // newDetailMenu['selectMenu'] = mainMenu.id;
-
+    // mainMenu.id = newDetailMenu.menuTitle;
     // Provider.of<MenuProvider>(context).createDetailMenu(newDetailMenu);
+    // if(mainMenu.id == 'ham'){
+    // }
+    // if(newDetailMenu.id == 'ham')
     Provider.of<MenuProvider>(context).createSubMenu(newDetailMenu);
     Navigator.pushNamed(context, "/");
   }

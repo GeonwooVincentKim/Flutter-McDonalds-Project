@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 class MainMenuModel{
-  final String id;
+  String id;
   final String foodName;
   final String mainImage;
   final int type;

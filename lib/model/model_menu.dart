@@ -8,6 +8,8 @@ class MenuModel{
   int prices;
   int type;
   String releaseDate;
+  String releaseYear;
+  String releaseMonth;
   bool isInCart;
 
   MenuModel({
