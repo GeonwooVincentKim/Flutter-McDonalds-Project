@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myTestApp/screens/sub_screen/sidemenu.dart';
-import 'package:myTestApp/widget/style/style.dart';
+import 'package:myTestApp/screens/sidemenu.dart';
+import 'package:myTestApp/shared/style/style.dart';
 
 
 class Home extends StatefulWidget {

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp/screens/main_screen/home.dart';
-import 'package:myTestApp/screens/sub_screen/sidemenu.dart';
-import 'package:myTestApp/widget/style/style.dart';
+import 'package:myTestApp/screens/main_screen/menu.dart';
+import 'package:myTestApp/screens/sidemenu.dart';
+import 'package:myTestApp/shared/style/style.dart';
 
 
 class Body extends StatefulWidget {  
@@ -12,7 +13,7 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   String title;
   int _selectPage = 0;
-  List<Widget> controller;
+  List<Widget> controller = List<Widget>();
   PageController pageController = PageController(
     initialPage: 0,
     keepPage: true
@@ -24,8 +25,8 @@ class _BodyState extends State<Body> {
       physics: ClampingScrollPhysics(),
       children: <Widget>[
         Home(pageIndex: _selectPage, title: "Home", pageInfo: _bodyNaviBar, homeColor: BasicAppBarColor),
-        // Menu(pageIndex: _selectPage, title: "Menu", pageInfo: _bodyNaviBar, homeColor: BasicAppBarColor)
-      ], onPageChanged: (page) => setState((){ /* _selectPage = page; */})
+        Menu(pageIndex: _selectPage, title: "Menu", pageInfo: _bodyNaviBar, homeColor: BasicAppBarColor)
+      ], onPageChanged: (page) => setState((){ _selectPage = page; })
     );
   }
 
