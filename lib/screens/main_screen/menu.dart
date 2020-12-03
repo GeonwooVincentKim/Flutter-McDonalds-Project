@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp/model/food_model/model_menu.dart';
+import 'package:myTestApp/provider/provider_filter.dart';
 import 'package:myTestApp/provider/provider_menu.dart';
+import 'package:myTestApp/screens/create-edit-filter/filter.dart';
 import 'package:myTestApp/screens/sidemenu.dart';
+import 'package:myTestApp/shared/helpers/functions.dart';
 import 'package:myTestApp/shared/helpers/icomoon.dart';
 import 'package:myTestApp/shared/style/style.dart';
 import 'package:myTestApp/widget/list_tile/list_tile_menu.dart';
@@ -49,7 +52,10 @@ class _MenuState extends State<Menu> {
       margin: EdgeInsets.all(basicMargin),
       child: Consumer<ProviderMenu>(
         builder: (ctx, menu, child){
+          
+          // final MenuModel filter = Provider.of<FilterProvider>(context).changeOrderNoMapFilters(filter);
           final List<MenuModel> listMenu = menu.menuList;
+          // final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilter(menu, ))
           mainPage = listMenu.toList();
 
           return GridView.builder(

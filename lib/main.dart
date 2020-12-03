@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myTestApp/provider/provider_filter.dart';
 import 'package:myTestApp/provider/provider_menu.dart';
 import 'package:myTestApp/provider/provider_user.dart';
 import 'package:myTestApp/screens/body.dart';
@@ -23,6 +24,7 @@ class myApp extends StatelessWidget{
       providers: [
         ChangeNotifierProvider(create: (_) => UserProvider()),
         ChangeNotifierProvider(create: (_) => ProviderMenu()),
+        ChangeNotifierProvider(create: (_) => FilterProvider()),
       ],
       child: MaterialApp(
         title: "McDonaldsApp",

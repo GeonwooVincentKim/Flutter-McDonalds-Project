@@ -12,9 +12,9 @@ class MenuModel{
   bool isInCart;
 
   MenuModel({
-    @required this.id,
-    @required this.menuTitle,
-    @required this.image,    
+    this.id,
+    this.menuTitle,
+    this.image,    
     this.prices,
     this.type,
     this.releaseYear,

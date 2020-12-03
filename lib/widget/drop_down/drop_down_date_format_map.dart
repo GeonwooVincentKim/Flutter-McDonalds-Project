@@ -4,22 +4,20 @@ import 'package:myTestApp/shared/style/style.dart';
 import 'package:myTestApp/widget/drop_down/drop_down.dart';
 
 
-class DropDownDateFormat extends StatefulWidget {
+class DropDownDateFormatMap extends StatefulWidget {
   final GlobalKey<FormState> yearmonthKey;
-  MenuModel menuModelYearMonth;
-  // Map<String, dynamic> menuYearMonthMap;
+  Map<String, dynamic> menuYearMonthMap;
   
-  DropDownDateFormat({
+  DropDownDateFormatMap({
     @required this.yearmonthKey,
-    this.menuModelYearMonth,
-    // this.menuYearMonthMap
+    this.menuYearMonthMap
   });
 
   @override
-  _DropDownDateFormatState createState() => _DropDownDateFormatState();
+  _DropDownDateFormatMapState createState() => _DropDownDateFormatMapState();
 }
 
-class _DropDownDateFormatState extends State<DropDownDateFormat> {
+class _DropDownDateFormatMapState extends State<DropDownDateFormatMap> {
   final List<String> yearList = [];
   final List<String> monthList = [];
 
@@ -33,27 +31,23 @@ class _DropDownDateFormatState extends State<DropDownDateFormat> {
       monthList.add(i.toString());
     }
 
-    // When it is not map
-    if(widget.menuModelYearMonth.releaseYear == '')
-      widget.menuModelYearMonth.releaseYear = yearList[yearList.length - 1];
-    if(widget.menuModelYearMonth.releaseMonth == '')
-      widget.menuModelYearMonth.releaseMonth = monthList[monthList.length - 1];
-    
-    // // When it is map
-    // if(widget.menuYearMonthMap['releaseYear'] == '')
-    //   widget.menuYearMonthMap['releaseYear'] = yearList[yearList.length - 1];
-    // if(widget.menuYearMonthMap['releaseMonth'] == '')
-    //   widget.menuYearMonthMap['releaseMonth'] = monthList[monthList.length - 1];
+    // When it is map
+    if(widget.menuYearMonthMap['releaseYear'] == '')
+      widget.menuYearMonthMap['releaseYear'] = yearList[yearList.length - 1];
+    if(widget.menuYearMonthMap['releaseMonth'] == '')
+      widget.menuYearMonthMap['releaseMonth'] = monthList[monthList.length - 1];
 
     super.initState();
   }
 
   Widget _buildYearList(){
     return DropDownWidget(
-      value: widget.menuModelYearMonth.releaseYear,
+      // value: widget.menuModelYearMonth.releaseYear,
+      value: widget.menuYearMonthMap['releaseYear'],
       onChanged: (String value){
         setState(() {
-          widget.menuModelYearMonth.releaseYear = value;
+          // widget.menuModelYearMonth.releaseYear = value;
+          widget.menuYearMonthMap['releaseYear'] = value;
         });
       },
       items: yearList
@@ -62,10 +56,12 @@ class _DropDownDateFormatState extends State<DropDownDateFormat> {
 
   Widget _buildMonthList(){
     return DropDownWidget(
-      value: widget.menuModelYearMonth.releaseMonth,
+      // value: widget.menuModelYearMonth.releaseMonth,
+      value: widget.menuYearMonthMap['releaseMonth'],
       onChanged: (String value){
         setState(() {
-          widget.menuModelYearMonth.releaseMonth = value;
+          // widget.menuModelYearMonth.releaseMonth = value;
+          widget.menuYearMonthMap['releaseMonth'] = value;
         });
       },
       items: monthList

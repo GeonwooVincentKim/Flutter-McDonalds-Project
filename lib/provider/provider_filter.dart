@@ -3,16 +3,18 @@ import 'package:myTestApp/model/food_model/model_menu.dart';
 
 
 class FilterProvider with ChangeNotifier{
+  MenuModel menuFilter = MenuModel(releaseYear: null, releaseMonth: null);
+  List<MenuModel> ordersNoMap = [];
+  
+  List<MenuModel> get orderFilterNoMap => [...ordersNoMap];
   final Map<String, dynamic> _orders = {
-    'releaseDate': '',
-    'releaseDateYear': null,
-    'releaseDateMonth': null,
+    'releaseYear': '',
+    'releaseMonth': '',
   };
   
   final Map<String, dynamic> _prevOrders = {
-    'releaseDate': '',
-    'releaseDateYear': null,
-    'releaseDateMonth': null
+    'releaseYear': '',
+    'releaseMonth': '',
   };
 
   Map<String, dynamic> get orderFilters {
@@ -24,34 +26,38 @@ class FilterProvider with ChangeNotifier{
   }
 
   void changeOrderFilters(Map<String, dynamic> newFilter){
-    _orders['releaseDate'] = newFilter['releaseDate'];
-    _orders['releaseDateYear'] = newFilter['releaseDateYear'];
-    _orders['releaseDateMonth'] = newFilter['releaseDateMonth'];
+    _orders['releaseYear'] = newFilter['releaseYear'];
+    _orders['releaseMonth'] = newFilter['releaseMonth'];
     notifyListeners();
   }
 
   void changeOrderNoMapFilters(MenuModel mainFilter){
-
+    menuFilter.releaseYear = mainFilter.releaseYear;
+    menuFilter.releaseMonth = mainFilter.releaseMonth;
+    notifyListeners();
   }
 
   void changePrevOrderFilters(Map<String, dynamic> newFilter){
-    _prevOrders['releaseDate'] = newFilter['releaseDate'];
-    _prevOrders['releaseDateYear'] = newFilter['releaseDateYear'];
-    _prevOrders['releaseDateMonth'] = newFilter['releaseDateMonth'];
+    _prevOrders['releaseYear'] = newFilter['releaseYear'];
+    _prevOrders['releaseMonth'] = newFilter['releaseMonth'];
     notifyListeners();
   }
 
   void resetOrderFilter(){
-    _orders['releaseDate'] = '';
-    _orders['releaseDateYear'] = null;
-    _orders['releaseDateMonth'] = null;
+    _orders['releaseYear'] = '';
+    _orders['releaseMonth'] = '';
+    notifyListeners();
+  }
+
+  void resetOrderNoMapFilter(){
+    menuFilter.releaseYear = '';
+    menuFilter.releaseMonth = '';
     notifyListeners();
   }
 
   void resetPrevOrderFilter(){
-    _prevOrders['releaseDate'] = '';
-    _prevOrders['releaseDateYear'] = null;
-    _prevOrders['releaseDateMonth'] = null;
+    _prevOrders['releaseYear'] = null;
+    _prevOrders['releaseMonth'] = null;
     notifyListeners();
   }
 }

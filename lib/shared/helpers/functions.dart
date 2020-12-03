@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:myTestApp/model/food_model/model_menu.dart';
 
 
 const _chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
@@ -15,4 +16,18 @@ DateTime getDateTimeFromString(String date) {
     final DateTime today = DateTime.now();
     return DateTime.parse('$date-${today.month + 1}-01');
   } 
+}
+
+DateTime getDateTimeNoDashString(String date){
+  
+}
+
+bool checkFilter(MenuModel menu, MenuModel newFilter){
+  final DateTime releaseYear = menu.releaseYear != '' ? getDateTimeFromString(menu.releaseYear) : null;
+  final DateTime releaseMonth = menu.releaseMonth != '' ? getDateTimeFromString(menu.releaseMonth) : null;
+  if((newFilter.releaseYear == '' || newFilter.releaseYear == releaseYear.year.toString()) && 
+  newFilter.releaseMonth == '' || newFilter.releaseYear == releaseMonth.month.toString()){
+    return true;
+  }
+  return false;
 }
