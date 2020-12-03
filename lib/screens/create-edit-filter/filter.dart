@@ -22,9 +22,10 @@ class _FilterState extends State<Filter> {
   // ];
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final Map<String, dynamic> _currentOrdersFilters = {
-    'releaseDate': '',
-    'year': null,
-    'month': null,
+    // 'releaseDate': '',
+    // 'year': null,
+    // 'month': null,
+      
   };
 
   @override

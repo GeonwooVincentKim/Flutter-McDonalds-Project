@@ -10,7 +10,7 @@ class SideMenu extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
-            child: Text("Drawer Header"),
+            child: null,
             decoration: BoxDecoration(
               color: SideAppBarColor,
               image: DecorationImage(

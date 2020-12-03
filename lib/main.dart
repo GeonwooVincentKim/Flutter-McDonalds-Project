@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:myTestApp/provider/provider_menu.dart';
 import 'package:myTestApp/provider/provider_user.dart';
 import 'package:myTestApp/screens/body.dart';
 import 'package:myTestApp/screens/create-edit-filter/create_category.dart';
 import 'package:myTestApp/screens/create-edit-filter/create_new_menu.dart';
 import 'package:myTestApp/screens/create-edit-filter/edit_user.dart';
+import 'package:myTestApp/screens/create-edit-filter/filter.dart';
+import 'package:myTestApp/screens/main_screen/cart.dart';
+import 'package:myTestApp/screens/main_screen/details.dart';
 import 'package:myTestApp/screens/main_screen/orders.dart';
 import 'package:myTestApp/screens/main_screen/settings.dart';
 import 'package:myTestApp/shared/style/style.dart';
@@ -18,6 +22,7 @@ class myApp extends StatelessWidget{
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => UserProvider()),
+        ChangeNotifierProvider(create: (_) => ProviderMenu()),
       ],
       child: MaterialApp(
         title: "McDonaldsApp",
@@ -26,7 +31,7 @@ class myApp extends StatelessWidget{
           "/": (context) => Body(),
           '/settings': (context) => Settings(),
           '/settings/modify': (context) => EditUser(),
-          // '/cart': (context) => Cart(title: "Cart", cartColor: BasicAppBarColor),
+          '/cart': (context) => Cart(title: "Cart", cartColor: BasicAppBarColor),
           '/orders': (context) => Orders(title: "Orders", ordersColor: BasicAppBarColor),
           '/createCategory': (context) => CreateCategory(),
           '/mainMenu/createMenu': (context) => CreateNewMenu(),
@@ -36,12 +41,12 @@ class myApp extends StatelessWidget{
           if(pathElements[0] != '') return null;
           if(pathElements[1] == 'food'){
             String foodID = pathElements[2];
-            return MaterialPageRoute(builder: (BuildContext context) => myApp());
+            return MaterialPageRoute(builder: (BuildContext context) => Details(backgroundColor: BasicAppBarColor, menuID: foodID));
           }else if(pathElements[1] == 'detail'){
             String foodID = pathElements[2];
             return MaterialPageRoute(builder: (BuildContext context) => myApp());
           }else if(pathElements[1] == 'filter'){
-            // return MaterialPageRoute(builder: (BuildContext context) => FilterPage(settings.arguments));
+            return MaterialPageRoute(builder: (BuildContext context) => Filter(settings.arguments));
           }
         },
         onUnknownRoute: (settings) {

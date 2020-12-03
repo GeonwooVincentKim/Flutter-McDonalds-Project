@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp/model/food_model/model_menu.dart';
+import 'package:myTestApp/provider/provider_menu.dart';
 import 'package:myTestApp/screens/sidemenu.dart';
 import 'package:myTestApp/shared/style/divider.dart';
 import 'package:myTestApp/shared/style/style.dart';
@@ -46,10 +47,10 @@ class _OrdersState extends State<Orders> {
       padding: EdgeInsets.symmetric(horizontal: basicPadding, vertical: basicPadding),
       color: CartOrderColor,
       child: SingleChildScrollView(
-        child: Consumer<MenuProvider>(
+        child: Consumer<ProviderMenu>(
           builder: (ctx, orderMenu, child){
             
-            final List<MenuModel> subMenuList = orderMenu.cartItems;
+            final List<MenuModel> subMenuList = orderMenu.cartList;
             final List<MenuModel> cartPage = subMenuList.toList();
 
             return Column(

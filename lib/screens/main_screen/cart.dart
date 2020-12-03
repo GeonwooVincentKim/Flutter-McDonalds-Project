@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp/model/food_model/model_menu.dart';
+import 'package:myTestApp/provider/provider_menu.dart';
 import 'package:myTestApp/screens/sidemenu.dart';
 import 'package:myTestApp/shared/helpers/icomoon.dart';
 import 'package:myTestApp/shared/style/divider.dart';
@@ -40,16 +41,16 @@ class _CartState extends State<Cart> {
       title: Text(widget.title),
       backgroundColor: widget.cartColor,
       centerTitle: true,
-      actions: [
-        IconButton(
-          icon: Icon(
-            IconMoon.iadd, 
-            color: Colors.white
-          ), 
-          // Menu(pageIndex: 1, pageInfo: null, title: "Menu", menuColor: BasicAppBarColor)
-          onPressed: () => Navigator.pushNamed(context, "/"),
-        )
-      ],
+      // actions: [
+      //   IconButton(
+      //     icon: Icon(
+      //       IconMoon.iadd, 
+      //       color: Colors.white
+      //     ), 
+      //     // Menu(pageIndex: 1, pageInfo: null, title: "Menu", menuColor: BasicAppBarColor)
+      //     onPressed: () => Navigator.pushNamed(context, "/"),
+      //   )
+      // ],
     );
   }
 
@@ -61,9 +62,9 @@ class _CartState extends State<Cart> {
       padding: EdgeInsets.symmetric(horizontal: basicPadding, vertical: basicPadding),
       color: CartOrderColor,
       child: SingleChildScrollView(
-        child: Consumer<MenuProvider>(
+        child: Consumer<ProviderMenu>(
           builder: (ctx, orderMenu, child){
-            final List<MenuModel> subMenuList = orderMenu.cartItems;
+            final List<MenuModel> subMenuList = orderMenu.cartList;
             final List<MenuModel> cartPage = subMenuList.toList();
 
             return Column(
@@ -85,7 +86,7 @@ class _CartState extends State<Cart> {
       padding: EdgeInsets.symmetric(horizontal: basicPadding, vertical: basicPadding),
       color: CartOrderColor,
       child: Center(
-        child: Consumer<MenuProvider>(
+        child: Consumer<ProviderMenu>(
           builder: (ctx, totalPrice, child){
             return Column(
               children: [
@@ -134,7 +135,7 @@ class _CartState extends State<Cart> {
   }
 
   void _buildSubmitForm(BuildContext context){
-    Provider.of<MenuProvider>(context, listen: false).cartItems;
+    Provider.of<ProviderMenu>(context, listen: false).cartList;
     Navigator.pushNamed(context, "/orders");
   }
 }

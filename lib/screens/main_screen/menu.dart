@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:myTestApp/model/food_model/model_menu.dart';
+import 'package:myTestApp/provider/provider_menu.dart';
 import 'package:myTestApp/screens/sidemenu.dart';
+import 'package:myTestApp/shared/helpers/icomoon.dart';
 import 'package:myTestApp/shared/style/style.dart';
+import 'package:myTestApp/widget/list_tile/list_tile_menu.dart';
+import 'package:provider/provider.dart';
 
 
 class Menu extends StatefulWidget {
@@ -20,21 +25,46 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
+  List<MenuModel> mainPage = [];
   Widget _buildMenuAppBar(){
     return AppBar(
       title: Text(widget.title),
       backgroundColor: BasicAppBarColor,
       centerTitle: true,
       actions: [
-
+        IconButton(
+          icon: Icon(
+            IconMoon.iadd,
+            color: Colors.white,
+          ),
+          onPressed: () => Navigator.pushNamed(context, "/food"),
+        )
       ],
     );
   }
 
   Widget _buildMenuBody(){
     return Container(
-      color: BasicBackgroundColor,
-      padding: EdgeInsets.all(basicPadding),
+      padding: EdgeInsets.symmetric(vertical: basicPadding, horizontal: basicPadding / 2),
+      margin: EdgeInsets.all(basicMargin),
+      child: Consumer<ProviderMenu>(
+        builder: (ctx, menu, child){
+          final List<MenuModel> listMenu = menu.menuList;
+          mainPage = listMenu.toList();
+
+          return GridView.builder(
+            shrinkWrap: true,
+            itemCount: mainPage.length,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 0.75,
+              crossAxisSpacing: 30.0,
+              mainAxisSpacing: 30.0
+            ),
+            itemBuilder: (context, index) => ListTileMenu(menuContents: mainPage[index]),
+          );
+        }
+      )
     );
   }
 
@@ -44,6 +74,7 @@ class _MenuState extends State<Menu> {
       appBar: _buildMenuAppBar(),
       body: _buildMenuBody(),
       drawer: SideMenu(),
+      backgroundColor: BasicBackgroundColor
     );
   }
 }

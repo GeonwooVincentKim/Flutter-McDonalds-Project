@@ -1,7 +1,7 @@
 import 'package:myTestApp/model/food_model/model_menu.dart';
 
 
-var menu1 = [
+var DUMMY_MENULIST = [
   MenuModel(
     id: 'ham01',
     menuTitle: '1955 HashBrown',
@@ -61,69 +61,7 @@ var menu1 = [
     releaseYear: '2019',
     releaseMonth: '10'
   ),
-  
-  MenuModel(
-    id: 'ham07',
-    menuTitle: 'Double 1955 Burger',
-    image: 'assets/img/burger/Double1955Burger.png',
-    prices: 7200,
-    type: 0,
-    releaseYear: '2011',
-    releaseMonth: '03'
-  ),
 
-  MenuModel(
-    id: 'ham08',
-    menuTitle: 'Double Bulgogi Burger',
-    image: 'assets/img/burger/DoubleBulgogiBurger.png',
-    prices: 4400,
-    type: 0,
-    releaseYear: '1999',
-    releaseMonth: '01'
-  ),
-
-  MenuModel(
-    id: 'ham09',
-    menuTitle: 'Egg Bulgogi Burger',
-    image: 'assets/img/burger/EggBulgogiBurger.png',
-    prices: 3000,
-    type: 0,
-    releaseYear: '2019',
-    releaseMonth: '02'
-  ),
-  
-  MenuModel(
-    id: 'ham10',
-    menuTitle: 'Bulgogi Burger',
-    image: 'assets/img/burger/BulgogiBurger.png',
-    prices: 2000,
-    type: 0,
-    releaseYear: '1997',
-    releaseMonth: '10'
-  ),
-  
-  MenuModel(
-    id: 'ham11',
-    menuTitle: 'Supreme Shirmp Burger',
-    image: 'assets/img/burger/SupremeShrimpBurger.png',
-    prices: 5500,
-    type: 0,
-    releaseYear: '2016',
-    releaseMonth: '10'
-  ),
-
-  MenuModel(
-    id: 'ham12',
-    menuTitle: 'Shrimp Beef Burger',
-    image: 'assets/img/burger/McChicken.png',
-    prices: 5500,
-    type: 0,
-    releaseYear: '2016',
-    releaseMonth: '10'
-  )
-];
-
-var menu2 = [
   MenuModel(
     id: 'cafe01',
     menuTitle: 'Americano',
@@ -174,88 +112,6 @@ var menu2 = [
     releaseMonth: '01'
   ),
 
-  MenuModel(
-    id: 'cafe06',
-    menuTitle: 'Decaffeine Cappuchino',
-    image: 'assets/img/McCafe_and_beverages/DecaffeineCappuchino.jpg',
-    prices: 0,
-    type: 1,
-    releaseYear: '2020',
-    releaseMonth: '01'
-  ),
-
-  MenuModel(
-    id: 'cafe07',
-    menuTitle: 'Decaffeine Iced Americano',
-    image: 'assets/img/McCafe_and_beverages/DecaffeineIcedAmericano.jpg',
-    prices: 1500,
-    type: 1,
-    releaseYear: '2020',
-    releaseMonth: '01'
-  ),
-
-  MenuModel(
-    id: 'cafe08',
-    menuTitle: 'Decaffeine Iced CafeLatte',
-    image: 'assets/img/McCafe_and_beverages/DecaffeineIcedCafeLatte.jpg',
-    prices: 2000,
-    type: 1,
-    releaseYear: '2020',
-    releaseMonth: '01'
-  ),
-
-  MenuModel(
-    id: 'cafe09',
-    menuTitle: 'Decaffeine Cappuchino',
-    image: 'assets/img/McCafe_and_beverages/DecaffeineCappuchino.jpg',
-    prices: 2000,
-    type: 1,
-    releaseYear: '2020',
-    releaseMonth: '01'
-  ),
-
-  MenuModel(
-    id: 'cafe10',
-    menuTitle: 'Iced Americano',
-    image: 'assets/img/McCafe_and_beverages/IcedAmericano.jpg',
-    prices: 2000,
-    type: 1,
-    releaseYear: '2011',
-    releaseMonth: '05'
-  ),
-
-  MenuModel(
-    id: 'cafe11',
-    menuTitle: 'Iced CaffeLatte',
-    image: 'assets/img/McCafe_and_beverages/IcedCaffeLatte.png',
-    prices: 2500,
-    type: 1,
-    releaseYear: '2011',
-    releaseMonth: '05'
-  ),
-
-  MenuModel(
-    id: 'cafe11',
-    menuTitle: 'Pear Chiller',
-    image: 'assets/img/McCafe_and_beverages/PearChiller.png',
-    prices: 2000,
-    type: 1,
-    releaseYear: '2020',
-    releaseMonth: '04'
-  ),
-
-  MenuModel(
-    id: 'cafe12',
-    menuTitle: 'Strawberry Chiller',
-    image: 'assets/img/McCafe_and_beverages/StrawberryChiller.jpg',
-    prices: 2000,
-    type: 1,
-    releaseYear: '2017',
-    releaseMonth: '11'
-  )
-].toList();
-
-var menu3 = [
   MenuModel(
     id: 'morning01',
     menuTitle: 'Bacon Egg McMuffine',
@@ -317,48 +173,6 @@ var menu3 = [
   ),
 
   MenuModel(
-    id: 'morning07',
-    menuTitle: 'Hotcakes 3pcs',
-    image: 'assets/img/McMorning/Hotcakes3pcs.jpg',
-    prices: 3000,
-    type: 2,
-    releaseYear: '2015',
-    releaseMonth: '09',
-  ),
-
-  MenuModel(
-    id: 'morning08',
-    menuTitle: 'McSpicy Shanghai Chicken Snak Wrap',
-    image: 'assets/img/McMorning/McSpicyShanghaiChickenSnackWrap.png',
-    prices: 2000,
-    type: 2,
-    releaseYear: '2018',
-    releaseMonth: '02',
-  ),
-
-  MenuModel(
-    id: 'morning09',
-    menuTitle: 'Sausage Egg McMuffin',
-    image: 'assets/img/McMorning/SausageEggMcMuffin.png',
-    prices: 3000,
-    type: 2,
-    releaseYear: '2006',
-    releaseMonth: '11',
-  ),
-
-  MenuModel(
-    id: 'morning10',
-    menuTitle: 'Sausage McMuffin',
-    image: 'assets/img/McMorning/SausageMcMuffin.png',
-    prices: 2200,
-    type: 2,
-    releaseYear: '2006',
-    releaseMonth: '11',
-  )
-].toList();
-
-var menu4 = [
-  MenuModel(
     id: 'dessert01',
     menuTitle: 'Apple Pie',
     image: 'assets/img/sides_and_desserts/ApplePie.png',
@@ -417,24 +231,4 @@ var menu4 = [
     releaseYear: '2016',
     releaseMonth: '11',
   ),
-
-  MenuModel(
-    id: 'dessert07',
-    menuTitle: 'String Cheese',
-    image: 'assets/img/sides_and_desserts/StringCheese.png',
-    prices: 2300,
-    type: 3,
-    releaseYear: '2017',
-    releaseMonth: '05',
-  ),
-
-  MenuModel(
-    id: 'dessert08',
-    menuTitle: 'Taro Pie',
-    image: 'assets/img/sides_and_desserts/TaroPie.png',
-    prices: 1000,
-    type: 3,
-    releaseYear: '2020',
-    releaseMonth: '09',
-  )
 ].toList();
