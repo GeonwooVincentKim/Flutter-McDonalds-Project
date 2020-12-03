@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myTestApp/model/food_model/model_menu.dart';
 
 
 class FilterProvider with ChangeNotifier{
@@ -27,6 +28,10 @@ class FilterProvider with ChangeNotifier{
     _orders['releaseDateYear'] = newFilter['releaseDateYear'];
     _orders['releaseDateMonth'] = newFilter['releaseDateMonth'];
     notifyListeners();
+  }
+
+  void changeOrderNoMapFilters(MenuModel mainFilter){
+
   }
 
   void changePrevOrderFilters(Map<String, dynamic> newFilter){

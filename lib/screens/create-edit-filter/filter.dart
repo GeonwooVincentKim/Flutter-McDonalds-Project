@@ -102,9 +102,9 @@ class _FilterState extends State<Filter> {
   void _buildResetFilter(){
     _formKey.currentState.reset();
     setState(() {
-      _currentOrdersFilters['releaseDate'] = '';
-      _currentOrdersFilters['year'] = null;
-      _currentOrdersFilters['month'] = null;
+      // _currentOrdersFilters['releaseDate'] = '';
+      // _currentOrdersFilters['year'] = null;
+      // _currentOrdersFilters['month'] = null;
     });
 
     if(widget.page == 'Orders'){
