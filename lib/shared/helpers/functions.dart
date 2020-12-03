@@ -31,3 +31,13 @@ bool checkFilter(MenuModel menu, MenuModel newFilter){
   }
   return false;
 }
+
+bool checkFilterMap(MenuModel menu, Map<String, dynamic> newFilter){
+  final DateTime releaseYear = menu.releaseYear != '' ? getDateTimeFromString(menu.releaseYear) : null;
+  final DateTime releaseMonth = menu.releaseMonth != '' ? getDateTimeFromString(menu.releaseMonth) : null;
+  if((newFilter['releaseYear'] == '' || newFilter['releaseYear'] == releaseYear.year.toString()) &&
+  newFilter['releaseMonth'] == '' || newFilter['releaseMonth'] == releaseMonth.month.toString()){
+    return true;
+  }
+  return false;
+}

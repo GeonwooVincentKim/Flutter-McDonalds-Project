@@ -8,6 +8,7 @@ import 'package:myTestApp/shared/helpers/functions.dart';
 import 'package:myTestApp/shared/style/style.dart';
 import 'package:myTestApp/widget/button/bottom_button.dart';
 import 'package:myTestApp/widget/drop_down/drop_down_date_format.dart';
+import 'package:myTestApp/widget/drop_down/drop_down_date_format_map.dart';
 import 'package:provider/provider.dart';
 
 
@@ -39,9 +40,14 @@ class _FilterState extends State<Filter> {
 
   @override
   void initState(){
-    // Map<String, dynamic> filterDate;
-    // _currentOrdersFilters['releaseYear'] = filterDate['releaseYear'];
-    // _currentOrdersFilters['releaseMonth'] = filterDate['releaseMonth'];
+    Map<String, dynamic> filterDate;
+    if(widget.page == 'home'){
+      filterDate = Provider.of<FilterProvider>(context, listen: false).orderFilters;
+    }else {
+      filterDate = Provider.of<FilterProvider>(context, listen: false).orderFilters;
+    }
+    _currentOrdersFilters['releaseYear'] = filterDate['releaseYear'];
+    _currentOrdersFilters['releaseMonth'] = filterDate['releaseMonth'];
     // _currentOrdersFilters['month'] = filterDate['month'];
     // if(filterDate['releaseDate'] != ''){
     //   final DateTime releaseDate = getDateTimeFromString(filterDate['releaseDate']);
@@ -100,9 +106,13 @@ class _FilterState extends State<Filter> {
   }
 
   Widget _buildFilterYearMonth(){
-    return DropDownDateFormat(
+    // return DropDownDateFormat(
+    //   yearmonthKey: _formKey,
+    //   menuModelYearMonth: newFilterData
+    // );
+    return DropDownDateFormatMap(
       yearmonthKey: _formKey,
-      menuModelYearMonth: newFilterData
+      menuYearMonthMap: _currentOrdersFilters,
     );
   }
 
@@ -120,26 +130,26 @@ class _FilterState extends State<Filter> {
     // if(!_formKey.currentState.validate()) return;
     _formKey.currentState.save();
     if(widget.page == 'Orders'){
-      Provider.of<FilterProvider>(context).changeOrderNoMapFilters(newFilterData);
-      // Provider.of<FilterProvider>(context, listen: false).changeOrderFilters(_currentOrdersFilters);
-    }/*else{
+      // Provider.of<FilterProvider>(context).changeOrderNoMapFilters(newFilterData);
+      Provider.of<FilterProvider>(context, listen: false).changeOrderFilters(_currentOrdersFilters);
+    }else{
       Provider.of<FilterProvider>(context, listen: false).changePrevOrderFilters(_currentOrdersFilters);
-    }*/
+    }
     Navigator.pop(context);
   }
 
   void _buildResetFilter(){
     _formKey.currentState.reset();
     setState(() {
-      // _currentOrdersFilters['releaseDate'] = '';
+      _currentOrdersFilters['releaseYear'] = '';
       // _currentOrdersFilters['year'] = null;
-      // _currentOrdersFilters['month'] = null;
+      _currentOrdersFilters['releaseMonth'] = '';
     });
 
     if(widget.page == 'Orders'){
       Provider.of<FilterProvider>(context, listen: false).changeOrderFilters(_currentOrdersFilters);
-    }/*else{
+    }else{
       Provider.of<FilterProvider>(context, listen: false).changePrevOrderFilters(_currentOrdersFilters);
-    }*/
+    }
   }
 }

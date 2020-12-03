@@ -5,7 +5,7 @@ import 'package:myTestApp/model/food_model/model_menu.dart';
 class FilterProvider with ChangeNotifier{
   MenuModel menuFilter = MenuModel(releaseYear: null, releaseMonth: null);
   List<MenuModel> ordersNoMap = [];
-  
+
   List<MenuModel> get orderFilterNoMap => [...ordersNoMap];
   final Map<String, dynamic> _orders = {
     'releaseYear': '',
@@ -56,8 +56,8 @@ class FilterProvider with ChangeNotifier{
   }
 
   void resetPrevOrderFilter(){
-    _prevOrders['releaseYear'] = null;
-    _prevOrders['releaseMonth'] = null;
+    _prevOrders['releaseYear'] = '';
+    _prevOrders['releaseMonth'] = '';
     notifyListeners();
   }
 }
