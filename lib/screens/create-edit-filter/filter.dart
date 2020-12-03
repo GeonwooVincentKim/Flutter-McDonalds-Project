@@ -1,11 +1,12 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:myTestApp/model/food_model/model_menu.dart';
 import 'package:myTestApp/provider/provider_filter.dart';
-import 'package:myTestApp/screens/create-edit-filter/create_new_menu_form.dart';
 import 'package:myTestApp/screens/sidemenu.dart';
 import 'package:myTestApp/shared/style/style.dart';
 import 'package:myTestApp/widget/button/bottom_button.dart';
+import 'package:myTestApp/widget/drop_down/drop_down_date_format.dart';
 import 'package:provider/provider.dart';
 
 
@@ -20,7 +21,8 @@ class _FilterState extends State<Filter> {
   // final List<String> _currentOrderFilters = [
   //   ''
   // ];
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  MenuModel newMenu = MenuModel(id: null, menuTitle: null, image: null, prices: null, releaseYear: null, releaseMonth: null);
   final Map<String, dynamic> _currentOrdersFilters = {
     // 'releaseDate': '',
     // 'year': null,
@@ -59,8 +61,9 @@ class _FilterState extends State<Filter> {
           padding: EdgeInsets.all(basicPadding * 2),
           child: Column(
             children: <Widget>[
-              CreateNewMenuForm(
-                formKey: formKey,
+              DropDownDateFormat(
+                yearmonthKey: _formKey,
+                menuModelYearMonth: newMenu
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -87,7 +90,7 @@ class _FilterState extends State<Filter> {
   }
 
   void _buildFilterForm(context){
-    formKey.currentState.save();
+    _formKey.currentState.save();
     if(widget.page == 'Orders'){
       Provider.of<FilterProvider>(context, listen: false).changeOrderFilters(_currentOrdersFilters);
     }else{
@@ -97,7 +100,7 @@ class _FilterState extends State<Filter> {
   }
 
   void _buildResetFilter(){
-    formKey.currentState.reset();
+    _formKey.currentState.reset();
     setState(() {
       _currentOrdersFilters['releaseDate'] = '';
       _currentOrdersFilters['year'] = null;

@@ -76,7 +76,7 @@ class _EditUserState extends State<EditUser> {
   }
 
   Widget _buildModifyInfo(String text, int index){
-    return index != 2 || text == userInform[2] ? 
+    return index != 2 || text != userInform[2] ? 
       TextFormField(
         initialValue: text,
         validator: (value){
@@ -125,6 +125,17 @@ class _EditUserState extends State<EditUser> {
         children: [
           Text("Email"),
           _buildModifyInfo(userInform[2], 2)
+          // TextFormField(
+          //   initialValue: userInform[2],
+          //   validator: (value){
+          //     Pattern pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+          //     RegExp regex = new RegExp(pattern); 
+          //     if(value.isEmpty) return 'Please fill the ${'text'} in your blank.';
+          //     else if(!regex.hasMatch(value)){return 'Please enter VALID E-Mail!!';}
+          //     return null;
+          //   },
+          //   onSaved: (value) => userInform[2] = value,
+          // )
         ],
       )
     );
