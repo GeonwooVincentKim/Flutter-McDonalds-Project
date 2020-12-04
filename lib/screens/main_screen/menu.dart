@@ -52,37 +52,37 @@ class _MenuState extends State<Menu> {
       margin: EdgeInsets.all(basicMargin),
       child: Consumer<ProviderMenu>(
         builder: (ctx, menu, child){
-          // final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
-          // final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilterMap(menu, menuFilter)).toList();
+          final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
+          final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilterMap(menu, menuFilter)).toList();
           // final MenuModel filter = Provider.of<FilterProvider>(context).changeOrderNoMapFilters(filter);
-          final List<MenuModel> listMenu = menu.menuList;
+          // final List<MenuModel> listMenu = menu.menuList;
           // final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilter(menu, ))
           mainPage = listMenu.toList();
 
-          // return listMenu.length == 0 ? 
-          //   Center(child: Text("NOO!!!")) : 
-          //   GridView.builder(
-          //     shrinkWrap: true,
-          //     itemCount: mainPage.length,
-          //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          //       crossAxisCount: 2,
-          //       childAspectRatio: 0.75,
-          //       crossAxisSpacing: 30.0,
-          //       mainAxisSpacing: 30.0
-          //     ),
-          //     itemBuilder: (context, index) => ListTileMenu(menuContents: mainPage[index]),
-          //   );
-          return GridView.builder(
-            shrinkWrap: true,
-            itemCount: listMenu.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 0.75,
-              crossAxisSpacing: 30.0,
-              mainAxisSpacing: 30.0
-            ),
-            itemBuilder: (context, index) => ListTileMenu(menuContents: listMenu[index]),
-          );
+          return listMenu.length == 0 ? 
+            Center(child: Text("NOO!!!")) : 
+            GridView.builder(
+              shrinkWrap: true,
+              itemCount: mainPage.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 0.75,
+                crossAxisSpacing: 30.0,
+                mainAxisSpacing: 30.0
+              ),
+              itemBuilder: (context, index) => ListTileMenu(menuContents: mainPage[index]),
+            );
+          // return GridView.builder(
+          //   shrinkWrap: true,
+          //   itemCount: listMenu.length,
+          //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          //     crossAxisCount: 2,
+          //     childAspectRatio: 0.75,
+          //     crossAxisSpacing: 30.0,
+          //     mainAxisSpacing: 30.0
+          //   ),
+          //   itemBuilder: (context, index) => ListTileMenu(menuContents: listMenu[index]),
+          // );
         }
       )
     );

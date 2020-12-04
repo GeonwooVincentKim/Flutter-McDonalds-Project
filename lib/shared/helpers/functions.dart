@@ -14,7 +14,12 @@ DateTime getDateTimeFromString(String date) {
     return DateTime.parse(stringDate);
   } else {
     final DateTime today = DateTime.now();
-    return DateTime.parse('$date-${today.month + 1}-01');
+    // return DateTime.parse('$today.month');
+    // return DateTime.parse('$date-${today.month + 1}-01');
+    // return DateTime.parse(today.year.toString());
+    print(today.year.toString());
+    // return DateTime.parse(today.year.toString());
+    return DateTime(today.year);
   } 
 }
 
@@ -24,9 +29,9 @@ DateTime getDateTimeNoDashString(String date){
 
 bool checkFilter(MenuModel menu, MenuModel newFilter){
   final DateTime releaseYear = menu.releaseYear != '' ? getDateTimeFromString(menu.releaseYear) : null;
-  final DateTime releaseMonth = menu.releaseMonth != '' ? getDateTimeFromString(menu.releaseMonth) : null;
+  // final DateTime releaseMonth = menu.releaseMonth != '' ? getDateTimeFromString(menu.releaseMonth) : null;
   if((newFilter.releaseYear == '' || newFilter.releaseYear == releaseYear.year.toString()) && 
-  newFilter.releaseMonth == '' || newFilter.releaseYear == releaseMonth.month.toString()){
+  newFilter.releaseMonth == '' || newFilter.releaseYear == releaseYear.month.toString()){
     return true;
   }
   return false;

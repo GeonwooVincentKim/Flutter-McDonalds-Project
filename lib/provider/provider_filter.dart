@@ -5,6 +5,9 @@ import 'package:myTestApp/model/food_model/model_menu.dart';
 class FilterProvider with ChangeNotifier{
   MenuModel menuFilter = MenuModel(releaseYear: null, releaseMonth: null);
   List<MenuModel> ordersNoMap = [];
+  List<String> _orderStrings = [
+    
+  ];
 
   List<MenuModel> get orderFilterNoMap => [...ordersNoMap];
   final Map<String, dynamic> _orders = {
