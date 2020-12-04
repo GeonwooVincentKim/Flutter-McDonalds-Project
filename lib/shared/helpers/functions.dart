@@ -15,7 +15,8 @@ DateTime getDateTimeFromString(String date) {
   } else {
     final DateTime today = DateTime.now();
     // return DateTime.parse('$today.month');
-    return DateTime.parse('$date-${today.month + 1}-01');
+    print(date);
+    // return DateTime.parse('');
     // print(today.year.toString() + today.month.toString());
     // return DateTime(int.parse(date) + today.month);
     // return DateTime.parse(today.year.toString());
@@ -23,17 +24,23 @@ DateTime getDateTimeFromString(String date) {
 }
 
 DateTime getDateTimeNoDashString(String date){
-  
+  if(date.contains('/')){
+    final String stringDate = date.replaceAll("/", "-");
+    return DateTime.parse(stringDate);
+  }
 }
 
-bool checkFilter(MenuModel menu, Map<String, dynamic> newFilter){
-  final DateTime releaseYearMonth = menu.releaseDate != '' ? getDateTimeFromString(menu.releaseDate) : null;
-  if((newFilter['releaseYear'] == null || newFilter['releaseYear'] == releaseYearMonth.year.toString())
-  && (newFilter['releaseMonth'] == null || newFilter['releaseMonth'] == releaseYearMonth.month.toString())){
-    return true;
-  }
-  return false;
-}
+// bool checkFilter(MenuModel menu, Map<String, dynamic> newFilter){
+//   final DateTime releaseYearMonth = menu.releaseDate != '' ? getDateTimeFromString(menu.releaseDate) : null;
+//   // // print(releaseYearMonth);
+//   // // print(getDateTimeFromString(menu.releaseDate));
+//   if((newFilter['releaseYear'] == null || newFilter['releaseYear'] == releaseYearMonth.year.toString())
+//   && (newFilter['releaseMonth'] == null || newFilter['releaseMonth'] == releaseYearMonth.month.toString())){
+//   //   print(newFilter['releaseYear']);
+//   //   return true;
+//   }
+//   return false;
+// }
 // bool checkFilter(MenuModel menu, MenuModel newFilter){
 //   final DateTime releaseYear = menu.releaseYear != '' ? getDateTimeFromString(menu.releaseYear) : null;
 //   // final DateTime releaseMonth = menu.releaseMonth != '' ? getDateTimeFromString(menu.releaseMonth) : null;
@@ -44,12 +51,12 @@ bool checkFilter(MenuModel menu, Map<String, dynamic> newFilter){
 //   return false;
 // }
 
-// bool checkFilterMap(MenuModel menu, Map<String, dynamic> newFilter){
-//   final DateTime releaseYear = menu.releaseYear != '' ? getDateTimeFromString(menu.releaseYear) : null;
-//   final DateTime releaseMonth = menu.releaseMonth != '' ? getDateTimeFromString(menu.releaseMonth) : null;
-//   if((newFilter['releaseYear'] == '' || newFilter['releaseYear'] == releaseYear.year.toString()) &&
-//   newFilter['releaseMonth'] == '' || newFilter['releaseMonth'] == releaseMonth.month.toString()){
-//     return true;
-//   }
-//   return false;
-// }
+bool checkFilter(MenuModel menu, Map<String, dynamic> newFilter){
+  final DateTime releaseYear = menu.releaseYear != '' ? getDateTimeFromString(menu.releaseYear) : null;
+  final DateTime releaseMonth = menu.releaseMonth != '' ? getDateTimeFromString(menu.releaseMonth) : null;
+  if((newFilter['releaseYear'] == '' || newFilter['releaseYear'] == releaseYear.year.toString()) &&
+  newFilter['releaseMonth'] == '' || newFilter['releaseMonth'] == releaseMonth.month.toString()){
+    return true;
+  }
+  return false;
+}

@@ -62,7 +62,7 @@ class _MenuState extends State<Menu> {
             Center(child: Text("NOO!!!")) : 
             GridView.builder(
               shrinkWrap: true,
-              itemCount: mainPage.length,
+              itemCount: listMenu.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 0.75,
