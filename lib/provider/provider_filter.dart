@@ -4,20 +4,25 @@ import 'package:myTestApp/model/food_model/model_menu.dart';
 
 class FilterProvider with ChangeNotifier{
   MenuModel menuFilter = MenuModel(releaseYear: null, releaseMonth: null);
+  MenuModel get orderMap => menuFilter;
   List<MenuModel> ordersNoMap = [];
   List<String> _orderStrings = [
-    
+
   ];
 
   List<MenuModel> get orderFilterNoMap => [...ordersNoMap];
   final Map<String, dynamic> _orders = {
     'releaseYear': '',
+    'releaseYearText': null,
     'releaseMonth': '',
+    'releaseMonthText': null
   };
   
   final Map<String, dynamic> _prevOrders = {
     'releaseYear': '',
+    'releaseYearText': null,
     'releaseMonth': '',
+    'releaseMonthText': null
   };
 
   Map<String, dynamic> get orderFilters {
@@ -30,13 +35,15 @@ class FilterProvider with ChangeNotifier{
 
   void changeOrderFilters(Map<String, dynamic> newFilter){
     _orders['releaseYear'] = newFilter['releaseYear'];
+    _orders['releaseYearText'] = newFilter['releaseYearText'];
     _orders['releaseMonth'] = newFilter['releaseMonth'];
+    _orders['releaseMonthText'] = newFilter['releaseMonthText'];
     notifyListeners();
   }
 
   void changeOrderNoMapFilters(MenuModel mainFilter){
-    menuFilter.releaseYear = mainFilter.releaseYear;
-    menuFilter.releaseMonth = mainFilter.releaseMonth;
+    orderMap.releaseYear = mainFilter.releaseYear;
+    orderMap.releaseMonth = mainFilter.releaseMonth;
     notifyListeners();
   }
 
@@ -53,8 +60,8 @@ class FilterProvider with ChangeNotifier{
   }
 
   void resetOrderNoMapFilter(){
-    menuFilter.releaseYear = '';
-    menuFilter.releaseMonth = '';
+    orderMap.releaseYear = '';
+    orderMap.releaseMonth = '';
     notifyListeners();
   }
 

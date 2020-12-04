@@ -28,10 +28,12 @@ class _FilterState extends State<Filter> {
   final List<String> year = [];
   final List<String> month = [];
 
-  MenuModel newFilterData = MenuModel(id: null, menuTitle: null, image: null, prices: null, releaseYear: null, releaseMonth: null);
+  MenuModel newFilterData = MenuModel(releaseYear: '', releaseMonth: '');
   final Map<String, dynamic> _currentOrdersFilters = {
     'releaseYear': '',
+    'releaseYearText': null,
     'releaseMonth': '',
+    'releaseMonthText': null
     // 'releaseDate': '',
     // 'year': null,
     // 'month': null,
@@ -40,14 +42,37 @@ class _FilterState extends State<Filter> {
 
   @override
   void initState(){
-    Map<String, dynamic> filterDate;
-    if(widget.page == 'home'){
-      filterDate = Provider.of<FilterProvider>(context, listen: false).orderFilters;
-    }else {
-      filterDate = Provider.of<FilterProvider>(context, listen: false).orderFilters;
-    }
-    _currentOrdersFilters['releaseYear'] = filterDate['releaseYear'];
-    _currentOrdersFilters['releaseMonth'] = filterDate['releaseMonth'];
+    // Map<String, dynamic> filterDate;
+    // if(widget.page == 'home'){
+    //   filterDate = Provider.of<FilterProvider>(context, listen: false).orderFilters;
+    // }else {
+    //   filterDate = Provider.of<FilterProvider>(context, listen: false).prevOrderFilters;
+    // }
+    // _currentOrdersFilters['releaseYear'] = filterDate['releaseYear'];
+    // _currentOrdersFilters['releaseYearText'] = filterDate['releaseYearText'];
+    // _currentOrdersFilters['releaseMonth'] = filterDate['releaseMonth'];
+    // _currentOrdersFilters['releaseMonthText'] = filterDate['releaseMonthText'];
+    
+    // if(filterDate['releaseYearText'] != ''){
+    //   final DateTime releaseYear = getDateTimeFromString(filterDate['releaseYear']);
+    //   _currentOrdersFilters['releaseYear'] = releaseYear.year.toString();
+    // }
+    // if(filterDate['releaseMonthText'] != ''){
+    //   final DateTime releaseMonth = getDateTimeFromString(filterDate['releaseMonth']);
+    //   _currentOrdersFilters['releaseMonth'] = releaseMonth.month.toString();
+    // }
+    // MenuModel menuDate;
+    // if(widget.page == 'menu'){
+    //   menuDate = Provider.of<FilterProvider>(context, listen: false).orderMap;
+    // }else{
+    //   menuDate = Provider.of<FilterProvider>(context, listen: false).orderMap;
+    // }
+    // newFilterData.releaseYear = menuDate.releaseYear;
+    // newFilterData.releaseMonth = menuDate.releaseMonth;
+    // if(menuDate.releaseMonth != ''){
+    //   final DateTime releaseYearMonth = getDateTimeFromString(menuDate.releaseYear);
+    //   newFilterData.releaseYear = releaseYearMonth.year.toString();
+    // }
     // _currentOrdersFilters['month'] = filterDate['month'];
     // if(filterDate['releaseDate'] != ''){
     //   final DateTime releaseDate = getDateTimeFromString(filterDate['releaseDate']);
@@ -106,14 +131,14 @@ class _FilterState extends State<Filter> {
   }
 
   Widget _buildFilterYearMonth(){
-    // return DropDownDateFormat(
-    //   yearmonthKey: _formKey,
-    //   menuModelYearMonth: newFilterData
-    // );
-    return DropDownDateFormatMap(
+    return DropDownDateFormat(
       yearmonthKey: _formKey,
-      menuYearMonthMap: _currentOrdersFilters,
+      menuModelYearMonth: newFilterData
     );
+    // return DropDownDateFormatMap(
+    //   yearmonthKey: _formKey,
+    //   menuYearMonthMap: _currentOrdersFilters,
+    // );
   }
 
   @override
@@ -129,7 +154,7 @@ class _FilterState extends State<Filter> {
   void _buildFilterForm(context){
     // if(!_formKey.currentState.validate()) return;
     _formKey.currentState.save();
-    if(widget.page == 'Orders'){
+    if(widget.page == 'menu'){
       // Provider.of<FilterProvider>(context).changeOrderNoMapFilters(newFilterData);
       Provider.of<FilterProvider>(context, listen: false).changeOrderFilters(_currentOrdersFilters);
     }else{
@@ -141,12 +166,17 @@ class _FilterState extends State<Filter> {
   void _buildResetFilter(){
     _formKey.currentState.reset();
     setState(() {
-      _currentOrdersFilters['releaseYear'] = '';
-      // _currentOrdersFilters['year'] = null;
-      _currentOrdersFilters['releaseMonth'] = '';
+      // _currentOrdersFilters['releaseYear'] = '';
+      // _currentOrdersFilters['releaseYearText'] = null;
+      // // // _currentOrdersFilters['year'] = null;
+      // _currentOrdersFilters['releaseMonth'] = '';
+      // _currentOrdersFilters['releaseMonthText'] = null;
+      newFilterData.releaseYear = null;
+      newFilterData.releaseMonth = null; 
     });
 
-    if(widget.page == 'Orders'){
+    if(widget.page == 'menu'){
+      // Provider.of<FilterProvider>(context).changeOrderNoMapFilters(newFilterData);
       Provider.of<FilterProvider>(context, listen: false).changeOrderFilters(_currentOrdersFilters);
     }else{
       Provider.of<FilterProvider>(context, listen: false).changePrevOrderFilters(_currentOrdersFilters);
