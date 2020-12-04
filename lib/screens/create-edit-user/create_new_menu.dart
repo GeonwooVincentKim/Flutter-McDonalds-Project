@@ -34,14 +34,14 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
   void initState(){
     // newMenu = Provider.of<ProviderMenu>(context, listen: false).menu;
     // mainMenuList = menuContentList.map((mainMenu) => mainMenu.menuTitle).toList();    
-    MenuModel showMenu = Provider.of<ProviderMenu>(context, listen: false).selectedMenu;
+    // MenuModel showMenu = Provider.of<ProviderMenu>(context, listen: false).selectedMenu;
     super.initState();
   }
 
 
   Widget _buildNewAppBar(){
     return AppBar(
-      title: Text(" Menu"),
+      title: Text("Menu"),
       centerTitle: true,
       backgroundColor: BasicAppBarColor,
       actions: [

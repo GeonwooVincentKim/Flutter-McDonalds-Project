@@ -16,6 +16,8 @@ DateTime getDateTimeFromString(String date) {
     final DateTime today = DateTime.now();
     // return DateTime.parse('$today.month');
     return DateTime.parse('$date-${today.month + 1}-01');
+    // print(today.year.toString() + today.month.toString());
+    // return DateTime(int.parse(date) + today.month);
     // return DateTime.parse(today.year.toString());
   } 
 }

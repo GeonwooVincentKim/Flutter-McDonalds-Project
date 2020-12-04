@@ -11,13 +11,15 @@ class FilterProvider with ChangeNotifier{
 
   List<MenuModel> get orderFilterNoMap => [...ordersNoMap];
   final Map<String, dynamic> _orders = {
-    'releaseYear': '',
-    'releaseMonth': '',
+    'releaseYearMonth': '',
+    'releaseYear': null,
+    'releaseMonth': null,
   };
   
   final Map<String, dynamic> _prevOrders = {
-    'releaseYear': '',
-    'releaseMonth': '',
+    'releaseYearMonth': '',
+    'releaseYear': null,
+    'releaseMonth': null,
   };
 
   Map<String, dynamic> get orderFilters {
@@ -29,6 +31,7 @@ class FilterProvider with ChangeNotifier{
   }
 
   void changeOrderFilters(Map<String, dynamic> newFilter){
+    _orders['releaseYearMonth'] = newFilter['releaseYearMonth'];
     _orders['releaseYear'] = newFilter['releaseYear'];
     _orders['releaseMonth'] = newFilter['releaseMonth'];
     notifyListeners();
@@ -41,14 +44,16 @@ class FilterProvider with ChangeNotifier{
   // }
 
   void changePrevOrderFilters(Map<String, dynamic> newFilter){
+    _prevOrders['releaseYearMonth'] = newFilter['releaseYearMonth'];
     _prevOrders['releaseYear'] = newFilter['releaseYear'];
     _prevOrders['releaseMonth'] = newFilter['releaseMonth'];
     notifyListeners();
   }
 
   void resetOrderFilter(){
-    _orders['releaseYear'] = '';
-    _orders['releaseMonth'] = '';
+    _orders['releaseYearMonth'] = '';
+    _orders['releaseYear'] = null;
+    _orders['releaseMonth'] = null;
     notifyListeners();
   }
 
@@ -59,8 +64,9 @@ class FilterProvider with ChangeNotifier{
   // }
 
   void resetPrevOrderFilter(){
-    _prevOrders['releaseYear'] = '';
-    _prevOrders['releaseMonth'] = '';
+    _prevOrders['releaseYearMonth'] = null;
+    _prevOrders['releaseYear'] = null;
+    _prevOrders['releaseMonth'] = null;
     notifyListeners();
   }
 }

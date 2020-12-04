@@ -16,18 +16,26 @@ class ListTileMenu extends StatelessWidget{
     "assets/burger/1955Burger.png",
     "assets/Americano.png",
     "assets/McMorning/BLTMuffin.png",
-    "assets/sides_and_desserts/ApplePie.png"
+    "assets/sides_and_desserts/ApplePie.png",
+    'assets/basicimages/McDonaldsLogo.jpg'
   ];
-  Random rnd;
+  Random rnd = new Random();
+
+  Widget _buildDisplay(BuildContext context){
+    int min = 0;
+    int max = listImagesNotFound.length + 1;
+    int r = min + rnd.nextInt(max - min);
+    String image_name = listImagesNotFound[r].toString();
+  }
 
 
   Widget _displayMedia(String media){
+    // int min = 0;
+    // int max = listImagesNotFound.length + 1;
+    // int r = min + rnd.nextInt(max - min);
+    // String imageName = listImagesNotFound[r].toString();
+
     if(media == null || media == "") {
-      int min = 0;
-      int max = listImagesNotFound.length + 1;
-      rnd = new Random();
-      int r = min + rnd.nextInt(max - min);
-      media = listImagesNotFound[r].toString();
       return Image.asset('assets/basicimages/McDonaldsLogo.jpg', fit : BoxFit.fill);
     } else {
       return Image.asset(media, fit : BoxFit.fill);

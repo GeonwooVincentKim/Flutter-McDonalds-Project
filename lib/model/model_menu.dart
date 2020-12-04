@@ -38,7 +38,7 @@ class MenuModel{
       image: menuMap['image'] ?? '',
       prices: menuMap['prices'] ?? 0,
       type: menuMap['type'] ?? 0,
-      releaseDate: menuMap['releaseDate'] ?? ''
+      releaseDate: menuMap['releaseYearMonth'] ?? ''
     );
   }
 

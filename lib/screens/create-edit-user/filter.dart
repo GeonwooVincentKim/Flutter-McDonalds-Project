@@ -30,8 +30,9 @@ class _FilterState extends State<Filter> {
 
   // MenuModel newFilterData = MenuModel(id: null, menuTitle: null, image: null, prices: null, releaseYear: null, releaseMonth: null);
   final Map<String, dynamic> _currentOrdersFilters = {
-    'releaseYear': '',
-    'releaseMonth': '',
+    'releaseYearMonth': '',
+    'releaseYear': null,
+    'releaseMonth': null,
     // 'releaseDate': '',
     // 'year': null,
     // 'month': null,
@@ -41,13 +42,21 @@ class _FilterState extends State<Filter> {
   @override
   void initState(){
     Map<String, dynamic> filterDate;
-    if(widget.page == 'home'){
+    if(widget.page == 'menu'){
       filterDate = Provider.of<FilterProvider>(context, listen: false).orderFilters;
     }else {
-      filterDate = Provider.of<FilterProvider>(context, listen: false).orderFilters;
+      filterDate = Provider.of<FilterProvider>(context, listen: false).prevOrderFilters;
     }
+    _currentOrdersFilters['releaseYearMonth'] = filterDate['releaseYearMonth'];
     _currentOrdersFilters['releaseYear'] = filterDate['releaseYear'];
     _currentOrdersFilters['releaseMonth'] = filterDate['releaseMonth'];
+    
+    if(filterDate['releaseYearMonth'] != ''){
+      final DateTime releaseYearMonth = getDateTimeFromString(filterDate['releaseYearMonth']);
+
+      _currentOrdersFilters['releaseYear'] = releaseYearMonth.year.toString();
+      _currentOrdersFilters['releaseMonth'] = releaseYearMonth.month.toString();
+    }
     // _currentOrdersFilters['month'] = filterDate['month'];
     // if(filterDate['releaseDate'] != ''){
     //   final DateTime releaseDate = getDateTimeFromString(filterDate['releaseDate']);
@@ -89,7 +98,11 @@ class _FilterState extends State<Filter> {
             key: _formKey,
             child: Column(
               children: <Widget>[
-                _buildFilterYearMonth(),
+                // _buildFilterYearMonth(),
+                DropDownDateFormatMap(
+                  yearmonthKey: _formKey,
+                  menuYearMonthMap: _currentOrdersFilters,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -141,9 +154,10 @@ class _FilterState extends State<Filter> {
   void _buildResetFilter(){
     _formKey.currentState.reset();
     setState(() {
-      _currentOrdersFilters['releaseYear'] = '';
+      _currentOrdersFilters['releaseYearMonth'] = '';
+      _currentOrdersFilters['releaseYear'] = null;
       // _currentOrdersFilters['year'] = null;
-      _currentOrdersFilters['releaseMonth'] = '';
+      _currentOrdersFilters['releaseMonth'] = null;
     });
 
     if(widget.page == 'Orders'){

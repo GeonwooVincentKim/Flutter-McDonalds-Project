@@ -46,6 +46,7 @@ class _DropDownDateFormatState extends State<DropDownDateFormat> {
       onChanged: (String value){
         setState(() {
           widget.menuYearMonthMap['releaseYear'] = value;
+          print(value);
         });
       },
       items: yearList
@@ -58,6 +59,7 @@ class _DropDownDateFormatState extends State<DropDownDateFormat> {
       onChanged: (String value){
         setState(() {
           widget.menuYearMonthMap['releaseMonth'] = value;
+          print(value);
         });
       },
       items: monthList
@@ -71,7 +73,7 @@ class _DropDownDateFormatState extends State<DropDownDateFormat> {
       child: Row(
         children: [
           _buildYearList(),
-          _buildMonthList()
+          _buildMonthList(),
         ],
       )
     );
