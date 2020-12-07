@@ -84,25 +84,6 @@ class _FilterState extends State<Filter> {
         // print(releaseMonth.month);
       }
     }
-    
-    // _currentOrdersFilters['month'] = filterDate['month'];
-    // if(filterDate['releaseDate'] != ''){
-    //   final DateTime releaseDate = getDateTimeFromString(filterDate['releaseDate']);
-    //   // _currentOrdersFilters['']
-    // }
-    // MenuModel newFilter;
-    // if(widget.page == 'food'){
-    //   newFilter = Provider.of<FilterProvider>(context, listen: false).menuFilter;
-    // }
-    // newFilterData.releaseYear = newFilter.releaseYear;
-    // newFilterData.releaseMonth = newFilter.releaseMonth;
-
-    // if(newFilter.releaseYear != '' || newFilter.releaseMonth != ''){
-    //   final DateTime releaseYear = getDateTimeFromString(newFilter.releaseYear);
-    //   newFilterData.releaseYear = releaseYear.year.toString();
-
-    // }
-
     super.initState();
   }
 
@@ -126,11 +107,11 @@ class _FilterState extends State<Filter> {
             key: _formKey,
             child: Column(
               children: <Widget>[
-                // _buildFilterYearMonth(),
-                DropDownDateFormatMap(
-                  yearmonthKey: _formKey,
-                  menuYearMonthMap: _currentOrdersFilters,
-                ),
+                _buildFilterYearMonth(),
+                // DropDownDateFormatMap(
+                //   yearmonthKey: _formKey,
+                //   menuYearMonthMap: _currentOrdersFilters,
+                // ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
