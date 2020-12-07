@@ -40,6 +40,13 @@ class _MenuState extends State<Menu> {
             color: Colors.white,
           ),
           onPressed: () => Navigator.pushNamed(context, "/mainMenu/createMenu", arguments: "menu"),
+        ),
+        IconButton(
+          icon: Icon(
+            IconMoon.ifilter,
+            color: Colors.white,
+          ),
+          onPressed: () => Navigator.pushNamed(context, "/filter", arguments: "menu"),
         )
       ],
     );

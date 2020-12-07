@@ -157,7 +157,7 @@ class _FilterState extends State<Filter> {
   void _buildFilterForm(context){
     // if(!_formKey.currentState.validate()) return;
     _formKey.currentState.save();
-    if(widget.page == 'Orders'){
+    if(widget.page == 'menu'){
       // Provider.of<FilterProvider>(context).changeOrderNoMapFilters(newFilterData);
       Provider.of<FilterProvider>(context, listen: false).changeOrderFilters(_currentOrdersFilters);
     }else{
@@ -169,13 +169,15 @@ class _FilterState extends State<Filter> {
   void _buildResetFilter(){
     _formKey.currentState.reset();
     setState(() {
-      _currentOrdersFilters['releaseYearMonth'] = '';
-      _currentOrdersFilters['releaseYear'] = null;
+      // _currentOrdersFilters['releaseYearMonth'] = '';
+      _currentOrdersFilters['releaseYear'] = '';
+      _currentOrdersFilters['releaseYearText'] = null;
       // _currentOrdersFilters['year'] = null;
-      _currentOrdersFilters['releaseMonth'] = null;
+      _currentOrdersFilters['releaseMonth'] = '';
+      _currentOrdersFilters['releaseMonthText'] = null;
     });
 
-    if(widget.page == 'Orders'){
+    if(widget.page == 'menu'){
       Provider.of<FilterProvider>(context, listen: false).changeOrderFilters(_currentOrdersFilters);
     }else{
       Provider.of<FilterProvider>(context, listen: false).changePrevOrderFilters(_currentOrdersFilters);

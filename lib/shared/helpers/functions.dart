@@ -15,10 +15,10 @@ DateTime getDateTimeFromString(String date) {
   } else {
     final DateTime today = DateTime.now();
     // return DateTime.parse('$today.month');
-    print(date);
+    // print(date);
     // return DateTime.parse('');
     // print(today.year.toString() + today.month.toString());
-    // return DateTime(int.parse(date) + today.month);
+    return DateTime(int.parse(date) + today.year + today.month);
     // return DateTime.parse(today.year.toString());
   } 
 }
@@ -54,8 +54,8 @@ DateTime getDateTimeNoDashString(String date){
 bool checkFilter(MenuModel menu, Map<String, dynamic> newFilter){
   final DateTime releaseYear = menu.releaseYear != '' ? getDateTimeFromString(menu.releaseYear) : null;
   final DateTime releaseMonth = menu.releaseMonth != '' ? getDateTimeFromString(menu.releaseMonth) : null;
-  if((newFilter['releaseYear'] == '' || newFilter['releaseYear'] == releaseYear.year.toString()) &&
-  newFilter['releaseMonth'] == '' || newFilter['releaseMonth'] == releaseMonth.month.toString()){
+  if((newFilter['releaseYearText'] == null || newFilter['releaseYearText'] == releaseYear.year.toString()) &&
+  newFilter['releaseMonthText'] == null || newFilter['releaseMonthText'] == releaseMonth.month.toString()){
     return true;
   }
   return false;
