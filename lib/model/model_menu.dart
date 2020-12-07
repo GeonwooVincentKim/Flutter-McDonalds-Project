@@ -7,9 +7,9 @@ class MenuModel{
   final String image;
   final int prices;
   final int type;
-  // final String releaseDate;
-  final String releaseYear;
-  final String releaseMonth;
+  final String releaseDate;
+  // final String releaseYear;
+  // final String releaseMonth;
   bool isInCart;
 
   MenuModel({
@@ -19,9 +19,9 @@ class MenuModel{
     this.isInCart,
     @required this.prices,
     this.type,
-    // @required this.releaseDate,
-    @required this.releaseYear,
-    @required this.releaseMonth
+    @required this.releaseDate,
+    // @required this.releaseYear,
+    // @required this.releaseMonth
   });
 
   factory MenuModel.fromMenuModelInfo(MenuModel menu){
@@ -31,9 +31,9 @@ class MenuModel{
       image: menu.image ?? '',
       prices: menu.prices ?? 0,
       type: menu.type ?? 0,
-      // releaseDate: menu.releaseDate ?? ''
-      releaseYear: menu.releaseYear ?? '',
-      releaseMonth: menu.releaseMonth ?? ''
+      releaseDate: menu.releaseDate ?? ''
+      // releaseYear: menu.releaseYear ?? '',
+      // releaseMonth: menu.releaseMonth ?? ''
     );
   }
 
@@ -44,9 +44,9 @@ class MenuModel{
       image: menuMap['image'] ?? '',
       prices: menuMap['prices'] ?? 0,
       type: menuMap['type'] ?? 0,
-      // releaseDate: menuMap['releaseYearMonth'] ?? ''
-      releaseYear: menuMap['releaseYear'] ?? '',
-      releaseMonth: menuMap['releaseMonth'] ?? '',
+      releaseDate: menuMap['releaseYearMonth'] ?? ''
+      // releaseYear: menuMap['releaseYear'] ?? '',
+      // releaseMonth: menuMap['releaseMonth'] ?? '',
     );
   }
 
@@ -58,9 +58,9 @@ class MenuModel{
       image: '',
       prices: 0,
       type: 0,
-      // releaseDate: ''
-      releaseYear: '',
-      releaseMonth: ''
+      releaseDate: ''
+      // releaseYear: '',
+      // releaseMonth: ''
     );
   }
 }
