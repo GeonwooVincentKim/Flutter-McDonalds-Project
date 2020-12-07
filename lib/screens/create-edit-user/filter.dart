@@ -25,8 +25,8 @@ class _FilterState extends State<Filter> {
   // ];
   final _formKey = GlobalKey<FormState>();
   
-  final List<String> year = [];
-  final List<String> month = [];
+  // final List<String> year = [];
+  // final List<String> month = [];
 
   // MenuModel newFilterData = MenuModel(id: null, menuTitle: null, image: null, prices: null, releaseYear: null, releaseMonth: null);
   final Map<String, dynamic> _currentOrdersFilters = {
@@ -65,13 +65,17 @@ class _FilterState extends State<Filter> {
     //   _currentOrdersFilters['releaseMonth'] = releaseYearMonth.month.toString();
     // }
     if(filterDate['releaseYear'] != ''){
-      final DateTime releaseYear = getDateTimeFromString(filterDate['releaseYear']);
-      _currentOrdersFilters['releaseYearText'] = releaseYear.year.toString();
+      final int releaseYear = filterDate['releaseYear'];
+      _currentOrdersFilters['releaseYearText'] = releaseYear.toString();
+      // final DateTime releaseYear = getDateTimeMonthString(filterDate['releaseYear']);
+      // _currentOrdersFilters['releaseYearText'] = releaseYear.year.toString();
     }
     if(filterDate['releaseMonth'] != ''){
-      final DateTime releaseMonth = getDateTimeFromString(filterDate['releaseMonth']);
-      _currentOrdersFilters['releaseMonthText'] = releaseMonth.month.toString();
-      print(releaseMonth.month);
+      final int releaseMonth = filterDate['releaseMonth'];
+      _currentOrdersFilters['releaseMonthText'] = releaseMonth.toString();
+      // final DateTime releaseMonth = getDateTimeMonthString(filterDate['releaseMonth']);
+      // _currentOrdersFilters['releaseMonthText'] = releaseMonth.month.toString();
+      // print(releaseMonth.month);
     }
     // _currentOrdersFilters['month'] = filterDate['month'];
     // if(filterDate['releaseDate'] != ''){

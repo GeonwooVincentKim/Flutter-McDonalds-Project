@@ -224,7 +224,7 @@ var DUMMY_MENU = [
     prices: 6000,
     type: 0,
     releaseYear: '2017',
-    releaseMonth: '01'
+    releaseMonth: '1'
   ),
   
   MenuModel(
@@ -234,7 +234,7 @@ var DUMMY_MENU = [
     prices: 5500,
     type: 0,
     releaseYear: '2013',
-    releaseMonth: '05'
+    releaseMonth: '5'
   ),
 
   MenuModel(
@@ -244,7 +244,7 @@ var DUMMY_MENU = [
     prices: 4500,
     type: 0,
     releaseYear: '1967',
-    releaseMonth: '03'
+    releaseMonth: '3'
   ),
 
   MenuModel(
@@ -264,7 +264,7 @@ var DUMMY_MENU = [
     prices: 3300,
     type: 0,
     releaseYear: '1980',
-    releaseMonth: '02'
+    releaseMonth: '2'
   ),
 
   MenuModel(
@@ -284,7 +284,7 @@ var DUMMY_MENU = [
     prices: 1500,
     type: 1,
     releaseYear: '1981',
-    releaseMonth: '03'
+    releaseMonth: '3'
   ),
 
   MenuModel(
@@ -294,7 +294,7 @@ var DUMMY_MENU = [
     prices: 2000,
     type: 1,
     releaseYear: '1981',
-    releaseMonth: '03'
+    releaseMonth: '3'
   ),
   
   MenuModel(
@@ -304,7 +304,7 @@ var DUMMY_MENU = [
     prices: 2000,
     type: 1,
     releaseYear: '1981',
-    releaseMonth: '03'
+    releaseMonth: '3'
   ),
   
   MenuModel(
@@ -314,7 +314,7 @@ var DUMMY_MENU = [
     prices: 2000,
     type: 1,
     releaseYear: '2020',
-    releaseMonth: '01'
+    releaseMonth: '1'
   ),
 
   MenuModel(
@@ -324,7 +324,7 @@ var DUMMY_MENU = [
     prices: 2000,
     type: 1,
     releaseYear: '2020',
-    releaseMonth: '01'
+    releaseMonth: '1'
   ),
 
   MenuModel(
@@ -344,7 +344,7 @@ var DUMMY_MENU = [
     prices: 3900,
     type: 2,
     releaseYear: '2014',
-    releaseMonth: '05',
+    releaseMonth: '5',
   ),
 
   MenuModel(
@@ -364,7 +364,7 @@ var DUMMY_MENU = [
     prices: 4800,
     type: 2,
     releaseYear: '2018',
-    releaseMonth: '03',
+    releaseMonth: '3',
   ),
 
   MenuModel(
@@ -384,7 +384,7 @@ var DUMMY_MENU = [
     prices: 2200,
     type: 2,
     releaseYear: '2015',
-    releaseMonth: '09',
+    releaseMonth: '9',
   ),
 
   MenuModel(
@@ -404,7 +404,7 @@ var DUMMY_MENU = [
     prices: 1000,
     type: 3,
     releaseYear: '1948',
-    releaseMonth: '02',
+    releaseMonth: '2',
   ),
 
   MenuModel(
@@ -414,7 +414,7 @@ var DUMMY_MENU = [
     prices: 2000,
     type: 3,
     releaseYear: '2017',
-    releaseMonth: '02',
+    releaseMonth: '2',
   ),
 
   MenuModel(
@@ -424,7 +424,7 @@ var DUMMY_MENU = [
     prices: 1700,
     type: 3,
     releaseYear: '2017',
-    releaseMonth: '01',
+    releaseMonth: '1',
   ),
 
   MenuModel(
@@ -434,7 +434,7 @@ var DUMMY_MENU = [
     prices: 1700,
     type: 3,
     releaseYear: '2019',
-    releaseMonth: '03',
+    releaseMonth: '3',
   ),
 
   MenuModel(

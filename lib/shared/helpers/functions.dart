@@ -10,8 +10,8 @@ String getRandomString(int length) => String.fromCharCodes(Iterable.generate(len
 
 DateTime getDateTimeFromString(String date) {
   if(date.contains('/')) {
-    final String stringDate = date.replaceAll('/', '-');
-    return DateTime.parse(stringDate);
+    // final String stringDate = date.replaceAll('/', '-');
+    // return DateTime.parse(stringDate);
   } else {
     final DateTime today = DateTime.now();
     // return DateTime.parse('$today.month');
@@ -22,6 +22,16 @@ DateTime getDateTimeFromString(String date) {
     return DateTime(int.parse(date));
     // return DateTime.parse(today.year.toString());
   } 
+}
+
+DateTime getDateTimeMonthString(String dateMonth){
+  if(dateMonth.contains('/')){
+    final String stringMonth = dateMonth.replaceAll('/', '-');
+    return DateTime.parse(stringMonth);
+  } else {
+    final DateTime today = DateTime.now();
+    return DateTime(int.parse(dateMonth) + today.month);
+  }
 }
 
 DateTime getDateTimeNoDashString(String date){
@@ -53,12 +63,15 @@ DateTime getDateTimeNoDashString(String date){
 // }
 
 bool checkFilter(MenuModel menu, Map<String, dynamic> newFilter){
-  final DateTime releaseYear = menu.releaseYear != '' ? getDateTimeFromString(menu.releaseYear) : null;
-  final DateTime releaseMonth = menu.releaseMonth != '' ? getDateTimeFromString(menu.releaseMonth) : null;
-  if((newFilter['releaseYearText'] == null || newFilter['releaseYearText'] == releaseYear.year.toString()) &&
-  newFilter['releaseMonthText'] == null || newFilter['releaseMonthText'] == releaseMonth.month.toString()){
-    print(releaseYear.year);
-    print(releaseMonth.month);
+  // final DateTime releaseYear = menu.releaseYear != '' ? getDateTimeFromString(menu.releaseYear) : null;
+  // final DateTime releaseMonth = menu.releaseMonth != '' ? getDateTimeFromString(menu.releaseMonth) : null;
+  final String releaseYear = menu.releaseYear != '' ? menu.releaseYear : null;
+  final String releaseMonth = menu.releaseMonth != '' ? menu.releaseMonth : null;
+  if((newFilter['releaseYearText'] == null || newFilter['releaseYearText'] == releaseYear.toString()) &&
+  newFilter['releaseMonthText'] == null || newFilter['releaseMonthText'] == releaseMonth.toString()){
+    // print(releaseYear.year);
+    print(releaseYear);
+    print(releaseMonth);
     return true;
   }
   return false;
