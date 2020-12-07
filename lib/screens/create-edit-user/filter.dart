@@ -64,19 +64,27 @@ class _FilterState extends State<Filter> {
     //   _currentOrdersFilters['releaseYear'] = releaseYearMonth.year.toString();
     //   _currentOrdersFilters['releaseMonth'] = releaseYearMonth.month.toString();
     // }
-    if(filterDate['releaseYear'] != ''){
+    if(filterDate['releaseYear'] != '' && filterDate['releaseMonth'] != ''){
       final int releaseYear = filterDate['releaseYear'];
-      _currentOrdersFilters['releaseYearText'] = releaseYear.toString();
-      // final DateTime releaseYear = getDateTimeMonthString(filterDate['releaseYear']);
-      // _currentOrdersFilters['releaseYearText'] = releaseYear.year.toString();
-    }
-    if(filterDate['releaseMonth'] != ''){
       final int releaseMonth = filterDate['releaseMonth'];
+      _currentOrdersFilters['releaseYearText'] = releaseYear.toString();
       _currentOrdersFilters['releaseMonthText'] = releaseMonth.toString();
-      // final DateTime releaseMonth = getDateTimeMonthString(filterDate['releaseMonth']);
-      // _currentOrdersFilters['releaseMonthText'] = releaseMonth.month.toString();
-      // print(releaseMonth.month);
+    }else{
+      if(filterDate['releaseYear'] != ''){
+        final int releaseYear = filterDate['releaseYear'];
+        _currentOrdersFilters['releaseYearText'] = releaseYear.toString();
+        // final DateTime releaseYear = getDateTimeMonthString(filterDate['releaseYear']);
+        // _currentOrdersFilters['releaseYearText'] = releaseYear.year.toString();
+      }
+      if(filterDate['releaseMonth'] != ''){
+        final int releaseMonth = filterDate['releaseMonth'];
+        _currentOrdersFilters['releaseMonthText'] = releaseMonth.toString();
+        // final DateTime releaseMonth = getDateTimeMonthString(filterDate['releaseMonth']);
+        // _currentOrdersFilters['releaseMonthText'] = releaseMonth.month.toString();
+        // print(releaseMonth.month);
+      }
     }
+    
     // _currentOrdersFilters['month'] = filterDate['month'];
     // if(filterDate['releaseDate'] != ''){
     //   final DateTime releaseDate = getDateTimeFromString(filterDate['releaseDate']);
