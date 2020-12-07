@@ -18,7 +18,8 @@ DateTime getDateTimeFromString(String date) {
     // print(date);
     // return DateTime.parse('');
     // print(today.year.toString() + today.month.toString());
-    return DateTime(int.parse(date) + today.year + today.month);
+    // return DateTime.parse("$date/${today.month}");
+    return DateTime(int.parse(date));
     // return DateTime.parse(today.year.toString());
   } 
 }
@@ -56,6 +57,8 @@ bool checkFilter(MenuModel menu, Map<String, dynamic> newFilter){
   final DateTime releaseMonth = menu.releaseMonth != '' ? getDateTimeFromString(menu.releaseMonth) : null;
   if((newFilter['releaseYearText'] == null || newFilter['releaseYearText'] == releaseYear.year.toString()) &&
   newFilter['releaseMonthText'] == null || newFilter['releaseMonthText'] == releaseMonth.month.toString()){
+    print(releaseYear.year);
+    print(releaseMonth.month);
     return true;
   }
   return false;

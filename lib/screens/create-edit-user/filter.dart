@@ -71,6 +71,7 @@ class _FilterState extends State<Filter> {
     if(filterDate['releaseMonth'] != ''){
       final DateTime releaseMonth = getDateTimeFromString(filterDate['releaseMonth']);
       _currentOrdersFilters['releaseMonthText'] = releaseMonth.month.toString();
+      print(releaseMonth.month);
     }
     // _currentOrdersFilters['month'] = filterDate['month'];
     // if(filterDate['releaseDate'] != ''){
