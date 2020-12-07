@@ -107,11 +107,11 @@ class _FilterState extends State<Filter> {
             key: _formKey,
             child: Column(
               children: <Widget>[
-                _buildFilterYearMonth(),
-                // DropDownDateFormatMap(
-                //   yearmonthKey: _formKey,
-                //   menuYearMonthMap: _currentOrdersFilters,
-                // ),
+                // _buildFilterYearMonth(),
+                DropDownDateFormatMap(
+                  yearmonthKey: _formKey,
+                  menuYearMonthMap: _currentOrdersFilters,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
