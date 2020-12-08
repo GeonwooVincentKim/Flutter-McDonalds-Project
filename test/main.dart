@@ -59,17 +59,19 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyAppSub extends StatefulWidget {
-  @override
-  _MyAppSubState createState() => _MyAppSubState();
-}
-
-class _MyAppSubState extends State<MyAppSub> {
-  @override
+class MyAppSub extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<DynamicThemeProvider>(context); 
     return MaterialApp(
-      theme: themeProvider.getDarkMode() ? ThemeData.dark() : ThemeData.light(),
+      theme: themeProvider.getDarkMode() ? 
+      ThemeData(
+        // primarySwatch: Colors.black,
+        brightness: Brightness.dark
+      ) : 
+      ThemeData(
+        // primarySwatch: Colors.white,
+        brightness: Brightness.light
+      ),
       initialRoute: "/",
       routes: {
         "/": (context) => TestBody(),
@@ -86,42 +88,3 @@ class _MyAppSubState extends State<MyAppSub> {
     );
   }
 }
-
-// class HomePage extends StatelessWidget {
-//   final bool darkThemeEnabled;
-
-//   HomePage(this.darkThemeEnabled);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text("Dynamic Theme"),
-//       ),
-//       body: Center(
-//         child: Text("Hello World"),
-//       ),
-//       drawer: Drawer(
-//         child: ListView(
-//           children: <Widget>[
-//             ListTile(
-//               title: Text("Dark Theme"),
-//               trailing: Switch(
-//                 value: darkThemeEnabled,
-//                 onChanged: bloc.changeTheme,
-//               ),
-//             )
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-// class Bloc {
-//   final _themeController = StreamController<bool>();
-//   get changeTheme => _themeController.sink.add;
-//   get darkThemeEnabled => _themeController.stream;
-// }
-
-// final bloc = Bloc();
