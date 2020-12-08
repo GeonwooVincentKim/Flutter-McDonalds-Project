@@ -88,11 +88,7 @@ class Settings extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: basicPadding, vertical: basicPadding),
       color: CartOrderColor,
       width: screenWidth,
-      child: Row(
-        children: [
-          BottomButton(contents: "Modify".toUpperCase(), onPressed: () => Navigator.pushNamed(context, "/settings/modify")),
-        ],
-      ),
+      child: BottomButton(contents: "Modify".toUpperCase(), onPressed: () => Navigator.pushNamed(context, "/settings/modify")),
     );
   }
 }
