@@ -16,6 +16,22 @@ import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
+ThemeData _lightTheme = ThemeData(
+  accentColor: Colors.pink,
+  brightness: Brightness.light,
+  primaryColor: Colors.blue
+);
+
+ThemeData _darkTheme = ThemeData(
+  accentColor: Colors.red,
+  brightness: Brightness.dark,
+  primaryColor: Colors.amber,
+  buttonTheme: ButtonThemeData(
+    buttonColor: Colors.amber
+  )
+);
+bool _light = true;
+
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -27,6 +43,7 @@ class MyApp extends StatelessWidget{
       ],
       child: MaterialApp(
         title: "McDonaldsApp",
+        theme: _light ? _lightTheme : _darkTheme,
         initialRoute: "/",
         routes: {
           "/": (context) => Body(),
