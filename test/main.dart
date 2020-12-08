@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => DynamicThemeProvider()),
+        ChangeNotifierProvider(create: (_) => DynamicThemeProvider(darkTheme)),
       ],
       child: MyAppSub()
     // return MultiProvider(
@@ -62,16 +62,28 @@ class MyApp extends StatelessWidget {
 class MyAppSub extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<DynamicThemeProvider>(context); 
+    // return DynamicTheme(
+    //   defaultBrightness: Brightness.light,
+    //   data: (brightness) => ThemeData(
+    //     primarySwatch: Colors.indigo,
+    //     brightness: brightness
+    //   ),
+    //   themedWidgetBuilder: (context, theme){
+    //     return MaterialApp(
+    //       theme: theme,
+    //     );
+    //   },
+    // );
     return MaterialApp(
-      theme: themeProvider.getDarkMode() ? 
-      ThemeData(
-        // primarySwatch: Colors.black,
-        brightness: Brightness.dark
-      ) : 
-      ThemeData(
-        // primarySwatch: Colors.white,
-        brightness: Brightness.light
-      ),
+      theme: themeProvider.getTheme(), 
+      // ThemeData(
+      //   // primarySwatch: Colors.black,
+      //   brightness: Brightness.dark
+      // ) : 
+      // ThemeData(
+      //   // primarySwatch: Colors.white,
+      //   brightness: Brightness.light
+      // ),
       initialRoute: "/",
       routes: {
         "/": (context) => TestBody(),
