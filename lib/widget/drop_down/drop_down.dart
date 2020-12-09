@@ -21,34 +21,11 @@ class DropDownWidget extends StatelessWidget{
       hint: hint,
       value: value,
       onChanged: onChanged,
-      // items: items.map((String value) {
-      //   return DropdownMenuItem<String>(
-      //     value: value,
-      //     child: Container(
-      //       padding: EdgeInsets.symmetric(horizontal: basicPadding),
-      //       // child: Column(
-      //       //   crossAxisAlignment: CrossAxisAlignment.start,
-      //       //   children: [
-      //       //     Text(value, style: TextStyle(color: Colors.black38)),
-      //       //     SizedBox(width: 1.0),
-      //       //   ],
-      //       // ),
-      //       child: Text(value, style: TextStyle(color: Colors.black38)),
-      //     ),
-      //   );
-      // }).toList()
       items: items.map<DropdownMenuItem<String>>((String value){
         return DropdownMenuItem(
           value: value,
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: basicPadding),
-            // child: Column(
-            //   crossAxisAlignment: CrossAxisAlignment.start,
-            //   children: [
-            //     Text(value, style: TextStyle(color: Colors.black38)),
-            //     SizedBox(width: 1.0),
-            //   ],
-            // ),
             child: Text(value),
           ),
         );

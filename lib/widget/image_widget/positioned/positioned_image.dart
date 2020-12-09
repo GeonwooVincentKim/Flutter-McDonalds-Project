@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:myTestApp_Test/provider/provider_theme.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/widget/image_widget/image_crop.dart';
+import 'package:provider/provider.dart';
 
 
 class PositionedImage extends StatelessWidget {
@@ -24,7 +26,7 @@ class PositionedImage extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-
+    final themeProvider = Provider.of<ProviderThemeDynamic>(context);
     return Positioned(
       bottom: bottom,
       right: right,
@@ -32,11 +34,14 @@ class PositionedImage extends StatelessWidget {
       width: width,
       left: left,
       child: selection != 0 ?
+      // 0XFFDCE775 (lime[300])
         Container(
           width: imageWidth,
           height: imageHeight,
           decoration: BoxDecoration(
-            color: BasicCircleColor,
+            // color: BasicCircleColor,
+            color: Theme.of(context).accentColor,
+            // color: themeProvider.getDarkMode() ? darkTheme : lightTheme,
             shape: BoxShape.circle
           ),
           child: ClipRRect(

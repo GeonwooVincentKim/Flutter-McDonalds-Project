@@ -37,7 +37,8 @@ final lightTheme = ThemeData(
   // backgroundColor: BasicBackgroundColor,
   bottomAppBarColor: Colors.blue,
   scaffoldBackgroundColor: BasicBackgroundColor,
-  accentColor: Colors.blue
+  accentColor: Colors.blue,
+  // bottomNavigationBarTheme: BottomNavigationBarTheme()
   // accentColor: Colors.black,
   // accentIconTheme: IconThemeData(color: Colors.white),
   // dividerColor: Colors.white54,
