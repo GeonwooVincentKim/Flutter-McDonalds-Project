@@ -75,15 +75,18 @@ class MyAppSub extends StatelessWidget {
     //   },
     // );
     return MaterialApp(
-      theme: themeProvider.getTheme(), 
-      // ThemeData(
-      //   // primarySwatch: Colors.black,
-      //   brightness: Brightness.dark
-      // ) : 
-      // ThemeData(
-      //   // primarySwatch: Colors.white,
-      //   brightness: Brightness.light
-      // ),
+      // theme: themeProvider.getTheme(), 
+      // theme: themeProvider.getDarkMode() ? ThemeData.dark() : ThemeData.light(),
+      theme: themeProvider.getDarkMode() ? ThemeData(
+        // primarySwatch: Colors.black,
+        primaryColor: Colors.black,
+        brightness: Brightness.dark
+      ) : 
+      ThemeData(
+        // primarySwatch: Colors.white,
+        primaryColor: Colors.amber,
+        brightness: Brightness.light
+      ),
       initialRoute: "/",
       routes: {
         "/": (context) => TestBody(),
