@@ -5,9 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/screens/body.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'test_body.dart';
 import 'test_provider.dart';
 
+// void main() => SharedPreferences.getInstance().then((prefs){
+//   var darkModeOn = prefs.getBool('darkMode') ?? true;
+//   runApp(MyApp());
+// });
 void main() => runApp(MyApp());
 
 //Using Bloc
@@ -16,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => DynamicThemeProvider(darkTheme)),
+        ChangeNotifierProvider(create: (_) => DynamicThemeProvider()),
       ],
       child: MyAppSub()
     // return MultiProvider(
@@ -78,16 +83,17 @@ class MyAppSub extends StatelessWidget {
     return MaterialApp(
       // theme: themeProvider.getTheme(), 
       // theme: themeProvider.getDarkMode() ? ThemeData.dark() : ThemeData.light(),
-      theme: themeProvider.getDarkMode() ? ThemeData(
-        // primarySwatch: Colors.black,
-        primaryColor: Colors.black,
-        brightness: Brightness.dark
-      ) : 
-      ThemeData(
-        // primarySwatch: Colors.white,
-        primaryColor: BasicAppBarColor,
-        brightness: Brightness.light
-      ),
+      theme: themeProvider.getDarkMode() ? darkTheme : lightTheme,
+      // theme: themeProvider.getDarkMode() ? ThemeData(
+      //   // primarySwatch: Colors.black,
+      //   primaryColor: Colors.black,
+      //   brightness: Brightness.dark
+      // ) : 
+      // ThemeData(
+      //   // primarySwatch: Colors.white,
+      //   primaryColor: BasicAppBarColor,
+      //   brightness: Brightness.light
+      // ),
       initialRoute: "/",
       routes: {
         "/": (context) => TestBody(),
