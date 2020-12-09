@@ -74,7 +74,21 @@ class _BodyState extends State<Body> {
     return Scaffold(
       drawer: SideMenu(),
       body: _buildBody(),
-      bottomNavigationBar: _bodyNaviBar(context),
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+          canvasColor: BasicAppBarColor,
+          // primaryColor: Colors.white 
+          // textTheme: Theme.of(context)
+          //             .textTheme
+          //             .copyWith(
+          //               caption: new TextStyle(color: Colors.yellow)
+          //             )
+          // primaryColor: Colors.red,
+          // textTheme: Theme(child: ,)
+        ),
+        child: _bodyNaviBar(context)
+      ),
+      // bottomNavigationBar: _bodyNaviBar(context),
     );
   }
 }

@@ -107,8 +107,8 @@ class _DetailsState extends State<Details> {
       left: 0,
       right: 0,
       child: FlatButton(
-        shape: ContinuousRectangleBorder(side: BorderSide(color: BasicBoxColor)),
-        color: BasicBoxColor,
+        shape: ContinuousRectangleBorder(side: BorderSide()),
+        // color: BasicBoxColor,
         child: Padding(
           padding: EdgeInsets.all(basicPadding / 2),
           child: Text("Add to my Cart", style: clickTileSize)

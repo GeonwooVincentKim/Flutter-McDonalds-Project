@@ -49,7 +49,7 @@ class DropDownWidget extends StatelessWidget{
             //     SizedBox(width: 1.0),
             //   ],
             // ),
-            child: Text(value, style: TextStyle(color: Colors.black38)),
+            child: Text(value),
           ),
         );
       }).toList()

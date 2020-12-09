@@ -18,6 +18,8 @@ final darkTheme = ThemeData(
   primaryColor: Colors.black,
   brightness: Brightness.dark,
   // backgroundColor: const Color(0xFF212121),
+  // bottomNavigationBarTheme: darkTheme,
+  bottomAppBarColor: Colors.blue,
   buttonColor: Colors.cyan[300],
   scaffoldBackgroundColor: Color(0xFF212121),
   textSelectionColor: Colors.teal
@@ -33,7 +35,9 @@ final lightTheme = ThemeData(
   buttonColor: alertButtonColor,
   // accentColor: CartOrderColor,
   // backgroundColor: BasicBackgroundColor,
-  scaffoldBackgroundColor: BasicBackgroundColor
+  bottomAppBarColor: Colors.blue,
+  scaffoldBackgroundColor: BasicBackgroundColor,
+  accentColor: Colors.blue
   // accentColor: Colors.black,
   // accentIconTheme: IconThemeData(color: Colors.white),
   // dividerColor: Colors.white54,
