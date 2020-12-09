@@ -38,7 +38,7 @@ class _SideMenuState extends State<SideMenu> {
           ListTile(title: Text("Create New Menu"), onTap: () => Navigator.pushNamed(context, "/mainMenu/createMenu")),
           ListTile(title: Text("Filter"), onTap: (){Navigator.pushNamed(context, "/filter");}),
           ListTile(
-            title: Text("Test"),
+            title: Text("Dark Theme"),
             trailing: Switch(
               value: themeProvider.getDarkMode(),
               onChanged: (value){
