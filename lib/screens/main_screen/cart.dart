@@ -60,7 +60,7 @@ class _CartState extends State<Cart> {
     return Container(
       height: screenHeight / 2,
       padding: EdgeInsets.symmetric(horizontal: basicPadding, vertical: basicPadding),
-      color: CartOrderColor,
+      // color: CartOrderColor,
       child: SingleChildScrollView(
         child: Consumer<ProviderMenu>(
           builder: (ctx, orderMenu, child){
@@ -84,7 +84,7 @@ class _CartState extends State<Cart> {
   Widget _buildCartPurchase(BuildContext context){
     return Container(
       padding: EdgeInsets.symmetric(horizontal: basicPadding, vertical: basicPadding),
-      color: CartOrderColor,
+      // color: CartOrderColor,
       // child: Center(
         
       // )
