@@ -10,11 +10,11 @@ import 'package:provider/provider.dart';
 
 class Orders extends StatefulWidget {
   final String title;
-  final Color ordersColor;
+  // final Color ordersColor;
 
   Orders({
     @required this.title,
-    @required this.ordersColor  
+    // @required this.ordersColor  
   });
 
   @override
@@ -35,7 +35,7 @@ class _OrdersState extends State<Orders> {
   Widget _buildOrdersAppBar(){
     return AppBar(
       title: Text("Orders"),
-      backgroundColor: widget.ordersColor,
+      // backgroundColor: widget.ordersColor,
       centerTitle: true,
     );
   }
@@ -84,7 +84,6 @@ class _OrdersState extends State<Orders> {
       appBar: _buildOrdersAppBar(),
       drawer: SideMenu(),
       body: _buildOrdersBody(context),
-      backgroundColor: BasicBackgroundColor,
     );
   }
 }

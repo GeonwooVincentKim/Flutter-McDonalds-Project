@@ -100,7 +100,6 @@ class _MenuState extends State<Menu> {
       appBar: _buildMenuAppBar(),
       body: _buildMenuBody(),
       drawer: SideMenu(),
-      backgroundColor: BasicBackgroundColor
     );
   }
 }

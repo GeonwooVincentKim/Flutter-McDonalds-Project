@@ -18,7 +18,6 @@ class Settings extends StatelessWidget {
       drawer: SideMenu(),
       appBar: _buildSettingsAppBar(context),
       body: _buildSettingsBody(context),
-      backgroundColor: BasicBackgroundColor,
     );
   }
 
@@ -64,7 +63,7 @@ class Settings extends StatelessWidget {
     return Container(
       height: screenHeight / 3,
       padding: EdgeInsets.symmetric(vertical: basicPadding, horizontal: basicPadding),
-      color: CartOrderColor,
+      // color: CartOrderColor,
       child: Column(
         // crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -86,7 +85,8 @@ class Settings extends StatelessWidget {
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: basicPadding, vertical: basicPadding),
-      color: CartOrderColor,
+      // color: CartOrderColor,
+      // color: lightTheme.primaryColor,
       width: screenWidth,
       child: BottomButton(contents: "Modify".toUpperCase(), onPressed: () => Navigator.pushNamed(context, "/settings/modify")),
     );

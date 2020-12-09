@@ -12,11 +12,11 @@ import 'package:provider/provider.dart';
 
 class Cart extends StatefulWidget {
   final String title;
-  final Color cartColor;
+  // final Color cartColor;
 
   Cart({
     @required this.title,
-    @required this.cartColor  
+    // @required this.cartColor  
   });
 
   @override
@@ -39,7 +39,7 @@ class _CartState extends State<Cart> {
   Widget _buildCartAppBar(){
     return AppBar(
       title: Text(widget.title),
-      backgroundColor: widget.cartColor,
+      // backgroundColor: widget.cartColor,
       centerTitle: true,
       // actions: [
       //   IconButton(
@@ -85,8 +85,10 @@ class _CartState extends State<Cart> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: basicPadding, vertical: basicPadding),
       color: CartOrderColor,
-      child: Center(
-        child: Consumer<ProviderMenu>(
+      // child: Center(
+        
+      // )
+      child: Consumer<ProviderMenu>(
           builder: (ctx, totalPrice, child){
             return Column(
               children: [
@@ -105,7 +107,6 @@ class _CartState extends State<Cart> {
             );
           }
         )
-      )
     );
   }
 
@@ -130,7 +131,7 @@ class _CartState extends State<Cart> {
       appBar: _buildCartAppBar(),
       drawer: SideMenu(),
       body: _buildCartBody(context),
-      backgroundColor: BasicBackgroundColor,
+      // backgroundColor: BasicBackgroundColor,
     );
   }
 

@@ -43,39 +43,7 @@ class MyApp extends StatelessWidget{
         ChangeNotifierProvider(create: (_) => FilterProvider()),
         ChangeNotifierProvider(create: (_) => ProviderThemeDynamic()),
       ],
-      // child: MyAppSub()
-      child: MaterialApp(
-        title: "McDonaldsApp",
-        // theme: themeProvider.getDarkMode() ? darkTheme : lightTheme,
-        // theme: _light ? _lightTheme : _darkTheme,
-        initialRoute: "/",
-        routes: {
-          "/": (context) => Body(),
-          '/settings': (context) => Settings(),
-          '/settings/modify': (context) => EditUser(),
-          '/cart': (context) => Cart(title: "Cart", cartColor: BasicAppBarColor),
-          // '/cart': (context) => Cart(title: "Cart"),
-          '/orders': (context) => Orders(title: "Orders", ordersColor: BasicAppBarColor),
-          // '/orders': (context) => Orders(title: "Orders"),
-          '/mainMenu/createMenu': (context) => CreateNewMenu(),
-        },
-        onGenerateRoute: (settings) {
-          final List<String> pathElements = settings.name.split("/");
-          if(pathElements[0] != '') return null;
-          if(pathElements[1] == 'food'){
-            String foodID = pathElements[2];
-            return MaterialPageRoute(builder: (BuildContext context) => Details(backgroundColor: BasicAppBarColor, menuID: foodID));
-          }else if(pathElements[1] == 'detail'){
-            String foodID = pathElements[2];
-            return MaterialPageRoute(builder: (BuildContext context) => MyApp());
-          }else if(pathElements[1] == 'filter'){
-            return MaterialPageRoute(builder: (BuildContext context) => Filter(settings.arguments));
-          }
-        },
-        onUnknownRoute: (settings) {
-          return MaterialPageRoute(builder: (BuildContext context) => MyApp());
-        },
-      ),
+      child: MyAppSub()
     );
   }
 }
@@ -94,9 +62,9 @@ class MyAppSub extends StatelessWidget{
         '/settings': (context) => Settings(),
         '/settings/modify': (context) => EditUser(),
         // '/cart': (context) => Cart(title: "Cart", cartColor: BasicAppBarColor),
-        // '/cart': (context) => Cart(title: "Cart"),
+        '/cart': (context) => Cart(title: "Cart"),
         // '/orders': (context) => Orders(title: "Orders", ordersColor: BasicAppBarColor),
-        // '/orders': (context) => Orders(title: "Orders"),
+        '/orders': (context) => Orders(title: "Orders"),
         '/mainMenu/createMenu': (context) => CreateNewMenu(),
       },
       onGenerateRoute: (settings) {
@@ -104,7 +72,12 @@ class MyAppSub extends StatelessWidget{
         if(pathElements[0] != '') return null;
         if(pathElements[1] == 'food'){
           String foodID = pathElements[2];
-          return MaterialPageRoute(builder: (BuildContext context) => Details(backgroundColor: BasicAppBarColor, menuID: foodID));
+          // MaterialPageRoute(builder: (BuildContext build){
+            
+          // }; 
+          
+          return MaterialPageRoute(builder: (BuildContext context) => Details(menuID: foodID)); 
+          // return MaterialPageRoute(builder: (BuildContext context) => Details(backgroundColor: BasicAppBarColor, menuID: foodID));
         }else if(pathElements[1] == 'detail'){
           String foodID = pathElements[2];
           return MaterialPageRoute(builder: (BuildContext context) => MyApp());

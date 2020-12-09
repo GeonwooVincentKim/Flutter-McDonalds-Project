@@ -46,7 +46,7 @@ class CartList extends StatelessWidget{
               secondaryActions: [
                 IconSlideAction(
                   caption: "Delete",
-                  color: Colors.grey.shade300,
+                  // color: Colors.grey.shade300,
                   icon: Icons.delete,
                   closeOnTap: false,
                   onTap: (){
@@ -59,7 +59,7 @@ class CartList extends StatelessWidget{
                 ),
               ],
               child: Container(
-                color: Colors.white,
+                // color: Colors.white,
                 child: ListTile(
                   leading: CircleAvatar(
                     backgroundColor: Colors.indigoAccent,

@@ -6,13 +6,13 @@ import 'package:myTestApp_Test/widget/contents/contents_detail.dart';
 class ContentsTitle extends StatelessWidget{
   final String ctxTitle;
   final String ctxContents;
-  final Color ctxColor;
+  // final Color ctxColor;
   final double marginBottom;
 
   ContentsTitle({
     @required this.ctxTitle,
     @required this.ctxContents,
-    this.ctxColor = CartOrderColor,
+    // this.ctxColor = CartOrderColor,
     this.marginBottom = basicPadding / 2,
   });
 

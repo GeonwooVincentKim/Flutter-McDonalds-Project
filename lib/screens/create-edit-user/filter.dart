@@ -143,7 +143,7 @@ class _FilterState extends State<Filter> {
     return Scaffold(
       appBar: _buildFilterAppBar(),
       body: _buildFilterBody(),
-      backgroundColor: BasicBackgroundColor,
+      // backgroundColor: BasicBackgroundColor,
       drawer: SideMenu(),
     );
   }

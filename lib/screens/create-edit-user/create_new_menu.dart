@@ -146,7 +146,7 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
     return Scaffold(
       appBar: _buildNewAppBar(),
       body: _buildNewBody(),
-      backgroundColor: BasicBackgroundColor,
+      // backgroundColor: BasicBackgroundColor,
       drawer: SideMenu(),
     );
   }

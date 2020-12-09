@@ -157,7 +157,7 @@ class _EditUserState extends State<EditUser> {
     return Scaffold(
       appBar: _buildEditBar(context),
       body: _buildEditBody(),
-      backgroundColor: BasicBackgroundColor,
+      // backgroundColor: BasicBackgroundColor,
     );
   }
 

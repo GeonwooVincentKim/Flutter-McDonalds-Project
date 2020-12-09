@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myTestApp_Test/screens/main_screen/cart.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:provider/provider.dart';
 
@@ -17,6 +18,9 @@ final darkTheme = ThemeData(
   primaryColor: Colors.black,
   brightness: Brightness.dark,
   // backgroundColor: const Color(0xFF212121),
+  buttonColor: Colors.cyan[300],
+  scaffoldBackgroundColor: Color(0xFF212121),
+  textSelectionColor: Colors.teal
   // accentColor: Colors.white,
   // accentIconTheme: IconThemeData(color: Colors.black),
   // dividerColor: Colors.black12,
@@ -25,8 +29,11 @@ final darkTheme = ThemeData(
 final lightTheme = ThemeData(
   // primarySwatch: Colors.grey,
   primaryColor: BasicAppBarColor,
-  brightness: Brightness.light,
-  // backgroundColor: const Color(0xFFE5E5E5),
+  // brightness: Brightness.light,
+  buttonColor: alertButtonColor,
+  // accentColor: CartOrderColor,
+  // backgroundColor: BasicBackgroundColor,
+  scaffoldBackgroundColor: BasicBackgroundColor
   // accentColor: Colors.black,
   // accentIconTheme: IconThemeData(color: Colors.white),
   // dividerColor: Colors.white54,

@@ -32,21 +32,19 @@ class _HomeState extends State<Home> {
       drawer: SideMenu(),
       appBar: _buildHomeAppBar(),
       body: _buildHomeBody(),
-      backgroundColor: BasicBackgroundColor,
+      // backgroundColor: BasicBackgroundColor,
     );
   }
 
   Widget _buildHomeAppBar(){
     return AppBar(
       title: Text(widget.title),
-      // backgroundColor: widget.homeColor,
       centerTitle: true,
     );
   }
 
   Widget _buildHomeBody(){
     return Container(
-      color: BasicBackgroundColor,
       padding: EdgeInsets.all(basicPadding),
       child: SingleChildScrollView(
         // It doesn't need to use Stack. You can change anything

@@ -11,11 +11,11 @@ import 'package:provider/provider.dart';
 
 
 class Details extends StatefulWidget {
-  final Color backgroundColor;
+  // final Color backgroundColor;
   final String menuID;
 
   Details({
-    @required this.backgroundColor,
+    // @required this.backgroundColor,
     @required this.menuID
   });
 
@@ -124,7 +124,6 @@ class _DetailsState extends State<Details> {
       appBar: _buildDetailAppBar(),
       body: _buildDetailBody(),
       drawer: SideMenu(),
-      backgroundColor: BasicBackgroundColor,
     );
   }
 

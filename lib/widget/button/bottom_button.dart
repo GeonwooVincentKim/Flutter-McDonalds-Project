@@ -19,7 +19,7 @@ class BottomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       onPressed: onPressed,
-      color: alertButtonColor,
+      // color: alertButtonColor,
       child: Text(contents, style: alertDialogText),
       shape: shape
     );
