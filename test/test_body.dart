@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
+import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
 import 'package:provider/provider.dart';
 
 import 'test_provider.dart';
@@ -20,7 +21,13 @@ class _TestBodyState extends State<TestBody> {
       // backgroundColor: themeProvider.getDarkMode() ? ThemeData.dark() : ThemeData.light(),
       centerTitle: true,
       actions: [
-
+        IconButton(
+          icon: Icon(
+            IconMoon.iadd,
+            color: Colors.white
+          ),
+          onPressed: () => Navigator.pushNamed(context, "/detail"),
+        )
       ],
     );
   }

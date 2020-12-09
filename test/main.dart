@@ -7,6 +7,7 @@ import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'test_body.dart';
+import 'test_page.dart';
 import 'test_provider.dart';
 
 void main() => runApp(MyApp());
@@ -31,13 +32,14 @@ class MyAppSub extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/": (context) => TestBody(),
+        "/detail": (context) => TestPage()
       },
       onGenerateRoute: (settings) {
         final List<String> routeGenerator = settings.name.split("/");
         if(routeGenerator[0] != '') return null;
-        if(routeGenerator[1] == '/detail'){
+        if(routeGenerator[1] == '/test'){
           String detailID = routeGenerator[2];
-          // return MaterialPageRoute(builder: (context) => Test());
+          // return MaterialPageRoute(builder: (context) => TestPage(testID: detailID));
         }
       },
       onUnknownRoute: (settings) => MaterialPageRoute(builder: (context) => MyApp()),

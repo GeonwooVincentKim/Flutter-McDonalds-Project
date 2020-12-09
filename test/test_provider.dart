@@ -3,33 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
    
 class DynamicThemeProvider with ChangeNotifier {  
-  // ChangeNotifier : will provide a notifier for any changes in the value to all it's listeners  
-  // ThemeData _themeData;
-  // DynamicThemeProvider(this._themeData);
-
-  // getTheme() => _themeData;
-  // setTheme(ThemeData themeData) async{
-  //   _themeData = themeData;
-  //   notifyListeners();
-  // }
-
   bool isDarkMode = false;  
   getDarkMode() => this.isDarkMode;  
   void changeDarkMode(isDarkMode) {  
     this.isDarkMode = isDarkMode;  
     notifyListeners(); // Notify all it's listeners about update. If you comment this line then you will see that new added items will not be reflected in the list.  
   } 
-
-  void changeBrightness(BuildContext context){
-    DynamicTheme.of(context).setBrightness(
-        Theme.of(context).brightness == Brightness.dark
-            ? Brightness.light
-            : Brightness.dark);
-  }
 }  
 
 final darkTheme = ThemeData(
-  // primarySwatch: Colors.grey,
+  primarySwatch: Colors.orange[200],
   primaryColor: Colors.black,
   brightness: Brightness.dark,
   // backgroundColor: const Color(0xFF212121),
