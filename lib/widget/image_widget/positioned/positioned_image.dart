@@ -40,7 +40,7 @@ class PositionedImage extends StatelessWidget {
           height: imageHeight,
           decoration: BoxDecoration(
             // color: BasicCircleColor,
-            color: Theme.of(context).accentColor,
+            color: Theme.of(context).highlightColor,
             // color: themeProvider.getDarkMode() ? darkTheme : lightTheme,
             shape: BoxShape.circle
           ),
