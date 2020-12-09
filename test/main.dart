@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/screens/body.dart';
+import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:provider/provider.dart';
 import 'test_body.dart';
 import 'test_provider.dart';
@@ -84,7 +85,7 @@ class MyAppSub extends StatelessWidget {
       ) : 
       ThemeData(
         // primarySwatch: Colors.white,
-        primaryColor: Colors.amber,
+        primaryColor: BasicAppBarColor,
         brightness: Brightness.light
       ),
       initialRoute: "/",
