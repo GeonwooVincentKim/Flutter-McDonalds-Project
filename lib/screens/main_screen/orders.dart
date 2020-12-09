@@ -35,7 +35,6 @@ class _OrdersState extends State<Orders> {
   Widget _buildOrdersAppBar(){
     return AppBar(
       title: Text("Orders"),
-      // backgroundColor: widget.ordersColor,
       centerTitle: true,
     );
   }
@@ -45,7 +44,7 @@ class _OrdersState extends State<Orders> {
     return Container(
       height: screenHeight / 1.2,
       padding: EdgeInsets.symmetric(horizontal: basicPadding, vertical: basicPadding),
-      // color: CartOrderColor,
+      color: Theme.of(context).primaryColor,
       child: SingleChildScrollView(
         child: Consumer<ProviderMenu>(
           builder: (ctx, orderMenu, child){

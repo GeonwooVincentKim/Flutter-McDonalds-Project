@@ -24,13 +24,12 @@ class Settings extends StatelessWidget {
   Widget _buildSettingsAppBar(BuildContext context){
     return AppBar(
       title: Text("Settings"),
-      // backgroundColor: BasicAppBarColor,
       centerTitle: true,
       actions: [
         IconButton(
           icon: Icon(
             Icons.edit,
-            color: Colors.white,
+            color: Theme.of(context).buttonColor,
           ), onPressed: () => Navigator.pushNamed(context, "/settings/modify")
         )
       ],
@@ -63,7 +62,7 @@ class Settings extends StatelessWidget {
     return Container(
       height: screenHeight / 3,
       padding: EdgeInsets.symmetric(vertical: basicPadding, horizontal: basicPadding),
-      // color: CartOrderColor,
+      color: Theme.of(context).primaryColor,
       child: Column(
         // crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -86,6 +85,7 @@ class Settings extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: basicPadding, vertical: basicPadding),
       // color: CartOrderColor,
+      color: Theme.of(context).primaryColor,
       // color: lightTheme.primaryColor,
       width: screenWidth,
       child: BottomButton(contents: "Modify".toUpperCase(), onPressed: () => Navigator.pushNamed(context, "/settings/modify")),

@@ -26,7 +26,6 @@ class PositionedImage extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ProviderThemeDynamic>(context);
     return Positioned(
       bottom: bottom,
       right: right,
@@ -39,9 +38,7 @@ class PositionedImage extends StatelessWidget {
           width: imageWidth,
           height: imageHeight,
           decoration: BoxDecoration(
-            // color: BasicCircleColor,
             color: Theme.of(context).highlightColor,
-            // color: themeProvider.getDarkMode() ? darkTheme : lightTheme,
             shape: BoxShape.circle
           ),
           child: ClipRRect(

@@ -39,18 +39,7 @@ class _CartState extends State<Cart> {
   Widget _buildCartAppBar(){
     return AppBar(
       title: Text(widget.title),
-      // backgroundColor: widget.cartColor,
       centerTitle: true,
-      // actions: [
-      //   IconButton(
-      //     icon: Icon(
-      //       IconMoon.iadd, 
-      //       color: Colors.white
-      //     ), 
-      //     // Menu(pageIndex: 1, pageInfo: null, title: "Menu", menuColor: BasicAppBarColor)
-      //     onPressed: () => Navigator.pushNamed(context, "/"),
-      //   )
-      // ],
     );
   }
 
@@ -60,7 +49,7 @@ class _CartState extends State<Cart> {
     return Container(
       height: screenHeight / 2,
       padding: EdgeInsets.symmetric(horizontal: basicPadding, vertical: basicPadding),
-      // color: CartOrderColor,
+      color: Theme.of(context).primaryColor,
       child: SingleChildScrollView(
         child: Consumer<ProviderMenu>(
           builder: (ctx, orderMenu, child){
@@ -84,10 +73,7 @@ class _CartState extends State<Cart> {
   Widget _buildCartPurchase(BuildContext context){
     return Container(
       padding: EdgeInsets.symmetric(horizontal: basicPadding, vertical: basicPadding),
-      // color: CartOrderColor,
-      // child: Center(
-        
-      // )
+      color: Theme.of(context).primaryColor,
       child: Consumer<ProviderMenu>(
           builder: (ctx, totalPrice, child){
             return Column(

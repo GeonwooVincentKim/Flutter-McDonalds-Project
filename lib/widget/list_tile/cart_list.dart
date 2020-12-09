@@ -59,7 +59,7 @@ class CartList extends StatelessWidget{
                 ),
               ],
               child: Container(
-                // color: Colors.white,
+                color: Theme.of(context).canvasColor,
                 child: ListTile(
                   leading: CircleAvatar(
                     backgroundColor: Colors.indigoAccent,
