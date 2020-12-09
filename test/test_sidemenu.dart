@@ -38,8 +38,8 @@ class _TestSideMenuState extends State<TestSideMenu> {
                    });
                  }
                ),
-             ),
-           ListTile(title: Text("Filter"), onTap: (){Navigator.pushNamed(context, "/detail");}),
+          ),
+          ListTile(title: Text("Filter"), onTap: (){Navigator.pushNamed(context, "/detail");}),
         ],
       )
     );

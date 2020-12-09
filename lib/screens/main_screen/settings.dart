@@ -25,7 +25,7 @@ class Settings extends StatelessWidget {
   Widget _buildSettingsAppBar(BuildContext context){
     return AppBar(
       title: Text("Settings"),
-      backgroundColor: BasicAppBarColor,
+      // backgroundColor: BasicAppBarColor,
       centerTitle: true,
       actions: [
         IconButton(

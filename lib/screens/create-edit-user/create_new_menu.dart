@@ -43,7 +43,7 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
     return AppBar(
       title: Text("Menu"),
       centerTitle: true,
-      backgroundColor: BasicAppBarColor,
+      // backgroundColor: BasicAppBarColor,
       actions: [
         IconButton(
           icon: Icon(

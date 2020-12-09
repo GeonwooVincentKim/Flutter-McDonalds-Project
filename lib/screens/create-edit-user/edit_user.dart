@@ -32,7 +32,7 @@ class _EditUserState extends State<EditUser> {
 
   Widget _buildEditBar(BuildContext context){
     return AppBar(
-      backgroundColor: BasicAppBarColor,
+      // backgroundColor: BasicAppBarColor,
       title: Text("Modify"),
       centerTitle: true,
       actions: [
@@ -51,7 +51,7 @@ class _EditUserState extends State<EditUser> {
 
     return Container(
       height: screenHeight,
-      color: BasicBackgroundColor,
+      // color: BasicBackgroundColor,
       child: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(basicPadding * 2),

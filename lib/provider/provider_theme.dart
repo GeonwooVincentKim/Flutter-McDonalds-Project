@@ -5,15 +5,15 @@ import 'package:provider/provider.dart';
 
 class ProviderThemeDynamic with ChangeNotifier{
   bool isDark = false;
-  getDarkMode() => isDark;
+  getDarkMode() => this.isDark;
   void changeMode(isDark){
-    isDark = isDark;
+    this.isDark = isDark;
     notifyListeners();
   }
 }
 
 final darkTheme = ThemeData(
-  primarySwatch: Colors.orange[200],
+  // primarySwatch: Colors.orange[200],
   primaryColor: Colors.black,
   brightness: Brightness.dark,
   // backgroundColor: const Color(0xFF212121),

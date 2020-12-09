@@ -1,22 +1,23 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:myTestApp_Test/provider/provider_theme.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
+import 'package:provider/provider.dart';
 
 
-class Bloc{
-  final _themeController = StreamController<bool>();
-  get changeTheme => _themeController.sink.add;
-  get darkThemeEnabled => _themeController.stream;
-}
-
-final bloc = Bloc();
-
-class SideMenu extends StatelessWidget {
+class SideMenu extends StatefulWidget {
   final bool darkThemeEnabled;
   SideMenu({this.darkThemeEnabled});
+
+  @override
+  _SideMenuState createState() => _SideMenuState();
+}
+
+class _SideMenuState extends State<SideMenu> {
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ProviderThemeDynamic>(context);  
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -37,11 +38,15 @@ class SideMenu extends StatelessWidget {
           ListTile(title: Text("Create New Menu"), onTap: () => Navigator.pushNamed(context, "/mainMenu/createMenu")),
           ListTile(title: Text("Filter"), onTap: (){Navigator.pushNamed(context, "/filter");}),
           ListTile(
-            title: Text("Dark Theme"),
-            // trailing: Switch(
-            //   value: darkThemeEnabled,
-            //   onChanged: bloc.changeTheme
-            // ),
+            title: Text("Test"),
+            trailing: Switch(
+              value: themeProvider.getDarkMode(),
+              onChanged: (value){
+                setState(() {
+                  themeProvider.changeMode(value);
+                });
+              }
+            ),
           ),
         ],
       )

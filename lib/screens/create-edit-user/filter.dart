@@ -90,7 +90,7 @@ class _FilterState extends State<Filter> {
   Widget _buildFilterAppBar(){
     return AppBar(
       title: Text("Filter"),
-      backgroundColor: BasicAppBarColor,
+      // backgroundColor: BasicAppBarColor,
       centerTitle: true,
     );
   }

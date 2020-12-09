@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:myTestApp_Test/provider/provider_theme.dart';
 import 'package:myTestApp_Test/screens/main_screen/home.dart';
 import 'package:myTestApp_Test/screens/main_screen/menu.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
+import 'package:provider/provider.dart';
 
 
 class Body extends StatefulWidget {  
@@ -45,7 +47,9 @@ class _BodyState extends State<Body> {
     ];
   }
 
-  Widget _bodyNaviBar(){
+  Widget _bodyNaviBar(BuildContext context){
+    final themeProvider = Provider.of<ProviderThemeDynamic>(context);  
+
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       onTap: (index) => tapBottom(index),
@@ -53,7 +57,7 @@ class _BodyState extends State<Body> {
       items: _bodyNaviBarItem(),
       iconSize: 45,
       selectedItemColor: Colors.white,
-      backgroundColor: BasicAppBarColor,
+      // backgroundColor: themeProvider.changeMode(val)
     );
   }
 
@@ -66,10 +70,11 @@ class _BodyState extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       drawer: SideMenu(),
       body: _buildBody(),
-      bottomNavigationBar: _bodyNaviBar(),
+      bottomNavigationBar: _bodyNaviBar(context),
     );
   }
 }

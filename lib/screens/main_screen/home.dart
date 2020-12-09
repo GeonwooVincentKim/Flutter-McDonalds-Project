@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
   Widget _buildHomeAppBar(){
     return AppBar(
       title: Text(widget.title),
-      backgroundColor: widget.homeColor,
+      // backgroundColor: widget.homeColor,
       centerTitle: true,
     );
   }

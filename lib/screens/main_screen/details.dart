@@ -41,7 +41,7 @@ class _DetailsState extends State<Details> {
   Widget _buildDetailAppBar(){
     return AppBar(
       title: Text(detailMenu.menuTitle),
-      backgroundColor: BasicAppBarColor,
+      // backgroundColor: BasicAppBarColor,
       centerTitle: true,
       actions: [
         IconButton(
