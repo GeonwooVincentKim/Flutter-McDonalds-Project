@@ -10,6 +10,7 @@ import 'package:myTestApp_Test/screens/create-edit-user/edit_user.dart';
 import 'package:myTestApp_Test/screens/create-edit-user/filter.dart';
 import 'package:myTestApp_Test/screens/main_screen/cart.dart';
 import 'package:myTestApp_Test/screens/main_screen/details.dart';
+import 'package:myTestApp_Test/screens/main_screen/menu.dart';
 import 'package:myTestApp_Test/screens/main_screen/orders.dart';
 import 'package:myTestApp_Test/screens/main_screen/settings.dart';
 import 'package:provider/provider.dart';
@@ -56,11 +57,12 @@ class MyAppSub extends StatelessWidget{
         if(pathElements[0] != '') return null;
         if(pathElements[1] == 'food'){
           String foodID = pathElements[2];
-          return MaterialPageRoute(builder: (BuildContext context) => Details(menuID: foodID)); 
+          return MaterialPageRoute(builder: (BuildContext context) => Menu(menuID: foodID));
+          // return MaterialPageRoute(builder: (BuildContext context) => Details(menuID: foodID));
           // return MaterialPageRoute(builder: (BuildContext context) => Details(backgroundColor: BasicAppBarColor, menuID: foodID));
         }else if(pathElements[1] == 'detail'){
           String foodID = pathElements[2];
-          return MaterialPageRoute(builder: (BuildContext context) => MyApp());
+          return MaterialPageRoute(builder: (BuildContext context) => Details(menuID: foodID));
         }else if(pathElements[1] == 'filter'){
           return MaterialPageRoute(builder: (BuildContext context) => Filter(settings.arguments));
         }

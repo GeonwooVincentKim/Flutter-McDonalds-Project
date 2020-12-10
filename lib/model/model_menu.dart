@@ -2,26 +2,28 @@ import 'package:flutter/material.dart';
 
 
 class MenuModel{
-  final String id;
-  final String menuTitle;
-  final String image;
-  final int prices;
-  final int type;
+  String id;
+  String menuTitle;
+  String image;
+  int prices;
+  int type;
   // final String releaseDate;
-  final String releaseYear;
-  final String releaseMonth;
+  String releaseYear;
+  String releaseMonth;
   bool isInCart;
+  List<MenuModel> childList;
 
   MenuModel({
     @required this.id,
     @required this.menuTitle,
     @required this.image,
     this.isInCart,
-    @required this.prices,
+    this.prices,
     this.type,
     // @required this.releaseDate,
-    @required this.releaseYear,
-    @required this.releaseMonth
+    this.releaseYear,
+    this.releaseMonth,
+    this.childList
   });
 
   factory MenuModel.fromMenuModelInfo(MenuModel menu){
@@ -33,7 +35,8 @@ class MenuModel{
       type: menu.type ?? 0,
       // releaseDate: menu.releaseDate ?? ''
       releaseYear: menu.releaseYear ?? '',
-      releaseMonth: menu.releaseMonth ?? ''
+      releaseMonth: menu.releaseMonth ?? '',
+      childList: menu.childList ?? []
     );
   }
 
@@ -47,20 +50,21 @@ class MenuModel{
       // releaseDate: menuMap['releaseYearMonth'] ?? ''
       releaseYear: menuMap['releaseYear'] ?? '',
       releaseMonth: menuMap['releaseMonth'] ?? '',
+      // childList: menuMap['childList'] ?? []
     );
   }
 
 
-  factory MenuModel.initialData(){
-    return MenuModel(
-      id: '',
-      menuTitle: '',
-      image: '',
-      prices: 0,
-      type: 0,
-      // releaseDate: ''
-      releaseYear: '',
-      releaseMonth: ''
-    );
-  }
+  // factory MenuModel.initialData(){
+  //   return MenuModel(
+  //     id: '',
+  //     menuTitle: '',
+  //     image: '',
+  //     prices: 0,
+  //     type: 0,
+  //     // releaseDate: ''
+  //     releaseYear: '',
+  //     releaseMonth: ''
+  //   );
+  // }
 }

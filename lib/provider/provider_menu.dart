@@ -1,26 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:myTestApp_Test/model/dummy/dummy_detail_menu.dart';
 import 'package:myTestApp_Test/model/model_menu.dart';
 import 'package:myTestApp_Test/model/dummy/dummy_menu.dart';
 import 'package:myTestApp_Test/shared/helpers/functions.dart';
 
 
 class ProviderMenu extends ChangeNotifier{
-  MenuModel menu;
+  MenuModel category;
+  MenuModel menuDetail;
   int sum = 0;
 
   List<MenuModel> _addCartItems = [];
   List<MenuModel> _addOrderedItems = [];
-  List<MenuModel> _menuItems = DUMMY_MENU.toList();
+  // List<MenuModel> _menuItems = DUMMY_CATEGORY.toList();
+  List<MenuModel> _menuItems = [ham, cafe, morning, dessert].toList();
+  // List<MenuModel> _menuItems = DUMMY_MENU.toList();
 
   List<MenuModel> get menuList => [..._menuItems];
   List<MenuModel> get cartList => [..._addCartItems];
   List<MenuModel> get orderList => [..._addOrderedItems];
 
-  MenuModel get selectedMenu => menu != null ? MenuModel.fromMenuModelInfo(menu) : null;
+  MenuModel get selectedMenu => menuDetail != null ? MenuModel.fromMenuModelInfo(selectedMenu) : null;
+  MenuModel get selectedCategory => category;
   int get totalPrices => cartList.fold(0, (sum, current) => sum + current.prices);
 
   void selectMenu(MenuModel menuContent){
-    menu = menuContent;
+    menuDetail = menuContent;
+    notifyListeners();
+  }
+
+  void selectCategory(MenuModel categoryContent){
+    category = categoryContent;
     notifyListeners();
   }
 

@@ -11,14 +11,16 @@ import 'package:provider/provider.dart';
 
 
 class Menu extends StatefulWidget {
-  final int pageIndex;
-  final String title;
-  final Function pageInfo;
+  // final int pageIndex;
+  // final String title;
+  // final Function pageInfo;
+  final String menuID;
 
   Menu({
-    @required this.pageIndex,
-    @required this.title,
-    @required this.pageInfo,
+    @required this.menuID
+    // @required this.pageIndex,
+    // @required this.title,
+    // @required this.pageInfo,
   });
   @override
   _MenuState createState() => _MenuState();
@@ -26,25 +28,36 @@ class Menu extends StatefulWidget {
 
 class _MenuState extends State<Menu> {
   // List<MenuModel> mainPage = [];
+  MenuModel categoryTypes;
+  @override
+  void initState(){
+    categoryTypes = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
+    if(categoryTypes == null || categoryTypes == ''){
+      final List<MenuModel> menuTitle = Provider.of<ProviderMenu>(context, listen: false).menuList;
+      categoryTypes = menuTitle.firstWhere((menu) => menu.id == widget.menuID);
+    }
+    super.initState();
+  }
+
   Widget _buildMenuAppBar(){
     return AppBar(
-      title: Text(widget.title),
+      title: Text(categoryTypes.menuTitle),
       centerTitle: true,
       actions: [
-        IconButton(
-          icon: Icon(
-            IconMoon.iadd,
-            color: Theme.of(context).cardColor
-          ),
-          onPressed: () => Navigator.pushNamed(context, "/mainMenu/createMenu", arguments: "menu"),
-        ),
-        IconButton(
-          icon: Icon(
-            IconMoon.ifilter,
-            color: Theme.of(context).cardColor
-          ),
-          onPressed: () => Navigator.pushNamed(context, "/filter", arguments: "menu"),
-        )
+        // IconButton(
+        //   icon: Icon(
+        //     IconMoon.iadd,
+        //     color: Theme.of(context).cardColor
+        //   ),
+        //   onPressed: () => Navigator.pushNamed(context, "/mainMenu/createMenu", arguments: "menu"),
+        // ),
+        // IconButton(
+        //   icon: Icon(
+        //     IconMoon.ifilter,
+        //     color: Theme.of(context).cardColor
+        //   ),
+        //   onPressed: () => Navigator.pushNamed(context, "/filter", arguments: "menu"),
+        // )
       ],
     );
   }
@@ -56,13 +69,16 @@ class _MenuState extends State<Menu> {
       child: Consumer<ProviderMenu>(
         builder: (ctx, menu, child){
           final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
-          final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilter(menu, menuFilter)).toList();
+          // final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilter(menu, menuFilter)).toList();
           // final MenuModel filter = Provider.of<FilterProvider>(context).changeOrderNoMapFilters(filter);
-          // final List<MenuModel> listMenu = menu.menuList;
+          MenuModel categoryMenu = Provider.of<ProviderMenu>(context, listen: false).selectedCategory;
+          print(categoryMenu.childList);
+          final List<MenuModel> listMenu = categoryMenu.childList;
+          // final List<MenuModel> listMenu = menu.menuList.toList();
           // final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilter(menu, ))
           // mainPage = listMenu.toList();
-
-          return listMenu.length == 0 ?
+          print(listMenu);
+          return listMenu.length == 0 || listMenu.length == null ?
             Center(child: Text("NOO!!!")) :
             GridView.builder(
               shrinkWrap: true,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_category.dart';
+import 'package:myTestApp_Test/model/model_menu.dart';
 import 'package:myTestApp_Test/provider/provider_category.dart';
 import 'package:myTestApp_Test/provider/provider_filter.dart';
+import 'package:myTestApp_Test/provider/provider_menu.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/widget/list_tile/list_tile_category.dart';
 import 'package:myTestApp_Test/widget/list_tile/list_tile_menu.dart';
@@ -24,10 +26,10 @@ class Category extends StatefulWidget {
 }
 
 class _CategoryState extends State<Category> {
-  List<CategoryModel> categoryList = [];
+  List<MenuModel> categoryList = [];
   Widget _buildCategoryAppBar(){
     return AppBar(
-      title: Text("Category"),
+      title: Text(widget.title),
       centerTitle: true,
     );
   }
@@ -36,27 +38,27 @@ class _CategoryState extends State<Category> {
     return Container(
       padding: EdgeInsets.symmetric(vertical: basicPadding, horizontal: basicPadding / 2),
       margin: EdgeInsets.all(basicMargin),
-      child: Consumer<ProviderCategory>(
+      child: Consumer<ProviderMenu>(
         builder: (ctx, category, child){
           // final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
-          final List<CategoryModel> listMenu = category.categoryList.toList();
+          // final List<CategoryModel> listMenu = category.categoryList.toList();
           // final MenuModel filter = Provider.of<FilterProvider>(context).changeOrderNoMapFilters(filter);
-          // final List<MenuModel> listMenu = menu.menuList;
+          final List<MenuModel> listCategory = category.menuList;
           // final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilter(menu, ))
-          // mainPage = listMenu.toList();
+          categoryList = listCategory.toList();
 
-          return listMenu.length == 0 ?
+          return listCategory.length == 0 ?
             Center(child: Text("NOO!!!")) :
             GridView.builder(
               shrinkWrap: true,
-              itemCount: listMenu.length,
+              itemCount: listCategory.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 0.75,
                 crossAxisSpacing: 30.0,
                 mainAxisSpacing: 30.0
               ),
-              itemBuilder: (context, index) => ListTileCategory(cate: listMenu[index])
+              itemBuilder: (context, index) => ListTileCategory(cate: listCategory[index])
               // itemBuilder: (context, index) => ListTileMenu(menuContents: listMenu[index]),
             );
         }
