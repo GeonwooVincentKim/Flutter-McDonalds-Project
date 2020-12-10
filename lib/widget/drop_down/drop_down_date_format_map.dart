@@ -32,6 +32,8 @@ class _DropDownDateFormatMapState extends State<DropDownDateFormatMap> {
     }
 
     // When it is map, and the user gonna filter the list.
+    // releaseYear -> Add the new values into the List.
+    // releaseYearText -> Filter the original lists
     if(widget.menuYearMonthMap['releaseYearText'] == '')
       widget.menuYearMonthMap['releaseYearText'] = yearList[yearList.length - 1];
     if(widget.menuYearMonthMap['releaseMonthText'] == '')
