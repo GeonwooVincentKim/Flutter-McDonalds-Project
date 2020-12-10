@@ -30,13 +30,13 @@ final darkTheme = ThemeData(
 
 final lightTheme = ThemeData(
   // primarySwatch: Colors.grey,
-  primaryColor: BasicAppBarColor,
+  primaryColor: basicAppBarColor,
   // brightness: Brightness.light,
   buttonColor: alertButtonColor,
   // accentColor: CartOrderColor,
   // backgroundColor: BasicBackgroundColor,
   bottomAppBarColor: Colors.blue,
-  scaffoldBackgroundColor: BasicBackgroundColor,
+  scaffoldBackgroundColor: basicBackgroundColor,
   accentColor: Colors.blue,
   // bottomNavigationBarTheme: BottomNavigationBarTheme()
   // accentColor: Colors.black,

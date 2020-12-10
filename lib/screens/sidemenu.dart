@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/provider/provider_theme.dart';
-import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:provider/provider.dart';
 
 
@@ -25,7 +24,6 @@ class _SideMenuState extends State<SideMenu> {
           DrawerHeader(
             child: null,
             decoration: BoxDecoration(
-              color: SideAppBarColor,
               image: DecorationImage(
                 image: AssetImage("assets/basicimages/McDonaldsLogo.jpg"), fit: BoxFit.cover
               )

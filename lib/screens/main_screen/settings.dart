@@ -29,7 +29,7 @@ class Settings extends StatelessWidget {
         IconButton(
           icon: Icon(
             Icons.edit,
-            color: Theme.of(context).buttonColor,
+            color: Theme.of(context).cardColor,
           ), onPressed: () => Navigator.pushNamed(context, "/settings/modify")
         )
       ],

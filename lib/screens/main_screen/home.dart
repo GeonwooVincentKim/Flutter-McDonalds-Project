@@ -7,13 +7,11 @@ class Home extends StatefulWidget {
   final int pageIndex;
   final String title;
   final Function pageInfo;
-  final Color homeColor;
 
   Home({
     @required this.pageIndex,
     @required this.title,
-    @required this.pageInfo,
-    @required this.homeColor
+    @required this.pageInfo
   });
 
   @override
@@ -32,7 +30,6 @@ class _HomeState extends State<Home> {
       drawer: SideMenu(),
       appBar: _buildHomeAppBar(),
       body: _buildHomeBody(),
-      // backgroundColor: BasicBackgroundColor,
     );
   }
 

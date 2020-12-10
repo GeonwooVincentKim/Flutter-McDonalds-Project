@@ -22,7 +22,7 @@ class _TestSideMenuState extends State<TestSideMenu> {
           DrawerHeader(
             child: null,
             decoration: BoxDecoration(
-              color: SideAppBarColor,
+              color: Theme.of(context).focusColor,
               image: DecorationImage(
                 image: AssetImage("assets/basicimages/McDonaldsLogo.jpg"), fit: BoxFit.cover
               )

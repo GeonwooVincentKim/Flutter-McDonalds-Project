@@ -14,13 +14,11 @@ class Menu extends StatefulWidget {
   final int pageIndex;
   final String title;
   final Function pageInfo;
-  final Color homeColor;
 
   Menu({
     @required this.pageIndex,
     @required this.title,
     @required this.pageInfo,
-    @required this.homeColor
   });
   @override
   _MenuState createState() => _MenuState();
@@ -31,20 +29,20 @@ class _MenuState extends State<Menu> {
   Widget _buildMenuAppBar(){
     return AppBar(
       title: Text(widget.title),
-      // backgroundColor: BasicAppBarColor,
+      // backgroundColor: Theme.of(context).primaryColor,
       centerTitle: true,
       actions: [
         IconButton(
           icon: Icon(
             IconMoon.iadd,
-            color: Colors.white,
+            color: Theme.of(context).cardColor
           ),
           onPressed: () => Navigator.pushNamed(context, "/mainMenu/createMenu", arguments: "menu"),
         ),
         IconButton(
           icon: Icon(
             IconMoon.ifilter,
-            color: Colors.white,
+            color: Theme.of(context).cardColor
           ),
           onPressed: () => Navigator.pushNamed(context, "/filter", arguments: "menu"),
         )
@@ -65,8 +63,8 @@ class _MenuState extends State<Menu> {
           // final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilter(menu, ))
           // mainPage = listMenu.toList();
 
-          return listMenu.length == 0 ? 
-            Center(child: Text("NOO!!!")) : 
+          return listMenu.length == 0 ?
+            Center(child: Text("NOO!!!")) :
             GridView.builder(
               shrinkWrap: true,
               itemCount: listMenu.length,
@@ -78,17 +76,6 @@ class _MenuState extends State<Menu> {
               ),
               itemBuilder: (context, index) => ListTileMenu(menuContents: listMenu[index]),
             );
-          // return GridView.builder(
-          //   shrinkWrap: true,
-          //   itemCount: listMenu.length,
-          //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          //     crossAxisCount: 2,
-          //     childAspectRatio: 0.75,
-          //     crossAxisSpacing: 30.0,
-          //     mainAxisSpacing: 30.0
-          //   ),
-          //   itemBuilder: (context, index) => ListTileMenu(menuContents: listMenu[index]),
-          // );
         }
       )
     );

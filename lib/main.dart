@@ -17,22 +17,6 @@ import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
-// ThemeData _lightTheme = ThemeData(
-//   accentColor: Colors.pink,
-//   brightness: Brightness.light,
-//   primaryColor: Colors.blue
-// );
-
-// ThemeData _darkTheme = ThemeData(
-//   accentColor: Colors.red,
-//   brightness: Brightness.dark,
-//   primaryColor: Colors.amber,
-//   buttonTheme: ButtonThemeData(
-//     buttonColor: Colors.amber
-//   )
-// );
-// bool _light = true;
-
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -55,7 +39,6 @@ class MyAppSub extends StatelessWidget{
     return MaterialApp(
       title: "McDonaldsApp",
       theme: themeProvider.getDarkMode() ? darkTheme : lightTheme,
-      // theme: _light ? _lightTheme : _darkTheme,
       initialRoute: "/",
       routes: {
         "/": (context) => Body(),
@@ -72,10 +55,6 @@ class MyAppSub extends StatelessWidget{
         if(pathElements[0] != '') return null;
         if(pathElements[1] == 'food'){
           String foodID = pathElements[2];
-          // MaterialPageRoute(builder: (BuildContext build){
-            
-          // }; 
-          
           return MaterialPageRoute(builder: (BuildContext context) => Details(menuID: foodID)); 
           // return MaterialPageRoute(builder: (BuildContext context) => Details(backgroundColor: BasicAppBarColor, menuID: foodID));
         }else if(pathElements[1] == 'detail'){

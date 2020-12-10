@@ -3,11 +3,10 @@ import 'package:myTestApp_Test/provider/provider_theme.dart';
 import 'package:myTestApp_Test/screens/main_screen/home.dart';
 import 'package:myTestApp_Test/screens/main_screen/menu.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
-import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:provider/provider.dart';
 
 
-class Body extends StatefulWidget {  
+class Body extends StatefulWidget {
   @override
   _BodyState createState() => _BodyState();
 }
@@ -26,8 +25,8 @@ class _BodyState extends State<Body> {
       controller: pageController,
       physics: ClampingScrollPhysics(),
       children: <Widget>[
-        Home(pageIndex: _selectPage, title: "Home", pageInfo: _bodyNaviBar, homeColor: BasicAppBarColor),
-        Menu(pageIndex: _selectPage, title: "Menu", pageInfo: _bodyNaviBar, homeColor: BasicAppBarColor)
+        Home(pageIndex: _selectPage, title: "Home", pageInfo: _bodyNaviBar),
+        Menu(pageIndex: _selectPage, title: "Menu", pageInfo: _bodyNaviBar)
       ], onPageChanged: (page) => setState((){ _selectPage = page; })
     );
   }
@@ -48,8 +47,6 @@ class _BodyState extends State<Body> {
   }
 
   Widget _bodyNaviBar(BuildContext context){
-    final themeProvider = Provider.of<ProviderThemeDynamic>(context);  
-
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
       onTap: (index) => tapBottom(index),
@@ -70,7 +67,6 @@ class _BodyState extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       drawer: SideMenu(),
       body: _buildBody(),

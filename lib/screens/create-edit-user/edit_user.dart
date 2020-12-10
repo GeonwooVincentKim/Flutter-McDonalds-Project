@@ -26,13 +26,11 @@ class _EditUserState extends State<EditUser> {
       userInform[2] = userInfo.userEmail;
       userInform[3] = userInfo.yourAddress;
     }
-    
     super.initState();
-  }  
+  }
 
   Widget _buildEditBar(BuildContext context){
     return AppBar(
-      // backgroundColor: BasicAppBarColor,
       title: Text("Modify"),
       centerTitle: true,
       actions: [
@@ -51,7 +49,6 @@ class _EditUserState extends State<EditUser> {
 
     return Container(
       height: screenHeight,
-      // color: BasicBackgroundColor,
       child: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(basicPadding * 2),
@@ -68,7 +65,7 @@ class _EditUserState extends State<EditUser> {
                 TransparentDivider(),
                 _buildEditAddress(),
               ]
-            ) 
+            )
           ),
         ),
       ),
@@ -76,7 +73,7 @@ class _EditUserState extends State<EditUser> {
   }
 
   Widget _buildModifyInfo(String text, int index){
-    return index != 2 || text != userInform[2] ? 
+    return index != 2 || text != userInform[2] ?
       TextFormField(
         initialValue: text,
         validator: (value){
@@ -88,7 +85,7 @@ class _EditUserState extends State<EditUser> {
         initialValue: text,
         validator: (value){
           Pattern pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-          RegExp regex = new RegExp(pattern); 
+          RegExp regex = new RegExp(pattern);
           if(value.isEmpty) return 'Please fill the ${'text'} in your blank.';
           else if(!regex.hasMatch(value)){return 'Please enter VALID E-Mail!!';}
           return null;
@@ -125,17 +122,7 @@ class _EditUserState extends State<EditUser> {
         children: [
           Text("Email"),
           _buildModifyInfo(userInform[2], 2)
-          // TextFormField(
-          //   initialValue: userInform[2],
-          //   validator: (value){
-          //     Pattern pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-          //     RegExp regex = new RegExp(pattern); 
-          //     if(value.isEmpty) return 'Please fill the ${'text'} in your blank.';
-          //     else if(!regex.hasMatch(value)){return 'Please enter VALID E-Mail!!';}
-          //     return null;
-          //   },
-          //   onSaved: (value) => userInform[2] = value,
-          // )
+
         ],
       )
     );
@@ -151,7 +138,7 @@ class _EditUserState extends State<EditUser> {
       )
     );
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
