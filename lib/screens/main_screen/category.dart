@@ -4,6 +4,7 @@ import 'package:myTestApp_Test/model/model_menu.dart';
 import 'package:myTestApp_Test/provider/provider_category.dart';
 import 'package:myTestApp_Test/provider/provider_filter.dart';
 import 'package:myTestApp_Test/provider/provider_menu.dart';
+import 'package:myTestApp_Test/screens/sidemenu.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/widget/list_tile/list_tile_category.dart';
 import 'package:myTestApp_Test/widget/list_tile/list_tile_menu.dart';
@@ -71,6 +72,7 @@ class _CategoryState extends State<Category> {
     return Scaffold(
       appBar: _buildCategoryAppBar(),
       body: _buildCategoryBody(),
+      drawer: SideMenu()
     );
   }
 }
