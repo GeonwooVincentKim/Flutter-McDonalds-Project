@@ -122,7 +122,7 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
             validator: (value){
               if(value.isEmpty) return 'Please input the number of costs';
               return null;
-            }, 
+            },
             onSaved: (String value) {newMenu['prices'] = int.parse(value);}
             // onSaved: (String value){newMenu.prices = int.parse(value);}
           )

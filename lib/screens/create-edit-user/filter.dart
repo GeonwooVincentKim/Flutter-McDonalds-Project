@@ -38,7 +38,6 @@ class _FilterState extends State<Filter> {
     // 'releaseDate': '',
     // 'year': null,
     // 'month': null,
-      
   };
 
   @override
@@ -52,12 +51,11 @@ class _FilterState extends State<Filter> {
     // _currentOrdersFilters['releaseYearMonth'] = filterDate['releaseYearMonth'];
     // _currentOrdersFilters['releaseYear'] = filterDate['releaseYear'];
     // _currentOrdersFilters['releaseMonth'] = filterDate['releaseMonth'];
-    
     _currentOrdersFilters['releaseYear'] = filterDate['releaseYear'];
     _currentOrdersFilters['releaseYearText'] = filterDate['releaseYearText'];
     _currentOrdersFilters['releaseMonth'] = filterDate['releaseMonth'];
     _currentOrdersFilters['releaseMonthText'] = filterDate['releaseMonthText'];
-    
+
     // if(filterDate['releaseYearMonth'] != ''){
     //   final DateTime releaseYearMonth = getDateTimeFromString(filterDate['releaseYearMonth']);
 
@@ -90,7 +88,6 @@ class _FilterState extends State<Filter> {
   Widget _buildFilterAppBar(){
     return AppBar(
       title: Text("Filter"),
-      // backgroundColor: BasicAppBarColor,
       centerTitle: true,
     );
   }
