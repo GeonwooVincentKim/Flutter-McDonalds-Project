@@ -122,7 +122,6 @@ class _EditUserState extends State<EditUser> {
         children: [
           Text("Email"),
           _buildModifyInfo(userInform[2], 2)
-
         ],
       )
     );
@@ -144,14 +143,13 @@ class _EditUserState extends State<EditUser> {
     return Scaffold(
       appBar: _buildEditBar(context),
       body: _buildEditBody(),
-      // backgroundColor: BasicBackgroundColor,
     );
   }
 
   void _buildEditForm(BuildContext context){
     if(!_formEditKey.currentState.validate()) return;
     _formEditKey.currentState.save();
-    
+
     Provider.of<UserProvider>(context).modifyUser(userInform);
     Navigator.pushNamed(context, "/settings");
   }
