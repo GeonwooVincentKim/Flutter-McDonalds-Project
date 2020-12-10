@@ -226,7 +226,7 @@ var DUMMY_MENU = [
     releaseYear: '2017',
     releaseMonth: '1'
   ),
-  
+
   MenuModel(
     id: 'ham02',
     menuTitle: '1955 Burger',
@@ -296,7 +296,7 @@ var DUMMY_MENU = [
     releaseYear: '1981',
     releaseMonth: '3'
   ),
-  
+
   MenuModel(
     id: 'cafe03',
     menuTitle: 'Cappuchino',
@@ -306,7 +306,7 @@ var DUMMY_MENU = [
     releaseYear: '1981',
     releaseMonth: '3'
   ),
-  
+
   MenuModel(
     id: 'cafe04',
     menuTitle: 'Decaffeine Americano',

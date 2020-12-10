@@ -12,6 +12,14 @@ class CategoryModel{
     @required this.image
   });
 
+  factory CategoryModel.getInfo(CategoryModel cate){
+    return CategoryModel(
+      categoryID: cate.categoryID ?? '',
+      name: cate.name ?? '',
+      image: cate.image ?? ''
+    );
+  }
+
   factory CategoryModel.initialize(CategoryModel cate){
     return CategoryModel(
       categoryID: '',

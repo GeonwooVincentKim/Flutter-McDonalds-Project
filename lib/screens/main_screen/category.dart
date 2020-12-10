@@ -3,6 +3,7 @@ import 'package:myTestApp_Test/model/model_category.dart';
 import 'package:myTestApp_Test/provider/provider_category.dart';
 import 'package:myTestApp_Test/provider/provider_filter.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
+import 'package:myTestApp_Test/widget/list_tile/list_tile_category.dart';
 import 'package:myTestApp_Test/widget/list_tile/list_tile_menu.dart';
 import 'package:provider/provider.dart';
 
@@ -55,7 +56,7 @@ class _CategoryState extends State<Category> {
                 crossAxisSpacing: 30.0,
                 mainAxisSpacing: 30.0
               ),
-              itemBuilder: (context, index) => Text("HI"),
+              itemBuilder: (context, index) => ListTileCategory(cate: listMenu[index])
               // itemBuilder: (context, index) => ListTileMenu(menuContents: listMenu[index]),
             );
         }

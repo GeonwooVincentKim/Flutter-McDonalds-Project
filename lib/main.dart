@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myTestApp_Test/provider/provider_category.dart';
 import 'package:myTestApp_Test/provider/provider_filter.dart';
 import 'package:myTestApp_Test/provider/provider_menu.dart';
 import 'package:myTestApp_Test/provider/provider_theme.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget{
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => UserProvider()),
+        ChangeNotifierProvider(create: (_) => ProviderCategory()),
         ChangeNotifierProvider(create: (_) => ProviderMenu()),
         ChangeNotifierProvider(create: (_) => FilterProvider()),
         ChangeNotifierProvider(create: (_) => ProviderThemeDynamic()),
