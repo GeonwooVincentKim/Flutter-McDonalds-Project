@@ -10,8 +10,8 @@ class ImageCropCircle extends StatelessWidget {
   MenuModel menu;
 
   ImageCropCircle({
-    this.width, 
-    this.height, 
+    this.width,
+    this.height,
     this.imagePath
   });
 

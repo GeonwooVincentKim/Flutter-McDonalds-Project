@@ -28,16 +28,18 @@ class _TestSideMenuState extends State<TestSideMenu> {
               )
             ),
           ),
+          // It changes color black to white(or white to black)
+          // when you click the switch.
           ListTile(
-               title: Text("Test"),
-               trailing: Switch(
-                 value: themeProvider.getDarkMode(),
-                 onChanged: (value){
-                   setState(() {
-                     themeProvider.changeDarkMode(value);
-                   });
-                 }
-               ),
+            title: Text("Test"),
+            trailing: Switch(
+              value: themeProvider.getDarkMode(),
+              onChanged: (value){
+                setState(() {
+                  themeProvider.changeDarkMode(value);
+                });
+              }
+            ),
           ),
           ListTile(title: Text("Filter"), onTap: (){Navigator.pushNamed(context, "/detail");}),
         ],

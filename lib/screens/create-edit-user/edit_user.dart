@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_user.dart';
 import 'package:myTestApp_Test/provider/provider_user.dart';
-import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
 import 'package:myTestApp_Test/shared/style/divider.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/widget/list_tile/card_tile_edit_user.dart';

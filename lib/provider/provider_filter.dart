@@ -6,7 +6,7 @@ class FilterProvider with ChangeNotifier{
   // MenuModel menuFilter = MenuModel(releaseYear: null, releaseMonth: null);
   List<MenuModel> ordersNoMap = [];
   List<String> _orderStrings = [
-    
+
   ];
 
   List<MenuModel> get orderFilterNoMap => [...ordersNoMap];
@@ -19,7 +19,7 @@ class FilterProvider with ChangeNotifier{
     'releaseMonth': '',
     'releaseMonthText': null
   };
-  
+
   final Map<String, dynamic> _prevOrders = {
     // 'releaseYearMonth': '',
     // 'releaseYear': null,

@@ -23,7 +23,7 @@ class PositionedImage extends StatelessWidget {
     @required this.selection,
     this.imagePath,
   });
-  
+
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -33,7 +33,6 @@ class PositionedImage extends StatelessWidget {
       width: width,
       left: left,
       child: selection != 0 ?
-      // 0XFFDCE775 (lime[300])
         Container(
           width: imageWidth,
           height: imageHeight,
@@ -44,7 +43,7 @@ class PositionedImage extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(circularSize),
           )
-        ) : 
+        ) :
         ImageCropCircle(
           width: width,
           height: height,

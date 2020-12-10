@@ -26,23 +26,13 @@ class UserModel{
     );
   }
 
-  // factory UserModel.fromUserInfoMap(Map<String, dynamic> user){
-  //   return UserModel(
-  //     id: user['id'] ?? '',
-  //     firstName: user['firstName'] ?? '',
-  //     lastName: user['lastName'] ?? '',
-  //     userEmail: user['userEmail'] ?? '',
-  //     yourAddress: user['userAddress'] ?? '',
-  //   );
-  // }
-
-  // factory UserModel.initialData(){
-  //   return UserModel(
-  //     id: '',
-  //     firstName: '',
-  //     lastName: '',
-  //     userEmail: '',
-  //     yourAddress: ''
-  //   );
-  // }
+  factory UserModel.initialData(){
+    return UserModel(
+      id: '',
+      firstName: '',
+      lastName: '',
+      userEmail: '',
+      yourAddress: ''
+    );
+  }
 }

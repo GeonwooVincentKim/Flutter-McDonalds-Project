@@ -11,7 +11,6 @@ import 'package:myTestApp_Test/screens/main_screen/cart.dart';
 import 'package:myTestApp_Test/screens/main_screen/details.dart';
 import 'package:myTestApp_Test/screens/main_screen/orders.dart';
 import 'package:myTestApp_Test/screens/main_screen/settings.dart';
-import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:provider/provider.dart';
 
 

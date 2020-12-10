@@ -7,12 +7,12 @@ import 'package:myTestApp_Test/widget/drop_down/drop_down.dart';
 class DropDownDateFormatMap extends StatefulWidget {
   final GlobalKey<FormState> yearmonthKey;
   Map<String, dynamic> menuYearMonthMap;
-  
+
   DropDownDateFormatMap({
     @required this.yearmonthKey,
     this.menuYearMonthMap
   });
- 
+
   @override
   _DropDownDateFormatMapState createState() => _DropDownDateFormatMapState();
 }
@@ -31,7 +31,7 @@ class _DropDownDateFormatMapState extends State<DropDownDateFormatMap> {
       monthList.add(i.toString());
     }
 
-    // When it is map
+    // When it is map, and the user gonna filter the list.
     if(widget.menuYearMonthMap['releaseYearText'] == '')
       widget.menuYearMonthMap['releaseYearText'] = yearList[yearList.length - 1];
     if(widget.menuYearMonthMap['releaseMonthText'] == '')
@@ -67,7 +67,7 @@ class _DropDownDateFormatMapState extends State<DropDownDateFormatMap> {
       items: monthList
     );
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(

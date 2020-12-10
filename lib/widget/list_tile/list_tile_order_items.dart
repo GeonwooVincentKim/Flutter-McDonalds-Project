@@ -22,8 +22,7 @@ class OrdersItemListTile extends StatelessWidget {
             physics: NeverScrollableScrollPhysics(),
             separatorBuilder: (context, index) => TransparentDivider(),
             itemCount: menuList.length,
-            itemBuilder: (context, index) => ListTileMenu(menuContents: menuList[index]),
-            // itemBuilder: (context, index) => OrdersList(orderMenu: menuList[index]),
+            itemBuilder: (context, index) => ListTileMenu(menuContents: menuList[index])
           )
         ]
       ) : Container(

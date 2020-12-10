@@ -16,7 +16,6 @@ class CreateNewMenu extends StatefulWidget {
 
 class _CreateNewMenuState extends State<CreateNewMenu> {
   final _formKey = GlobalKey<FormState>();
-  // List<String> newMenuList = ['', '', '', '', '', ''];
   List<MenuModel> menuContentList = [];
 
   List<String> mainMenuList = [];
@@ -89,7 +88,7 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
             validator: (value){
               if(value.isEmpty) return 'Please input any text';
               return null;
-            }, 
+            },
             onSaved: (String value){newMenu['menuTitle'] = value;}
             // onSaved: (String value){newMenu.menuTitle = value;},
           )
@@ -140,13 +139,12 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
       menuYearMonthMap: newMenu,
     );
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildNewAppBar(),
       body: _buildNewBody(),
-      // backgroundColor: BasicBackgroundColor,
       drawer: SideMenu(),
     );
   }

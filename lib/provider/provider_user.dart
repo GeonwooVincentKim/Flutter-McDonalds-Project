@@ -20,19 +20,4 @@ class UserProvider with ChangeNotifier{
     _userList = modifyUser;
     notifyListeners();
   }
-  
-  // void editUser(Map<String, dynamic> _formUserData){
-  //   UserModel editUser = UserModel(
-  //     id: _userList.id,
-  //     // id: _formUserData['id'],
-  //     // id: data['id'],
-  //     // firstName: _userFirstName,
-  //     firstName: _formUserData['firstName'],
-  //     lastName: _formUserData['lastName'],
-  //     userEmail: _formUserData['userEmail'],
-  //     yourAddress: _formUserData['userAddress']
-  //   );
-  //   _userList = editUser;
-  //   notifyListeners();
-  // }
 }

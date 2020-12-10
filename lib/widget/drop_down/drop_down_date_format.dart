@@ -30,7 +30,7 @@ class _DropDownDateFormatState extends State<DropDownDateFormat> {
     for(int i = 1; i <= today.month; i++){
       monthList.add(i.toString());
     }
-    
+
     // When it is map
     if(widget.menuYearMonthMap['releaseYear'] == '')
       widget.menuYearMonthMap['releaseYear'] = yearList[yearList.length - 1];
@@ -65,7 +65,7 @@ class _DropDownDateFormatState extends State<DropDownDateFormat> {
       items: monthList
     );
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -22,7 +22,6 @@ class Orders extends StatefulWidget {
 }
 
 class _OrdersState extends State<Orders> {
-  // List<String> yourOrder = <String>['Your Orders', 'Total Prices'];
   String yourOrder = 'Previous Orders';
   String menuID;
   List<MenuModel> totalPrices = [];
@@ -48,7 +47,6 @@ class _OrdersState extends State<Orders> {
       child: SingleChildScrollView(
         child: Consumer<ProviderMenu>(
           builder: (ctx, orderMenu, child){
-            
             final List<MenuModel> subMenuList = orderMenu.cartList;
             final List<MenuModel> cartPage = subMenuList.toList();
 
@@ -76,7 +74,7 @@ class _OrdersState extends State<Orders> {
       ),
     );
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

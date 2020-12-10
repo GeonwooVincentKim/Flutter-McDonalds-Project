@@ -7,7 +7,7 @@ class ContentDetails extends StatelessWidget{
   final String ctxContents;
 
   ContentDetails({@required this.ctxTitle, @required this.ctxContents});
-  
+
   @override
   Widget build(BuildContext context) {
     return RichText(

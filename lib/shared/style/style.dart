@@ -36,4 +36,4 @@ const imageWidth = 300.0;
 const imageHeight = 300.0;
 
 // ignore: non_constant_identifier_names
-RoundedRectangleBorder AlertBorder = RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0));
+RoundedRectangleBorder alertBorder = RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0));

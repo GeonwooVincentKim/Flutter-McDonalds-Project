@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myTestApp_Test/provider/provider_theme.dart';
 import 'package:myTestApp_Test/screens/main_screen/home.dart';
 import 'package:myTestApp_Test/screens/main_screen/menu.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
-import 'package:provider/provider.dart';
 
 
 class Body extends StatefulWidget {

@@ -22,7 +22,6 @@ class CartItemListTile extends StatelessWidget {
             physics: NeverScrollableScrollPhysics(),
             separatorBuilder: (context, index) => TransparentDivider(),
             itemCount: menuList.length,
-            // itemBuilder: (context, index) => SubMenuTile(subMenu: menuList[index],),
             itemBuilder: (context, index) => CartList(orderMenu: menuList[index])
           )
         ]

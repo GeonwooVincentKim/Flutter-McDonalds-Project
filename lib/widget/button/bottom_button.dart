@@ -14,12 +14,11 @@ class BottomButton extends StatelessWidget {
     @required this.onPressed,
     this.shape
   });
-  
+
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
       onPressed: onPressed,
-      // color: alertButtonColor,
       child: Text(contents, style: alertDialogText),
       shape: shape
     );

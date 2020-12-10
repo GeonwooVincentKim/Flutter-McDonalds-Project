@@ -12,19 +12,13 @@ import 'package:provider/provider.dart';
 
 class Cart extends StatefulWidget {
   final String title;
-  // final Color cartColor;
-
-  Cart({
-    @required this.title,
-    // @required this.cartColor  
-  });
+  Cart({@required this.title});
 
   @override
   _CartState createState() => _CartState();
 }
 
 class _CartState extends State<Cart> {
-  // String yourOrder = 'Your Orders';
   List<String> yourOrder = <String>['Your Orders', 'Total Prices'];
   String menuID;
   List<MenuModel> totalPrices = [];
@@ -110,14 +104,13 @@ class _CartState extends State<Cart> {
       ),
     );
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildCartAppBar(),
       drawer: SideMenu(),
       body: _buildCartBody(context),
-      // backgroundColor: BasicBackgroundColor,
     );
   }
 

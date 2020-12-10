@@ -11,30 +11,9 @@ import 'package:provider/provider.dart';
 class ListTileMenu extends StatelessWidget{
   final MenuModel menuContents;
   ListTileMenu({@required this.menuContents});
-  
-  dynamic listImagesNotFound = [
-    "assets/burger/1955Burger.png",
-    "assets/Americano.png",
-    "assets/McMorning/BLTMuffin.png",
-    "assets/sides_and_desserts/ApplePie.png",
-    'assets/basicimages/McDonaldsLogo.jpg'
-  ];
-  Random rnd = new Random();
 
-  Widget _buildDisplay(BuildContext context){
-    int min = 0;
-    int max = listImagesNotFound.length + 1;
-    int r = min + rnd.nextInt(max - min);
-    String image_name = listImagesNotFound[r].toString();
-  }
-
-
+  // If there is no name of image, then shows the 'McDonaldsLogo.jpg' file.
   Widget _displayMedia(String media){
-    // int min = 0;
-    // int max = listImagesNotFound.length + 1;
-    // int r = min + rnd.nextInt(max - min);
-    // String imageName = listImagesNotFound[r].toString();
-
     if(media == null || media == "") {
       return Image.asset('assets/basicimages/McDonaldsLogo.jpg', fit : BoxFit.fill);
     } else {
@@ -42,11 +21,7 @@ class ListTileMenu extends StatelessWidget{
     }
   }
 
-  Widget _buildMenuImage(){
-    return Container(
-      child: _displayMedia(menuContents.image),
-    );
-  }
+  Widget _buildMenuImage() => Container(child: _displayMedia(menuContents.image));
 
   Widget _buildMenuBody(BuildContext context){
     return Container(
@@ -66,7 +41,7 @@ class ListTileMenu extends StatelessWidget{
           Divider(height: 5, color: Colors.transparent),
           TextDesign(
             // basicText: menuContents.releaseDate.toString(),
-            basicText: menuContents.releaseYear.toString() + "/" 
+            basicText: menuContents.releaseYear.toString() + "/"
             + menuContents.releaseMonth.toString(),
             textStyle: subListSize
           ),

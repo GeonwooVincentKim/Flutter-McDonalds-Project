@@ -29,7 +29,6 @@ class _MenuState extends State<Menu> {
   Widget _buildMenuAppBar(){
     return AppBar(
       title: Text(widget.title),
-      // backgroundColor: Theme.of(context).primaryColor,
       centerTitle: true,
       actions: [
         IconButton(

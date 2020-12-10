@@ -11,13 +11,8 @@ import 'package:provider/provider.dart';
 
 
 class Details extends StatefulWidget {
-  // final Color backgroundColor;
   final String menuID;
-
-  Details({
-    // @required this.backgroundColor,
-    @required this.menuID
-  });
+  Details({@required this.menuID});
 
   @override
   _DetailsState createState() => _DetailsState();
@@ -37,17 +32,15 @@ class _DetailsState extends State<Details> {
     }
     super.initState();
   }
-  
+
   Widget _buildDetailAppBar(){
     return AppBar(
       title: Text(detailMenu.menuTitle),
-      // backgroundColor: BasicAppBarColor,
       centerTitle: true,
       actions: [
         IconButton(
           icon: Icon(IconMoon.iadd), color: Colors.white,
           onPressed: () => _buildAlertTextForm(context),
-          // onPressed: () => Navigator.pushNamed(context, "/cart"),
         )
       ],
     );
@@ -73,7 +66,6 @@ class _DetailsState extends State<Details> {
     double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       height: screenHeight / 1.5,
-      // width: screenWidth,
       padding: EdgeInsets.symmetric(horizontal: basicPadding),
       child: Stack(
         overflow: Overflow.visible,
@@ -132,7 +124,7 @@ class _DetailsState extends State<Details> {
       builder: (BuildContext context){
         return AlertDialog(
           title: Text("Add to the Cart", textAlign: TextAlign.center),
-          shape: AlertBorder,
+          shape: alertBorder,
           content:  Container(
             width: MediaQuery.of(context).size.width,
             child: Form(

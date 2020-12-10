@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:myTestApp_Test/model/model_menu.dart';
+import 'package:myTestApp_Test/provider/provider_menu.dart';
 import 'package:myTestApp_Test/widget/image_widget/positioned/positioned_image.dart';
+import 'package:provider/provider.dart';
 
 
 class CartList extends StatelessWidget{
@@ -12,31 +14,7 @@ class CartList extends StatelessWidget{
   Widget build(BuildContext context) {
     return Container(
       child: GestureDetector(
-        onTap: (){
-          // Provider.of<MenuProvider>(context, listen: false).selectDetailMenu(orderMenu);
-          Navigator.pushNamed(context, "/details/${orderMenu.id}");
-        },
-        // child: Container(
-        //       child: Dismissible(
-        //           key: UniqueKey(),
-        //           child: _buildTileContent(),
-        //           background: _buildSlideLeft(),
-        //           secondaryBackground: _buildSlideRight(),
-        //           onDismissed: (direction){
-        //             // if(direction == DismissDirection.startToEnd){
-        //             //   Provider.of<MenuProvider>(context, listen: false).selectGame(game);
-        //             //   // Provider.of<GameProvider>(context, listen: false).changeProgression(game, 50);
-        //             //   Navigator.pushNamed(context, "/createGame");
-        //             //   print("HI");
-        //             // }
-        //             if (direction == DismissDirection.endToStart){
-        //               Provider.of<MenuProvider>(context, listen: false).deleteDetailMenu(orderMenu);
-        //               // print(orderMenu);
-        //               // print("Yeah"); 
-        //             }
-        //           },
-        //         )
-        //     ),
+        onTap: () => Navigator.pushNamed(context, "/details/${orderMenu.id}"),
         child: Container(
           child: Dismissible(
             key: UniqueKey(),
@@ -46,16 +24,9 @@ class CartList extends StatelessWidget{
               secondaryActions: [
                 IconSlideAction(
                   caption: "Delete",
-                  // color: Colors.grey.shade300,
                   icon: Icons.delete,
                   closeOnTap: false,
-                  onTap: (){
-                    print("Testing..");
-                    // Toast.show(icon:, context,
-                    //   duration: Toast.LENGTH_SHORT, 
-                    // );
-                    // Provider.of<MenuProvider>(context, listen: false).deleteDetailMenu(orderMenu);
-                  }
+                  onTap: () => Provider.of<ProviderMenu>(context, listen: false).deleteOrderMenu(orderMenu)
                 ),
               ],
               child: Container(

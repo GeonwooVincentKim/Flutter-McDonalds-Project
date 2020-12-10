@@ -4,8 +4,6 @@ import 'test_sidemenu.dart';
 
 
 class TestPage extends StatefulWidget {
-  // final String testID;
-  // TestPage({@required this.testID});
   @override
   _TestPageState createState() => _TestPageState();
 }
@@ -13,7 +11,6 @@ class TestPage extends StatefulWidget {
 class _TestPageState extends State<TestPage> {
   Widget _buildTestAppBar(){
     return AppBar(
-      // title: Text(widget.testID),
       title: Text("TEST.."),
       centerTitle: true,
       actions: [

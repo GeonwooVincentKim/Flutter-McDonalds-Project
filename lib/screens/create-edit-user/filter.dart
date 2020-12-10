@@ -107,7 +107,6 @@ class _FilterState extends State<Filter> {
             key: _formKey,
             child: Column(
               children: <Widget>[
-                // _buildFilterYearMonth(),
                 DropDownDateFormatMap(
                   yearmonthKey: _formKey,
                   menuYearMonthMap: _currentOrdersFilters,
@@ -127,23 +126,11 @@ class _FilterState extends State<Filter> {
     );
   }
 
-  Widget _buildFilterYearMonth(){
-    // return DropDownDateFormat(
-    //   yearmonthKey: _formKey,
-    //   menuModelYearMonth: newFilterData
-    // );
-    return DropDownDateFormatMap(
-      yearmonthKey: _formKey,
-      menuYearMonthMap: _currentOrdersFilters,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildFilterAppBar(),
       body: _buildFilterBody(),
-      // backgroundColor: BasicBackgroundColor,
       drawer: SideMenu(),
     );
   }

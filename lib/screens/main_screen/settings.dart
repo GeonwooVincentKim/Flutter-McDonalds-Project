@@ -64,9 +64,7 @@ class Settings extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: basicPadding, horizontal: basicPadding),
       color: Theme.of(context).primaryColor,
       child: Column(
-        // crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
-        // overflow: Overflow.visible,
         children: <Widget>[
           Text("Your Account Info".toUpperCase(), style: menuTitleSize),
           TransparentDivider(),
@@ -84,9 +82,7 @@ class Settings extends StatelessWidget {
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: basicPadding, vertical: basicPadding),
-      // color: CartOrderColor,
       color: Theme.of(context).primaryColor,
-      // color: lightTheme.primaryColor,
       width: screenWidth,
       child: BottomButton(contents: "Modify".toUpperCase(), onPressed: () => Navigator.pushNamed(context, "/settings/modify")),
     );
