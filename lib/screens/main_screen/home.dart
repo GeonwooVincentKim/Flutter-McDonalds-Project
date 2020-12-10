@@ -11,6 +11,9 @@ class Home extends StatefulWidget {
   // This page will going to be use as a Special-Menu.
   // Special-Menu has the features that a User or Administrator
   // can add several menus what they want.
+
+  // You also have to create Dummy-menu for Special-Menu,
+  // but not to difficult.
   Home({
     @required this.pageIndex,
     @required this.title,
