@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_menu.dart';
+import 'package:myTestApp_Test/provider/provider_filter.dart';
 import 'package:myTestApp_Test/provider/provider_menu.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
+import 'package:myTestApp_Test/shared/helpers/functions.dart';
+import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
 import 'package:myTestApp_Test/shared/style/divider.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/widget/list_tile/list_tile_order_items.dart';
@@ -35,6 +38,15 @@ class _OrdersState extends State<Orders> {
     return AppBar(
       title: Text("Orders"),
       centerTitle: true,
+      actions: [
+        IconButton(
+          icon: Icon(
+            IconMoon.ifilter,
+            color: Theme.of(context).cardColor
+          ),
+          onPressed: () => Navigator.pushNamed(context, "/filter", arguments: "orders"),
+        )
+      ]
     );
   }
 
@@ -47,16 +59,20 @@ class _OrdersState extends State<Orders> {
       child: SingleChildScrollView(
         child: Consumer<ProviderMenu>(
           builder: (ctx, orderMenu, child){
-            final List<MenuModel> subMenuList = orderMenu.cartList;
-            final List<MenuModel> cartPage = subMenuList.toList();
+            final Map<String, dynamic> orderFilter = Provider.of<FilterProvider>(context).orderFilters;
+            final List<MenuModel> subMenuList = orderMenu.cartList.where((ordered) => checkFilter(ordered, orderFilter)).toList();
+            // final List<MenuModel> subMenuList = orderMenu.cartList;
+            // final List<MenuModel> cartPage = subMenuList.toList();
 
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                OrdersItemListTile(title: yourOrder, menuList: cartPage),
-                TransparentDivider(),
-              ],
+            return subMenuList.length == 0 ?
+              Center(child: Text("No Menu inside the List")) :
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  OrdersItemListTile(title: yourOrder, menuList: subMenuList),
+                  TransparentDivider(),
+                ],
             );
           }
         )
