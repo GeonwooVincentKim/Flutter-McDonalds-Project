@@ -11,8 +11,8 @@ class ProviderMenu extends ChangeNotifier{
   List<MenuModel> _addCartItems = [];
   List<MenuModel> _addOrderedItems = [];
   List<MenuModel> _menuItems = DUMMY_MENU.toList();
-  
-  List<MenuModel> get menuList => [..._menuItems]; 
+
+  List<MenuModel> get menuList => [..._menuItems];
   List<MenuModel> get cartList => [..._addCartItems];
   List<MenuModel> get orderList => [..._addOrderedItems];
 

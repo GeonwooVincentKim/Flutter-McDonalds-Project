@@ -8,6 +8,9 @@ class Home extends StatefulWidget {
   final String title;
   final Function pageInfo;
 
+  // This page will going to be use as a Special-Menu.
+  // Special-Menu has the features that a User or Administrator
+  // can add several menus what they want.
   Home({
     @required this.pageIndex,
     @required this.title,

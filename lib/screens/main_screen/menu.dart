@@ -25,7 +25,7 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
-  List<MenuModel> mainPage = [];
+  // List<MenuModel> mainPage = [];
   Widget _buildMenuAppBar(){
     return AppBar(
       title: Text(widget.title),
