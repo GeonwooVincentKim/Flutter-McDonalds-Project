@@ -48,23 +48,19 @@ class _HomeState extends State<Home> {
 
   Widget _buildHomeBody(){
     return Container(
-      padding: EdgeInsets.all(basicPadding),
-      child: SingleChildScrollView(
-        // It doesn't need to use Stack. You can change anything
-        // What you want.
-        // child: Conumser<MenuModel>(
-        //   builder: (context, menuList, child) => Stack(
-        //     children: [
-        //
-        //     ]
-        //   )
-        // );
-        child: Column(
-          children: <Widget>[
-
-          ]
+      padding: EdgeInsets.symmetric(vertical: basicPadding, horizontal: basicPadding / 2),
+      margin: EdgeInsets.all(basicMargin),
+      child: GridView.builder(
+        shrinkWrap: true,
+        itemCount: 4,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          childAspectRatio: 0.75,
+          crossAxisSpacing: 30.0,
+          mainAxisSpacing: 30.0
         ),
-      ),
+        itemBuilder: (context, builder) => Text("HI")
+      )
     );
   }
 }

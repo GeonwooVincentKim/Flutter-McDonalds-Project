@@ -11,23 +11,13 @@ import 'package:provider/provider.dart';
 
 
 class Menu extends StatefulWidget {
-  // final int pageIndex;
-  // final String title;
-  // final Function pageInfo;
   final String menuID;
-
-  Menu({
-    @required this.menuID
-    // @required this.pageIndex,
-    // @required this.title,
-    // @required this.pageInfo,
-  });
+  Menu({@required this.menuID});
   @override
   _MenuState createState() => _MenuState();
 }
 
 class _MenuState extends State<Menu> {
-  // List<MenuModel> mainPage = [];
   MenuModel categoryTypes;
   @override
   void initState(){
