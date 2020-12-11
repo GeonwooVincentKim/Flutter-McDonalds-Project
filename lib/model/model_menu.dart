@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 
 class MenuModel{
-  String id;
-  String menuTitle;
-  String image;
-  int prices;
-  int type;
+  final String id;
+  final String menuTitle;
+  final String image;
+  final int prices;
+  final int type;
   // final String releaseDate;
-  String releaseYear;
-  String releaseMonth;
-  bool isInCart;
+  final String releaseYear;
+  final String releaseMonth;
+  final bool isInCart;
   List<MenuModel> childList;
 
   MenuModel({
@@ -55,16 +55,16 @@ class MenuModel{
   }
 
 
-  // factory MenuModel.initialData(){
-  //   return MenuModel(
-  //     id: '',
-  //     menuTitle: '',
-  //     image: '',
-  //     prices: 0,
-  //     type: 0,
-  //     // releaseDate: ''
-  //     releaseYear: '',
-  //     releaseMonth: ''
-  //   );
-  // }
+  factory MenuModel.initialData(){
+    return MenuModel(
+      id: '',
+      menuTitle: '',
+      image: '',
+      prices: 0,
+      type: 0,
+      // releaseDate: ''
+      releaseYear: '',
+      releaseMonth: ''
+    );
+  }
 }

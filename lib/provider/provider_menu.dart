@@ -8,19 +8,25 @@ import 'package:myTestApp_Test/shared/helpers/functions.dart';
 class ProviderMenu extends ChangeNotifier{
   MenuModel category;
   MenuModel menuDetail;
+  MenuModel specialMenu;
   int sum = 0;
 
   List<MenuModel> _addCartItems = [];
   List<MenuModel> _addOrderedItems = [];
+  List<MenuModel> _addSpecialItems = [];
   // List<MenuModel> _menuItems = DUMMY_CATEGORY.toList();
-  List<MenuModel> _menuItems = [ham, cafe, morning, dessert].toList();
+  List<MenuModel> _menuItems = DUMMY_CATEGORY.toList();
+  List<MenuModel> _menuSpecialItems = DUMMY_SPECIAL.toList();
   // List<MenuModel> _menuItems = DUMMY_MENU.toList();
 
   List<MenuModel> get menuList => [..._menuItems];
+  List<MenuModel> get specialMenuList => [..._menuSpecialItems];
   List<MenuModel> get cartList => [..._addCartItems];
   List<MenuModel> get orderList => [..._addOrderedItems];
+  // List<MenuModel> get specialList => [..._addSpecialItems];
 
   MenuModel get selectedMenu => menuDetail != null ? MenuModel.fromMenuModelInfo(selectedMenu) : null;
+  // MenuModel get selectedSpecialMenu => specialMenu != null ? MenuModel.fromMenuModelInfo(selectedSpecialMenu) : null;
   MenuModel get selectedCategory => category;
   int get totalPrices => cartList.fold(0, (sum, current) => sum + current.prices);
 
@@ -34,6 +40,12 @@ class ProviderMenu extends ChangeNotifier{
     notifyListeners();
   }
 
+  // void selectSpecialMenu(MenuModel specialContent){
+  //   specialMenu = specialContent;
+  //   notifyListeners();
+  // }
+
+  // Add new elements.
   void addMenu(MenuModel menuAdd){
     _addCartItems.add(menuAdd);
     notifyListeners();
@@ -43,6 +55,11 @@ class ProviderMenu extends ChangeNotifier{
     _addOrderedItems.add(menuOrderAdd);
     notifyListeners();
   }
+
+  // void addSpecialMenu(MenuModel menuSpecialAdd){
+  //   _addSpecialItems.add(menuSpecialAdd);
+  //   notifyListeners();
+  // }
 
   // void createMenu(MenuModel menuCreate){
   //   menuCreate.id = getRandomString(2);
@@ -54,7 +71,8 @@ class ProviderMenu extends ChangeNotifier{
   void createMenu(Map<String, dynamic> menuCreate){
     menuCreate['id'] = getRandomString(2);
     final MenuModel menuSettings = MenuModel.fromMenuModelMapInfo(menuCreate);
-    _menuItems.add(menuSettings);
+    // _menuItems.add(menuSettings);
+    _menuSpecialItems.add(menuSettings);
     notifyListeners();
   }
 

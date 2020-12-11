@@ -38,7 +38,6 @@ class ListTileMenu extends StatelessWidget{
           ),
           Divider(height: 5, color: Colors.transparent),
           TextDesign(
-            // basicText: menuContents.releaseDate.toString(),
             basicText: menuContents.releaseYear.toString() + "/"
             + menuContents.releaseMonth.toString(),
             textStyle: subListSize

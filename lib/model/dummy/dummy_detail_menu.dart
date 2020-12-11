@@ -446,7 +446,6 @@ var DUMMY_DESSERT = [
     type: 3,
     releaseYear: '2017',
     releaseMonth: '6'
-    // releaseDate: '2017/05'
   ),
 
   MenuModel(
@@ -457,7 +456,6 @@ var DUMMY_DESSERT = [
     type: 3,
     releaseYear: '2020',
     releaseMonth: '9'
-    // releaseDate: '2020/09'
   ),
 ].toList();
 
@@ -468,7 +466,21 @@ var DUMMY_CATEGORY = [
   MenuModel(id: 'dessert', menuTitle: 'dessert', image: 'assets/img/sides_and_desserts/ApplePie.png', childList: DUMMY_DESSERT)
 ];
 
-MenuModel ham = MenuModel(id: 'ham', menuTitle: 'hamburger', image: 'assets/img/burger/1955HashBrown.png', childList: DUMMY_HAM);
-MenuModel cafe = MenuModel(id: 'cafe', menuTitle: 'cafe', image: 'assets/img/McCafe_and_beverages/Americano.png', childList: DUMMY_CAFE);
-MenuModel morning = MenuModel(id: 'morning', menuTitle: 'morning', image: 'assets/img/McMorning/BaconEggMcMuffin.png', childList: DUMMY_MORNING);
-MenuModel dessert = MenuModel(id: 'dessert', menuTitle: 'dessert', image: 'assets/img/sides_and_desserts/ApplePie.png', childList: DUMMY_DESSERT);
+var DUMMY_SPECIAL = [
+  MenuModel(
+    id: 'sp01',
+    menuTitle: 'Rich Potato Burger',
+    image: 'assets/img/burger/1955HashBrown.png',
+    prices: 8500,
+    releaseYear: '2020',
+    releaseMonth: '12'
+  ),
+  MenuModel(
+    id: 'sp02',
+    menuTitle: 'Rich Potato Mushroom Burger',
+    image: 'assets/img/burger/RichPotatoMushroomBurgerMeal.png',
+    prices: 8900,
+    releaseYear: '2020',
+    releaseMonth: '12'
+  )
+];

@@ -68,6 +68,8 @@ flutter:
     - assets/img/burger/McSpicyShanghaiBurger.png
     - assets/img/burger/ShrimpBeefBurger.png
     - assets/img/burger/SupremeShrimpBurger.png
+    - assets/img/burger/RichPotatoBurgerMeal.png
+    - assets/img/burger/RichPotatoMushroomBurgerMeal.png
 
     - assets/img/McCafe_and_beverages/Americano.png
     - assets/img/McCafe_and_beverages/CafeLatte.png
