@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:myTestApp_Test/model/model_home.dart';
+import 'package:myTestApp_Test/provider/provider_home.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
+import 'package:myTestApp_Test/widget/list_tile/list_tile_home.dart';
+import 'package:provider/provider.dart';
 
 
 class Home extends StatefulWidget {
@@ -50,16 +54,23 @@ class _HomeState extends State<Home> {
     return Container(
       padding: EdgeInsets.symmetric(vertical: basicPadding, horizontal: basicPadding / 2),
       margin: EdgeInsets.all(basicMargin),
-      child: GridView.builder(
-        shrinkWrap: true,
-        itemCount: 4,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 0.75,
-          crossAxisSpacing: 30.0,
-          mainAxisSpacing: 30.0
-        ),
-        itemBuilder: (context, builder) => Text("HI")
+      child: Consumer<ProviderHome>(
+        builder: (ctx, home, child){
+          final List<ModelHome> listHome = home.homeContent;
+          return listHome.length == 0 ?
+            Center(child: Text("No List")) :
+            GridView.builder(
+              shrinkWrap: true,
+              itemCount: listHome.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 0.75,
+                crossAxisSpacing: 30.0,
+                mainAxisSpacing: 30.0
+              ),
+              itemBuilder: (context, index) => ListTileHome(listHome: listHome[index])
+          );
+        }
       )
     );
   }

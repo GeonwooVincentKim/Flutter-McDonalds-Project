@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/provider/provider_category.dart';
 import 'package:myTestApp_Test/provider/provider_filter.dart';
+import 'package:myTestApp_Test/provider/provider_home.dart';
 import 'package:myTestApp_Test/provider/provider_menu.dart';
 import 'package:myTestApp_Test/provider/provider_theme.dart';
 import 'package:myTestApp_Test/provider/provider_user.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget{
         ChangeNotifierProvider(create: (_) => ProviderMenu()),
         ChangeNotifierProvider(create: (_) => FilterProvider()),
         ChangeNotifierProvider(create: (_) => ProviderThemeDynamic()),
+        ChangeNotifierProvider(create: (_) => ProviderHome()),
       ],
       child: MyAppSub()
     );
@@ -67,6 +69,9 @@ class MyAppSub extends StatelessWidget{
         }else if(pathElements[1] == 'specialMenu'){
           String specialID = pathElements[2];
           return MaterialPageRoute(builder: (BuildContext context) => Details(menuID: specialID));
+        }else if(pathElements[1] == 'home'){
+          String homeID = pathElements[2];
+          return MaterialPageRoute(builder: (BuildContext context) => NotExist(title: "Page does not exist"));
         }
       },
       onUnknownRoute: (settings) {

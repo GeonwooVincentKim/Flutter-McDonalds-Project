@@ -55,6 +55,9 @@ flutter:
   assets:
     - assets/basicimages/McDonaldsLogo.jpg
     - assets/basicimages/404.jpg
+    - assets/basicimages/question.jpg
+    - assets/basicimages/qna.png
+    - assets/basicimages/order.png
 
     - assets/img/burger/1955Burger.png
     - assets/img/burger/1955HashBrown.png
