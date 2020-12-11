@@ -3,6 +3,7 @@ import 'package:myTestApp_Test/model/model_menu.dart';
 import 'package:myTestApp_Test/provider/provider_filter.dart';
 import 'package:myTestApp_Test/provider/provider_menu.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
+import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/widget/list_tile/list_tile_special.dart';
 import 'package:provider/provider.dart';
@@ -20,6 +21,15 @@ class _SpecialState extends State<Special> {
     return AppBar(
       title: Text(widget.title),
       centerTitle: true,
+      actions: [
+        IconButton(
+          icon: Icon(
+            IconMoon.ipencil,
+            color: Theme.of(context).cardColor,
+          ),
+          onPressed: () => Navigator.pushNamed(context, "/mainMenu/createMenu")
+        )
+      ],
     );
   }
 
