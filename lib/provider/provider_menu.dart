@@ -7,7 +7,7 @@ import 'package:myTestApp_Test/shared/helpers/functions.dart';
 
 class ProviderMenu extends ChangeNotifier{
   MenuModel category;
-  MenuModel menuDetail;
+  MenuModel menuDetail = MenuModel(id: '', image: '', menuTitle: '', childList: []);
   MenuModel specialMenu;
   int sum = 0;
 
@@ -25,9 +25,9 @@ class ProviderMenu extends ChangeNotifier{
   List<MenuModel> get orderList => [..._addOrderedItems];
   // List<MenuModel> get specialList => [..._addSpecialItems];
 
-  MenuModel get selectedMenu => menuDetail != null ? MenuModel.fromMenuModelInfo(selectedMenu) : null;
+  MenuModel get selectedMenu => menuDetail != null ? MenuModel.fromMenuModelInfo(selectedMenu) : '';
   // MenuModel get selectedSpecialMenu => specialMenu != null ? MenuModel.fromMenuModelInfo(selectedSpecialMenu) : null;
-  MenuModel get selectedCategory => category;
+  MenuModel get selectedCategory => category != null ? MenuModel.fromMenuModelInfo(category) : '';
   int get totalPrices => cartList.fold(0, (sum, current) => sum + current.prices);
 
   void selectMenu(MenuModel menuContent){

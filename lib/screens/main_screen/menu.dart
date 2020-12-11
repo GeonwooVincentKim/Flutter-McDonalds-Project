@@ -21,10 +21,14 @@ class _MenuState extends State<Menu> {
   MenuModel categoryTypes;
   @override
   void initState(){
+    // categoryTypes = 
     categoryTypes = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
-    if(categoryTypes == null || categoryTypes == ''){
+    if(categoryTypes == null){
       final List<MenuModel> menuTitle = Provider.of<ProviderMenu>(context, listen: false).menuList;
       categoryTypes = menuTitle.firstWhere((menu) => menu.id == widget.menuID);
+    }else{
+      // categoryTypes = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
+      print("Does Does Does Does");
     }
     super.initState();
   }
@@ -62,8 +66,8 @@ class _MenuState extends State<Menu> {
           // final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilter(menu, menuFilter)).toList();
           // final MenuModel filter = Provider.of<FilterProvider>(context).changeOrderNoMapFilters(filter);
           MenuModel categoryMenu = Provider.of<ProviderMenu>(context, listen: false).selectedCategory;
-          print(categoryMenu.childList);
-          final List<MenuModel> listMenu = categoryMenu.childList;
+          print(categoryMenu.menuTitle);
+          List<MenuModel> listMenu = categoryMenu.childList;
           // final List<MenuModel> listMenu = menu.menuList.toList();
           // final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilter(menu, ))
           // mainPage = listMenu.toList();

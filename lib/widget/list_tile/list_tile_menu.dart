@@ -10,16 +10,14 @@ class ListTileMenu extends StatelessWidget{
   final MenuModel menuContents;
   ListTileMenu({@required this.menuContents});
 
-  // If there is no name of image, then shows the 'McDonaldsLogo.jpg' file.
-  Widget _displayMedia(String media){
-    if(media == null || media == "") {
-      return Image.asset('assets/basicimages/McDonaldsLogo.jpg', fit : BoxFit.fill);
-    } else {
-      return Image.asset(media, fit : BoxFit.fill);
-    }
+  Widget _buildMenuImage(){
+    return Container(
+      child: Image.asset(
+        menuContents.image,
+        fit: BoxFit.fill
+      )
+    );
   }
-
-  Widget _buildMenuImage() => Container(child: _displayMedia(menuContents.image));
 
   Widget _buildMenuBody(BuildContext context){
     return Container(
