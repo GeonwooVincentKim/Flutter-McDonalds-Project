@@ -5,6 +5,9 @@ import 'package:myTestApp_Test/shared/style/text.dart';
 
 
 class NotExist extends StatelessWidget{
+  final String title;
+  NotExist({@required this.title});
+
   Widget _buildImage(){
     return Container(
       child: Image.asset(
@@ -34,7 +37,7 @@ class NotExist extends StatelessWidget{
 
   Widget _buildApp(){
     return AppBar(
-      title: Text("Page does not exist"),
+      title: Text(title),
       centerTitle: true
     );
   }

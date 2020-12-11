@@ -10,6 +10,9 @@ import 'package:provider/provider.dart';
 
 
 class Settings extends StatelessWidget {
+  final String title;
+  Settings({@required this.title});
+
   UserModel userInfo;
 
   @override
@@ -23,7 +26,7 @@ class Settings extends StatelessWidget {
 
   Widget _buildSettingsAppBar(BuildContext context){
     return AppBar(
-      title: Text("Settings"),
+      title: Text(title),
       centerTitle: true,
       actions: [
         IconButton(

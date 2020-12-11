@@ -10,6 +10,8 @@ import 'package:provider/provider.dart';
 
 
 class CreateNewMenu extends StatefulWidget {
+  final String title;
+  CreateNewMenu({@required this.title});
   @override
   _CreateNewMenuState createState() => _CreateNewMenuState();
 }
@@ -40,7 +42,7 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
 
   Widget _buildNewAppBar(){
     return AppBar(
-      title: Text("Menu"),
+      title: Text(widget.title),
       centerTitle: true,
       // backgroundColor: BasicAppBarColor,
       actions: [

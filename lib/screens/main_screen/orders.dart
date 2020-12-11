@@ -13,12 +13,7 @@ import 'package:provider/provider.dart';
 
 class Orders extends StatefulWidget {
   final String title;
-  // final Color ordersColor;
-
-  Orders({
-    @required this.title,
-    // @required this.ordersColor  
-  });
+  Orders({@required this.title,});
 
   @override
   _OrdersState createState() => _OrdersState();

@@ -14,6 +14,7 @@ import 'package:myTestApp_Test/screens/main_screen/menu.dart';
 import 'package:myTestApp_Test/screens/main_screen/not_exist.dart';
 import 'package:myTestApp_Test/screens/main_screen/orders.dart';
 import 'package:myTestApp_Test/screens/main_screen/settings.dart';
+import 'package:myTestApp_Test/screens/main_screen/special.dart';
 import 'package:provider/provider.dart';
 
 
@@ -45,13 +46,12 @@ class MyAppSub extends StatelessWidget{
       initialRoute: "/",
       routes: {
         "/": (context) => Body(),
-        '/settings': (context) => Settings(),
-        '/settings/modify': (context) => EditUser(),
-        // '/cart': (context) => Cart(title: "Cart", cartColor: BasicAppBarColor),
+        '/settings': (context) => Settings(title: "Settings"),
+        '/settings/modify': (context) => EditUser(title: "Modify"),
         '/cart': (context) => Cart(title: "Cart"),
-        // '/orders': (context) => Orders(title: "Orders", ordersColor: BasicAppBarColor),
         '/orders': (context) => Orders(title: "Orders"),
-        '/mainMenu/createMenu': (context) => CreateNewMenu(),
+        '/mainMenu/createMenu': (context) => CreateNewMenu(title: "Menu"),
+        '/special': (context) => Special(title: "Special"),
       },
       onGenerateRoute: (settings) {
         final List<String> pathElements = settings.name.split("/");
@@ -59,17 +59,18 @@ class MyAppSub extends StatelessWidget{
         if(pathElements[1] == 'food'){
           String foodID = pathElements[2];
           return MaterialPageRoute(builder: (BuildContext context) => Menu(menuID: foodID));
-          // return MaterialPageRoute(builder: (BuildContext context) => Details(menuID: foodID));
-          // return MaterialPageRoute(builder: (BuildContext context) => Details(backgroundColor: BasicAppBarColor, menuID: foodID));
         }else if(pathElements[1] == 'detail'){
           String foodID = pathElements[2];
           return MaterialPageRoute(builder: (BuildContext context) => Details(menuID: foodID));
         }else if(pathElements[1] == 'filter'){
           return MaterialPageRoute(builder: (BuildContext context) => Filter(settings.arguments));
+        }else if(pathElements[1] == 'specialMenu'){
+          String specialID = pathElements[2];
+          return MaterialPageRoute(builder: (BuildContext context) => NotExist(title: "Page does not exist"));
         }
       },
       onUnknownRoute: (settings) {
-        return MaterialPageRoute(builder: (BuildContext context) => NotExist());
+        return MaterialPageRoute(builder: (BuildContext context) => NotExist(title: "Page does not exist"));
       },
     );
   }

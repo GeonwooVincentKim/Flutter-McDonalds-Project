@@ -8,6 +8,8 @@ import 'package:provider/provider.dart';
 
 
 class EditUser extends StatefulWidget {
+  final String title;
+  EditUser({@required this.title});
   @override
   _EditUserState createState() => _EditUserState();
 }
@@ -30,7 +32,7 @@ class _EditUserState extends State<EditUser> {
 
   Widget _buildEditBar(BuildContext context){
     return AppBar(
-      title: Text("Modify"),
+      title: Text(widget.title),
       centerTitle: true,
       actions: [
         IconButton(
