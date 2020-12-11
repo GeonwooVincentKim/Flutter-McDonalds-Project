@@ -11,6 +11,7 @@ import 'package:myTestApp_Test/screens/create-edit-user/filter.dart';
 import 'package:myTestApp_Test/screens/main_screen/cart.dart';
 import 'package:myTestApp_Test/screens/main_screen/details.dart';
 import 'package:myTestApp_Test/screens/main_screen/menu.dart';
+import 'package:myTestApp_Test/screens/main_screen/not_exist.dart';
 import 'package:myTestApp_Test/screens/main_screen/orders.dart';
 import 'package:myTestApp_Test/screens/main_screen/settings.dart';
 import 'package:provider/provider.dart';
@@ -68,7 +69,7 @@ class MyAppSub extends StatelessWidget{
         }
       },
       onUnknownRoute: (settings) {
-        return MaterialPageRoute(builder: (BuildContext context) => MyApp());
+        return MaterialPageRoute(builder: (BuildContext context) => NotExist());
       },
     );
   }
