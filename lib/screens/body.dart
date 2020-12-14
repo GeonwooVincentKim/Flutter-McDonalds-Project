@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/screens/main_screen/category.dart';
 import 'package:myTestApp_Test/screens/main_screen/home.dart';
-import 'package:myTestApp_Test/screens/main_screen/menu.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
 
 
@@ -25,7 +24,6 @@ class _BodyState extends State<Body> {
       physics: ClampingScrollPhysics(),
       children: <Widget>[
         Home(pageIndex: _selectPage, title: "Home", pageInfo: _bodyNaviBar),
-        // Menu(pageIndex: _selectPage, title: "Menu", pageInfo: _bodyNaviBar),
         Category(pageIndex: _selectPage, title: "Category", pageInfo: _bodyNaviBar)
       ], onPageChanged: (page) => setState((){ _selectPage = page; })
     );
@@ -35,14 +33,8 @@ class _BodyState extends State<Body> {
     return [
       BottomNavigationBarItem(
         icon: Icon(Icons.home),
-        // label: "Home",
         title: Text("Home"),
       ),
-      // BottomNavigationBarItem(
-      //   icon: Icon(Icons.menu),
-      //   // label: "Home",
-      //   title: Text("Menu"),
-      // ),
       BottomNavigationBarItem(
         icon: Icon(Icons.category),
         title: Text("Category"),
