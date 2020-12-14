@@ -22,9 +22,9 @@ class Menu extends StatefulWidget {
 class _MenuState extends State<Menu> {
   // MenuModel categoryTypes;
   CategoryModel categoryTypes;
+
   @override
   void initState(){
-    // categoryTypes = 
     // categoryTypes = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
     categoryTypes = Provider.of<ProviderCategory>(context, listen: false).category;
     if(categoryTypes == null){
