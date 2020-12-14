@@ -31,9 +31,6 @@ class _MenuState extends State<Menu> {
       final List<CategoryModel> menuTitle = Provider.of<ProviderCategory>(context, listen: false).categoryList.toList();
       // final List<MenuModel> menuTitle = Provider.of<ProviderMenu>(context, listen: false).menuList;
       categoryTypes = menuTitle.firstWhere((menu) => menu.categoryID == widget.menuID);
-    }else{
-      // categoryTypes = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
-      print("Does Does Does Does");
     }
     super.initState();
   }
