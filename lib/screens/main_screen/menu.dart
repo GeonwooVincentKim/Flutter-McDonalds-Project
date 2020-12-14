@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myTestApp_Test/model/model_category.dart';
 import 'package:myTestApp_Test/model/model_menu.dart';
+import 'package:myTestApp_Test/provider/provider_category.dart';
 import 'package:myTestApp_Test/provider/provider_filter.dart';
 import 'package:myTestApp_Test/provider/provider_menu.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
@@ -18,14 +20,17 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
-  MenuModel categoryTypes;
+  // MenuModel categoryTypes;
+  CategoryModel categoryTypes;
   @override
   void initState(){
     // categoryTypes = 
-    categoryTypes = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
+    // categoryTypes = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
+    categoryTypes = Provider.of<ProviderCategory>(context, listen: false).category;
     if(categoryTypes == null){
-      final List<MenuModel> menuTitle = Provider.of<ProviderMenu>(context, listen: false).menuList;
-      categoryTypes = menuTitle.firstWhere((menu) => menu.id == widget.menuID);
+      final List<CategoryModel> menuTitle = Provider.of<ProviderCategory>(context, listen: false).categoryList.toList();
+      // final List<MenuModel> menuTitle = Provider.of<ProviderMenu>(context, listen: false).menuList;
+      categoryTypes = menuTitle.firstWhere((menu) => menu.categoryID == widget.menuID);
     }else{
       // categoryTypes = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
       print("Does Does Does Does");
@@ -35,7 +40,7 @@ class _MenuState extends State<Menu> {
 
   Widget _buildMenuAppBar(){
     return AppBar(
-      title: Text(categoryTypes.menuTitle),
+      title: Text(categoryTypes.name),
       centerTitle: true,
       actions: [
         // IconButton(
@@ -65,9 +70,21 @@ class _MenuState extends State<Menu> {
           final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
           // final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilter(menu, menuFilter)).toList();
           // final MenuModel filter = Provider.of<FilterProvider>(context).changeOrderNoMapFilters(filter);
-          MenuModel categoryMenu = Provider.of<ProviderMenu>(context, listen: false).selectedCategory;
-          print(categoryMenu.menuTitle);
-          List<MenuModel> listMenu = categoryMenu.childList;
+          // MenuModel categoryMenu = Provider.of<ProviderMenu>(context, listen: false).selectedCategory;
+          CategoryModel categoryMenu = Provider.of<ProviderCategory>(context, listen: false).category;
+          print(categoryMenu.name);
+          // List<MenuModel> listMenu = categoryMenu.childList;
+          List<MenuModel> listMenu = [];
+
+          if(categoryMenu.categoryID == 'ham'){
+            listMenu = menu.menuHam;
+          }else if (categoryMenu.categoryID == 'cafe'){
+            listMenu = menu.menuCafe;
+          }else if(categoryMenu.categoryID == 'morning'){
+            listMenu = menu.menuMorning;
+          }else if(categoryMenu.categoryID == 'dessert'){
+            listMenu = menu.menuDessert;
+          }
           // final List<MenuModel> listMenu = menu.menuList.toList();
           // final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilter(menu, ))
           // mainPage = listMenu.toList();

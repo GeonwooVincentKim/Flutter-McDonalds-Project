@@ -460,10 +460,10 @@ var DUMMY_DESSERT = [
 ].toList();
 
 var DUMMY_CATEGORY = [
-  MenuModel(id: 'ham', menuTitle: 'hamburger', image: 'assets/img/burger/1955HashBrown.png', childList: DUMMY_HAM),
-  MenuModel(id: 'cafe', menuTitle: 'cafe', image: 'assets/img/McCafe_and_beverages/Americano.png', childList: DUMMY_CAFE),
-  MenuModel(id: 'morning', menuTitle: 'morning', image: 'assets/img/McMorning/BaconEggMcMuffin.png', childList: DUMMY_MORNING),
-  MenuModel(id: 'dessert', menuTitle: 'dessert', image: 'assets/img/sides_and_desserts/ApplePie.png', childList: DUMMY_DESSERT)
+  MenuModel(id: 'ham', menuTitle: 'hamburger', image: 'assets/img/burger/1955HashBrown.png'),
+  MenuModel(id: 'cafe', menuTitle: 'cafe', image: 'assets/img/McCafe_and_beverages/Americano.png'),
+  MenuModel(id: 'morning', menuTitle: 'morning', image: 'assets/img/McMorning/BaconEggMcMuffin.png'),
+  MenuModel(id: 'dessert', menuTitle: 'dessert', image: 'assets/img/sides_and_desserts/ApplePie.png')
 ];
 
 var DUMMY_SPECIAL = [
