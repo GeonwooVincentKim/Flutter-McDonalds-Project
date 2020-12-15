@@ -37,3 +37,21 @@ const imageHeight = 300.0;
 
 // ignore: non_constant_identifier_names
 RoundedRectangleBorder alertBorder = RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0));
+
+ThemeData dark = ThemeData(
+  primaryColor: Colors.black,
+  brightness: Brightness.dark,
+  bottomAppBarColor: Colors.blue,
+  buttonColor: Colors.cyan[300],
+  scaffoldBackgroundColor: Color(0xFF212121),
+  textSelectionColor: Colors.teal
+);
+
+ThemeData light = ThemeData(
+  primaryColor: basicAppBarColor,
+  brightness: Brightness.light,
+  buttonColor: alertButtonColor,
+  bottomAppBarColor: Colors.blue,
+  scaffoldBackgroundColor: basicBackgroundColor,
+  accentColor: Colors.blue,
+);
