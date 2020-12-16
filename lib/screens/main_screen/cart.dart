@@ -30,7 +30,7 @@ class _CartState extends State<Cart> {
 
   @override
   void initState(){
-    // cartMenu = Provider.of<ProviderMenu>(context, listen: false).cartList;
+    cartMenu = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
     super.initState();
   }
 
@@ -68,10 +68,12 @@ class _CartState extends State<Cart> {
             //     TransparentDivider(),
             //   ],
             // );
-            return Column(
+            return subMenuList.length > 0 && subMenuList.length != 0?
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 ContentsCart(title: yourOrder[0]),
+                Divider(height: basicPadding * 2, color: Colors.transparent),
                 ListView.separated(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
@@ -79,6 +81,19 @@ class _CartState extends State<Cart> {
                   itemCount: subMenuList.length,
                   itemBuilder: (context, index) => CartList(orderMenu: subMenuList[index])
                 )
+              ]
+            ) : Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                ContentsCart(title: yourOrder[0]),
+                Divider(height: basicPadding * 2, color: Colors.transparent),
+                // ListView.separated(
+                //   shrinkWrap: true,
+                //   physics: NeverScrollableScrollPhysics(),
+                //   separatorBuilder: (context, index) => TransparentDivider(),
+                //   itemCount: subMenuList.length,
+                //   itemBuilder: (context, index) => CartList(orderMenu: subMenuList[index])
+                // )
               ]
             );
           }
@@ -118,10 +133,38 @@ class _CartState extends State<Cart> {
             //     )
             //   ]
             // ) :
-            return Column(
+            return totalPrice.totalPrices > 0 || totalPrice.totalPrices != 0 ?
+            Column(
               children: [
-                Text(yourOrder[1].toUpperCase().toString(), style: menuTitleSize),
+                // Text(yourOrder[1].toUpperCase().toString(), style: menuTitleSize),
+                ContentsCart(title: yourOrder[1]),
+                // TransparentDivider(),
+                Divider(height: basicPadding * 2, color: Colors.transparent),
+                Text("\￦${totalPrice.totalPrices}", style: costText),
                 TransparentDivider(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    BottomButton(contents: "OK", onPressed: () => _buildSubmitForm(context)),
+                    BottomButton(contents: "CANCEL", onPressed: () => _buildResetForm(context)),
+                    // RaisedButton(
+                    //   child: Text('Clear'),
+                    //   onPressed: () {
+                    //     setState(() {
+                    //       yourOrder.clear();
+                    //     });
+                    //   },
+                    // ),
+                  ]
+                )
+              ]
+            ) : 
+            Column(
+              children: [
+                // Text(yourOrder[1].toUpperCase().toString(), style: menuTitleSize),
+                ContentsCart(title: yourOrder[1]),
+                // TransparentDivider(),
+                Divider(height: basicPadding * 2, color: Colors.transparent),
                 Text("\￦${totalPrice.totalPrices}", style: costText),
                 TransparentDivider(),
                 Row(
@@ -176,7 +219,7 @@ class _CartState extends State<Cart> {
   }
 
   void _buildResetForm(BuildContext context){
-    Provider.of<ProviderMenu>(context, listen: false).deleteCartMenu(totalPrices);
+    Provider.of<ProviderMenu>(context, listen: false).deleteOrderMenu(cartMenu);
     
   }
 }
