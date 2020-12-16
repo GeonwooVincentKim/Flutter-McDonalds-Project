@@ -133,17 +133,7 @@ class _DetailsState extends State<Details> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text("Do you want to order \n${detailMenu.menuTitle}\n into your Cart?", textAlign: TextAlign.center, ),
-                  // Text("Please enter the Number of ${detailMenu.menuTitle} to order.", textAlign: TextAlign.center),
                   TransparentDivider(),
-                  // TextFormField(
-                  //   keyboardType: TextInputType.number,
-                  //   decoration: InputDecoration(hintText: "Ex:) 1",),
-                  //   onSaved: (_countNum) => countNum = int.parse(_countNum),
-                  //   validator: (value){
-                  //     if(value.isEmpty){return 'Please input the number of you selected';}
-                  //     return null;
-                  //   }
-                  // ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [

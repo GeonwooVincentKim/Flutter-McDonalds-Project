@@ -44,21 +44,3 @@ class ProviderThemeDynamic with ChangeNotifier{
     _pref.setBool(key, _darkTheme);
   }
 }
-
-ThemeData dark = ThemeData(
-  primaryColor: Colors.black,
-  brightness: Brightness.dark,
-  bottomAppBarColor: Colors.blue,
-  buttonColor: Colors.cyan[300],
-  scaffoldBackgroundColor: Color(0xFF212121),
-  textSelectionColor: Colors.teal
-);
-
-ThemeData light = ThemeData(
-  primaryColor: basicAppBarColor,
-  brightness: Brightness.light,
-  buttonColor: alertButtonColor,
-  bottomAppBarColor: Colors.blue,
-  scaffoldBackgroundColor: basicBackgroundColor,
-  accentColor: Colors.blue,
-);

@@ -6,6 +6,8 @@ import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
 import 'package:myTestApp_Test/shared/style/divider.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/widget/button/bottom_button.dart';
+import 'package:myTestApp_Test/widget/contents/contents_cart.dart';
+import 'package:myTestApp_Test/widget/list_tile/cart_list.dart';
 import 'package:myTestApp_Test/widget/list_tile/list_tile_cart_item.dart';
 import 'package:provider/provider.dart';
 
@@ -19,6 +21,7 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
+  MenuModel cartMenu;
   List<String> yourOrder = <String>['Your Orders', 'Total Prices'];
   String menuID;
   List<MenuModel> totalPrices = [];
@@ -27,6 +30,7 @@ class _CartState extends State<Cart> {
 
   @override
   void initState(){
+    // cartMenu = Provider.of<ProviderMenu>(context, listen: false).cartList;
     super.initState();
   }
 
@@ -47,15 +51,35 @@ class _CartState extends State<Cart> {
       child: SingleChildScrollView(
         child: Consumer<ProviderMenu>(
           builder: (ctx, orderMenu, child){
-            final List<MenuModel> subMenuList = orderMenu.cartList;
+            final List<MenuModel> subMenuList = orderMenu.cartList.toList();
             final List<MenuModel> cartPage = subMenuList.toList();
-
+            // return yourOrder.length == 0 || yourOrder.length == null ?
+            // Column(
+            //   crossAxisAlignment: CrossAxisAlignment.start,
+            //   children: <Widget>[
+            //     // CartItemListTile(title: yourOrder[0], menuList: cartPage),
+            //     TransparentDivider(),
+            //   ],
+            // ) :
+            // return Column(
+            //   crossAxisAlignment: CrossAxisAlignment.start,
+            //   children: <Widget>[
+            //     CartItemListTile(title: yourOrder[0], menuList: cartPage),
+            //     TransparentDivider(),
+            //   ],
+            // );
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                CartItemListTile(title: yourOrder[0], menuList: cartPage),
-                TransparentDivider(),
-              ],
+                ContentsCart(title: yourOrder[0]),
+                ListView.separated(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  separatorBuilder: (context, index) => TransparentDivider(),
+                  itemCount: subMenuList.length,
+                  itemBuilder: (context, index) => CartList(orderMenu: subMenuList[index])
+                )
+              ]
             );
           }
         )
@@ -70,6 +94,30 @@ class _CartState extends State<Cart> {
       color: Theme.of(context).primaryColor,
       child: Consumer<ProviderMenu>(
           builder: (ctx, totalPrice, child){
+            // return yourOrder.length == 0 || yourOrder.length == null ?
+            // Column(
+            //   children: [
+            //     // Text(yourOrder[1].toUpperCase().toString(), style: menuTitleSize),
+            //     TransparentDivider(),
+            //     // Text("\￦${totalPrice.totalPrices}", style: costText),
+            //     TransparentDivider(),
+            //     Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //       children: [
+            //         BottomButton(contents: "OK", onPressed: () => _buildSubmitForm(context)),
+            //         BottomButton(contents: "CANCEL", onPressed: () => _buildResetForm(context)),
+            //         // RaisedButton(
+            //         //   child: Text('Clear'),
+            //         //   onPressed: () {
+            //         //     setState(() {
+            //         //       yourOrder.clear();
+            //         //     });
+            //         //   },
+            //         // ),
+            //       ]
+            //     )
+            //   ]
+            // ) :
             return Column(
               children: [
                 Text(yourOrder[1].toUpperCase().toString(), style: menuTitleSize),
@@ -80,7 +128,15 @@ class _CartState extends State<Cart> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     BottomButton(contents: "OK", onPressed: () => _buildSubmitForm(context)),
-                    BottomButton(contents: "CANCEL", onPressed: () => Navigator.of(context).pop()),
+                    BottomButton(contents: "CANCEL", onPressed: () => _buildResetForm(context)),
+                    // RaisedButton(
+                    //   child: Text('Clear'),
+                    //   onPressed: () {
+                    //     setState(() {
+                    //       yourOrder.clear();
+                    //     });
+                    //   },
+                    // ),
                   ]
                 )
               ]
@@ -117,5 +173,10 @@ class _CartState extends State<Cart> {
   void _buildSubmitForm(BuildContext context){
     Provider.of<ProviderMenu>(context, listen: false).cartList;
     Navigator.pushNamed(context, "/orders");
+  }
+
+  void _buildResetForm(BuildContext context){
+    Provider.of<ProviderMenu>(context, listen: false).deleteCartMenu(totalPrices);
+    
   }
 }

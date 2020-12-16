@@ -93,4 +93,9 @@ class ProviderMenu extends ChangeNotifier{
     _addCartItems.remove(menuDelete);
     notifyListeners();
   }
+
+  void deleteCartMenu(List<MenuModel> list){
+    _addCartItems.remove(list);
+    notifyListeners();
+  }
 }
