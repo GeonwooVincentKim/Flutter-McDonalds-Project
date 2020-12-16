@@ -16,20 +16,20 @@ class ProviderMenu extends ChangeNotifier{
   List<MenuModel> _addSpecialItems = [];
   List<MenuModel> _menuItems = DUMMY_CATEGORY.toList();
   
-  List<MenuModel> _menuHam = DUMMY_HAM.toList();
-  List<MenuModel> _menuCafe = DUMMY_CAFE.toList();
-  List<MenuModel> _menuMorning = DUMMY_MORNING.toList();
-  List<MenuModel> _menuDessert = DUMMY_DESSERT.toList();
+  // List<MenuModel> _menuHam = DUMMY_HAM.toList();
+  // List<MenuModel> _menuCafe = DUMMY_CAFE.toList();
+  // List<MenuModel> _menuMorning = DUMMY_MORNING.toList();
+  // List<MenuModel> _menuDessert = DUMMY_DESSERT.toList();
 
   List<MenuModel> _menuSpecialItems = DUMMY_SPECIAL.toList();
   // List<MenuModel> _menuItems = DUMMY_MENU.toList();
 
   List<MenuModel> get menuList => [..._menuItems];
   
-  List<MenuModel> get menuHam => [..._menuHam];
-  List<MenuModel> get menuCafe => [..._menuCafe];
-  List<MenuModel> get menuMorning => [..._menuMorning];
-  List<MenuModel> get menuDessert => [..._menuDessert];
+  // List<MenuModel> get menuHam => [..._menuHam];
+  // List<MenuModel> get menuCafe => [..._menuCafe];
+  // List<MenuModel> get menuMorning => [..._menuMorning];
+  // List<MenuModel> get menuDessert => [..._menuDessert];
 
   List<MenuModel> get specialMenuList => [..._menuSpecialItems];
   List<MenuModel> get cartList => [..._addCartItems];

@@ -27,8 +27,8 @@ class Category extends StatefulWidget {
 }
 
 class _CategoryState extends State<Category> {
-  // List<MenuModel> categoryList = [];
-  List<CategoryModel> categoryList = [];
+  List<MenuModel> categoryList = [];
+  // List<CategoryModel> categoryList = [];
   Widget _buildCategoryAppBar(){
     return AppBar(
       title: Text(widget.title),
@@ -40,14 +40,14 @@ class _CategoryState extends State<Category> {
     return Container(
       padding: EdgeInsets.symmetric(vertical: basicPadding, horizontal: basicPadding / 2),
       margin: EdgeInsets.all(basicMargin),
-      child: Consumer<ProviderCategory>(
+      child: Consumer<ProviderMenu>(
         builder: (ctx, category, child){
           // final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
-          final List<CategoryModel> listCategory = category.categoryList.toList();
+          // final List<CategoryModel> listCategory = category.categoryList.toList();
           // final MenuModel filter = Provider.of<FilterProvider>(context).changeOrderNoMapFilters(filter);
-          // final List<MenuModel> listCategory = category.menuList;
+          final List<MenuModel> listCategory = category.menuList;
           // final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilter(menu, ))
-          categoryList = listCategory.toList();
+          // categoryList = listCategory.toList();
 
           return listCategory.length == 0 ?
             Center(child: Text("NOO!!!")) :

@@ -9,8 +9,8 @@ import 'package:provider/provider.dart';
 
 
 class ListTileCategory extends StatelessWidget {
-  // final MenuModel cate;
-  final CategoryModel cate;
+  final MenuModel cate;
+  // final CategoryModel cate;
   ListTileCategory({@required this.cate});
 
   Widget _buildCategoryImage(){
@@ -29,8 +29,8 @@ class ListTileCategory extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           TextDesign(
-            // basicText: cate.menuTitle,
-            basicText: cate.name,
+            basicText: cate.menuTitle,
+            // basicText: cate.name,
             textStyle: mainListSize
           ),
           Divider(height: 5, color: Colors.transparent),
@@ -44,10 +44,10 @@ class ListTileCategory extends StatelessWidget {
     return Container(
       child: GestureDetector(
         onTap: (){
-          // Provider.of<ProviderMenu>(context, listen: false).selectCategory(cate);
-          Provider.of<ProviderCategory>(context, listen: false).selectMenu(cate);
-          // Navigator.pushNamed(context, "/food/${cate.id}");
-          Navigator.pushNamed(context, "/food/${cate.categoryID}");
+          Provider.of<ProviderMenu>(context, listen: false).selectCategory(cate);
+          // Provider.of<ProviderCategory>(context, listen: false).selectMenu(cate);
+          Navigator.pushNamed(context, "/food/${cate.id}");
+          // Navigator.pushNamed(context, "/food/${cate.categoryID}");
         },
         child: Card(
           child: Column(
