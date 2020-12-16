@@ -6,7 +6,7 @@ var DUMMY_MENU = [
     menuTitle: '1955 HashBrown',
     image: 'assets/img/burger/1955HashBrown.png',
     prices: 6000,
-    type: 0,
+    // type: 0,
     releaseYear: '2017',
     releaseMonth: '1'
   ),
@@ -16,7 +16,7 @@ var DUMMY_MENU = [
     menuTitle: '1955 Burger',
     image: 'assets/img/burger/1955Burger.png',
     prices: 5500,
-    type: 0,
+    // type: 0,
     releaseYear: '2013',
     releaseMonth: '5'
   ),
@@ -26,7 +26,7 @@ var DUMMY_MENU = [
     menuTitle: 'Big Mac',
     image: 'assets/img/burger/BigMac.png',
     prices: 4500,
-    type: 0,
+    // type: 0,
     releaseYear: '1967',
     releaseMonth: '3'
   ),
@@ -36,7 +36,7 @@ var DUMMY_MENU = [
     menuTitle: 'McSpicy ShanghaiBurger',
     image: 'assets/img/burger/McSpicyShanghaiBurger.png',
     prices: 4500,
-    type: 0,
+    // type: 0,
     releaseYear: '2003',
     releaseMonth: '12'
   ),
@@ -46,7 +46,7 @@ var DUMMY_MENU = [
     menuTitle: 'McChicken',
     image: 'assets/img/burger/McChicken.png',
     prices: 3300,
-    type: 0,
+    // type: 0,
     releaseYear: '1980',
     releaseMonth: '2'
   ),
@@ -56,7 +56,7 @@ var DUMMY_MENU = [
     menuTitle: 'McChicken Mozzarella',
     image: 'assets/img/burger/McChickenMozzarella.png',
     prices: 4700,
-    type: 0,
+    // type: 0,
     releaseYear: '2019',
     releaseMonth: '10'
   ),
@@ -66,7 +66,7 @@ var DUMMY_MENU = [
     menuTitle: 'Double 1955 Burger',
     image: 'assets/img/burger/Double1955Burger.png',
     prices: 7200,
-    type: 0,
+    // type: 0,
     releaseYear: '2011',
     releaseMonth: '3',
     // releaseDate: '2011/03'
@@ -77,7 +77,7 @@ var DUMMY_MENU = [
     menuTitle: 'Double Bulgogi Burger',
     image: 'assets/img/burger/DoubleBulgogiBurger.png',
     prices: 4400,
-    type: 0,
+    // type: 0,
     releaseYear: '1999',
     releaseMonth: '1'
     // releaseDate: '1999/01',
@@ -88,7 +88,7 @@ var DUMMY_MENU = [
     menuTitle: 'Egg Bulgogi Burger',
     image: 'assets/img/burger/EggBulgogiBurger.png',
     prices: 3000,
-    type: 0,
+    // type: 0,
     releaseYear: '2019',
     releaseMonth: '2'
     // releaseDate: '2019/02'
@@ -99,7 +99,7 @@ var DUMMY_MENU = [
     menuTitle: 'Bulgogi Burger',
     image: 'assets/img/burger/BulgogiBurger.png',
     prices: 2000,
-    type: 0,
+    // type: 0,
     releaseYear: '1997',
     releaseMonth: '10'
     // releaseDate: '1997/10'
@@ -110,7 +110,7 @@ var DUMMY_MENU = [
     menuTitle: 'Supreme Shirmp Burger',
     image: 'assets/img/burger/SupremeShrimpBurger.png',
     prices: 5500,
-    type: 0,
+    // type: 0,
     releaseYear: '2016',
     releaseMonth: '10'
     // releaseDate: '2016/10'
@@ -121,7 +121,7 @@ var DUMMY_MENU = [
     menuTitle: 'Shrimp Beef Burger',
     image: 'assets/img/burger/McChicken.png',
     prices: 5500,
-    type: 0,
+    // type: 0,
     releaseYear: '2016',
     releaseMonth: '10',
     // releaseDate: '2016/10'
@@ -132,7 +132,7 @@ var DUMMY_MENU = [
     menuTitle: 'Americano',
     image: 'assets/img/McCafe_and_beverages/Americano.png',
     prices: 1500,
-    type: 1,
+    // type: 1,
     releaseYear: '1981',
     releaseMonth: '3'
   ),
@@ -142,7 +142,7 @@ var DUMMY_MENU = [
     menuTitle: 'CafeLatte',
     image: 'assets/img/McCafe_and_beverages/CafeLatte.png',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '1981',
     releaseMonth: '3'
   ),
@@ -152,7 +152,7 @@ var DUMMY_MENU = [
     menuTitle: 'Cappuchino',
     image: 'assets/img/McCafe_and_beverages/Cappuchino.png',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '1981',
     releaseMonth: '3'
   ),
@@ -162,7 +162,7 @@ var DUMMY_MENU = [
     menuTitle: 'Decaffeine Americano',
     image: 'assets/img/McCafe_and_beverages/DecaffeineAmericano.jpg',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '2020',
     releaseMonth: '1'
   ),
@@ -172,7 +172,7 @@ var DUMMY_MENU = [
     menuTitle: 'Decaffeine CafeLatte',
     image: 'assets/img/McCafe_and_beverages/DecaffeineCafeLatte.jpg',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '2020',
     releaseMonth: '1'
   ),
@@ -182,7 +182,7 @@ var DUMMY_MENU = [
     menuTitle: 'Decaffeine Cappuchino',
     image: 'assets/img/McCafe_and_beverages/DecaffeineCappuchino.jpg',
     prices: 0,
-    type: 1,
+    // type: 1,
     releaseYear: '2020',
     releaseMonth: '1'
     // releaseDate: '2020/01'
@@ -193,7 +193,7 @@ var DUMMY_MENU = [
     menuTitle: 'Decaffeine Iced Americano',
     image: 'assets/img/McCafe_and_beverages/DecaffeineIcedAmericano.jpg',
     prices: 1500,
-    type: 1,
+    // type: 1,
     releaseYear: '2020',
     releaseMonth: '1'
     // releaseDate: '2020/01'
@@ -204,7 +204,7 @@ var DUMMY_MENU = [
     menuTitle: 'Decaffeine Iced CafeLatte',
     image: 'assets/img/McCafe_and_beverages/DecaffeineIcedCafeLatte.jpg',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '2020',
     releaseMonth: '1'
     // releaseDate: '2020/01'
@@ -215,7 +215,7 @@ var DUMMY_MENU = [
     menuTitle: 'Decaffeine Cappuchino',
     image: 'assets/img/McCafe_and_beverages/DecaffeineCappuchino.jpg',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '2020',
     releaseMonth: '1'
     // releaseDate: '2020/01'
@@ -226,7 +226,7 @@ var DUMMY_MENU = [
     menuTitle: 'Iced Americano',
     image: 'assets/img/McCafe_and_beverages/IcedAmericano.jpg',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '2011',
     releaseMonth: '5'
     // releaseDate: '2011/05'
@@ -237,7 +237,7 @@ var DUMMY_MENU = [
     menuTitle: 'Iced CaffeLatte',
     image: 'assets/img/McCafe_and_beverages/IcedCaffeLatte.png',
     prices: 2500,
-    type: 1,
+    // type: 1,
     releaseYear: '2011',
     releaseMonth: '5'
     // releaseDate: '2011/05'
@@ -248,7 +248,7 @@ var DUMMY_MENU = [
     menuTitle: 'Pear Chiller',
     image: 'assets/img/McCafe_and_beverages/PearChiller.png',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '2020',
     releaseMonth: '4'
     // releaseDate: '2020/04'
@@ -259,7 +259,7 @@ var DUMMY_MENU = [
     menuTitle: 'Strawberry Chiller',
     image: 'assets/img/McCafe_and_beverages/StrawberryChiller.jpg',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '2017',
     releaseMonth: '11'
     // releaseDate: '2017/11'
@@ -270,7 +270,7 @@ var DUMMY_MENU = [
     menuTitle: 'Bacon Egg McMuffine',
     image: 'assets/img/McMorning/BaconEggMcMuffin.png',
     prices: 3000,
-    type: 2,
+    // type: 2,
     releaseYear: '2006',
     releaseMonth: '11',
   ),
@@ -280,7 +280,7 @@ var DUMMY_MENU = [
     menuTitle: 'BLT Muffin',
     image: 'assets/img/McMorning/BLTMuffin.png',
     prices: 3900,
-    type: 2,
+    // type: 2,
     releaseYear: '2014',
     releaseMonth: '5',
   ),
@@ -290,7 +290,7 @@ var DUMMY_MENU = [
     menuTitle: 'Chicken And Cheese Muffin',
     image: 'assets/img/McMorning/ChickenAndCheeseMuffin.png',
     prices: 3200,
-    type: 2,
+    // type: 2,
     releaseYear: '2019',
     releaseMonth: '10',
   ),
@@ -300,7 +300,7 @@ var DUMMY_MENU = [
     menuTitle: 'Deluxe Breakfast',
     image: 'assets/img/McMorning/DeluxeBreakfast.png',
     prices: 4800,
-    type: 2,
+    // type: 2,
     releaseYear: '2018',
     releaseMonth: '3',
   ),
@@ -310,7 +310,7 @@ var DUMMY_MENU = [
     menuTitle: 'Egg McMuffin',
     image: 'assets/img/McMorning/EggMcMuffin.png',
     prices: 2500,
-    type: 2,
+    // type: 2,
     releaseYear: '2006',
     releaseMonth: '11',
   ),
@@ -320,7 +320,7 @@ var DUMMY_MENU = [
     menuTitle: 'Hotcakes 2pcs',
     image: 'assets/img/McMorning/Hotcakes2pcs.png',
     prices: 2200,
-    type: 2,
+    // type: 2,
     releaseYear: '2015',
     releaseMonth: '9',
   ),
@@ -330,7 +330,7 @@ var DUMMY_MENU = [
     menuTitle: 'Hotcakes 3pcs',
     image: 'assets/img/McMorning/Hotcakes3pcs.jpg',
     prices: 3000,
-    type: 2,
+    // type: 2,
     releaseYear: '2015',
     releaseMonth: '9'
     // releaseDate: '2015/09'
@@ -341,7 +341,7 @@ var DUMMY_MENU = [
     menuTitle: 'McSpicy Shanghai Chicken Snak Wrap',
     image: 'assets/img/McMorning/McSpicyShanghaiChickenSnackWrap.png',
     prices: 2000,
-    type: 2,
+    // type: 2,
     releaseYear: '2018',
     releaseMonth: '2'
     // releaseDate: '2018/02'
@@ -352,7 +352,7 @@ var DUMMY_MENU = [
     menuTitle: 'Sausage Egg McMuffin',
     image: 'assets/img/McMorning/SausageEggMcMuffin.png',
     prices: 3000,
-    type: 2,
+    // type: 2,
     releaseYear: '2006',
     releaseMonth: '11'
     // releaseDate: '2006/11'
@@ -363,7 +363,7 @@ var DUMMY_MENU = [
     menuTitle: 'Sausage McMuffin',
     image: 'assets/img/McMorning/SausageMcMuffin.png',
     prices: 2200,
-    type: 2,
+    // type: 2,
     releaseYear: '2006',
     releaseMonth: '11'
     // releaseDate: '2006/11'
@@ -374,7 +374,7 @@ var DUMMY_MENU = [
     menuTitle: 'Apple Pie',
     image: 'assets/img/sides_and_desserts/ApplePie.png',
     prices: 1000,
-    type: 3,
+    // type: 3,
     releaseYear: '2016',
     releaseMonth: '11',
   ),
@@ -384,7 +384,7 @@ var DUMMY_MENU = [
     menuTitle: 'French Fries',
     image: 'assets/img/sides_and_desserts/FrenchFries.png',
     prices: 1000,
-    type: 3,
+    // type: 3,
     releaseYear: '1948',
     releaseMonth: '2',
   ),
@@ -394,7 +394,7 @@ var DUMMY_MENU = [
     menuTitle: 'Golden Mozzarella Cheese Sticks',
     image: 'assets/img/sides_and_desserts/GoldenMozzarellaCheeseSticks.png',
     prices: 2000,
-    type: 3,
+    // type: 3,
     releaseYear: '2017',
     releaseMonth: '2',
   ),
@@ -404,7 +404,7 @@ var DUMMY_MENU = [
     menuTitle: 'HashBrown',
     image: 'assets/img/sides_and_desserts/HashBrown.jpg',
     prices: 1700,
-    type: 3,
+    // type: 3,
     releaseYear: '2017',
     releaseMonth: '1',
   ),
@@ -414,7 +414,7 @@ var DUMMY_MENU = [
     menuTitle: 'McNuggets',
     image: 'assets/img/sides_and_desserts/McNuggets.jpg',
     prices: 1700,
-    type: 3,
+    // type: 3,
     releaseYear: '2019',
     releaseMonth: '3',
   ),
@@ -424,7 +424,7 @@ var DUMMY_MENU = [
     menuTitle: 'McSpicy Chicken Tenders',
     image: 'assets/img/sides_and_desserts/McSpicyChickenTenders.png',
     prices: 2500,
-    type: 3,
+    // type: 3,
     releaseYear: '2016',
     releaseMonth: '11',
   ),
@@ -434,7 +434,7 @@ var DUMMY_MENU = [
     menuTitle: 'String Cheese',
     image: 'assets/img/sides_and_desserts/StringCheese.png',
     prices: 2300,
-    type: 3,
+    // type: 3,
     releaseYear: '2017',
     releaseMonth: '6'
   ),
@@ -444,7 +444,7 @@ var DUMMY_MENU = [
     menuTitle: 'Taro Pie',
     image: 'assets/img/sides_and_desserts/TaroPie.png',
     prices: 1000,
-    type: 3,
+    // type: 3,
     releaseYear: '2020',
     releaseMonth: '9'
   )
@@ -452,10 +452,10 @@ var DUMMY_MENU = [
 
 
 var DUMMY_CATEGORY = [
-  MenuModel(id: 'ham', menuTitle: 'hamburger', image: 'assets/img/burger/1955HashBrown.png', type: 0),
-  MenuModel(id: 'cafe', menuTitle: 'cafe', image: 'assets/img/McCafe_and_beverages/Americano.png', type: 1),
-  MenuModel(id: 'morning', menuTitle: 'morning', image: 'assets/img/McMorning/BaconEggMcMuffin.png', type: 2),
-  MenuModel(id: 'dessert', menuTitle: 'dessert', image: 'assets/img/sides_and_desserts/ApplePie.png', type: 3)
+  MenuModel(id: 'ham', menuTitle: 'hamburger', image: 'assets/img/burger/1955HashBrown.png', type: 0, childList: DUMMY_MENU),
+  MenuModel(id: 'cafe', menuTitle: 'cafe', image: 'assets/img/McCafe_and_beverages/Americano.png', type: 1, childList: DUMMY_MENU),
+  MenuModel(id: 'morning', menuTitle: 'morning', image: 'assets/img/McMorning/BaconEggMcMuffin.png', type: 2, childList: DUMMY_MENU),
+  MenuModel(id: 'dessert', menuTitle: 'dessert', image: 'assets/img/sides_and_desserts/ApplePie.png', type: 3, childList: DUMMY_MENU)
 ];
 
 var DUMMY_SPECIAL = [

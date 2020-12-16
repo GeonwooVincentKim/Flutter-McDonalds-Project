@@ -6,7 +6,7 @@ class MenuModel{
   final String menuTitle;
   final String image;
   final int prices;
-  final int type;
+  int type;
   // final String releaseDate;
   final String releaseYear;
   final String releaseMonth;
@@ -32,7 +32,7 @@ class MenuModel{
       menuTitle: menu.menuTitle ?? '',
       image: menu.image ?? '',
       prices: menu.prices ?? 0,
-      type: menu.type ?? 0,
+      type: menu.type ?? '',
       // releaseDate: menu.releaseDate ?? ''
       releaseYear: menu.releaseYear ?? '',
       releaseMonth: menu.releaseMonth ?? '',
