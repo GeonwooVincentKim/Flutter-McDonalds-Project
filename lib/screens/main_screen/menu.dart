@@ -72,7 +72,17 @@ class _MenuState extends State<Menu> {
           // CategoryModel categoryMenu = Provider.of<ProviderCategory>(context, listen: false).category;
           // print(categoryMenu.name);
           print(categoryMenu.menuTitle);
-          List<MenuModel> listMenu = categoryMenu.childList;
+          // List<MenuModel> listMenu = categoryMenu.childList;
+          List<MenuModel> listMenu = [];
+          if(categoryMenu.id == 'ham'){
+            listMenu = categoryMenu.childList;
+          }else if(categoryMenu.id == 'cafe'){
+            listMenu = categoryMenu.childList;
+          }else if(categoryMenu.id == 'morning'){
+            listMenu = categoryMenu.childList;
+          }else if(categoryMenu.id == 'dessert'){
+            listMenu = categoryMenu.childList;
+          }
           // List<MenuModel> listMenu = [];
 
           // if(categoryMenu.categoryID == 'ham'){

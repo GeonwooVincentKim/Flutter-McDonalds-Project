@@ -449,3 +449,30 @@ var DUMMY_MENU = [
     releaseMonth: '9'
   )
 ].toList();
+
+
+var DUMMY_CATEGORY = [
+  MenuModel(id: 'ham', menuTitle: 'hamburger', image: 'assets/img/burger/1955HashBrown.png', type: 0),
+  MenuModel(id: 'cafe', menuTitle: 'cafe', image: 'assets/img/McCafe_and_beverages/Americano.png', type: 1),
+  MenuModel(id: 'morning', menuTitle: 'morning', image: 'assets/img/McMorning/BaconEggMcMuffin.png', type: 2),
+  MenuModel(id: 'dessert', menuTitle: 'dessert', image: 'assets/img/sides_and_desserts/ApplePie.png', type: 3)
+];
+
+var DUMMY_SPECIAL = [
+  MenuModel(
+    id: 'sp01',
+    menuTitle: 'Rich Potato Burger',
+    image: 'assets/img/burger/1955HashBrown.png',
+    prices: 8500,
+    releaseYear: '2020',
+    releaseMonth: '12'
+  ),
+  MenuModel(
+    id: 'sp02',
+    menuTitle: 'Rich Potato Mushroom Burger',
+    image: 'assets/img/burger/RichPotatoMushroomBurgerMeal.png',
+    prices: 8900,
+    releaseYear: '2020',
+    releaseMonth: '12'
+  )
+];
