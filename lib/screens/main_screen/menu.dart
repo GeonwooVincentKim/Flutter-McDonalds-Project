@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_category.dart';
 import 'package:myTestApp_Test/model/model_menu.dart';
 import 'package:myTestApp_Test/provider/provider_category.dart';
-import 'package:myTestApp_Test/provider/provider_filter.dart';
 import 'package:myTestApp_Test/provider/provider_menu.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
@@ -18,21 +17,25 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
-  CategoryModel categoryTypes;
+  CategoryModel categoryList;
 
   @override
   void initState(){
-    categoryTypes = Provider.of<ProviderCategory>(context, listen: false).category;
-    if(categoryTypes == null){
-      final List<CategoryModel> menuTitle = Provider.of<ProviderCategory>(context, listen: false).categoryList.toList();
-      categoryTypes = menuTitle.firstWhere((menu) => menu.categoryID == widget.menuID);
+    // If the title of category is null, get the ID values from 'widget.menuID',
+    // and substitude it which are already comparsed to the 'menu.categoryID'.
+    categoryList = Provider.of<ProviderCategory>(context, listen: false).category;
+    if(categoryList == null){
+      final List<CategoryModel> menuList = Provider.of<ProviderCategory>(context, listen: false).categoryList.toList();
+      // Comparse values, and then if it's right, then substitude the values of 'widget.menuID'
+      // into 'menu.categoryID'.
+      categoryList = menuList.firstWhere((menu) => menu.categoryID == widget.menuID);
     }
     super.initState();
   }
 
   Widget _buildMenuAppBar(){
     return AppBar(
-      title: Text(categoryTypes.name),
+      title: Text(categoryList.name),
       centerTitle: true,
     );
   }
@@ -43,9 +46,10 @@ class _MenuState extends State<Menu> {
       margin: EdgeInsets.all(basicMargin),
       child: Consumer<ProviderMenu>(
         builder: (ctx, menu, child){
-          final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
+          // final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
+          // Comparse
           List<MenuModel> listMenu = [];
-          listMenu = menu.menuList.where((submenu) => submenu.type == categoryTypes.type).toList();
+          listMenu = menu.menuList.where((submenu) => submenu.type == categoryList.type).toList();
 
           return listMenu.length == 0 || listMenu.length == null ?
             Center(child: Text("NOO!!!")) :
