@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myTestApp_Test/model/dummy/dummy_detail_menu.dart';
+// import 'package:myTestApp_Test/model/dummy/dummy_detail_menu.dart';
 import 'package:myTestApp_Test/model/model_menu.dart';
-// import 'package:myTestApp_Test/model/dummy/dummy_unified_menu.dart';
+import 'package:myTestApp_Test/model/dummy/dummy_unified_menu.dart';
 // import 'package:myTestApp_Test/model/dummy/dummy_menu.dart';
 import 'package:myTestApp_Test/shared/helpers/functions.dart';
 
@@ -15,7 +15,8 @@ class ProviderMenu extends ChangeNotifier{
   List<MenuModel> _addCartItems = [];
   List<MenuModel> _addOrderedItems = [];
   List<MenuModel> _addSpecialItems = [];
-  List<MenuModel> _menuItems = DUMMY_CATEGORY.toList();
+  // List<MenuModel> _menuItems = DUMMY_CATEGORY.toList();
+  List<MenuModel> _menuItems = DUMMY_MENU.toList();
   
   // List<MenuModel> _menuHam = DUMMY_HAM.toList();
   // List<MenuModel> _menuCafe = DUMMY_CAFE.toList();

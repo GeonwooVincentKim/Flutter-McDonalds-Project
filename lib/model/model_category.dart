@@ -5,18 +5,21 @@ class CategoryModel{
   final String categoryID;
   final String name;
   final String image;
+  int type;
 
   CategoryModel({
     @required this.categoryID,
     @required this.name,
-    @required this.image
+    @required this.image,
+    this.type
   });
 
   factory CategoryModel.getInfo(CategoryModel cate){
     return CategoryModel(
       categoryID: cate.categoryID ?? '',
       name: cate.name ?? '',
-      image: cate.image ?? ''
+      image: cate.image ?? '',
+      type: cate.type ?? 0
     );
   }
 
@@ -24,7 +27,8 @@ class CategoryModel{
     return CategoryModel(
       categoryID: '',
       name: '',
-      image: ''
+      image: '',
+      type: 0
     );
   }
 }

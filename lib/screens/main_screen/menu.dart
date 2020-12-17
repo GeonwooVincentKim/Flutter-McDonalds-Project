@@ -20,25 +20,25 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
-  MenuModel categoryTypes;
-  // CategoryModel categoryTypes;
+  // MenuModel categoryTypes;
+  CategoryModel categoryTypes;
 
   @override
   void initState(){
-    categoryTypes = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
-    // categoryTypes = Provider.of<ProviderCategory>(context, listen: false).category;
+    // categoryTypes = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
+    categoryTypes = Provider.of<ProviderCategory>(context, listen: false).category;
     if(categoryTypes == null){
-      // final List<CategoryModel> menuTitle = Provider.of<ProviderCategory>(context, listen: false).categoryList.toList();
-      final List<MenuModel> menuTitle = Provider.of<ProviderMenu>(context, listen: false).menuList;
-      categoryTypes = menuTitle.firstWhere((menu) => menu.id == widget.menuID);
-      // categoryTypes = menuTitle.firstWhere((menu) => menu.categoryID == widget.menuID);
+      final List<CategoryModel> menuTitle = Provider.of<ProviderCategory>(context, listen: false).categoryList.toList();
+      // final List<MenuModel> menuTitle = Provider.of<ProviderMenu>(context, listen: false).menuList;
+      // categoryTypes = menuTitle.firstWhere((menu) => menu.id == widget.menuID);
+      categoryTypes = menuTitle.firstWhere((menu) => menu.categoryID == widget.menuID);
     }
     super.initState();
   }
 
   Widget _buildMenuAppBar(){
     return AppBar(
-      title: Text(categoryTypes.menuTitle),
+      title: Text(categoryTypes.name),
       centerTitle: true,
       actions: [
         // IconButton(
@@ -68,15 +68,19 @@ class _MenuState extends State<Menu> {
           final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
           // final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilter(menu, menuFilter)).toList();
           // final MenuModel filter = Provider.of<FilterProvider>(context).changeOrderNoMapFilters(filter);
-          MenuModel categoryMenu = Provider.of<ProviderMenu>(context, listen: false).selectedCategory;
-          // CategoryModel categoryMenu = Provider.of<ProviderCategory>(context, listen: false).category;
+          // MenuModel categoryMenu = Provider.of<ProviderMenu>(context, listen: false).selectedCategory;
+          CategoryModel categoryMenu = Provider.of<ProviderCategory>(context, listen: false).category;
           // print(categoryMenu.name);
-          print(categoryMenu.menuTitle);
+          // print(categoryMenu.menuTitle);
           List<MenuModel> listMenu = [];
-          if(categoryMenu.type == categoryTypes.type){
-            listMenu = categoryMenu.childList;
-            // listMenu = menu.menuList;
-          }
+          listMenu = menu.menuList.where((submenu) => submenu.type == categoryTypes.type).toList();
+          // if(categoryTypes.type == 0){
+          //   // listMenu = categoryMenu.childList;
+          //   // listMenu = menu.menuList.where((submenu) => submenu.type == categoryTypes.type);
+          //   listMenu = menu.menuList.where((submenu) => submenu.type == categoryTypes.type).toList();
+          // }else if(categoryTypes.type == 1){
+          //   listMenu = menu.menuList.where((submenu) => submenu.type == categoryTypes.type).toList();
+          // }
           // List<MenuModel> listMenu = [];
           // if(categoryMenu.type == 0){
           //   listMenu = categoryMenu.childList;
