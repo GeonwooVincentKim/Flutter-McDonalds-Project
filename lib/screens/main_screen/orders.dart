@@ -7,7 +7,8 @@ import 'package:myTestApp_Test/shared/helpers/functions.dart';
 import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
 import 'package:myTestApp_Test/shared/style/divider.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
-import 'package:myTestApp_Test/widget/list_tile/list_tile_order_items.dart';
+import 'package:myTestApp_Test/widget/contents/contents_orders.dart';
+import 'package:myTestApp_Test/widget/list_tile/list_tile_menu.dart';
 import 'package:provider/provider.dart';
 
 
@@ -43,13 +44,6 @@ class _OrdersState extends State<Orders> {
           ),
           onPressed: () => Navigator.pushNamed(context, "/filter", arguments: "orders"),
         ),
-        // IconButton(
-        //   icon: Icon(
-        //     IconMoon.iedit,
-        //     color: Theme.of(context).cardColor
-        //   ),
-        //   onPressed: () => _buildOrdersReset(context),
-        // )
       ]
     );
   }
@@ -64,26 +58,25 @@ class _OrdersState extends State<Orders> {
         child: Consumer<ProviderMenu>(
           builder: (ctx, orderMenu, child){
             final Map<String, dynamic> orderFilter = Provider.of<FilterProvider>(context).orderFilters;
-            final List<MenuModel> subMenuList = orderMenu.orderList.where((ordered) => checkFilter(ordered, orderFilter)).toList();
-            // final List<MenuModel> subMenuList = orderMenu.cartList;
-            // final List<MenuModel> cartPage = subMenuList.toList();
+            final List<MenuModel> orderList = orderMenu.orderList.where((ordered) => checkFilter(ordered, orderFilter)).toList();
 
-            return subMenuList.length == 0 ?
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  OrdersItemListTile(title: yourOrder, menuList: subMenuList),
-                  TransparentDivider(),
-                ],
-              ) :
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  OrdersItemListTile(title: yourOrder, menuList: subMenuList),
-                  TransparentDivider(),
-                ],
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                ContentsOrder(title: yourOrder),
+                // If cartList has the item, then shows ListView,
+                // Otherwise, just show the text
+                orderList.length != 0 ?
+                ListView.separated(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  separatorBuilder: (context, index) => TransparentDivider(),
+                  itemCount: orderList.length,
+                  itemBuilder: (context, index) => ListTileMenu(menuContents: orderList[index])
+                ) : Center(child: Text("No recent Order List")),
+                TransparentDivider(),
+              ],
             );
           }
         )
@@ -100,11 +93,6 @@ class _OrdersState extends State<Orders> {
         child: _buildOrdersOrderList(context),
       ),
     );
-  }
-
-  void _buildOrdersReset(BuildContext context){
-    Provider.of<ProviderMenu>(context).deleteCartMenu(totalPrices);
-    print(totalPrices);
   }
 
   @override

@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_menu.dart';
 import 'package:myTestApp_Test/provider/provider_menu.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
-import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
 import 'package:myTestApp_Test/shared/style/divider.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/widget/button/bottom_button.dart';
 import 'package:myTestApp_Test/widget/contents/contents_cart.dart';
 import 'package:myTestApp_Test/widget/list_tile/cart_list.dart';
-import 'package:myTestApp_Test/widget/list_tile/list_tile_cart_item.dart';
 import 'package:provider/provider.dart';
 
 
@@ -51,26 +49,22 @@ class _CartState extends State<Cart> {
       child: SingleChildScrollView(
         child: Consumer<ProviderMenu>(
           builder: (ctx, orderMenu, child){
-            final List<MenuModel> subMenuList = orderMenu.cartList.toList();
-            return subMenuList.length > 0 && subMenuList.length != 0?
-            Column(
+            final List<MenuModel> cartList = orderMenu.cartList.toList();
+            return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 ContentsCart(title: yourOrder[0]),
                 Divider(height: basicPadding * 2, color: Colors.transparent),
+                // If cartList has the item, then shows ListView,
+                // Otherwise, just show the text
+                cartList.length > 0 && cartList.length != 0 ?
                 ListView.separated(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   separatorBuilder: (context, index) => TransparentDivider(),
-                  itemCount: subMenuList.length,
-                  itemBuilder: (context, index) => CartList(orderMenu: subMenuList[index])
-                )
-              ]
-            ) : Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                ContentsCart(title: yourOrder[0]),
-                Divider(height: basicPadding * 2, color: Colors.transparent),
+                  itemCount: cartList.length,
+                  itemBuilder: (context, index) => CartList(orderMenu: cartList[index])
+                ) : Center(child: Text("No Ordered List"))
               ]
             );
           }
@@ -88,9 +82,7 @@ class _CartState extends State<Cart> {
           builder: (ctx, totalPrice, child){
             return Column(
               children: [
-                // Text(yourOrder[1].toUpperCase().toString(), style: menuTitleSize),
                 ContentsCart(title: yourOrder[1]),
-                // TransparentDivider(),
                 Divider(height: basicPadding * 2, color: Colors.transparent),
                 Text("\￦${totalPrice.totalPrices}", style: costText),
                 TransparentDivider(),
@@ -99,14 +91,6 @@ class _CartState extends State<Cart> {
                   children: [
                     BottomButton(contents: "OK", onPressed: () => _buildSubmitForm(context)),
                     BottomButton(contents: "CANCEL", onPressed: () => _buildResetForm(context)),
-                    // RaisedButton(
-                    //   child: Text('Clear'),
-                    //   onPressed: () {
-                    //     setState(() {
-                    //       yourOrder.clear();
-                    //     });
-                    //   },
-                    // ),
                   ]
                 )
               ]
@@ -141,15 +125,12 @@ class _CartState extends State<Cart> {
   }
 
   void _buildSubmitForm(BuildContext context){
-    // Provider.of<ProviderMenu>(context, listen: false).orderList;
-    // Provider.of<ProviderMenu>(context, listen: false).addCart(totalPrices);
     Provider.of<ProviderMenu>(context, listen: false).addToOrder(cartMenu);
     Navigator.pushNamed(context, "/orders");
-    // Provider.of<ProviderMenu>(context, listen: false).cartList.clear();
   }
 
   void _buildResetForm(BuildContext context){
-    Provider.of<ProviderMenu>(context, listen: false).deleteOrderMenu(cartMenu);
+    Provider.of<ProviderMenu>(context, listen: false).deleteCartMenu(cartMenu);
     print(cartMenu);
   }
 }

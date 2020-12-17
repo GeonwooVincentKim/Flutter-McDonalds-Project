@@ -42,22 +42,16 @@ class ProviderMenu extends ChangeNotifier{
     notifyListeners();
   }
 
-  // Add new elements.
+  // Add the items that the User selected to the Cart.
   void addToCart(MenuModel menuAdd){
     _addCartItems.add(menuAdd);
     notifyListeners();
   }
 
+  // Add the items that the User ordered from the Cart.
   void addToOrder(MenuModel menuOrderAdd){
     _addOrderedItems.add(menuOrderAdd);
     _addCartItems.clear();
-    notifyListeners();
-  }
-
-  void addCart(List<MenuModel> list){
-    list = _addCartItems;
-    _addOrderedItems.addAll(list);
-    list.remove(list);
     notifyListeners();
   }
 
@@ -81,8 +75,8 @@ class ProviderMenu extends ChangeNotifier{
     notifyListeners();
   }
 
-  void deleteCartMenu(List<MenuModel> list){
-    _addCartItems.remove(list);
+  void deleteCartMenu(MenuModel menuDelete){
+    _addCartItems.clear();
     notifyListeners();
   }
 }

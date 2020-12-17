@@ -26,7 +26,7 @@ class CartList extends StatelessWidget{
                   caption: "Delete",
                   icon: Icons.delete,
                   closeOnTap: false,
-                  onTap: () => Provider.of<ProviderMenu>(context, listen: false).deleteOrderMenu(orderMenu)
+                  onTap: () => Provider.of<ProviderMenu>(context, listen: false).deleteCartMenu(orderMenu)
                 ),
               ],
               child: Container(
