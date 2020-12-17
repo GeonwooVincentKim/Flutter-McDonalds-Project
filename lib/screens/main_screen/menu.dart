@@ -5,8 +5,6 @@ import 'package:myTestApp_Test/provider/provider_category.dart';
 import 'package:myTestApp_Test/provider/provider_filter.dart';
 import 'package:myTestApp_Test/provider/provider_menu.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
-import 'package:myTestApp_Test/shared/helpers/functions.dart';
-import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/widget/list_tile/list_tile_menu.dart';
 import 'package:provider/provider.dart';
@@ -36,22 +34,6 @@ class _MenuState extends State<Menu> {
     return AppBar(
       title: Text(categoryTypes.name),
       centerTitle: true,
-      actions: [
-        // IconButton(
-        //   icon: Icon(
-        //     IconMoon.iadd,
-        //     color: Theme.of(context).cardColor
-        //   ),
-        //   onPressed: () => Navigator.pushNamed(context, "/mainMenu/createMenu", arguments: "menu"),
-        // ),
-        // IconButton(
-        //   icon: Icon(
-        //     IconMoon.ifilter,
-        //     color: Theme.of(context).cardColor
-        //   ),
-        //   onPressed: () => Navigator.pushNamed(context, "/filter", arguments: "menu"),
-        // )
-      ],
     );
   }
 
