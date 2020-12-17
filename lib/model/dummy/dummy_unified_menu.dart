@@ -134,7 +134,8 @@ var DUMMY_MENU = [
     prices: 1500,
     type: 1,
     releaseYear: '1981',
-    releaseMonth: '3'
+    releaseMonth: '3',
+    // releaseDate: '1981/03'
   ),
 
   MenuModel(
@@ -144,7 +145,8 @@ var DUMMY_MENU = [
     prices: 2000,
     type: 1,
     releaseYear: '1981',
-    releaseMonth: '3'
+    releaseMonth: '3',
+    // releaseDate: '1981/03'
   ),
 
   MenuModel(
@@ -154,7 +156,8 @@ var DUMMY_MENU = [
     prices: 2000,
     type: 1,
     releaseYear: '1981',
-    releaseMonth: '3'
+    releaseMonth: '3',
+    // releaseDate: '1981/03'
   ),
 
   MenuModel(
@@ -164,7 +167,8 @@ var DUMMY_MENU = [
     prices: 2000,
     type: 1,
     releaseYear: '2020',
-    releaseMonth: '1'
+    releaseMonth: '1',
+    // releaseDate: '2020/01'
   ),
 
   MenuModel(
@@ -174,7 +178,8 @@ var DUMMY_MENU = [
     prices: 2000,
     type: 1,
     releaseYear: '2020',
-    releaseMonth: '1'
+    releaseMonth: '1',
+    // releaseDate: '2020/01'
   ),
 
   MenuModel(
@@ -273,6 +278,7 @@ var DUMMY_MENU = [
     type: 2,
     releaseYear: '2006',
     releaseMonth: '11',
+    // releaseDate: '2006/11'
   ),
 
   MenuModel(
@@ -283,6 +289,7 @@ var DUMMY_MENU = [
     type: 2,
     releaseYear: '2014',
     releaseMonth: '5',
+    // releaseDate: '2014/05'
   ),
 
   MenuModel(
@@ -293,6 +300,7 @@ var DUMMY_MENU = [
     type: 2,
     releaseYear: '2019',
     releaseMonth: '10',
+    // releaseDate: '2019/10'
   ),
 
   MenuModel(
@@ -303,6 +311,7 @@ var DUMMY_MENU = [
     type: 2,
     releaseYear: '2018',
     releaseMonth: '3',
+    // releaseDate: '2018/03'
   ),
 
   MenuModel(
@@ -313,6 +322,7 @@ var DUMMY_MENU = [
     type: 2,
     releaseYear: '2006',
     releaseMonth: '11',
+    // releaseDate: '2006/11'
   ),
 
   MenuModel(
@@ -323,6 +333,7 @@ var DUMMY_MENU = [
     type: 2,
     releaseYear: '2015',
     releaseMonth: '9',
+    // releaseDate: '2015/09'
   ),
 
   MenuModel(
@@ -377,6 +388,7 @@ var DUMMY_MENU = [
     type: 3,
     releaseYear: '2016',
     releaseMonth: '11',
+    // releaseDate: '2016/11'
   ),
 
   MenuModel(
@@ -387,6 +399,7 @@ var DUMMY_MENU = [
     type: 3,
     releaseYear: '1948',
     releaseMonth: '2',
+    // releaseDate: '1948/02'
   ),
 
   MenuModel(
@@ -397,6 +410,7 @@ var DUMMY_MENU = [
     type: 3,
     releaseYear: '2017',
     releaseMonth: '2',
+    // releaseYear: '2017/02'
   ),
 
   MenuModel(
@@ -407,6 +421,7 @@ var DUMMY_MENU = [
     type: 3,
     releaseYear: '2017',
     releaseMonth: '1',
+    // releaseDate: '2017/01'
   ),
 
   MenuModel(
@@ -417,6 +432,7 @@ var DUMMY_MENU = [
     type: 3,
     releaseYear: '2019',
     releaseMonth: '3',
+    // releaseDate: '2019/03'
   ),
 
   MenuModel(
@@ -427,6 +443,7 @@ var DUMMY_MENU = [
     type: 3,
     releaseYear: '2016',
     releaseMonth: '11',
+    // releaseDate: '2016/11'
   ),
 
   MenuModel(
@@ -436,7 +453,8 @@ var DUMMY_MENU = [
     prices: 2300,
     type: 3,
     releaseYear: '2017',
-    releaseMonth: '6'
+    releaseMonth: '6',
+    // releaseDate: '2017/06'
   ),
 
   MenuModel(
@@ -446,7 +464,8 @@ var DUMMY_MENU = [
     prices: 1000,
     type: 3,
     releaseYear: '2020',
-    releaseMonth: '9'
+    releaseMonth: '9',
+    // releaseDate: '2020/09'
   )
 ].toList();
 
@@ -465,7 +484,8 @@ var DUMMY_SPECIAL = [
     image: 'assets/img/burger/1955HashBrown.png',
     prices: 8500,
     releaseYear: '2020',
-    releaseMonth: '12'
+    releaseMonth: '12',
+    // releaseDate: '2020/12'
   ),
   MenuModel(
     id: 'sp02',
@@ -473,6 +493,7 @@ var DUMMY_SPECIAL = [
     image: 'assets/img/burger/RichPotatoMushroomBurgerMeal.png',
     prices: 8900,
     releaseYear: '2020',
-    releaseMonth: '12'
+    releaseMonth: '12',
+    // releaseDate: '2020/12'
   )
 ];

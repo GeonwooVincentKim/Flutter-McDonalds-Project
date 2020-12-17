@@ -20,17 +20,13 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
-  // MenuModel categoryTypes;
   CategoryModel categoryTypes;
 
   @override
   void initState(){
-    // categoryTypes = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
     categoryTypes = Provider.of<ProviderCategory>(context, listen: false).category;
     if(categoryTypes == null){
       final List<CategoryModel> menuTitle = Provider.of<ProviderCategory>(context, listen: false).categoryList.toList();
-      // final List<MenuModel> menuTitle = Provider.of<ProviderMenu>(context, listen: false).menuList;
-      // categoryTypes = menuTitle.firstWhere((menu) => menu.id == widget.menuID);
       categoryTypes = menuTitle.firstWhere((menu) => menu.categoryID == widget.menuID);
     }
     super.initState();
@@ -66,47 +62,9 @@ class _MenuState extends State<Menu> {
       child: Consumer<ProviderMenu>(
         builder: (ctx, menu, child){
           final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
-          // final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilter(menu, menuFilter)).toList();
-          // final MenuModel filter = Provider.of<FilterProvider>(context).changeOrderNoMapFilters(filter);
-          // MenuModel categoryMenu = Provider.of<ProviderMenu>(context, listen: false).selectedCategory;
-          CategoryModel categoryMenu = Provider.of<ProviderCategory>(context, listen: false).category;
-          // print(categoryMenu.name);
-          // print(categoryMenu.menuTitle);
           List<MenuModel> listMenu = [];
           listMenu = menu.menuList.where((submenu) => submenu.type == categoryTypes.type).toList();
-          // if(categoryTypes.type == 0){
-          //   // listMenu = categoryMenu.childList;
-          //   // listMenu = menu.menuList.where((submenu) => submenu.type == categoryTypes.type);
-          //   listMenu = menu.menuList.where((submenu) => submenu.type == categoryTypes.type).toList();
-          // }else if(categoryTypes.type == 1){
-          //   listMenu = menu.menuList.where((submenu) => submenu.type == categoryTypes.type).toList();
-          // }
-          // List<MenuModel> listMenu = [];
-          // if(categoryMenu.type == 0){
-          //   listMenu = categoryMenu.childList;
-          // }else if(categoryMenu.type == 1){
-          //   listMenu = categoryMenu.childList;
-          // }else if(categoryMenu.type == 2){
-          //   listMenu = categoryMenu.childList;
-          // }else if(categoryMenu.type == 3){
-          //   listMenu = categoryMenu.childList;
-          // }
 
-          // List<MenuModel> listMenu = [];
-
-          // if(categoryMenu.categoryID == 'ham'){
-          //   listMenu = menu.menuHam;
-          // }else if (categoryMenu.categoryID == 'cafe'){
-          //   listMenu = menu.menuCafe;
-          // }else if(categoryMenu.categoryID == 'morning'){
-          //   listMenu = menu.menuMorning;
-          // }else if(categoryMenu.categoryID == 'dessert'){
-          //   listMenu = menu.menuDessert;
-          // }
-          // final List<MenuModel> listMenu = menu.menuList.toList();
-          // final List<MenuModel> listMenu = menu.menuList.where((menu) => checkFilter(menu, ))
-          // mainPage = listMenu.toList();
-          print(listMenu);
           return listMenu.length == 0 || listMenu.length == null ?
             Center(child: Text("NOO!!!")) :
             GridView.builder(
