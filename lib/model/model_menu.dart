@@ -50,7 +50,7 @@ class MenuModel{
       // releaseDate: menuMap['releaseYearMonth'] ?? ''
       releaseYear: menuMap['releaseYear'] ?? '',
       releaseMonth: menuMap['releaseMonth'] ?? '',
-      // childList: menuMap['childList'] ?? []
+      childList: menuMap['childList'] ?? []
     );
   }
 

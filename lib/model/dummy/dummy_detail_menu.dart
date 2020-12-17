@@ -113,7 +113,7 @@ var DUMMY_HAM = [
     menuTitle: 'Supreme Shirmp Burger',
     image: 'assets/img/burger/SupremeShrimpBurger.png',
     prices: 5500,
-    type: 0,
+    type: 10,
     releaseYear: '2016',
     releaseMonth: '10'
     // releaseDate: '2016/10'
@@ -124,7 +124,7 @@ var DUMMY_HAM = [
     menuTitle: 'Shrimp Beef Burger',
     image: 'assets/img/burger/McChicken.png',
     prices: 5500,
-    type: 0,
+    type: 10,
     releaseYear: '2016',
     releaseMonth: '10',
     // releaseDate: '2016/10'
@@ -460,10 +460,10 @@ var DUMMY_DESSERT = [
 ].toList();
 
 var DUMMY_CATEGORY = [
-  MenuModel(id: 'ham', menuTitle: 'hamburger', image: 'assets/img/burger/1955HashBrown.png', childList: DUMMY_HAM),
-  MenuModel(id: 'cafe', menuTitle: 'cafe', image: 'assets/img/McCafe_and_beverages/Americano.png', childList: DUMMY_CAFE),
-  MenuModel(id: 'morning', menuTitle: 'morning', image: 'assets/img/McMorning/BaconEggMcMuffin.png', childList: DUMMY_MORNING),
-  MenuModel(id: 'dessert', menuTitle: 'dessert', image: 'assets/img/sides_and_desserts/ApplePie.png', childList: DUMMY_DESSERT)
+  MenuModel(id: 'ham', menuTitle: 'hamburger', image: 'assets/img/burger/1955HashBrown.png', type: 0, childList: DUMMY_HAM),
+  MenuModel(id: 'cafe', menuTitle: 'cafe', image: 'assets/img/McCafe_and_beverages/Americano.png', type: 1, childList: DUMMY_CAFE),
+  MenuModel(id: 'morning', menuTitle: 'morning', image: 'assets/img/McMorning/BaconEggMcMuffin.png', type: 2, childList: DUMMY_MORNING),
+  MenuModel(id: 'dessert', menuTitle: 'dessert', image: 'assets/img/sides_and_desserts/ApplePie.png', type: 3, childList: DUMMY_DESSERT)
 ];
 
 var DUMMY_SPECIAL = [
