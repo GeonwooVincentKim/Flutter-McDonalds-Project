@@ -8,7 +8,8 @@ var DUMMY_MENU = [
     prices: 6000,
     type: 0,
     releaseYear: '2017',
-    releaseMonth: '1'
+    releaseMonth: '1',
+    // releaseDate: '2017/01'
   ),
 
   MenuModel(
@@ -18,7 +19,8 @@ var DUMMY_MENU = [
     prices: 5500,
     type: 0,
     releaseYear: '2013',
-    releaseMonth: '5'
+    releaseMonth: '5',
+    // releaseDate: '2013/05'
   ),
 
   MenuModel(
@@ -28,7 +30,8 @@ var DUMMY_MENU = [
     prices: 4500,
     type: 0,
     releaseYear: '1967',
-    releaseMonth: '3'
+    releaseMonth: '3',
+    // releaseDate: '1967/03'
   ),
 
   MenuModel(
@@ -38,7 +41,8 @@ var DUMMY_MENU = [
     prices: 4500,
     type: 0,
     releaseYear: '2003',
-    releaseMonth: '12'
+    releaseMonth: '12',
+    // releaseDate: '2003/12'
   ),
 
   MenuModel(
@@ -48,7 +52,8 @@ var DUMMY_MENU = [
     prices: 3300,
     type: 0,
     releaseYear: '1980',
-    releaseMonth: '2'
+    releaseMonth: '2',
+    // releaseDate: '1980/02'
   ),
 
   MenuModel(
@@ -58,7 +63,8 @@ var DUMMY_MENU = [
     prices: 4700,
     type: 0,
     releaseYear: '2019',
-    releaseMonth: '10'
+    releaseMonth: '10',
+    // releaseDate: '2019/10'
   ),
 
   MenuModel(

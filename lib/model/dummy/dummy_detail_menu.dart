@@ -3,7 +3,7 @@
 import 'package:myTestApp_Test/model/model_menu.dart';
 
 
-var DUMMY_HAM = [
+var DUMMY_MENU = [
   MenuModel(
     id: 'ham01',
     menuTitle: '1955 HashBrown',
@@ -11,7 +11,8 @@ var DUMMY_HAM = [
     prices: 6000,
     type: 0,
     releaseYear: '2017',
-    releaseMonth: '1'
+    releaseMonth: '1',
+    // releaseDate: '2017/01'
   ),
 
   MenuModel(
@@ -21,7 +22,8 @@ var DUMMY_HAM = [
     prices: 5500,
     type: 0,
     releaseYear: '2013',
-    releaseMonth: '5'
+    releaseMonth: '5',
+    // releaseDate: '2013/05'
   ),
 
   MenuModel(
@@ -31,7 +33,8 @@ var DUMMY_HAM = [
     prices: 4500,
     type: 0,
     releaseYear: '1967',
-    releaseMonth: '3'
+    releaseMonth: '3',
+    // releaseDate: '1967/03'
   ),
 
   MenuModel(
@@ -41,7 +44,8 @@ var DUMMY_HAM = [
     prices: 4500,
     type: 0,
     releaseYear: '2003',
-    releaseMonth: '12'
+    releaseMonth: '12',
+    // releaseDate: '2003/12'
   ),
 
   MenuModel(
@@ -51,7 +55,8 @@ var DUMMY_HAM = [
     prices: 3300,
     type: 0,
     releaseYear: '1980',
-    releaseMonth: '2'
+    releaseMonth: '2',
+    // releaseDate: '1980/02'
   ),
 
   MenuModel(
@@ -61,7 +66,8 @@ var DUMMY_HAM = [
     prices: 4700,
     type: 0,
     releaseYear: '2019',
-    releaseMonth: '10'
+    releaseMonth: '10',
+    // releaseDate: '2019/10'
   ),
 
   MenuModel(
@@ -113,7 +119,7 @@ var DUMMY_HAM = [
     menuTitle: 'Supreme Shirmp Burger',
     image: 'assets/img/burger/SupremeShrimpBurger.png',
     prices: 5500,
-    type: 10,
+    type: 0,
     releaseYear: '2016',
     releaseMonth: '10'
     // releaseDate: '2016/10'
@@ -124,14 +130,12 @@ var DUMMY_HAM = [
     menuTitle: 'Shrimp Beef Burger',
     image: 'assets/img/burger/McChicken.png',
     prices: 5500,
-    type: 10,
+    type: 0,
     releaseYear: '2016',
     releaseMonth: '10',
     // releaseDate: '2016/10'
   ),
-].toList();
-
-var DUMMY_CAFE = [
+  
   MenuModel(
     id: 'cafe01',
     menuTitle: 'Americano',
@@ -139,7 +143,8 @@ var DUMMY_CAFE = [
     prices: 1500,
     type: 1,
     releaseYear: '1981',
-    releaseMonth: '3'
+    releaseMonth: '3',
+    // releaseDate: '1981/03'
   ),
 
   MenuModel(
@@ -149,7 +154,8 @@ var DUMMY_CAFE = [
     prices: 2000,
     type: 1,
     releaseYear: '1981',
-    releaseMonth: '3'
+    releaseMonth: '3',
+    // releaseDate: '1981/03'
   ),
 
   MenuModel(
@@ -159,7 +165,8 @@ var DUMMY_CAFE = [
     prices: 2000,
     type: 1,
     releaseYear: '1981',
-    releaseMonth: '3'
+    releaseMonth: '3',
+    // releaseDate: '1981/03'
   ),
 
   MenuModel(
@@ -169,7 +176,8 @@ var DUMMY_CAFE = [
     prices: 2000,
     type: 1,
     releaseYear: '2020',
-    releaseMonth: '1'
+    releaseMonth: '1',
+    // releaseDate: '2020/01'
   ),
 
   MenuModel(
@@ -179,7 +187,8 @@ var DUMMY_CAFE = [
     prices: 2000,
     type: 1,
     releaseYear: '2020',
-    releaseMonth: '1'
+    releaseMonth: '1',
+    // releaseDate: '2020/01'
   ),
 
   MenuModel(
@@ -269,9 +278,7 @@ var DUMMY_CAFE = [
     releaseMonth: '11'
     // releaseDate: '2017/11'
   ),
-].toList();
 
-var DUMMY_MORNING = [
   MenuModel(
     id: 'morning01',
     menuTitle: 'Bacon Egg McMuffine',
@@ -280,6 +287,7 @@ var DUMMY_MORNING = [
     type: 2,
     releaseYear: '2006',
     releaseMonth: '11',
+    // releaseDate: '2006/11'
   ),
 
   MenuModel(
@@ -290,6 +298,7 @@ var DUMMY_MORNING = [
     type: 2,
     releaseYear: '2014',
     releaseMonth: '5',
+    // releaseDate: '2014/05'
   ),
 
   MenuModel(
@@ -300,6 +309,7 @@ var DUMMY_MORNING = [
     type: 2,
     releaseYear: '2019',
     releaseMonth: '10',
+    // releaseDate: '2019/10'
   ),
 
   MenuModel(
@@ -310,6 +320,7 @@ var DUMMY_MORNING = [
     type: 2,
     releaseYear: '2018',
     releaseMonth: '3',
+    // releaseDate: '2018/03'
   ),
 
   MenuModel(
@@ -320,6 +331,7 @@ var DUMMY_MORNING = [
     type: 2,
     releaseYear: '2006',
     releaseMonth: '11',
+    // releaseDate: '2006/11'
   ),
 
   MenuModel(
@@ -330,6 +342,7 @@ var DUMMY_MORNING = [
     type: 2,
     releaseYear: '2015',
     releaseMonth: '9',
+    // releaseDate: '2015/09'
   ),
 
   MenuModel(
@@ -375,9 +388,7 @@ var DUMMY_MORNING = [
     releaseMonth: '11'
     // releaseDate: '2006/11'
   ),
-].toList();
 
-var DUMMY_DESSERT = [
   MenuModel(
     id: 'dessert01',
     menuTitle: 'Apple Pie',
@@ -386,6 +397,7 @@ var DUMMY_DESSERT = [
     type: 3,
     releaseYear: '2016',
     releaseMonth: '11',
+    // releaseDate: '2016/11'
   ),
 
   MenuModel(
@@ -396,6 +408,7 @@ var DUMMY_DESSERT = [
     type: 3,
     releaseYear: '1948',
     releaseMonth: '2',
+    // releaseDate: '1948/02'
   ),
 
   MenuModel(
@@ -406,6 +419,7 @@ var DUMMY_DESSERT = [
     type: 3,
     releaseYear: '2017',
     releaseMonth: '2',
+    // releaseYear: '2017/02'
   ),
 
   MenuModel(
@@ -416,6 +430,7 @@ var DUMMY_DESSERT = [
     type: 3,
     releaseYear: '2017',
     releaseMonth: '1',
+    // releaseDate: '2017/01'
   ),
 
   MenuModel(
@@ -426,6 +441,7 @@ var DUMMY_DESSERT = [
     type: 3,
     releaseYear: '2019',
     releaseMonth: '3',
+    // releaseDate: '2019/03'
   ),
 
   MenuModel(
@@ -436,6 +452,7 @@ var DUMMY_DESSERT = [
     type: 3,
     releaseYear: '2016',
     releaseMonth: '11',
+    // releaseDate: '2016/11'
   ),
 
   MenuModel(
@@ -445,7 +462,8 @@ var DUMMY_DESSERT = [
     prices: 2300,
     type: 3,
     releaseYear: '2017',
-    releaseMonth: '6'
+    releaseMonth: '6',
+    // releaseDate: '2017/06'
   ),
 
   MenuModel(
@@ -455,32 +473,7 @@ var DUMMY_DESSERT = [
     prices: 1000,
     type: 3,
     releaseYear: '2020',
-    releaseMonth: '9'
-  ),
-].toList();
-
-var DUMMY_CATEGORY = [
-  MenuModel(id: 'ham', menuTitle: 'hamburger', image: 'assets/img/burger/1955HashBrown.png', type: 0, childList: DUMMY_HAM),
-  MenuModel(id: 'cafe', menuTitle: 'cafe', image: 'assets/img/McCafe_and_beverages/Americano.png', type: 1, childList: DUMMY_CAFE),
-  MenuModel(id: 'morning', menuTitle: 'morning', image: 'assets/img/McMorning/BaconEggMcMuffin.png', type: 2, childList: DUMMY_MORNING),
-  MenuModel(id: 'dessert', menuTitle: 'dessert', image: 'assets/img/sides_and_desserts/ApplePie.png', type: 3, childList: DUMMY_DESSERT)
-];
-
-var DUMMY_SPECIAL = [
-  MenuModel(
-    id: 'sp01',
-    menuTitle: 'Rich Potato Burger',
-    image: 'assets/img/burger/1955HashBrown.png',
-    prices: 8500,
-    releaseYear: '2020',
-    releaseMonth: '12'
-  ),
-  MenuModel(
-    id: 'sp02',
-    menuTitle: 'Rich Potato Mushroom Burger',
-    image: 'assets/img/burger/RichPotatoMushroomBurgerMeal.png',
-    prices: 8900,
-    releaseYear: '2020',
-    releaseMonth: '12'
+    releaseMonth: '9',
+    // releaseDate: '2020/09'
   )
-];
+].toList();
