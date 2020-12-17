@@ -20,12 +20,14 @@ class Orders extends StatefulWidget {
 }
 
 class _OrdersState extends State<Orders> {
+  MenuModel orderedMenu;
   String yourOrder = 'Previous Orders';
   String menuID;
   List<MenuModel> totalPrices = [];
 
   @override
   void initState(){
+    orderedMenu = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
     super.initState();
   }
 
@@ -62,7 +64,7 @@ class _OrdersState extends State<Orders> {
         child: Consumer<ProviderMenu>(
           builder: (ctx, orderMenu, child){
             final Map<String, dynamic> orderFilter = Provider.of<FilterProvider>(context).orderFilters;
-            final List<MenuModel> subMenuList = orderMenu.cartList.where((ordered) => checkFilter(ordered, orderFilter)).toList();
+            final List<MenuModel> subMenuList = orderMenu.orderList.where((ordered) => checkFilter(ordered, orderFilter)).toList();
             // final List<MenuModel> subMenuList = orderMenu.cartList;
             // final List<MenuModel> cartPage = subMenuList.toList();
 

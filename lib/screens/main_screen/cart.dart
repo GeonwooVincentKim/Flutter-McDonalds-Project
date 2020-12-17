@@ -52,22 +52,6 @@ class _CartState extends State<Cart> {
         child: Consumer<ProviderMenu>(
           builder: (ctx, orderMenu, child){
             final List<MenuModel> subMenuList = orderMenu.cartList.toList();
-            // final List<MenuModel> cartPage = subMenuList.toList();
-            // return yourOrder.length == 0 || yourOrder.length == null ?
-            // Column(
-            //   crossAxisAlignment: CrossAxisAlignment.start,
-            //   children: <Widget>[
-            //     // CartItemListTile(title: yourOrder[0], menuList: cartPage),
-            //     TransparentDivider(),
-            //   ],
-            // ) :
-            // return Column(
-            //   crossAxisAlignment: CrossAxisAlignment.start,
-            //   children: <Widget>[
-            //     CartItemListTile(title: yourOrder[0], menuList: cartPage),
-            //     TransparentDivider(),
-            //   ],
-            // );
             return subMenuList.length > 0 && subMenuList.length != 0?
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,13 +71,6 @@ class _CartState extends State<Cart> {
               children: <Widget>[
                 ContentsCart(title: yourOrder[0]),
                 Divider(height: basicPadding * 2, color: Colors.transparent),
-                // ListView.separated(
-                //   shrinkWrap: true,
-                //   physics: NeverScrollableScrollPhysics(),
-                //   separatorBuilder: (context, index) => TransparentDivider(),
-                //   itemCount: subMenuList.length,
-                //   itemBuilder: (context, index) => CartList(orderMenu: subMenuList[index])
-                // )
               ]
             );
           }
@@ -109,57 +86,7 @@ class _CartState extends State<Cart> {
       color: Theme.of(context).primaryColor,
       child: Consumer<ProviderMenu>(
           builder: (ctx, totalPrice, child){
-            // return yourOrder.length == 0 || yourOrder.length == null ?
-            // Column(
-            //   children: [
-            //     // Text(yourOrder[1].toUpperCase().toString(), style: menuTitleSize),
-            //     TransparentDivider(),
-            //     // Text("\￦${totalPrice.totalPrices}", style: costText),
-            //     TransparentDivider(),
-            //     Row(
-            //       mainAxisAlignment: MainAxisAlignment.spaceAround,
-            //       children: [
-            //         BottomButton(contents: "OK", onPressed: () => _buildSubmitForm(context)),
-            //         BottomButton(contents: "CANCEL", onPressed: () => _buildResetForm(context)),
-            //         // RaisedButton(
-            //         //   child: Text('Clear'),
-            //         //   onPressed: () {
-            //         //     setState(() {
-            //         //       yourOrder.clear();
-            //         //     });
-            //         //   },
-            //         // ),
-            //       ]
-            //     )
-            //   ]
-            // ) :
-            return totalPrice.totalPrices > 0 || totalPrice.totalPrices != 0 ?
-            Column(
-              children: [
-                // Text(yourOrder[1].toUpperCase().toString(), style: menuTitleSize),
-                ContentsCart(title: yourOrder[1]),
-                // TransparentDivider(),
-                Divider(height: basicPadding * 2, color: Colors.transparent),
-                Text("\￦${totalPrice.totalPrices}", style: costText),
-                TransparentDivider(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    BottomButton(contents: "OK", onPressed: () => _buildSubmitForm(context)),
-                    BottomButton(contents: "CANCEL", onPressed: () => _buildResetForm(context)),
-                    // RaisedButton(
-                    //   child: Text('Clear'),
-                    //   onPressed: () {
-                    //     setState(() {
-                    //       yourOrder.clear();
-                    //     });
-                    //   },
-                    // ),
-                  ]
-                )
-              ]
-            ) : 
-            Column(
+            return Column(
               children: [
                 // Text(yourOrder[1].toUpperCase().toString(), style: menuTitleSize),
                 ContentsCart(title: yourOrder[1]),
@@ -214,10 +141,11 @@ class _CartState extends State<Cart> {
   }
 
   void _buildSubmitForm(BuildContext context){
-    Provider.of<ProviderMenu>(context, listen: false).cartList;
-    // Provider.of<ProviderMenu>(context, listen: false).addToCart(add);
+    // Provider.of<ProviderMenu>(context, listen: false).orderList;
+    // Provider.of<ProviderMenu>(context, listen: false).addCart(totalPrices);
+    Provider.of<ProviderMenu>(context, listen: false).addToOrder(cartMenu);
     Navigator.pushNamed(context, "/orders");
-    Provider.of<ProviderMenu>(context, listen: false).cartList.clear();
+    // Provider.of<ProviderMenu>(context, listen: false).cartList.clear();
   }
 
   void _buildResetForm(BuildContext context){

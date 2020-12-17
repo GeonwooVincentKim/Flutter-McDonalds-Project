@@ -50,6 +50,14 @@ class ProviderMenu extends ChangeNotifier{
 
   void addToOrder(MenuModel menuOrderAdd){
     _addOrderedItems.add(menuOrderAdd);
+    _addCartItems.clear();
+    notifyListeners();
+  }
+
+  void addCart(List<MenuModel> list){
+    list = _addCartItems;
+    _addOrderedItems.addAll(list);
+    list.remove(list);
     notifyListeners();
   }
 
