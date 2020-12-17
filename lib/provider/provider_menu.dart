@@ -43,12 +43,12 @@ class ProviderMenu extends ChangeNotifier{
   }
 
   // Add new elements.
-  void addMenu(MenuModel menuAdd){
+  void addToCart(MenuModel menuAdd){
     _addCartItems.add(menuAdd);
     notifyListeners();
   }
 
-  void addOrder(MenuModel menuOrderAdd){
+  void addToOrder(MenuModel menuOrderAdd){
     _addOrderedItems.add(menuOrderAdd);
     notifyListeners();
   }
@@ -69,7 +69,7 @@ class ProviderMenu extends ChangeNotifier{
   }
 
   void deleteOrderMenu(MenuModel menuDelete){
-    _addCartItems.remove(menuDelete);
+    _addCartItems.clear();
     notifyListeners();
   }
 

@@ -153,7 +153,7 @@ class _DetailsState extends State<Details> {
   void _buildSubmitForm(BuildContext context){
     if(!_formDetailKey.currentState.validate()) return;
     _formDetailKey.currentState.save();
-    Provider.of<ProviderMenu>(context).addMenu(detailMenu);
+    Provider.of<ProviderMenu>(context).addToCart(detailMenu);
     Navigator.of(context).pop();
     Navigator.pushNamed(context, "/cart");
   }

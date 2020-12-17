@@ -52,7 +52,7 @@ class _CartState extends State<Cart> {
         child: Consumer<ProviderMenu>(
           builder: (ctx, orderMenu, child){
             final List<MenuModel> subMenuList = orderMenu.cartList.toList();
-            final List<MenuModel> cartPage = subMenuList.toList();
+            // final List<MenuModel> cartPage = subMenuList.toList();
             // return yourOrder.length == 0 || yourOrder.length == null ?
             // Column(
             //   crossAxisAlignment: CrossAxisAlignment.start,
@@ -215,11 +215,13 @@ class _CartState extends State<Cart> {
 
   void _buildSubmitForm(BuildContext context){
     Provider.of<ProviderMenu>(context, listen: false).cartList;
+    // Provider.of<ProviderMenu>(context, listen: false).addToCart(add);
     Navigator.pushNamed(context, "/orders");
+    Provider.of<ProviderMenu>(context, listen: false).cartList.clear();
   }
 
   void _buildResetForm(BuildContext context){
     Provider.of<ProviderMenu>(context, listen: false).deleteOrderMenu(cartMenu);
-    
+    print(cartMenu);
   }
 }

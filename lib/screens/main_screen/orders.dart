@@ -40,7 +40,14 @@ class _OrdersState extends State<Orders> {
             color: Theme.of(context).cardColor
           ),
           onPressed: () => Navigator.pushNamed(context, "/filter", arguments: "orders"),
-        )
+        ),
+        // IconButton(
+        //   icon: Icon(
+        //     IconMoon.iedit,
+        //     color: Theme.of(context).cardColor
+        //   ),
+        //   onPressed: () => _buildOrdersReset(context),
+        // )
       ]
     );
   }
@@ -91,6 +98,11 @@ class _OrdersState extends State<Orders> {
         child: _buildOrdersOrderList(context),
       ),
     );
+  }
+
+  void _buildOrdersReset(BuildContext context){
+    Provider.of<ProviderMenu>(context).deleteCartMenu(totalPrices);
+    print(totalPrices);
   }
 
   @override

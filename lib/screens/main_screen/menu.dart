@@ -17,23 +17,23 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
-  CategoryModel categoryList;
+  CategoryModel cate;
 
   @override
   void initState(){
-    categoryList = Provider.of<ProviderCategory>(context, listen: false).category;
-    if(categoryList == null){
-      final List<CategoryModel> menuList = Provider.of<ProviderCategory>(context, listen: false).categoryList.toList();
+    cate = Provider.of<ProviderCategory>(context, listen: false).category;
+    if(cate == null){
+      final List<CategoryModel> menu = Provider.of<ProviderCategory>(context, listen: false).categoryList.toList();
       // Get one item from menuID.
       // If menuID matches to menuList, then shows the category what the User selected.
-      categoryList = menuList.firstWhere((menu) => menu.categoryID == widget.menuID);
+      cate = menu.firstWhere((menuTitle) => menuTitle.categoryID == widget.menuID);
     }
     super.initState();
   }
 
   Widget _buildMenuAppBar(){
     return AppBar(
-      title: Text(categoryList.name),
+      title: Text(cate.name),
       centerTitle: true,
     );
   }
@@ -46,21 +46,21 @@ class _MenuState extends State<Menu> {
         builder: (ctx, menu, child){
           // final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
           // Get all items of list that match to CategoryList's type.
-          List<MenuModel> listMenu = [];
-          listMenu = menu.menuList.where((submenu) => submenu.type == categoryList.type).toList();
+          List<MenuModel> menuList = [];
+          menuList = menu.menuList.where((menu) => menu.type == cate.type).toList();
 
-          return listMenu.length == 0 || listMenu.length == null ?
+          return menuList.length == 0 || menuList.length == null ?
             Center(child: Text("NOO!!!")) :
             GridView.builder(
               shrinkWrap: true,
-              itemCount: listMenu.length,
+              itemCount: menuList.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 0.75,
                 crossAxisSpacing: 30.0,
                 mainAxisSpacing: 30.0
               ),
-              itemBuilder: (context, index) => ListTileMenu(menuContents: listMenu[index]),
+              itemBuilder: (context, index) => ListTileMenu(menuContents: menuList[index]),
             );
         }
       )
