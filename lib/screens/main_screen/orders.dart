@@ -60,7 +60,14 @@ class _OrdersState extends State<Orders> {
             // final List<MenuModel> cartPage = subMenuList.toList();
 
             return subMenuList.length == 0 ?
-              Center(child: Text("No Menu inside the List")) :
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  OrdersItemListTile(title: yourOrder, menuList: subMenuList),
+                  TransparentDivider(),
+                ],
+              ) :
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -21,13 +21,11 @@ class _MenuState extends State<Menu> {
 
   @override
   void initState(){
-    // If the title of category is null, get the ID values from 'widget.menuID',
-    // and substitude it which are already comparsed to the 'menu.categoryID'.
     categoryList = Provider.of<ProviderCategory>(context, listen: false).category;
     if(categoryList == null){
       final List<CategoryModel> menuList = Provider.of<ProviderCategory>(context, listen: false).categoryList.toList();
-      // Comparse values, and then if it's right, then substitude the values of 'widget.menuID'
-      // into 'menu.categoryID'.
+      // Get one item from menuID.
+      // If menuID matches to menuList, then shows the category what the User selected.
       categoryList = menuList.firstWhere((menu) => menu.categoryID == widget.menuID);
     }
     super.initState();
@@ -47,7 +45,7 @@ class _MenuState extends State<Menu> {
       child: Consumer<ProviderMenu>(
         builder: (ctx, menu, child){
           // final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
-          // Comparse
+          // Get all items of list that match to CategoryList's type.
           List<MenuModel> listMenu = [];
           listMenu = menu.menuList.where((submenu) => submenu.type == categoryList.type).toList();
 
