@@ -50,7 +50,7 @@ class _SideMenuState extends State<SideMenu> {
               SwitchListTile(
                 title: Text("Dark Mode"),
                 onChanged:(value){
-                  notifier.toggleTheme();
+                  notifier.switchTheme();
               } ,
               value: notifier.darkTheme ,
             ),
