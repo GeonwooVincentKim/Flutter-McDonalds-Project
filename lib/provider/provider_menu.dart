@@ -28,17 +28,11 @@ class ProviderMenu extends ChangeNotifier{
   List<MenuModel> get orderList => [..._addOrderedItems];
 
   // Bring the Category
-  MenuModel get selectedCategory => category;
   MenuModel get selectedMenu => menuDetail != null ? MenuModel.fromMenuModelInfo(selectedMenu) : '';
   int get totalPrices => cartList.fold(0, (sum, current) => sum + current.prices);
 
   void selectMenu(MenuModel menuContent){
     menuDetail = menuContent;
-    notifyListeners();
-  }
-
-  void selectCategory(MenuModel categoryContent){
-    category = categoryContent;
     notifyListeners();
   }
 
