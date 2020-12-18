@@ -63,11 +63,6 @@ class ProviderMenu extends ChangeNotifier{
     notifyListeners();
   }
 
-  void deleteOrderMenu(MenuModel menuDelete){
-    _addCartItems.clear();
-    notifyListeners();
-  }
-
   void deleteCartMenu(MenuModel menuDelete){
     _addCartItems.clear();
     notifyListeners();
