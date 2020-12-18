@@ -51,7 +51,7 @@ class ProviderMenu extends ChangeNotifier{
   // Add the items that the User ordered from the Cart.
   void addToOrder(MenuModel menuOrderAdd){
     _addOrderedItems.add(menuOrderAdd);
-    _addCartItems.clear();
+    _addCartItems.clear();  // Clear '_addCartItems' after adds in '_addOrderedItems'.
     notifyListeners();
   }
 
@@ -65,7 +65,6 @@ class ProviderMenu extends ChangeNotifier{
   void createMenu(Map<String, dynamic> menuCreate){
     menuCreate['id'] = getRandomString(2);
     final MenuModel menuSettings = MenuModel.fromMenuModelMapInfo(menuCreate);
-    // _menuItems.add(menuSettings);
     _menuSpecialItems.add(menuSettings);
     notifyListeners();
   }
