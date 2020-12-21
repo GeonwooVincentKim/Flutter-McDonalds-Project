@@ -37,10 +37,14 @@ class ListTileSpecial extends StatelessWidget{
           ),
           Divider(height: 10, color: Colors.transparent),
           TextDesign(
-            basicText: spMenuList.releaseYear.toString() + "/"
-              + spMenuList.releaseMonth.toString(),
+            basicText: spMenuList.releaseDate.toString(),
             textStyle: subListSize
-          ),
+          )
+          // TextDesign(
+          //   basicText: spMenuList.releaseYear.toString() + "/"
+          //     + spMenuList.releaseMonth.toString(),
+          //   textStyle: subListSize
+          // ),
         ],
       )
     );

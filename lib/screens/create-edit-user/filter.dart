@@ -24,11 +24,11 @@ class _FilterState extends State<Filter> {
 
   // MenuModel newFilterData = MenuModel(id: null, menuTitle: null, image: null, prices: null, releaseYear: null, releaseMonth: null);
   final Map<String, dynamic> _currentOrdersFilters = {
-    // 'releaseYearMonth': '',
-    'releaseYear': '',
-    'releaseYearText': null,
-    'releaseMonth': '',
-    'releaseMonthText': null,
+    'releaseYearMonth': '',
+    'releaseYear': null,
+    // 'releaseYearText': null,
+    'releaseMonth': null,
+    // 'releaseMonthText': null,
     // 'releaseDate': '',
     // 'year': null,
     // 'month': null,
@@ -42,28 +42,32 @@ class _FilterState extends State<Filter> {
     }else {
       filterDate = Provider.of<FilterProvider>(context, listen: false).prevOrderFilters;
     }
-    // _currentOrdersFilters['releaseYearMonth'] = filterDate['releaseYearMonth'];
+    _currentOrdersFilters['releaseYearMonth'] = filterDate['releaseYearMonth'];
     // _currentOrdersFilters['releaseYear'] = filterDate['releaseYear'];
     // _currentOrdersFilters['releaseMonth'] = filterDate['releaseMonth'];
     _currentOrdersFilters['releaseYear'] = filterDate['releaseYear'];
-    _currentOrdersFilters['releaseYearText'] = filterDate['releaseYearText'];
+    // _currentOrdersFilters['releaseYearText'] = filterDate['releaseYearText'];
     _currentOrdersFilters['releaseMonth'] = filterDate['releaseMonth'];
-    _currentOrdersFilters['releaseMonthText'] = filterDate['releaseMonthText'];
+    // _currentOrdersFilters['releaseMonthText'] = filterDate['releaseMonthText'];
 
-    // if(filterDate['releaseYearMonth'] != ''){
-    //   final DateTime releaseYearMonth = getDateTimeFromString(filterDate['releaseYearMonth']);
-
-    //   _currentOrdersFilters['releaseYear'] = releaseYearMonth.year.toString();
-    //   _currentOrdersFilters['releaseMonth'] = releaseYearMonth.month.toString();
-    // }
-    if(filterDate['releaseYear'] != '' && filterDate['releaseMonth'] != ''){
-      final int releaseYear = filterDate['releaseYear'];
-      final int releaseMonth = filterDate['releaseMonth'];
-      _currentOrdersFilters['releaseYearText'] = releaseYear.toString();
-      _currentOrdersFilters['releaseMonthText'] = releaseMonth.toString();
-    }else if(filterDate['releaseYear'] != '' && filterDate['releaseMonth'] == null){
-
+    if(filterDate['releaseYearMonth'] != ''){
+      final DateTime releaseYearMonth = getDateTimeMonthString(filterDate['releaseYearMonth']);
+      // final DateTime releaseYearMonth = filterDate['releaseYearMonth'];
+      // // final int releaseYearMonth = filterDate['releaseYearMonth'];
+      // if(filterDate['releaseYearMonth'].toString().contains("/")){
+      //   print("HI");
+      // }
+      _currentOrdersFilters['releaseYear'] = releaseYearMonth.year.toString();
+      _currentOrdersFilters['releaseMonth'] = releaseYearMonth.month.toString();
     }
+    // if(filterDate['releaseYear'] != '' && filterDate['releaseMonth'] != ''){
+    //   final int releaseYear = filterDate['releaseYear'];
+    //   final int releaseMonth = filterDate['releaseMonth'];
+    //   _currentOrdersFilters['releaseYearText'] = releaseYear.toString();
+    //   _currentOrdersFilters['releaseMonthText'] = releaseMonth.toString();
+    // }else if(filterDate['releaseYear'] != '' && filterDate['releaseMonth'] == null){
+
+    // }
     // else{
     //   if(filterDate['releaseYear'] != ''){
     //     final int releaseYear = filterDate['releaseYear'];
@@ -101,7 +105,7 @@ class _FilterState extends State<Filter> {
             key: _formKey,
             child: Column(
               children: <Widget>[
-                DropDownDateFormatMap(
+                DropDownDateFormat(
                   yearmonthKey: _formKey,
                   menuYearMonthMap: _currentOrdersFilters,
                 ),
@@ -146,11 +150,11 @@ class _FilterState extends State<Filter> {
     _formKey.currentState.reset();
     setState(() {
       // _currentOrdersFilters['releaseYearMonth'] = '';
-      _currentOrdersFilters['releaseYear'] = '';
-      _currentOrdersFilters['releaseYearText'] = null;
+      _currentOrdersFilters['releaseYear'] = null;
+      // _currentOrdersFilters['releaseYearText'] = null;
       // _currentOrdersFilters['year'] = null;
-      _currentOrdersFilters['releaseMonth'] = '';
-      _currentOrdersFilters['releaseMonthText'] = null;
+      _currentOrdersFilters['releaseMonth'] = null;
+      // _currentOrdersFilters['releaseMonthText'] = null;
     });
 
     if(widget.page == 'orders'){
