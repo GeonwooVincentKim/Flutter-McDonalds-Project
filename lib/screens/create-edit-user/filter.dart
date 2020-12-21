@@ -29,6 +29,7 @@ class _FilterState extends State<Filter> {
     'releaseYearText': null,
     'releaseMonth': '',
     'releaseMonthText': null,
+    'releaseDate': '',
     // 'releaseDate': '',
     // 'year': null,
     // 'month': null,
@@ -42,6 +43,8 @@ class _FilterState extends State<Filter> {
     }else {
       filterDate = Provider.of<FilterProvider>(context, listen: false).prevOrderFilters;
     }
+    // _currentOrdersFilters['releaseDate'] = filterDate['releaseYear'] + filterDate['releaseMonth'];
+    // _currentOrdersFilters['releaseDate'] = '${filterDate['releaseYear']}/${filterDate['releaseMonth']}';
     // _currentOrdersFilters['releaseYearMonth'] = filterDate['releaseYearMonth'];
     // _currentOrdersFilters['releaseYear'] = filterDate['releaseYear'];
     // _currentOrdersFilters['releaseMonth'] = filterDate['releaseMonth'];
@@ -56,14 +59,22 @@ class _FilterState extends State<Filter> {
     //   _currentOrdersFilters['releaseYear'] = releaseYearMonth.year.toString();
     //   _currentOrdersFilters['releaseMonth'] = releaseYearMonth.month.toString();
     // }
-    if(filterDate['releaseYear'] != '' && filterDate['releaseMonth'] != ''){
-      final int releaseYear = filterDate['releaseYear'];
-      final int releaseMonth = filterDate['releaseMonth'];
-      _currentOrdersFilters['releaseYearText'] = releaseYear.toString();
-      _currentOrdersFilters['releaseMonthText'] = releaseMonth.toString();
-    }else if(filterDate['releaseYear'] != '' && filterDate['releaseMonth'] == null){
-
+    if(filterDate['releaseDate'] != ''){
+      final int releaseDate = filterDate['releaseDate'];
+      _currentOrdersFilters['releaseYear'] = releaseDate.toString();
+      _currentOrdersFilters['releaseMonth'] = releaseDate.toString();
     }
+    // if(filterDate['releaseYear'] != '' || filterDate['releaseMonth'] != ''){
+    //   final int releaseYear = filterDate['releaseYear'];
+    //   final int releaseMonth = filterDate['releaseMonth'];
+    //   _currentOrdersFilters['releaseYearText'] = releaseYear.toString();
+    //   _currentOrdersFilters['releaseMonthText'] = releaseMonth.toString();
+    // }else if(filterDate['releaseYear'] == null || filterDate['releaseMonth'] == null){
+    //   final int releaseYear = filterDate['releaseYear'];
+    //   final int releaseMonth = filterDate['releaseMonth'];
+    //   _currentOrdersFilters['releaseYearText'] = releaseYear.toString();
+    //   _currentOrdersFilters['releaseMonthText'] = releaseMonth.toString();
+    // }
     // else{
     //   if(filterDate['releaseYear'] != ''){
     //     final int releaseYear = filterDate['releaseYear'];
@@ -146,6 +157,7 @@ class _FilterState extends State<Filter> {
     _formKey.currentState.reset();
     setState(() {
       // _currentOrdersFilters['releaseYearMonth'] = '';
+      // _currentOrdersFilters['releaseDate'] = '';
       _currentOrdersFilters['releaseYear'] = '';
       _currentOrdersFilters['releaseYearText'] = null;
       // _currentOrdersFilters['year'] = null;

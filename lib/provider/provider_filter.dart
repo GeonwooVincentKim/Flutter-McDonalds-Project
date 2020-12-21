@@ -14,6 +14,7 @@ class FilterProvider with ChangeNotifier{
     // 'releaseYearMonth': '',
     // 'releaseYear': null,
     // 'releaseMonth': null,
+    'releaseDate': '',
     'releaseYear': '',
     'releaseYearText': null,
     'releaseMonth': '',
@@ -42,6 +43,7 @@ class FilterProvider with ChangeNotifier{
     // _orders['releaseYearMonth'] = newFilter['releaseYearMonth'];
     // _orders['releaseYear'] = newFilter['releaseYear'];
     // _orders['releaseMonth'] = newFilter['releaseMonth'];
+    // _orders['releaseDate'] = newFilter['releaseYear'] + newFilter['releaseMonth'];
     _orders['releaseYear'] = newFilter['releaseYear'];
     _orders['releaseYearText'] = newFilter['releaseYearText'];
     _orders['releaseMonth'] = newFilter['releaseMonth'];
@@ -70,6 +72,7 @@ class FilterProvider with ChangeNotifier{
     // _orders['releaseYearMonth'] = '';
     // _orders['releaseYear'] = null;
     // _orders['releaseMonth'] = null;
+    // _orders['releaseDate'] = '';
     _orders['releaseYear'] = '';
     _orders['releaseYearText'] = null;
     _orders['releaseMonth'] = '';
