@@ -24,7 +24,6 @@ class _FilterState extends State<Filter> {
   //   ''
   // ];
   final _formKey = GlobalKey<FormState>();
-  
   // final List<String> year = [];
   // final List<String> month = [];
 
@@ -135,7 +134,7 @@ class _FilterState extends State<Filter> {
   void _buildFilterForm(context){
     // if(!_formKey.currentState.validate()) return;
     _formKey.currentState.save();
-    if(widget.page == 'menu'){
+    if(widget.page == 'orders'){
       // Provider.of<FilterProvider>(context).changeOrderNoMapFilters(newFilterData);
       Provider.of<FilterProvider>(context, listen: false).changeOrderFilters(_currentOrdersFilters);
     }else{
@@ -155,7 +154,7 @@ class _FilterState extends State<Filter> {
       _currentOrdersFilters['releaseMonthText'] = null;
     });
 
-    if(widget.page == 'menu'){
+    if(widget.page == 'orders'){
       Provider.of<FilterProvider>(context, listen: false).changeOrderFilters(_currentOrdersFilters);
     }else{
       Provider.of<FilterProvider>(context, listen: false).changePrevOrderFilters(_currentOrdersFilters);

@@ -42,18 +42,18 @@ DateTime getDateTimeNoDashString(String date){
 
 // bool checkFilter(MenuModel menu, Map<String, dynamic> newFilter){
 //   final DateTime releaseYearMonth = menu.releaseDate != '' ? getDateTimeFromString(menu.releaseDate) : null;
-//   // // print(releaseYearMonth);
-//   // // print(getDateTimeFromString(menu.releaseDate));
+//   print(releaseYearMonth);
+//   print(getDateTimeFromString(menu.releaseDate));
 //   if((newFilter['releaseYear'] == null || newFilter['releaseYear'] == releaseYearMonth.year.toString())
 //   && (newFilter['releaseMonth'] == null || newFilter['releaseMonth'] == releaseYearMonth.month.toString())){
-//   //   print(newFilter['releaseYear']);
-//   //   return true;
+//   print(newFilter['releaseYear']);
+//   return true;
 //   }
 //   return false;
 // }
 // bool checkFilter(MenuModel menu, MenuModel newFilter){
 //   final DateTime releaseYear = menu.releaseYear != '' ? getDateTimeFromString(menu.releaseYear) : null;
-//   // final DateTime releaseMonth = menu.releaseMonth != '' ? getDateTimeFromString(menu.releaseMonth) : null;
+//   final DateTime releaseMonth = menu.releaseMonth != '' ? getDateTimeFromString(menu.releaseMonth) : null;
 //   if((newFilter.releaseYear == '' || newFilter.releaseYear == releaseYear.year.toString()) && 
 //   newFilter.releaseMonth == '' || newFilter.releaseYear == releaseYear.month.toString()){
 //     return true;
