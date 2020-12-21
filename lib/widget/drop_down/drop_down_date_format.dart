@@ -7,10 +7,10 @@ import 'package:myTestApp_Test/widget/drop_down/drop_down.dart';
 class DropDownDateFormat extends StatefulWidget {
   final GlobalKey<FormState> yearmonthKey;
   Map<String, dynamic> menuYearMonthMap;
-  
+
   DropDownDateFormat({
     @required this.yearmonthKey,
-    this.menuYearMonthMap 
+    this.menuYearMonthMap
   });
 
   @override

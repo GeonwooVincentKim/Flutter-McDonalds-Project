@@ -32,7 +32,7 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
     'releaseMonth': ''
   };
   @override
-  void initState(){
+  void initState(){ 
     // newMenu = Provider.of<ProviderMenu>(context, listen: false).menu;
     // mainMenuList = menuContentList.map((mainMenu) => mainMenu.menuTitle).toList();    
     // MenuModel showMenu = Provider.of<ProviderMenu>(context, listen: false).selectedMenu;
@@ -155,6 +155,7 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
     if(!_formKey.currentState.validate()) return;
     _formKey.currentState.save();
 
+    newMenu['releaseYearMonth'] = '${newMenu['releaseYear']}/${newMenu['releaseMonth']}';
     // Provider.of<ProviderMenu>(context).createSubMenu(newMenuList);
     Provider.of<ProviderMenu>(context).createMenu(newMenu);
     Navigator.pushNamed(context, "/");

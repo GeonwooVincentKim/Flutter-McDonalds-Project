@@ -37,7 +37,7 @@ class _FilterState extends State<Filter> {
   @override
   void initState(){
     Map<String, dynamic> filterDate;
-    if(widget.page == 'menu'){
+    if(widget.page == 'orders'){
       filterDate = Provider.of<FilterProvider>(context, listen: false).orderFilters;
     }else {
       filterDate = Provider.of<FilterProvider>(context, listen: false).prevOrderFilters;
@@ -61,21 +61,24 @@ class _FilterState extends State<Filter> {
       final int releaseMonth = filterDate['releaseMonth'];
       _currentOrdersFilters['releaseYearText'] = releaseYear.toString();
       _currentOrdersFilters['releaseMonthText'] = releaseMonth.toString();
-    }else{
-      if(filterDate['releaseYear'] != ''){
-        final int releaseYear = filterDate['releaseYear'];
-        _currentOrdersFilters['releaseYearText'] = releaseYear.toString();
-        // final DateTime releaseYear = getDateTimeMonthString(filterDate['releaseYear']);
-        // _currentOrdersFilters['releaseYearText'] = releaseYear.year.toString();
-      }
-      if(filterDate['releaseMonth'] != ''){
-        final int releaseMonth = filterDate['releaseMonth'];
-        _currentOrdersFilters['releaseMonthText'] = releaseMonth.toString();
-        // final DateTime releaseMonth = getDateTimeMonthString(filterDate['releaseMonth']);
-        // _currentOrdersFilters['releaseMonthText'] = releaseMonth.month.toString();
-        // print(releaseMonth.month);
-      }
+    }else if(filterDate['releaseYear'] != '' && filterDate['releaseMonth'] == null){
+
     }
+    // else{
+    //   if(filterDate['releaseYear'] != ''){
+    //     final int releaseYear = filterDate['releaseYear'];
+    //     _currentOrdersFilters['releaseYearText'] = releaseYear.toString();
+    //     // final DateTime releaseYear = getDateTimeMonthString(filterDate['releaseYear']);
+    //     // _currentOrdersFilters['releaseYearText'] = releaseYear.year.toString();
+    //   }
+    //   if(filterDate['releaseMonth'] != ''){
+    //     final int releaseMonth = filterDate['releaseMonth'];
+    //     _currentOrdersFilters['releaseMonthText'] = releaseMonth.toString();
+    //     // final DateTime releaseMonth = getDateTimeMonthString(filterDate['releaseMonth']);
+    //     // _currentOrdersFilters['releaseMonthText'] = releaseMonth.month.toString();
+    //     // print(releaseMonth.month);
+    //   }
+    // }
     super.initState();
   }
 
@@ -132,6 +135,7 @@ class _FilterState extends State<Filter> {
     if(widget.page == 'orders'){
       // Provider.of<FilterProvider>(context).changeOrderNoMapFilters(newFilterData);
       Provider.of<FilterProvider>(context, listen: false).changeOrderFilters(_currentOrdersFilters);
+      // Navigator.pushNamed(context, "/orders");
     }else{
       Provider.of<FilterProvider>(context, listen: false).changePrevOrderFilters(_currentOrdersFilters);
     }
@@ -151,6 +155,7 @@ class _FilterState extends State<Filter> {
 
     if(widget.page == 'orders'){
       Provider.of<FilterProvider>(context, listen: false).changeOrderFilters(_currentOrdersFilters);
+      // Navigator.pushNamed(context, "/orders");
     }else{
       Provider.of<FilterProvider>(context, listen: false).changePrevOrderFilters(_currentOrdersFilters);
     }
