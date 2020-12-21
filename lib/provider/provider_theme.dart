@@ -13,6 +13,8 @@ class ProviderThemeDynamic with ChangeNotifier{
 
   final String key = "theme";
   // Stores Data key-value pair in the AOS & iOS.
+  // It's a DB that can stores simple things.
+  // Like a state of some variable or status, etc..
   SharedPreferences _pref;
   bool _darkTheme;
 
