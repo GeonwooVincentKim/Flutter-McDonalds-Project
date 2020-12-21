@@ -89,7 +89,7 @@ class _CartState extends State<Cart> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    BottomButton(contents: "OK", onPressed: () => _buildSubmitForm(context)),
+                    BottomButton(contents: "OK", onPressed: () => _buildCartForm(context)),
                     BottomButton(contents: "CANCEL", onPressed: () => _buildResetForm(context)),
                   ]
                 )
@@ -121,6 +121,35 @@ class _CartState extends State<Cart> {
       appBar: _buildCartAppBar(),
       drawer: SideMenu(),
       body: _buildCartBody(context),
+    );
+  }
+
+  void _buildCartForm(BuildContext context) async{
+    return showDialog(
+      context: context,
+      builder: (BuildContext context){
+        return AlertDialog(
+          title: Text("Add to your Order", textAlign: TextAlign.center),
+          shape: alertBorder,
+          content:  Container(
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text("Do you want to continue to buy??", textAlign: TextAlign.center, ),
+                TransparentDivider(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    BottomButton(contents: "OK", onPressed: () => _buildSubmitForm(context)),
+                    BottomButton(contents: "CANCEL", onPressed: () => Navigator.of(context).pop())
+                  ]
+                ),
+              ],
+            )
+          ),
+        );
+      }
     );
   }
 
