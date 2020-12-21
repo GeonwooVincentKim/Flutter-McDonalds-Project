@@ -20,12 +20,7 @@ class Filter extends StatefulWidget {
 }
 
 class _FilterState extends State<Filter> {
-  // final List<String> _currentOrderFilters = [
-  //   ''
-  // ];
   final _formKey = GlobalKey<FormState>();
-  // final List<String> year = [];
-  // final List<String> month = [];
 
   // MenuModel newFilterData = MenuModel(id: null, menuTitle: null, image: null, prices: null, releaseYear: null, releaseMonth: null);
   final Map<String, dynamic> _currentOrdersFilters = {
