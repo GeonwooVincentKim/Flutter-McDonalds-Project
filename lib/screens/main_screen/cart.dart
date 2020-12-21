@@ -154,6 +154,8 @@ class _CartState extends State<Cart> {
   }
 
   void _buildSubmitForm(BuildContext context){
+    // Provider.of<ProviderMenu>(context, listen: false).orderList;
+    // Provider.of<ProviderMenu>(context, listen: false).cartList.clear();
     Provider.of<ProviderMenu>(context, listen: false).addToOrder(cartMenu);
     Navigator.pushNamed(context, "/orders");
   }
