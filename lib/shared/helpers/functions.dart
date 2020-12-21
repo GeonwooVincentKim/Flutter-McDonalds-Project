@@ -24,13 +24,15 @@ DateTime getDateTimeFromString(String date) {
 }
 
 DateTime getDateTimeMonthString(String dateMonth){
-  if(dateMonth.contains('/')){
-    final String stringMonth = dateMonth.replaceAll('/', '-');
-    return DateTime.parse(stringMonth);
-  } else {
-    final DateTime today = DateTime.now();
-    return DateTime(int.parse(dateMonth) + today.month);
-  }
+  final DateTime today = DateTime.now();
+  return DateTime(int.parse(dateMonth) + today.month);
+  // if(dateMonth.contains('/')){
+  //   final String stringMonth = dateMonth.replaceAll('/', '-');
+  //   return DateTime.parse(stringMonth);
+  // } else {
+  //   final DateTime today = DateTime.now();
+  //   return DateTime(int.parse(dateMonth) + today.month);
+  // }
 }
 
 DateTime getDateTimeNoDashString(String date){

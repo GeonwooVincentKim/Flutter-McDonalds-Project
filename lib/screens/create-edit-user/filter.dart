@@ -149,7 +149,7 @@ class _FilterState extends State<Filter> {
   void _buildResetFilter(){
     _formKey.currentState.reset();
     setState(() {
-      // _currentOrdersFilters['releaseYearMonth'] = '';
+      _currentOrdersFilters['releaseYearMonth'] = '';
       _currentOrdersFilters['releaseYear'] = null;
       // _currentOrdersFilters['releaseYearText'] = null;
       // _currentOrdersFilters['year'] = null;

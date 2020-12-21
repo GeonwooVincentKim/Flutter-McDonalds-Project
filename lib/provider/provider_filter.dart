@@ -11,23 +11,23 @@ class FilterProvider with ChangeNotifier{
 
   List<MenuModel> get orderFilterNoMap => [...ordersNoMap];
   final Map<String, dynamic> _orders = {
-    // 'releaseYearMonth': '',
+    'releaseYearMonth': '',
     // 'releaseYear': null,
     // 'releaseMonth': null,
     'releaseYear': '',
-    'releaseYearText': null,
+    // 'releaseYearText': null,
     'releaseMonth': '',
-    'releaseMonthText': null
+    // 'releaseMonthText': null
   };
 
   final Map<String, dynamic> _prevOrders = {
-    // 'releaseYearMonth': '',
-    // 'releaseYear': null,
-    // 'releaseMonth': null,
-    'releaseYear': '',
-    'releaseYearText': null,
-    'releaseMonth': '',
-    'releaseMonthText': null
+    'releaseYearMonth': '',
+    'releaseYear': null,
+    'releaseMonth': null,
+    // 'releaseYear': '',
+    // 'releaseYearText': null,
+    // 'releaseMonth': '',
+    // 'releaseMonthText': null
   };
 
   Map<String, dynamic> get orderFilters {
@@ -39,13 +39,13 @@ class FilterProvider with ChangeNotifier{
   }
 
   void changeOrderFilters(Map<String, dynamic> newFilter){
-    // _orders['releaseYearMonth'] = newFilter['releaseYearMonth'];
-    // _orders['releaseYear'] = newFilter['releaseYear'];
-    // _orders['releaseMonth'] = newFilter['releaseMonth'];
+    _orders['releaseYearMonth'] = newFilter['releaseYearMonth'];
     _orders['releaseYear'] = newFilter['releaseYear'];
-    _orders['releaseYearText'] = newFilter['releaseYearText'];
     _orders['releaseMonth'] = newFilter['releaseMonth'];
-    _orders['releaseMonthText'] = newFilter['releaseMonthText'];
+    // _orders['releaseYear'] = newFilter['releaseYear'];
+    // _orders['releaseYearText'] = newFilter['releaseYearText'];
+    // _orders['releaseMonth'] = newFilter['releaseMonth'];
+    // _orders['releaseMonthText'] = newFilter['releaseMonthText'];
     notifyListeners();
   }
 
@@ -67,13 +67,13 @@ class FilterProvider with ChangeNotifier{
   }
 
   void resetOrderFilter(){
-    // _orders['releaseYearMonth'] = '';
-    // _orders['releaseYear'] = null;
-    // _orders['releaseMonth'] = null;
-    _orders['releaseYear'] = '';
-    _orders['releaseYearText'] = null;
-    _orders['releaseMonth'] = '';
-    _orders['releaseMonthText'] = null;
+    _orders['releaseYearMonth'] = '';
+    _orders['releaseYear'] = null;
+    _orders['releaseMonth'] = null;
+    // _orders['releaseYear'] = '';
+    // _orders['releaseYearText'] = null;
+    // _orders['releaseMonth'] = '';
+    // _orders['releaseMonthText'] = null;
     notifyListeners();
   }
 
