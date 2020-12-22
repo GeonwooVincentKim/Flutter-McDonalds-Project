@@ -26,7 +26,10 @@ DateTime getDateTimeFromString(String date) {
 DateTime getDateTimeMonthString(String dateMonth){
   final DateTime today = DateTime.now();
   // return DateTime(int.parse(dateMonth) + today.month);
-  return DateTime.parse('$dateMonth/${today.month + 1}');
+  dateMonth = "${today.year.toString()}/${today.month.toString()}";
+  print(dateMonth);
+  return DateTime.parse(dateMonth);
+  // return DateTime.parse('$dateMonth/${today.month + 1}');
 
   // if(dateMonth.contains('/')){
   //   final String stringMonth = dateMonth.replaceAll('/', '-');
