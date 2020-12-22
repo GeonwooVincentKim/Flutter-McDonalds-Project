@@ -12,7 +12,7 @@ var DUMMY_MENU = [
     type: 0,
     // releaseYear: '2017',
     // releaseMonth: '1',
-    releaseDate: '2017/01'
+    releaseDate: '2017/01/21'
   ),
 
   MenuModel(
