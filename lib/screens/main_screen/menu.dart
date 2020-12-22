@@ -22,12 +22,12 @@ class _MenuState extends State<Menu> {
   @override
   void initState(){
     cate = Provider.of<ProviderCategory>(context, listen: false).category;
-    if(cate == null){
-      final List<CategoryModel> menu = Provider.of<ProviderCategory>(context, listen: false).categoryList.toList();
+    // if(cate == null){
+      // final List<CategoryModel> menu = Provider.of<ProviderCategory>(context, listen: false).categoryList.toList();
       // Get one item from menuID.
       // If menuID matches to menuList, then shows the category what the User selected.
-      cate = menu.firstWhere((menuTitle) => menuTitle.categoryID == widget.menuID);
-    }
+      // cate = menu.firstWhere((menuTitle) => menuTitle.categoryID == widget.menuID);
+    // }
     super.initState();
   }
 
