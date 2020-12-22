@@ -23,12 +23,22 @@ DateTime getDateTimeFromString(String date) {
   }
 }
 
+String formatNumberForDate(int number) {
+  return number < 10 ? '0$number' : number.toString();
+}
+
 DateTime getDateTimeMonthString(String dateMonth){
-  final DateTime today = DateTime.now();
-  // return DateTime(int.parse(dateMonth) + today.month);
-  dateMonth = "${today.year.toString()}/${today.month.toString()}";
-  print(dateMonth);
-  return DateTime.parse(dateMonth);
+  if(dateMonth.contains("/")){
+    final String stringDate = dateMonth.replaceAll("/", "-");
+    return DateTime.parse(stringDate);
+  }else{
+    final DateTime today = DateTime.now();
+    // return DateTime(int.parse(dateMonth) + today.month);
+    // dateMonth = "$dateMonth-${today.month.toString()}";
+    dateMonth = "$dateMonth";
+    print(today.year.toString() + today.month.toString());
+    return DateTime.parse(dateMonth);
+  }
   // return DateTime.parse('$dateMonth/${today.month + 1}');
 
   // if(dateMonth.contains('/')){
@@ -48,7 +58,7 @@ DateTime getDateTimeNoDashString(String date){
 }
 
 bool checkFilter(MenuModel menu, Map<String, dynamic> newFilter){
-  final DateTime releaseYearMonth = menu.releaseDate != '' ? getDateTimeFromString(menu.releaseDate) : null;
+  final DateTime releaseYearMonth = menu.releaseDate != '' ? getDateTimeMonthString(menu.releaseDate) : null;
   print(releaseYearMonth);
   print(getDateTimeFromString(menu.releaseDate));
   if((newFilter['releaseYear'] == null || newFilter['releaseYear'] == releaseYearMonth.year.toString())

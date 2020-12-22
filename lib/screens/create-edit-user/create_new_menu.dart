@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_menu.dart';
 import 'package:myTestApp_Test/provider/provider_menu.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
+import 'package:myTestApp_Test/shared/helpers/functions.dart';
 import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/widget/drop_down/drop_down_date_format.dart';
@@ -160,7 +161,8 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
     if(!_formKey.currentState.validate()) return;
     _formKey.currentState.save();
 
-    newMenu['releaseYearMonth'] = '${newMenu['releaseYear']}/${newMenu['releaseMonth']}';
+    final String month = formatNumberForDate(int.parse(newMenu['releaseMonth']));
+    newMenu['releaseYearMonth'] = '${newMenu['releaseYear']}/$month';
     // Provider.of<ProviderMenu>(context).createSubMenu(newMenuList);
     Provider.of<ProviderMenu>(context).createMenu(newMenu);
     Navigator.pushNamed(context, "/");

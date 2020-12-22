@@ -14,9 +14,9 @@ class FilterProvider with ChangeNotifier{
     'releaseYearMonth': '',
     // 'releaseYear': null,
     // 'releaseMonth': null,
-    'releaseYear': '',
+    'releaseYear': null,
     // 'releaseYearText': null,
-    'releaseMonth': '',
+    'releaseMonth': null,
     // 'releaseMonthText': null
   };
 
@@ -56,13 +56,13 @@ class FilterProvider with ChangeNotifier{
   // }
 
   void changePrevOrderFilters(Map<String, dynamic> newFilter){
-    _prevOrders['releaseYear'] = newFilter['releaseYear'];
-    _prevOrders['releaseYearText'] = newFilter['releaseYearText'];
-    _prevOrders['releaseMonth'] = newFilter['releaseMonth'];
-    _prevOrders['releaseMonthText'] = newFilter['releaseMonthText'];
-    // _prevOrders['releaseYearMonth'] = newFilter['releaseYearMonth'];
     // _prevOrders['releaseYear'] = newFilter['releaseYear'];
+    // _prevOrders['releaseYearText'] = newFilter['releaseYearText'];
     // _prevOrders['releaseMonth'] = newFilter['releaseMonth'];
+    // _prevOrders['releaseMonthText'] = newFilter['releaseMonthText'];
+    _prevOrders['releaseYearMonth'] = newFilter['releaseYearMonth'];
+    _prevOrders['releaseYear'] = newFilter['releaseYear'];
+    _prevOrders['releaseMonth'] = newFilter['releaseMonth'];
     notifyListeners();
   }
 
@@ -84,13 +84,13 @@ class FilterProvider with ChangeNotifier{
   // }
 
   void resetPrevOrderFilter(){
-    // _prevOrders['releaseYearMonth'] = null;
-    // _prevOrders['releaseYear'] = null;
-    // _prevOrders['releaseMonth'] = null;
-    _prevOrders['releaseYear'] = '';
-    _prevOrders['releaseYearText'] = null;
-    _prevOrders['releaseMonth'] = '';
-    _prevOrders['releaseMonthText'] = null;
+    _prevOrders['releaseYearMonth'] = null;
+    _prevOrders['releaseYear'] = null;
+    _prevOrders['releaseMonth'] = null;
+    // _prevOrders['releaseYear'] = '';
+    // _prevOrders['releaseYearText'] = null;
+    // _prevOrders['releaseMonth'] = '';
+    // _prevOrders['releaseMonthText'] = null;
     notifyListeners();
   }
 }

@@ -58,8 +58,8 @@ class _OrdersState extends State<Orders> {
         child: Consumer<ProviderMenu>(
           builder: (ctx, orderMenu, child){
             final Map<String, dynamic> orderFilter = Provider.of<FilterProvider>(context).orderFilters;
-            // final List<MenuModel> orderList = orderMenu.cartList.where((ordered) => checkFilter(ordered, orderFilter)).toList();
-            final List<MenuModel> orderList = orderMenu.orderList.toList();
+            final List<MenuModel> orderList = orderMenu.orderList.where((ordered) => checkFilter(ordered, orderFilter)).toList();
+            // final List<MenuModel> orderList = orderMenu.orderList.toList();
 
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
