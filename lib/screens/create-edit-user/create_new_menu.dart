@@ -51,7 +51,6 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
             IconMoon.iadd,
             color: Colors.white,
           ), onPressed: () => _buildMenuForm(),
-          
         )
       ],
     );
