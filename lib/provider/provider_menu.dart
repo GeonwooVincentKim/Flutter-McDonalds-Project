@@ -7,14 +7,12 @@ import 'package:myTestApp_Test/shared/helpers/functions.dart';
 
 
 class ProviderMenu extends ChangeNotifier{
-  MenuModel category;
   MenuModel menuDetail;
   MenuModel specialMenu;
   int sum = 0;
 
   List<MenuModel> _addCartItems = [];
   List<MenuModel> _addOrderedItems = [];
-  List<MenuModel> _addSpecialItems = [];
 
   // Import DUMMY_MENU list and DUMMY_SPECIAL list.
   List<MenuModel> _menuItems = DUMMY_MENU.toList();
