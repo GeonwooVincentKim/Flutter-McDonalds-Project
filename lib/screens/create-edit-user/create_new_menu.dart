@@ -29,7 +29,8 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
     'image': '',
     'prices': '',
     'releaseYear': '',
-    'releaseMonth': ''
+    'releaseMonth': '',
+    'releaseDay': 1,
   };
   @override
   void initState(){ 

@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_menu.dart';
 import 'package:myTestApp_Test/provider/provider_filter.dart';
@@ -79,15 +77,15 @@ class _FilterState extends State<Filter> {
     //   if(filterDate['releaseYear'] != ''){
     //     final int releaseYear = filterDate['releaseYear'];
     //     _currentOrdersFilters['releaseYearText'] = releaseYear.toString();
-    //     // final DateTime releaseYear = getDateTimeMonthString(filterDate['releaseYear']);
-    //     // _currentOrdersFilters['releaseYearText'] = releaseYear.year.toString();
+    //     final DateTime releaseYear = getDateTimeMonthString(filterDate['releaseYear']);
+    //     _currentOrdersFilters['releaseYearText'] = releaseYear.year.toString();
     //   }
     //   if(filterDate['releaseMonth'] != ''){
     //     final int releaseMonth = filterDate['releaseMonth'];
     //     _currentOrdersFilters['releaseMonthText'] = releaseMonth.toString();
-    //     // final DateTime releaseMonth = getDateTimeMonthString(filterDate['releaseMonth']);
-    //     // _currentOrdersFilters['releaseMonthText'] = releaseMonth.month.toString();
-    //     // print(releaseMonth.month);
+    //     final DateTime releaseMonth = getDateTimeMonthString(filterDate['releaseMonth']);
+    //     _currentOrdersFilters['releaseMonthText'] = releaseMonth.month.toString();
+    //     print(releaseMonth.month);
     //   }
     // }
     super.initState();
