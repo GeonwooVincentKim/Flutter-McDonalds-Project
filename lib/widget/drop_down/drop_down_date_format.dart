@@ -20,6 +20,7 @@ class DropDownDateFormat extends StatefulWidget {
 class _DropDownDateFormatState extends State<DropDownDateFormat> {
   final List<String> yearList = [];
   final List<String> monthList = [];
+  final List<String> dayList = [];
 
   @override
   void initState(){
@@ -30,12 +31,17 @@ class _DropDownDateFormatState extends State<DropDownDateFormat> {
     for(int i = 1; i <= today.month; i++){
       monthList.add(i.toString());
     }
+    for(int i = 1; i <= today.day; i++){
+      dayList.add(i.toString());
+    }
 
     // When it is map
     if(widget.menuYearMonthMap['releaseYear'] == '')
       widget.menuYearMonthMap['releaseYear'] = yearList[yearList.length - 1];
     if(widget.menuYearMonthMap['releaseMonth'] == '')
       widget.menuYearMonthMap['releaseMonth'] = monthList[monthList.length - 1];
+    if(widget.menuYearMonthMap['releaseDay'] == '')
+      widget.menuYearMonthMap['releaseDay'] = dayList[dayList.length - 1];
 
     super.initState();
   }
@@ -65,6 +71,7 @@ class _DropDownDateFormatState extends State<DropDownDateFormat> {
       items: monthList
     );
   }
+
 
   @override
   Widget build(BuildContext context) {

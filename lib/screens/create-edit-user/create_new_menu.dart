@@ -31,7 +31,8 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
     'image': '',
     'prices': '',
     'releaseYear': '',
-    'releaseMonth': ''
+    'releaseMonth': '',
+    'releaseDay': ''
   };
   @override
   void initState(){
@@ -162,7 +163,8 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
     _formKey.currentState.save();
 
     final String month = formatNumberForDate(int.parse(newMenu['releaseMonth']));
-    newMenu['releaseYearMonth'] = '${newMenu['releaseYear']}/$month';
+    final String day = formatNumberForDate(int.parse(newMenu['releaseDay']));
+    newMenu['releaseYearMonth'] = '${newMenu['releaseYear']}/$month/$day';
     // Provider.of<ProviderMenu>(context).createSubMenu(newMenuList);
     Provider.of<ProviderMenu>(context).createMenu(newMenu);
     Navigator.pushNamed(context, "/");

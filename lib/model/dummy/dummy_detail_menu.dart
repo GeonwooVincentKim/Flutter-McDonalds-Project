@@ -12,7 +12,7 @@ var DUMMY_MENU = [
     type: 0,
     // releaseYear: '2017',
     // releaseMonth: '1',
-    releaseDate: '2017/01/21'
+    releaseDate: '2017/01/01'
   ),
 
   MenuModel(
@@ -23,7 +23,7 @@ var DUMMY_MENU = [
     type: 0,
     // releaseYear: '2013',
     // releaseMonth: '5',
-    releaseDate: '2013/05'
+    releaseDate: '2013/05/05'
   ),
 
   MenuModel(
@@ -34,7 +34,7 @@ var DUMMY_MENU = [
     type: 0,
     // releaseYear: '1967',
     // releaseMonth: '3',
-    releaseDate: '1967/03'
+    releaseDate: '1967/03/03'
   ),
 
   MenuModel(
@@ -45,7 +45,7 @@ var DUMMY_MENU = [
     type: 0,
     // releaseYear: '2003',
     // releaseMonth: '12',
-    releaseDate: '2003/12'
+    releaseDate: '2003/12/12'
   ),
 
   MenuModel(
@@ -56,7 +56,7 @@ var DUMMY_MENU = [
     type: 0,
     // releaseYear: '1980',
     // releaseMonth: '2',
-    releaseDate: '1980/02'
+    releaseDate: '1980/02/02'
   ),
 
   MenuModel(
@@ -67,7 +67,7 @@ var DUMMY_MENU = [
     type: 0,
     // releaseYear: '2019',
     // releaseMonth: '10',
-    releaseDate: '2019/10'
+    releaseDate: '2019/10/10'
   ),
 
   MenuModel(
@@ -78,7 +78,7 @@ var DUMMY_MENU = [
     type: 0,
     // releaseYear: '2011',
     // releaseMonth: '3',
-    releaseDate: '2011/03'
+    releaseDate: '2011/03/03'
   ),
 
   MenuModel(
@@ -89,7 +89,7 @@ var DUMMY_MENU = [
     type: 0,
     // releaseYear: '1999',
     // releaseMonth: '1',
-    releaseDate: '1999/01',
+    releaseDate: '1999/01/01',
   ),
 
   MenuModel(
@@ -100,7 +100,7 @@ var DUMMY_MENU = [
     type: 0,
     // releaseYear: '2019',
     // releaseMonth: '2',
-    releaseDate: '2019/02'
+    releaseDate: '2019/02/02'
   ),
 
   MenuModel(
@@ -111,7 +111,7 @@ var DUMMY_MENU = [
     type: 0,
     // releaseYear: '1997',
     // releaseMonth: '10',
-    releaseDate: '1997/10'
+    releaseDate: '1997/10/10'
   ),
 
   MenuModel(
@@ -122,7 +122,7 @@ var DUMMY_MENU = [
     type: 0,
     // releaseYear: '2016',
     // releaseMonth: '10',
-    releaseDate: '2016/10'
+    releaseDate: '2016/10/10'
   ),
 
   MenuModel(
@@ -133,7 +133,7 @@ var DUMMY_MENU = [
     type: 0,
     // releaseYear: '2016',
     // releaseMonth: '10',
-    releaseDate: '2016/10'
+    releaseDate: '2016/10/10'
   ),
 
   MenuModel(
@@ -144,7 +144,7 @@ var DUMMY_MENU = [
     type: 1,
     // releaseYear: '1981',
     // releaseMonth: '3',
-    releaseDate: '1981/03'
+    releaseDate: '1981/03/03'
   ),
 
   MenuModel(
@@ -155,7 +155,7 @@ var DUMMY_MENU = [
     type: 1,
     // releaseYear: '1981',
     // releaseMonth: '3',
-    releaseDate: '1981/03'
+    releaseDate: '1981/03/03'
   ),
 
   MenuModel(
@@ -166,7 +166,7 @@ var DUMMY_MENU = [
     type: 1,
     // releaseYear: '1981',
     // releaseMonth: '3',
-    releaseDate: '1981/03'
+    releaseDate: '1981/03/03'
   ),
 
   MenuModel(
@@ -177,7 +177,7 @@ var DUMMY_MENU = [
     type: 1,
     // releaseYear: '2020',
     // releaseMonth: '1',
-    releaseDate: '2020/01'
+    releaseDate: '2020/01/01'
   ),
 
   MenuModel(
@@ -188,7 +188,7 @@ var DUMMY_MENU = [
     type: 1,
     // releaseYear: '2020',
     // releaseMonth: '1',
-    releaseDate: '2020/01'
+    releaseDate: '2020/01/01'
   ),
 
   MenuModel(
@@ -199,7 +199,7 @@ var DUMMY_MENU = [
     type: 1,
     // releaseYear: '2020',
     // releaseMonth: '1',
-    releaseDate: '2020/01'
+    releaseDate: '2020/01/01'
   ),
 
   MenuModel(
@@ -210,7 +210,7 @@ var DUMMY_MENU = [
     type: 1,
     // releaseYear: '2020',
     // releaseMonth: '1',
-    releaseDate: '2020/01'
+    releaseDate: '2020/01/01'
   ),
 
   MenuModel(
@@ -221,7 +221,7 @@ var DUMMY_MENU = [
     type: 1,
     // releaseYear: '2020',
     // releaseMonth: '1',
-    releaseDate: '2020/01'
+    releaseDate: '2020/01/01'
   ),
 
   MenuModel(
@@ -232,7 +232,7 @@ var DUMMY_MENU = [
     type: 1,
     // releaseYear: '2020',
     // releaseMonth: '1',
-    releaseDate: '2020/01'
+    releaseDate: '2020/01/01'
   ),
 
   MenuModel(
@@ -254,7 +254,7 @@ var DUMMY_MENU = [
     type: 1,
     // releaseYear: '2011',
     // releaseMonth: '5',
-    releaseDate: '2011/05'
+    releaseDate: '2011/05/05'
   ),
 
   MenuModel(
@@ -265,7 +265,7 @@ var DUMMY_MENU = [
     type: 1,
     // releaseYear: '2020',
     // releaseMonth: '4',
-    releaseDate: '2020/04'
+    releaseDate: '2020/04/04'
   ),
 
   MenuModel(
@@ -276,7 +276,7 @@ var DUMMY_MENU = [
     type: 1,
     // releaseYear: '2017',
     // releaseMonth: '11',
-    releaseDate: '2017/11'
+    releaseDate: '2017/11/11'
   ),
 
   MenuModel(
@@ -287,7 +287,7 @@ var DUMMY_MENU = [
     type: 2,
     // releaseYear: '2006',
     // releaseMonth: '11',
-    releaseDate: '2006/11'
+    releaseDate: '2006/11/11'
   ),
 
   MenuModel(
@@ -298,7 +298,7 @@ var DUMMY_MENU = [
     type: 2,
     // releaseYear: '2014',
     // releaseMonth: '5',
-    releaseDate: '2014/05'
+    releaseDate: '2014/05/05'
   ),
 
   MenuModel(
@@ -309,7 +309,7 @@ var DUMMY_MENU = [
     type: 2,
     // releaseYear: '2019',
     // releaseMonth: '10',
-    releaseDate: '2019/10'
+    releaseDate: '2019/10/10'
   ),
 
   MenuModel(
@@ -320,7 +320,7 @@ var DUMMY_MENU = [
     type: 2,
     // releaseYear: '2018',
     // releaseMonth: '3',
-    releaseDate: '2018/03'
+    releaseDate: '2018/03/03'
   ),
 
   MenuModel(
@@ -331,7 +331,7 @@ var DUMMY_MENU = [
     type: 2,
     // releaseYear: '2006',
     // releaseMonth: '11',
-    releaseDate: '2006/11'
+    releaseDate: '2006/11/11'
   ),
 
   MenuModel(
@@ -342,7 +342,7 @@ var DUMMY_MENU = [
     type: 2,
     // releaseYear: '2015',
     // releaseMonth: '9',
-    releaseDate: '2015/09'
+    releaseDate: '2015/09/09'
   ),
 
   MenuModel(
@@ -353,7 +353,7 @@ var DUMMY_MENU = [
     type: 2,
     // releaseYear: '2015',
     // releaseMonth: '9',
-    releaseDate: '2015/09'
+    releaseDate: '2015/09/09'
   ),
 
   MenuModel(
@@ -364,7 +364,7 @@ var DUMMY_MENU = [
     type: 2,
     // releaseYear: '2018',
     // releaseMonth: '2',
-    releaseDate: '2018/02'
+    releaseDate: '2018/02/02'
   ),
 
   MenuModel(
@@ -375,7 +375,7 @@ var DUMMY_MENU = [
     type: 2,
     // releaseYear: '2006',
     // releaseMonth: '11',
-    releaseDate: '2006/11'
+    releaseDate: '2006/11/11'
   ),
 
   MenuModel(
@@ -386,7 +386,7 @@ var DUMMY_MENU = [
     type: 2,
     // releaseYear: '2006',
     // releaseMonth: '11',
-    releaseDate: '2006/11'
+    releaseDate: '2006/11/11'
   ),
 
   MenuModel(
@@ -397,7 +397,7 @@ var DUMMY_MENU = [
     type: 3,
     // releaseYear: '2016',
     // releaseMonth: '11',
-    releaseDate: '2016/11'
+    releaseDate: '2016/11/11'
   ),
 
   MenuModel(
@@ -408,7 +408,7 @@ var DUMMY_MENU = [
     type: 3,
     // releaseYear: '1948',
     // releaseMonth: '2',
-    releaseDate: '1948/02'
+    releaseDate: '1948/02/02'
   ),
 
   MenuModel(
@@ -419,7 +419,7 @@ var DUMMY_MENU = [
     type: 3,
     // releaseYear: '2017',
     // releaseMonth: '2',
-    releaseDate: '2017/02'
+    releaseDate: '2017/02/02'
   ),
 
   MenuModel(
@@ -430,7 +430,7 @@ var DUMMY_MENU = [
     type: 3,
     // releaseYear: '2017',
     // releaseMonth: '1',
-    releaseDate: '2017/01'
+    releaseDate: '2017/01/01'
   ),
 
   MenuModel(
@@ -441,7 +441,7 @@ var DUMMY_MENU = [
     type: 3,
     // releaseYear: '2019',
     // releaseMonth: '3',
-    releaseDate: '2019/03'
+    releaseDate: '2019/03/03'
   ),
 
   MenuModel(
@@ -452,7 +452,7 @@ var DUMMY_MENU = [
     type: 3,
     // releaseYear: '2016',
     // releaseMonth: '11',
-    releaseDate: '2016/11'
+    releaseDate: '2016/11/11'
   ),
 
   MenuModel(
@@ -463,7 +463,7 @@ var DUMMY_MENU = [
     type: 3,
     // releaseYear: '2017',
     // releaseMonth: '6',
-    releaseDate: '2017/06'
+    releaseDate: '2017/06/06'
   ),
 
   MenuModel(
@@ -474,6 +474,6 @@ var DUMMY_MENU = [
     type: 3,
     // releaseYear: '2020',
     // releaseMonth: '9',
-    releaseDate: '2020/09'
+    releaseDate: '2020/09/09'
   )
 ].toList();

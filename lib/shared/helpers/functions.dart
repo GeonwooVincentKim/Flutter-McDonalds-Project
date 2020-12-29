@@ -34,9 +34,9 @@ DateTime getDateTimeMonthString(String dateMonth){
   }else{
     final DateTime today = DateTime.now();
     // return DateTime(int.parse(dateMonth) + today.month);
-    // dateMonth = "$dateMonth-${today.month.toString()}";
-    dateMonth = "$dateMonth";
-    print(today.year.toString() + today.month.toString());
+    dateMonth = "$dateMonth-${today.month.toString()}-01";
+    // dateMonth = "$dateMonth";
+    // print(today.year.toString() + today.month.toString() + today.day.toString());
     return DateTime.parse(dateMonth);
   }
   // return DateTime.parse('$dateMonth/${today.month + 1}');
