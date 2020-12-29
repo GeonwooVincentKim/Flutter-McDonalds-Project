@@ -2,7 +2,7 @@ import 'package:myTestApp_Test/model/model_menu.dart';
 
 var DUMMY_MENU = [
   MenuModel(
-    id: 'ham01',
+    menuID: 'ham01',
     menuTitle: '1955 HashBrown',
     image: 'assets/img/burger/1955HashBrown.png',
     prices: 6000,
@@ -13,7 +13,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'ham02',
+    menuID: 'ham02',
     menuTitle: '1955 Burger',
     image: 'assets/img/burger/1955Burger.png',
     prices: 5500,
@@ -24,7 +24,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'ham03',
+    menuID: 'ham03',
     menuTitle: 'Big Mac',
     image: 'assets/img/burger/BigMac.png',
     prices: 4500,
@@ -35,7 +35,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'ham04',
+    menuID: 'ham04',
     menuTitle: 'McSpicy ShanghaiBurger',
     image: 'assets/img/burger/McSpicyShanghaiBurger.png',
     prices: 4500,
@@ -46,7 +46,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'ham05',
+    menuID: 'ham05',
     menuTitle: 'McChicken',
     image: 'assets/img/burger/McChicken.png',
     prices: 3300,
@@ -57,7 +57,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'ham06',
+    menuID: 'ham06',
     menuTitle: 'McChicken Mozzarella',
     image: 'assets/img/burger/McChickenMozzarella.png',
     prices: 4700,
@@ -68,7 +68,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'ham07',
+    menuID: 'ham07',
     menuTitle: 'Double 1955 Burger',
     image: 'assets/img/burger/Double1955Burger.png',
     prices: 7200,
@@ -79,7 +79,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'ham08',
+    menuID: 'ham08',
     menuTitle: 'Double Bulgogi Burger',
     image: 'assets/img/burger/DoubleBulgogiBurger.png',
     prices: 4400,
@@ -90,7 +90,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'ham09',
+    menuID: 'ham09',
     menuTitle: 'Egg Bulgogi Burger',
     image: 'assets/img/burger/EggBulgogiBurger.png',
     prices: 3000,
@@ -101,7 +101,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'ham10',
+    menuID: 'ham10',
     menuTitle: 'Bulgogi Burger',
     image: 'assets/img/burger/BulgogiBurger.png',
     prices: 2000,
@@ -112,7 +112,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'ham11',
+    menuID: 'ham11',
     menuTitle: 'Supreme Shirmp Burger',
     image: 'assets/img/burger/SupremeShrimpBurger.png',
     prices: 5500,
@@ -123,7 +123,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'ham12',
+    menuID: 'ham12',
     menuTitle: 'Shrimp Beef Burger',
     image: 'assets/img/burger/McChicken.png',
     prices: 5500,
@@ -134,7 +134,7 @@ var DUMMY_MENU = [
   ),
   
   MenuModel(
-    id: 'cafe01',
+    menuID: 'cafe01',
     menuTitle: 'Americano',
     image: 'assets/img/McCafe_and_beverages/Americano.png',
     prices: 1500,
@@ -145,7 +145,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'cafe02',
+    menuID: 'cafe02',
     menuTitle: 'CafeLatte',
     image: 'assets/img/McCafe_and_beverages/CafeLatte.png',
     prices: 2000,
@@ -156,7 +156,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'cafe03',
+    menuID: 'cafe03',
     menuTitle: 'Cappuchino',
     image: 'assets/img/McCafe_and_beverages/Cappuchino.png',
     prices: 2000,
@@ -167,7 +167,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'cafe04',
+    menuID: 'cafe04',
     menuTitle: 'Decaffeine Americano',
     image: 'assets/img/McCafe_and_beverages/DecaffeineAmericano.jpg',
     prices: 2000,
@@ -178,7 +178,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'cafe05',
+    menuID: 'cafe05',
     menuTitle: 'Decaffeine CafeLatte',
     image: 'assets/img/McCafe_and_beverages/DecaffeineCafeLatte.jpg',
     prices: 2000,
@@ -189,7 +189,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'cafe06',
+    menuID: 'cafe06',
     menuTitle: 'Decaffeine Cappuchino',
     image: 'assets/img/McCafe_and_beverages/DecaffeineCappuchino.jpg',
     prices: 0,
@@ -200,7 +200,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'cafe07',
+    menuID: 'cafe07',
     menuTitle: 'Decaffeine Iced Americano',
     image: 'assets/img/McCafe_and_beverages/DecaffeineIcedAmericano.jpg',
     prices: 1500,
@@ -211,7 +211,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'cafe08',
+    menuID: 'cafe08',
     menuTitle: 'Decaffeine Iced CafeLatte',
     image: 'assets/img/McCafe_and_beverages/DecaffeineIcedCafeLatte.jpg',
     prices: 2000,
@@ -222,7 +222,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'cafe09',
+    menuID: 'cafe09',
     menuTitle: 'Decaffeine Cappuchino',
     image: 'assets/img/McCafe_and_beverages/DecaffeineCappuchino.jpg',
     prices: 2000,
@@ -233,7 +233,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'cafe10',
+    menuID: 'cafe10',
     menuTitle: 'Iced Americano',
     image: 'assets/img/McCafe_and_beverages/IcedAmericano.jpg',
     prices: 2000,
@@ -244,7 +244,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'cafe11',
+    menuID: 'cafe11',
     menuTitle: 'Iced CaffeLatte',
     image: 'assets/img/McCafe_and_beverages/IcedCaffeLatte.png',
     prices: 2500,
@@ -255,7 +255,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'cafe11',
+    menuID: 'cafe11',
     menuTitle: 'Pear Chiller',
     image: 'assets/img/McCafe_and_beverages/PearChiller.png',
     prices: 2000,
@@ -266,7 +266,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'cafe12',
+    menuID: 'cafe12',
     menuTitle: 'Strawberry Chiller',
     image: 'assets/img/McCafe_and_beverages/StrawberryChiller.jpg',
     prices: 2000,
@@ -277,7 +277,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'morning01',
+    menuID: 'morning01',
     menuTitle: 'Bacon Egg McMuffine',
     image: 'assets/img/McMorning/BaconEggMcMuffin.png',
     prices: 3000,
@@ -288,7 +288,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'morning02',
+    menuID: 'morning02',
     menuTitle: 'BLT Muffin',
     image: 'assets/img/McMorning/BLTMuffin.png',
     prices: 3900,
@@ -299,7 +299,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'morning03',
+    menuID: 'morning03',
     menuTitle: 'Chicken And Cheese Muffin',
     image: 'assets/img/McMorning/ChickenAndCheeseMuffin.png',
     prices: 3200,
@@ -310,7 +310,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'morning04',
+    menuID: 'morning04',
     menuTitle: 'Deluxe Breakfast',
     image: 'assets/img/McMorning/DeluxeBreakfast.png',
     prices: 4800,
@@ -321,7 +321,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'morning05',
+    menuID: 'morning05',
     menuTitle: 'Egg McMuffin',
     image: 'assets/img/McMorning/EggMcMuffin.png',
     prices: 2500,
@@ -332,7 +332,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'morning06',
+    menuID: 'morning06',
     menuTitle: 'Hotcakes 2pcs',
     image: 'assets/img/McMorning/Hotcakes2pcs.png',
     prices: 2200,
@@ -343,7 +343,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'morning07',
+    menuID: 'morning07',
     menuTitle: 'Hotcakes 3pcs',
     image: 'assets/img/McMorning/Hotcakes3pcs.jpg',
     prices: 3000,
@@ -354,7 +354,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'morning08',
+    menuID: 'morning08',
     menuTitle: 'McSpicy Shanghai Chicken Snak Wrap',
     image: 'assets/img/McMorning/McSpicyShanghaiChickenSnackWrap.png',
     prices: 2000,
@@ -365,7 +365,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'morning09',
+    menuID: 'morning09',
     menuTitle: 'Sausage Egg McMuffin',
     image: 'assets/img/McMorning/SausageEggMcMuffin.png',
     prices: 3000,
@@ -376,7 +376,7 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'morning10',
+    menuID: 'morning10',
     menuTitle: 'Sausage McMuffin',
     image: 'assets/img/McMorning/SausageMcMuffin.png',
     prices: 2200,
@@ -387,9 +387,9 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'dessert01',
+    menuID: 'dessert01',
     menuTitle: 'Apple Pie',
-    image: 'assets/img/sides_and_desserts/ApplePie.png',
+    image: 'assets/img/smenuIDes_and_desserts/ApplePie.png',
     prices: 1000,
     type: 3,
     releaseYear: '2016',
@@ -398,9 +398,9 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'dessert02',
+    menuID: 'dessert02',
     menuTitle: 'French Fries',
-    image: 'assets/img/sides_and_desserts/FrenchFries.png',
+    image: 'assets/img/smenuIDes_and_desserts/FrenchFries.png',
     prices: 1000,
     type: 3,
     releaseYear: '1948',
@@ -409,9 +409,9 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'dessert03',
+    menuID: 'dessert03',
     menuTitle: 'Golden Mozzarella Cheese Sticks',
-    image: 'assets/img/sides_and_desserts/GoldenMozzarellaCheeseSticks.png',
+    image: 'assets/img/smenuIDes_and_desserts/GoldenMozzarellaCheeseSticks.png',
     prices: 2000,
     type: 3,
     releaseYear: '2017',
@@ -420,9 +420,9 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'dessert04',
+    menuID: 'dessert04',
     menuTitle: 'HashBrown',
-    image: 'assets/img/sides_and_desserts/HashBrown.jpg',
+    image: 'assets/img/smenuIDes_and_desserts/HashBrown.jpg',
     prices: 1700,
     type: 3,
     releaseYear: '2017',
@@ -431,9 +431,9 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'dessert05',
+    menuID: 'dessert05',
     menuTitle: 'McNuggets',
-    image: 'assets/img/sides_and_desserts/McNuggets.jpg',
+    image: 'assets/img/smenuIDes_and_desserts/McNuggets.jpg',
     prices: 1700,
     type: 3,
     releaseYear: '2019',
@@ -442,9 +442,9 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'dessert06',
+    menuID: 'dessert06',
     menuTitle: 'McSpicy Chicken Tenders',
-    image: 'assets/img/sides_and_desserts/McSpicyChickenTenders.png',
+    image: 'assets/img/smenuIDes_and_desserts/McSpicyChickenTenders.png',
     prices: 2500,
     type: 3,
     releaseYear: '2016',
@@ -453,9 +453,9 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'dessert07',
+    menuID: 'dessert07',
     menuTitle: 'String Cheese',
-    image: 'assets/img/sides_and_desserts/StringCheese.png',
+    image: 'assets/img/smenuIDes_and_desserts/StringCheese.png',
     prices: 2300,
     type: 3,
     releaseYear: '2017',
@@ -464,9 +464,9 @@ var DUMMY_MENU = [
   ),
 
   MenuModel(
-    id: 'dessert08',
+    menuID: 'dessert08',
     menuTitle: 'Taro Pie',
-    image: 'assets/img/sides_and_desserts/TaroPie.png',
+    image: 'assets/img/smenuIDes_and_desserts/TaroPie.png',
     prices: 1000,
     type: 3,
     releaseYear: '2020',
@@ -477,15 +477,15 @@ var DUMMY_MENU = [
 
 
 var DUMMY_CATEGORY = [
-  MenuModel(id: 'ham', menuTitle: 'hamburger', image: 'assets/img/burger/1955HashBrown.png', type: 0, childList: DUMMY_MENU),
-  MenuModel(id: 'cafe', menuTitle: 'cafe', image: 'assets/img/McCafe_and_beverages/Americano.png', type: 1, childList: DUMMY_MENU),
-  MenuModel(id: 'morning', menuTitle: 'morning', image: 'assets/img/McMorning/BaconEggMcMuffin.png', type: 2, childList: DUMMY_MENU),
-  MenuModel(id: 'dessert', menuTitle: 'dessert', image: 'assets/img/sides_and_desserts/ApplePie.png', type: 3, childList: DUMMY_MENU)
+  MenuModel(menuID: 'ham', menuTitle: 'hamburger', image: 'assets/img/burger/1955HashBrown.png', type: 0, childList: DUMMY_MENU),
+  MenuModel(menuID: 'cafe', menuTitle: 'cafe', image: 'assets/img/McCafe_and_beverages/Americano.png', type: 1, childList: DUMMY_MENU),
+  MenuModel(menuID: 'morning', menuTitle: 'morning', image: 'assets/img/McMorning/BaconEggMcMuffin.png', type: 2, childList: DUMMY_MENU),
+  MenuModel(menuID: 'dessert', menuTitle: 'dessert', image: 'assets/img/smenuIDes_and_desserts/ApplePie.png', type: 3, childList: DUMMY_MENU)
 ];
 
 var DUMMY_SPECIAL = [
   MenuModel(
-    id: 'sp01',
+    menuID: 'sp01',
     menuTitle: 'Rich Potato Burger',
     image: 'assets/img/burger/1955HashBrown.png',
     prices: 8500,
@@ -494,7 +494,7 @@ var DUMMY_SPECIAL = [
     // releaseDate: '2020/12'
   ),
   MenuModel(
-    id: 'sp02',
+    menuID: 'sp02',
     menuTitle: 'Rich Potato Mushroom Burger',
     image: 'assets/img/burger/RichPotatoMushroomBurgerMeal.png',
     prices: 8900,

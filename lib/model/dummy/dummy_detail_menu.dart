@@ -5,473 +5,516 @@ import 'package:myTestApp_Test/model/model_menu.dart';
 
 var DUMMY_MENU = [
   MenuModel(
-    id: 'ham01',
+    // menuID: 'ham',
+    menuID: 'ham',
     menuTitle: '1955 HashBrown',
     image: 'assets/img/burger/1955HashBrown.png',
     prices: 6000,
-    type: 0,
+    // type: 0,
     releaseYear: '2017',
     releaseMonth: '1',
     // releaseDate: '2017/01'
   ),
 
   MenuModel(
-    id: 'ham02',
+    // menuID: 'ham02',
+    menuID: 'ham',
     menuTitle: '1955 Burger',
     image: 'assets/img/burger/1955Burger.png',
     prices: 5500,
-    type: 0,
+    // type: 0,
     releaseYear: '2013',
     releaseMonth: '5',
     // releaseDate: '2013/05'
   ),
 
   MenuModel(
-    id: 'ham03',
+    // menuID: 'ham03',
+    menuID: 'ham',
     menuTitle: 'Big Mac',
     image: 'assets/img/burger/BigMac.png',
     prices: 4500,
-    type: 0,
+    // type: 0,
     releaseYear: '1967',
     releaseMonth: '3',
     // releaseDate: '1967/03'
   ),
 
   MenuModel(
-    id: 'ham04',
+    // menuID: 'ham04',
+    menuID: 'ham',
     menuTitle: 'McSpicy ShanghaiBurger',
     image: 'assets/img/burger/McSpicyShanghaiBurger.png',
     prices: 4500,
-    type: 0,
+    // type: 0,
     releaseYear: '2003',
     releaseMonth: '12',
     // releaseDate: '2003/12'
   ),
 
   MenuModel(
-    id: 'ham05',
+    // menuID: 'ham05',
+    menuID: 'ham',
     menuTitle: 'McChicken',
     image: 'assets/img/burger/McChicken.png',
     prices: 3300,
-    type: 0,
+    // type: 0,
     releaseYear: '1980',
     releaseMonth: '2',
     // releaseDate: '1980/02'
   ),
 
   MenuModel(
-    id: 'ham06',
+    // menuID: 'ham06',
+    menuID: 'ham',
     menuTitle: 'McChicken Mozzarella',
     image: 'assets/img/burger/McChickenMozzarella.png',
     prices: 4700,
-    type: 0,
+    // type: 0,
     releaseYear: '2019',
     releaseMonth: '10',
     // releaseDate: '2019/10'
   ),
 
   MenuModel(
-    id: 'ham07',
+    // menuID: 'ham07',
+    menuID: 'ham',
     menuTitle: 'Double 1955 Burger',
     image: 'assets/img/burger/Double1955Burger.png',
     prices: 7200,
-    type: 0,
+    // type: 0,
     releaseYear: '2011',
     releaseMonth: '3',
     // releaseDate: '2011/03'
   ),
 
   MenuModel(
-    id: 'ham08',
+    // menuID: 'ham08',
+    menuID: 'ham',
     menuTitle: 'Double Bulgogi Burger',
     image: 'assets/img/burger/DoubleBulgogiBurger.png',
     prices: 4400,
-    type: 0,
+    // type: 0,
     releaseYear: '1999',
     releaseMonth: '1'
     // releaseDate: '1999/01',
   ),
 
   MenuModel(
-    id: 'ham09',
+    // menuID: 'ham09',
+    menuID: 'ham',
     menuTitle: 'Egg Bulgogi Burger',
     image: 'assets/img/burger/EggBulgogiBurger.png',
     prices: 3000,
-    type: 0,
+    // type: 0,
     releaseYear: '2019',
     releaseMonth: '2'
     // releaseDate: '2019/02'
   ),
 
   MenuModel(
-    id: 'ham10',
+    // menuID: 'ham10',
+    menuID: 'ham',
     menuTitle: 'Bulgogi Burger',
     image: 'assets/img/burger/BulgogiBurger.png',
     prices: 2000,
-    type: 0,
+    // type: 0,
     releaseYear: '1997',
     releaseMonth: '10'
     // releaseDate: '1997/10'
   ),
 
   MenuModel(
-    id: 'ham11',
+    // menuID: 'ham11',
+    menuID: 'ham',
     menuTitle: 'Supreme Shirmp Burger',
     image: 'assets/img/burger/SupremeShrimpBurger.png',
     prices: 5500,
-    type: 0,
+    // type: 0,
     releaseYear: '2016',
     releaseMonth: '10'
     // releaseDate: '2016/10'
   ),
 
   MenuModel(
-    id: 'ham12',
+    // menuID: 'ham12',
+    menuID: 'ham',
     menuTitle: 'Shrimp Beef Burger',
     image: 'assets/img/burger/McChicken.png',
     prices: 5500,
-    type: 0,
+    // type: 0,
     releaseYear: '2016',
     releaseMonth: '10',
     // releaseDate: '2016/10'
   ),
   
   MenuModel(
-    id: 'cafe01',
+    // menuID: 'cafe01',
+    menuID: 'cafe',
     menuTitle: 'Americano',
     image: 'assets/img/McCafe_and_beverages/Americano.png',
     prices: 1500,
-    type: 1,
+    // type: 1,
     releaseYear: '1981',
     releaseMonth: '3',
     // releaseDate: '1981/03'
   ),
 
   MenuModel(
-    id: 'cafe02',
+    // menuID: 'cafe02',
+    menuID: 'cafe',
     menuTitle: 'CafeLatte',
     image: 'assets/img/McCafe_and_beverages/CafeLatte.png',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '1981',
     releaseMonth: '3',
     // releaseDate: '1981/03'
   ),
 
   MenuModel(
-    id: 'cafe03',
+    // menuID: 'cafe03',
+    menuID: 'cafe',
     menuTitle: 'Cappuchino',
     image: 'assets/img/McCafe_and_beverages/Cappuchino.png',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '1981',
     releaseMonth: '3',
     // releaseDate: '1981/03'
   ),
 
   MenuModel(
-    id: 'cafe04',
+    // menuID: 'cafe04',
+    menuID: 'cafe',
     menuTitle: 'Decaffeine Americano',
     image: 'assets/img/McCafe_and_beverages/DecaffeineAmericano.jpg',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '2020',
     releaseMonth: '1',
     // releaseDate: '2020/01'
   ),
 
   MenuModel(
-    id: 'cafe05',
+    // menuID: 'cafe05',
+    menuID: 'cafe',
     menuTitle: 'Decaffeine CafeLatte',
     image: 'assets/img/McCafe_and_beverages/DecaffeineCafeLatte.jpg',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '2020',
     releaseMonth: '1',
     // releaseDate: '2020/01'
   ),
 
   MenuModel(
-    id: 'cafe06',
+    // menuID: 'cafe06',
+    menuID: 'cafe',
     menuTitle: 'Decaffeine Cappuchino',
     image: 'assets/img/McCafe_and_beverages/DecaffeineCappuchino.jpg',
     prices: 0,
-    type: 1,
+    // type: 1,
     releaseYear: '2020',
     releaseMonth: '1'
     // releaseDate: '2020/01'
   ),
 
   MenuModel(
-    id: 'cafe07',
+    // menuID: 'cafe07',
+    menuID: 'cafe',
     menuTitle: 'Decaffeine Iced Americano',
     image: 'assets/img/McCafe_and_beverages/DecaffeineIcedAmericano.jpg',
     prices: 1500,
-    type: 1,
+    // type: 1,
     releaseYear: '2020',
     releaseMonth: '1'
     // releaseDate: '2020/01'
   ),
 
   MenuModel(
-    id: 'cafe08',
+    // menuID: 'cafe08',
+    menuID: 'cafe',
     menuTitle: 'Decaffeine Iced CafeLatte',
     image: 'assets/img/McCafe_and_beverages/DecaffeineIcedCafeLatte.jpg',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '2020',
     releaseMonth: '1'
     // releaseDate: '2020/01'
   ),
 
   MenuModel(
-    id: 'cafe09',
+    // menuID: 'cafe09',
+    menuID: 'ham',
     menuTitle: 'Decaffeine Cappuchino',
     image: 'assets/img/McCafe_and_beverages/DecaffeineCappuchino.jpg',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '2020',
     releaseMonth: '1'
     // releaseDate: '2020/01'
   ),
 
   MenuModel(
-    id: 'cafe10',
+    // menuID: 'cafe10',
+    menuID: 'cafe',
     menuTitle: 'Iced Americano',
     image: 'assets/img/McCafe_and_beverages/IcedAmericano.jpg',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '2011',
     releaseMonth: '5'
     // releaseDate: '2011/05'
   ),
 
   MenuModel(
-    id: 'cafe11',
+    // menuID: 'cafe11',
+    menuID: 'cafe',
     menuTitle: 'Iced CaffeLatte',
     image: 'assets/img/McCafe_and_beverages/IcedCaffeLatte.png',
     prices: 2500,
-    type: 1,
+    // type: 1,
     releaseYear: '2011',
     releaseMonth: '5'
     // releaseDate: '2011/05'
   ),
 
   MenuModel(
-    id: 'cafe11',
+    // menuID: 'cafe11',
+    menuID: 'cafe',
     menuTitle: 'Pear Chiller',
     image: 'assets/img/McCafe_and_beverages/PearChiller.png',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '2020',
     releaseMonth: '4'
     // releaseDate: '2020/04'
   ),
 
   MenuModel(
-    id: 'cafe12',
+    // menuID: 'cafe12',
+    menuID: 'cafe',
     menuTitle: 'Strawberry Chiller',
     image: 'assets/img/McCafe_and_beverages/StrawberryChiller.jpg',
     prices: 2000,
-    type: 1,
+    // type: 1,
     releaseYear: '2017',
     releaseMonth: '11'
     // releaseDate: '2017/11'
   ),
 
   MenuModel(
-    id: 'morning01',
+    // menuID: 'morning01',
+    menuID: 'morning',
     menuTitle: 'Bacon Egg McMuffine',
     image: 'assets/img/McMorning/BaconEggMcMuffin.png',
     prices: 3000,
-    type: 2,
+    // type: 2,
     releaseYear: '2006',
     releaseMonth: '11',
     // releaseDate: '2006/11'
   ),
 
   MenuModel(
-    id: 'morning02',
+    // menuID: 'morning02',
+    menuID: 'morning',
     menuTitle: 'BLT Muffin',
     image: 'assets/img/McMorning/BLTMuffin.png',
     prices: 3900,
-    type: 2,
+    // type: 2,
     releaseYear: '2014',
     releaseMonth: '5',
     // releaseDate: '2014/05'
   ),
 
   MenuModel(
-    id: 'morning03',
+    // menuID: 'morning03',
+    menuID: 'morning',
     menuTitle: 'Chicken And Cheese Muffin',
     image: 'assets/img/McMorning/ChickenAndCheeseMuffin.png',
     prices: 3200,
-    type: 2,
+    // type: 2,
     releaseYear: '2019',
     releaseMonth: '10',
     // releaseDate: '2019/10'
   ),
 
   MenuModel(
-    id: 'morning04',
+    // menuID: 'morning04',
+    menuID: 'morning',
     menuTitle: 'Deluxe Breakfast',
     image: 'assets/img/McMorning/DeluxeBreakfast.png',
     prices: 4800,
-    type: 2,
+    // type: 2,
     releaseYear: '2018',
     releaseMonth: '3',
     // releaseDate: '2018/03'
   ),
 
   MenuModel(
-    id: 'morning05',
+    // menuID: 'morning05',
+    menuID: 'morning',
     menuTitle: 'Egg McMuffin',
     image: 'assets/img/McMorning/EggMcMuffin.png',
     prices: 2500,
-    type: 2,
+    // type: 2,
     releaseYear: '2006',
     releaseMonth: '11',
     // releaseDate: '2006/11'
   ),
 
   MenuModel(
-    id: 'morning06',
+    // menuID: 'morning06',
+    menuID: 'morning',
     menuTitle: 'Hotcakes 2pcs',
     image: 'assets/img/McMorning/Hotcakes2pcs.png',
     prices: 2200,
-    type: 2,
+    // type: 2,
     releaseYear: '2015',
     releaseMonth: '9',
     // releaseDate: '2015/09'
   ),
 
   MenuModel(
-    id: 'morning07',
+    // menuID: 'morning07',
+    menuID: 'morning',
     menuTitle: 'Hotcakes 3pcs',
     image: 'assets/img/McMorning/Hotcakes3pcs.jpg',
     prices: 3000,
-    type: 2,
+    // type: 2,
     releaseYear: '2015',
     releaseMonth: '9'
     // releaseDate: '2015/09'
   ),
 
   MenuModel(
-    id: 'morning08',
+    // menuID: 'morning08',
+    menuID: 'morning',
     menuTitle: 'McSpicy Shanghai Chicken Snak Wrap',
     image: 'assets/img/McMorning/McSpicyShanghaiChickenSnackWrap.png',
     prices: 2000,
-    type: 2,
+    // type: 2,
     releaseYear: '2018',
     releaseMonth: '2'
     // releaseDate: '2018/02'
   ),
 
   MenuModel(
-    id: 'morning09',
+    // menuID: 'morning09',
+    menuID: 'morning',
     menuTitle: 'Sausage Egg McMuffin',
     image: 'assets/img/McMorning/SausageEggMcMuffin.png',
     prices: 3000,
-    type: 2,
+    // type: 2,
     releaseYear: '2006',
     releaseMonth: '11'
     // releaseDate: '2006/11'
   ),
 
   MenuModel(
-    id: 'morning10',
+    // menuID: 'morning10',
+    menuID: 'morning',
     menuTitle: 'Sausage McMuffin',
     image: 'assets/img/McMorning/SausageMcMuffin.png',
     prices: 2200,
-    type: 2,
+    // type: 2,
     releaseYear: '2006',
     releaseMonth: '11'
     // releaseDate: '2006/11'
   ),
 
   MenuModel(
-    id: 'dessert01',
+    // menuID: 'dessert01',
+    menuID: 'dessert',
     menuTitle: 'Apple Pie',
     image: 'assets/img/sides_and_desserts/ApplePie.png',
     prices: 1000,
-    type: 3,
+    // type: 3,
     releaseYear: '2016',
     releaseMonth: '11',
     // releaseDate: '2016/11'
   ),
 
   MenuModel(
-    id: 'dessert02',
+    // menuID: 'dessert02',
+    menuID: 'dessert',
     menuTitle: 'French Fries',
     image: 'assets/img/sides_and_desserts/FrenchFries.png',
     prices: 1000,
-    type: 3,
+    // type: 3,
     releaseYear: '1948',
     releaseMonth: '2',
     // releaseDate: '1948/02'
   ),
 
   MenuModel(
-    id: 'dessert03',
+    // menuID: 'dessert03',
+    menuID: 'dessert',
     menuTitle: 'Golden Mozzarella Cheese Sticks',
     image: 'assets/img/sides_and_desserts/GoldenMozzarellaCheeseSticks.png',
     prices: 2000,
-    type: 3,
+    // type: 3,
     releaseYear: '2017',
     releaseMonth: '2',
     // releaseYear: '2017/02'
   ),
 
   MenuModel(
-    id: 'dessert04',
+    // menuID: 'dessert04',
+    menuID: 'dessert',
     menuTitle: 'HashBrown',
     image: 'assets/img/sides_and_desserts/HashBrown.jpg',
     prices: 1700,
-    type: 3,
+    // type: 3,
     releaseYear: '2017',
     releaseMonth: '1',
     // releaseDate: '2017/01'
   ),
 
   MenuModel(
-    id: 'dessert05',
+    // menuID: 'dessert05',
+    menuID: 'dessert',
     menuTitle: 'McNuggets',
     image: 'assets/img/sides_and_desserts/McNuggets.jpg',
     prices: 1700,
-    type: 3,
+    // type: 3,
     releaseYear: '2019',
     releaseMonth: '3',
     // releaseDate: '2019/03'
   ),
 
   MenuModel(
-    id: 'dessert06',
+    // menuID: 'dessert06',
+    menuID: 'dessert',
     menuTitle: 'McSpicy Chicken Tenders',
     image: 'assets/img/sides_and_desserts/McSpicyChickenTenders.png',
     prices: 2500,
-    type: 3,
+    // type: 3,
     releaseYear: '2016',
     releaseMonth: '11',
     // releaseDate: '2016/11'
   ),
 
   MenuModel(
-    id: 'dessert07',
+    // menuID: 'dessert07',
+    menuID: 'dessert',
     menuTitle: 'String Cheese',
     image: 'assets/img/sides_and_desserts/StringCheese.png',
     prices: 2300,
-    type: 3,
+    // type: 3,
     releaseYear: '2017',
     releaseMonth: '6',
     // releaseDate: '2017/06'
   ),
 
   MenuModel(
-    id: 'dessert08',
+    // menuID: 'dessert08',
+    menuID: 'dessert',
     menuTitle: 'Taro Pie',
     image: 'assets/img/sides_and_desserts/TaroPie.png',
     prices: 1000,
-    type: 3,
+    // type: 3,
     releaseYear: '2020',
     releaseMonth: '9',
     // releaseDate: '2020/09'

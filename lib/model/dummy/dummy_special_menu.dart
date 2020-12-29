@@ -2,7 +2,7 @@ import 'package:myTestApp_Test/model/model_menu.dart';
 
 var DUMMY_SPECIAL = [
   MenuModel(
-    id: 'sp01',
+    menuID: 'sp01',
     menuTitle: 'Rich Potato Burger',
     image: 'assets/img/burger/1955HashBrown.png',
     prices: 8500,
@@ -11,7 +11,7 @@ var DUMMY_SPECIAL = [
     // releaseDate: '2020/12'
   ),
   MenuModel(
-    id: 'sp02',
+    menuID: 'sp02',
     menuTitle: 'Rich Potato Mushroom Burger',
     image: 'assets/img/burger/RichPotatoMushroomBurgerMeal.png',
     prices: 8900,

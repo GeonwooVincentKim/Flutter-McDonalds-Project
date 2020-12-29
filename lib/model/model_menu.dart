@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 class MenuModel{
-  final String id;
+  final String menuID;
   final String menuTitle;
   final String image;
   final int prices;
@@ -14,7 +14,7 @@ class MenuModel{
   List<MenuModel> childList;
 
   MenuModel({
-    @required this.id,
+    @required this.menuID,
     @required this.menuTitle,
     @required this.image,
     this.isInCart,
@@ -28,7 +28,7 @@ class MenuModel{
 
   factory MenuModel.fromMenuModelInfo(MenuModel menu){
     return MenuModel(
-      id: menu.id ?? '',
+      menuID: menu.menuID ?? '',
       menuTitle: menu.menuTitle ?? '',
       image: menu.image ?? '',
       prices: menu.prices ?? 0,
@@ -42,7 +42,7 @@ class MenuModel{
 
   factory MenuModel.fromMenuModelMapInfo(Map<String, dynamic> menuMap){
     return MenuModel(
-      id: menuMap['id'] ?? '',
+      menuID: menuMap['id'] ?? '',
       menuTitle: menuMap['menuTitle'] ?? '',
       image: menuMap['image'] ?? '',
       prices: menuMap['prices'] ?? 0,
@@ -57,7 +57,7 @@ class MenuModel{
 
   factory MenuModel.initialData(){
     return MenuModel(
-      id: '',
+      menuID: '',
       menuTitle: '',
       image: '',
       prices: 0,

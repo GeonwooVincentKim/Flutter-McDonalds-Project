@@ -14,7 +14,7 @@ class CartList extends StatelessWidget{
   Widget build(BuildContext context) {
     return Container(
       child: GestureDetector(
-        onTap: () => Navigator.pushNamed(context, "/details/${orderMenu.id}"),
+        onTap: () => Navigator.pushNamed(context, "/details/${orderMenu.menuID}"),
         child: Container(
           child: Dismissible(
             key: UniqueKey(),
