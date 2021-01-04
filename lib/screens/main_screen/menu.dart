@@ -27,7 +27,9 @@ class _MenuState extends State<Menu> {
       // Get one item from menuID.
       // If menuID matches to menuList, then shows the category what the User selected.
       // cate = menu.firstWhere((menuTitle) => menuTitle.categoryID == widget.menuID);
+    //   print(cate.categoryID);
     // }
+    print(cate.categoryID);
     super.initState();
   }
 
@@ -47,7 +49,9 @@ class _MenuState extends State<Menu> {
           // final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
           // Get all items of list that match to CategoryList's type.
           List<MenuModel> menuList = [];
-          menuList = menu.menuList.where((menu) => menu.menuID == cate.categoryID).toList();
+          // menuList = menu.menuList.toList();
+          // menuList = menu.menuList.where((menu) => menu.menuID == cate.categoryID).toList();
+          menuList = menu.menuList.where((menu) => menu.menuID.contains(cate.categoryID)).toList();
 
           return menuList.length == 0 || menuList.length == null ?
             Center(child: Text("NOO!!!")) :
