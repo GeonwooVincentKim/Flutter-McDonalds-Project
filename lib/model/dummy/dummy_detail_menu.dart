@@ -6,7 +6,7 @@ import 'package:myTestApp_Test/model/model_menu.dart';
 var DUMMY_MENU = [
   MenuModel(
     // menuID: 'ham',
-    menuID: 'ham',
+    menuID: 'ham01',
     menuTitle: '1955 HashBrown',
     image: 'assets/img/burger/1955HashBrown.png',
     prices: 6000,
@@ -18,7 +18,7 @@ var DUMMY_MENU = [
 
   MenuModel(
     // menuID: 'ham02',
-    menuID: 'ham',
+    menuID: 'ham02',
     menuTitle: '1955 Burger',
     image: 'assets/img/burger/1955Burger.png',
     prices: 5500,
