@@ -47,7 +47,8 @@ class _MenuState extends State<Menu> {
           // final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
           // Get all items of list that match to CategoryList's type.
           List<MenuModel> menuList = [];
-          menuList = menu.menuList.where((menu) => menu.type == cate.type).toList();
+          menuList = menu.menuList.where((menu) => menu.id.contains(cate.categoryID)).toList();
+          // menuList = menu.menuList.where((menu) => menu.type == cate.type).toList();
 
           return menuList.length == 0 || menuList.length == null ?
             Center(child: Text("NOO!!!")) :
