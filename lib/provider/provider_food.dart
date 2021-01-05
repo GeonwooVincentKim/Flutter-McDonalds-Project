@@ -17,12 +17,12 @@ class ProviderFood extends ChangeNotifier{
   List<FoodModel> _addSpecialItems = [];
 
   // Import DUMMY_food list and DUMMY_SPECIAL list.
-  List<FoodModel> _foodItems = DUMMY_MENU.toList();
+  List<FoodModel> _foodItemsList = DUMMY_MENU.toList();
   List<FoodModel> _foodSpecialItems = DUMMY_SPECIAL.toList();
 
   // Get _foodItems which already involves
   // DUMMY_food list and DUMMY_SPECIAL list to List.
-  List<FoodModel> get foodList => [..._foodItems];
+  List<FoodModel> get foodItemList => [..._foodItemsList];
   List<FoodModel> get specialMenuList => [..._foodSpecialItems];
   List<FoodModel> get cartList => [..._addCartItems];
   List<FoodModel> get orderList => [..._addOrderedItems];

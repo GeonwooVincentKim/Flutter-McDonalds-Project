@@ -47,7 +47,8 @@ class _FoodState extends State<Food> {
           // final Map<String, dynamic> FoodFilter = Provider.of<FilterProvider>(context).orderFilters;
           // Get all items of list that match to CategoryList's type.
           List<FoodModel> foodList = [];
-          foodList = food.foodList.where((food) => food.id.contains(cate.categoryID)).toList();
+          foodList= food.foodItemList.toList();
+          // foodList = food.foodItemList.where((food) => food.id.contains(cate.categoryID)).toList();
           // FoodList = Food.FoodList.where((Food) => Food.type == cate.type).toList();
 
           return foodList.length == 0 || foodList.length == null ?
