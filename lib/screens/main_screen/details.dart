@@ -19,7 +19,7 @@ class Details extends StatefulWidget {
 }
 
 class _DetailsState extends State<Details> {
-  MenuModel detailMenu;
+  FoodModel detailMenu;
   int countNum = 0;
   final _formDetailKey = GlobalKey<FormState>();
 
@@ -27,7 +27,7 @@ class _DetailsState extends State<Details> {
   void initState(){
     detailMenu = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
     if(detailMenu == null){
-      final List<MenuModel> detailTitle = Provider.of<ProviderMenu>(context, listen: false).menuList.toList();
+      final List<FoodModel> detailTitle = Provider.of<ProviderMenu>(context, listen: false).menuList.toList();
       detailMenu = detailTitle.firstWhere((menu) => menu.id == widget.menuID);
     }
     super.initState();

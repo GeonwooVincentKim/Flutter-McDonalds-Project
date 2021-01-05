@@ -7,7 +7,7 @@ class ImageCropCircle extends StatelessWidget {
   final double width;
   final double height;
   final String imagePath;
-  MenuModel menu;
+  FoodModel menu;
 
   ImageCropCircle({
     this.width,

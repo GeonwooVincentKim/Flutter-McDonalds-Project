@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 
 
 class ListTileSpecial extends StatelessWidget{
-  final MenuModel spMenuList;
+  final FoodModel spMenuList;
   ListTileSpecial({@required this.spMenuList});
 
   // If there is no name of image, then shows the 'McDonaldsLogo.jpg' file.

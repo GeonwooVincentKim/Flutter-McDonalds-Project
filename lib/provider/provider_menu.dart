@@ -7,63 +7,63 @@ import 'package:myTestApp_Test/shared/helpers/functions.dart';
 
 
 class ProviderMenu extends ChangeNotifier{
-  MenuModel category;
-  MenuModel menuDetail;
-  MenuModel specialMenu;
+  FoodModel category;
+  FoodModel menuDetail;
+  FoodModel specialMenu;
   int sum = 0;
 
-  List<MenuModel> _addCartItems = [];
-  List<MenuModel> _addOrderedItems = [];
-  List<MenuModel> _addSpecialItems = [];
+  List<FoodModel> _addCartItems = [];
+  List<FoodModel> _addOrderedItems = [];
+  List<FoodModel> _addSpecialItems = [];
 
   // Import DUMMY_MENU list and DUMMY_SPECIAL list.
-  List<MenuModel> _menuItems = DUMMY_MENU.toList();
-  List<MenuModel> _menuSpecialItems = DUMMY_SPECIAL.toList();
+  List<FoodModel> _menuItems = DUMMY_MENU.toList();
+  List<FoodModel> _menuSpecialItems = DUMMY_SPECIAL.toList();
 
   // Get _menuItems which already involves
   // DUMMY_MENU list and DUMMY_SPECIAL list to List.
-  List<MenuModel> get menuList => [..._menuItems];
-  List<MenuModel> get specialMenuList => [..._menuSpecialItems];
-  List<MenuModel> get cartList => [..._addCartItems];
-  List<MenuModel> get orderList => [..._addOrderedItems];
+  List<FoodModel> get menuList => [..._menuItems];
+  List<FoodModel> get specialMenuList => [..._menuSpecialItems];
+  List<FoodModel> get cartList => [..._addCartItems];
+  List<FoodModel> get orderList => [..._addOrderedItems];
 
   // Bring the Category
-  MenuModel get selectedMenu => menuDetail != null ? MenuModel.fromMenuModelInfo(selectedMenu) : '';
+  FoodModel get selectedMenu => menuDetail != null ? FoodModel.fromFoodModelInfo(selectedMenu) : '';
   int get totalPrices => cartList.fold(0, (sum, current) => sum + current.prices);
 
-  void selectMenu(MenuModel menuContent){
+  void selectMenu(FoodModel menuContent){
     menuDetail = menuContent;
     notifyListeners();
   }
 
   // Add the items that the User selected to the Cart.
-  void addToCart(MenuModel menuAdd){
+  void addToCart(FoodModel menuAdd){
     _addCartItems.add(menuAdd);
     notifyListeners();
   }
 
   // Add the items that the User ordered from the Cart.
-  void addToOrder(MenuModel menuOrderAdd){
+  void addToOrder(FoodModel menuOrderAdd){
     _addOrderedItems.add(menuOrderAdd);
     _addCartItems.clear();  // Clear '_addCartItems' after adds in '_addOrderedItems'.
     notifyListeners();
   }
 
-  // void createMenu(MenuModel menuCreate){
+  // void createMenu(FoodModel menuCreate){
   //   menuCreate.id = getRandomString(2);
-  //   final MenuModel menuAttribute = MenuModel.fromMenuModelInfo(menuCreate);
+  //   final FoodModel menuAttribute = FoodModel.fromFoodModelInfo(menuCreate);
   //   _menuItems.add(menuAttribute);
   //   notifyListeners();
   // }
 
   void createMenu(Map<String, dynamic> menuCreate){
     menuCreate['id'] = getRandomString(2);
-    final MenuModel menuSettings = MenuModel.fromMenuModelMapInfo(menuCreate);
+    final FoodModel menuSettings = FoodModel.fromFoodModelMapInfo(menuCreate);
     _menuSpecialItems.add(menuSettings);
     notifyListeners();
   }
 
-  void deleteCartMenu(MenuModel menuDelete){
+  void deleteCartMenu(FoodModel menuDelete){
     _addCartItems.clear();
     notifyListeners();
   }

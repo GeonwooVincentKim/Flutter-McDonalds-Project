@@ -7,7 +7,7 @@ import 'package:myTestApp_Test/widget/list_tile/cart_list.dart';
 
 class CartItemListTile extends StatelessWidget {
   final String title;
-  final List<MenuModel> menuList;
+  final List<FoodModel> menuList;
 
   CartItemListTile({@required this.title, @required this.menuList});
 

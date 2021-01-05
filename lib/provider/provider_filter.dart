@@ -3,13 +3,13 @@ import 'package:myTestApp_Test/model/model_menu.dart';
 
 
 class FilterProvider with ChangeNotifier{
-  // MenuModel menuFilter = MenuModel(releaseYear: null, releaseMonth: null);
-  List<MenuModel> ordersNoMap = [];
+  // FoodModel menuFilter = FoodModel(releaseYear: null, releaseMonth: null);
+  List<FoodModel> ordersNoMap = [];
   List<String> _orderStrings = [
 
   ];
 
-  List<MenuModel> get orderFilterNoMap => [...ordersNoMap];
+  List<FoodModel> get orderFilterNoMap => [...ordersNoMap];
   final Map<String, dynamic> _orders = {
     'releaseYearMonth': '',
     // 'releaseYear': null,
@@ -49,7 +49,7 @@ class FilterProvider with ChangeNotifier{
     notifyListeners();
   }
 
-  // void changeOrderNoMapFilters(MenuModel mainFilter){
+  // void changeOrderNoMapFilters(FoodModel mainFilter){
   //   menuFilter.releaseYear = mainFilter.releaseYear;
   //   menuFilter.releaseMonth = mainFilter.releaseMonth;
   //   notifyListeners();

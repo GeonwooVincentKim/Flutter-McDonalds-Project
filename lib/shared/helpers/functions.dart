@@ -57,7 +57,7 @@ DateTime getDateTimeNoDashString(String date){
   }
 }
 
-bool checkFilter(MenuModel menu, Map<String, dynamic> newFilter){
+bool checkFilter(FoodModel menu, Map<String, dynamic> newFilter){
   final DateTime releaseYearMonth = menu.releaseDate != '' ? getDateTimeMonthString(menu.releaseDate) : null;
   print(releaseYearMonth);
   print(getDateTimeFromString(menu.releaseDate));
@@ -68,7 +68,7 @@ bool checkFilter(MenuModel menu, Map<String, dynamic> newFilter){
   }
   return false;
 }
-// bool checkFilter(MenuModel menu, MenuModel newFilter){
+// bool checkFilter(FoodModel menu, FoodModel newFilter){
 //   final DateTime releaseYear = menu.releaseYear != '' ? getDateTimeFromString(menu.releaseYear) : null;
 //   final DateTime releaseMonth = menu.releaseMonth != '' ? getDateTimeFromString(menu.releaseMonth) : null;
 //   if((newFilter.releaseYear == '' || newFilter.releaseYear == releaseYear.year.toString()) && 
@@ -78,7 +78,7 @@ bool checkFilter(MenuModel menu, Map<String, dynamic> newFilter){
 //   return false;
 // }
 
-// bool checkFilter(MenuModel menu, Map<String, dynamic> newFilter){
+// bool checkFilter(FoodModel menu, Map<String, dynamic> newFilter){
 //   // final DateTime releaseYear = menu.releaseYear != '' ? getDateTimeFromString(menu.releaseYear) : null;
 //   // final DateTime releaseMonth = menu.releaseMonth != '' ? getDateTimeFromString(menu.releaseMonth) : null;
 //   final String releaseYear = menu.releaseYear != '' ? menu.releaseYear : null;

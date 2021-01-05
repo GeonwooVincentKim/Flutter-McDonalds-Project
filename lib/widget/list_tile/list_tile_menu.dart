@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 
 
 class ListTileMenu extends StatelessWidget{
-  final MenuModel menuContents;
+  final FoodModel menuContents;
   ListTileMenu({@required this.menuContents});
 
   Widget _buildMenuImage(){

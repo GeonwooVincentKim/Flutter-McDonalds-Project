@@ -22,7 +22,7 @@ class Filter extends StatefulWidget {
 class _FilterState extends State<Filter> {
   final _formKey = GlobalKey<FormState>();
 
-  // MenuModel newFilterData = MenuModel(id: null, menuTitle: null, image: null, prices: null, releaseYear: null, releaseMonth: null);
+  // FoodModel newFilterData = FoodModel(id: null, menuTitle: null, image: null, prices: null, releaseYear: null, releaseMonth: null);
   final Map<String, dynamic> _currentOrdersFilters = {
     'releaseYearMonth': '',
     'releaseYear': null,

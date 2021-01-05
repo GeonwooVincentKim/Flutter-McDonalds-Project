@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 
 
 class CartList extends StatelessWidget{
-  final MenuModel orderMenu;
+  final FoodModel orderMenu;
   CartList({@required this.orderMenu});
 
   @override

@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 
 
 class ListTileCategory extends StatelessWidget {
-  // final MenuModel cate;
+  // final FoodModel cate;
   final CategoryModel cate;
   ListTileCategory({@required this.cate});
 

@@ -19,10 +19,10 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
-  MenuModel cartMenu;
+  FoodModel cartMenu;
   List<String> yourOrder = <String>['Your Orders', 'Total Prices'];
   String menuID;
-  List<MenuModel> totalPrices = [];
+  List<FoodModel> totalPrices = [];
 
   int sum = 0;
 
@@ -49,7 +49,7 @@ class _CartState extends State<Cart> {
       child: SingleChildScrollView(
         child: Consumer<ProviderMenu>(
           builder: (ctx, orderMenu, child){
-            final List<MenuModel> cartList = orderMenu.cartList.toList();
+            final List<FoodModel> cartList = orderMenu.cartList.toList();
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[

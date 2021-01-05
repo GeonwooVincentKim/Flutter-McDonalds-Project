@@ -20,12 +20,12 @@ class CreateNewMenu extends StatefulWidget {
 
 class _CreateNewMenuState extends State<CreateNewMenu> {
   final _formKey = GlobalKey<FormState>();
-  List<MenuModel> menuContentList = [];
+  List<FoodModel> menuContentList = [];
 
   List<String> mainMenuList = [];
   final List<String> year = [];
   final List<String> month = [];
-  // MenuModel newMenu = MenuModel(id: null, menuTitle: null, image: null, prices: null, releaseYear: null, releaseMonth: null);
+  // FoodModel newMenu = FoodModel(id: null, menuTitle: null, image: null, prices: null, releaseYear: null, releaseMonth: null);
   Map<String, dynamic> newMenu = {
     'menuTitle': '',
     'image': '',
@@ -38,7 +38,7 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
   void initState(){
     // newMenu = Provider.of<ProviderMenu>(context, listen: false).menu;
     // mainMenuList = menuContentList.map((mainMenu) => mainMenu.menuTitle).toList();    
-    // MenuModel showMenu = Provider.of<ProviderMenu>(context, listen: false).selectedMenu;
+    // FoodModel showMenu = Provider.of<ProviderMenu>(context, listen: false).selectedMenu;
     super.initState();
   }
 

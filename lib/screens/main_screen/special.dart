@@ -40,8 +40,8 @@ class _SpecialState extends State<Special> {
       child: Consumer<ProviderMenu>(
         builder: (ctx, menu, child){
           // final Map<String, dynamic> specialFilter = Provider.of<FilterProvider>(context, listen: false).orderFilters;
-          // MenuModel specialMenu = Provider.of<ProviderMenu>(context, listen: false).selectedSpecialMenu;
-          final List<MenuModel> listSpecial = menu.specialMenuList.toList();
+          // FoodModel specialMenu = Provider.of<ProviderMenu>(context, listen: false).selectedSpecialMenu;
+          final List<FoodModel> listSpecial = menu.specialMenuList.toList();
           // specialList = listSpecial.toList();
 
           return listSpecial.length == 0 ?

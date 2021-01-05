@@ -46,7 +46,7 @@ class _MenuState extends State<Menu> {
         builder: (ctx, menu, child){
           // final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
           // Get all items of list that match to CategoryList's type.
-          List<MenuModel> menuList = [];
+          List<FoodModel> menuList = [];
           menuList = menu.menuList.where((menu) => menu.id.contains(cate.categoryID)).toList();
           // menuList = menu.menuList.where((menu) => menu.type == cate.type).toList();
 
