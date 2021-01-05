@@ -1,6 +1,6 @@
 
 
-import 'package:myTestApp_Test/model/model_menu.dart';
+import 'package:myTestApp_Test/model/model_food.dart';
 
 
 var DUMMY_MENU = [

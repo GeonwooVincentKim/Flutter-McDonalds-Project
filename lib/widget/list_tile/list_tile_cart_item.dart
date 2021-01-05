@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myTestApp_Test/model/model_menu.dart';
+import 'package:myTestApp_Test/model/model_food.dart';
 import 'package:myTestApp_Test/shared/style/divider.dart';
 import 'package:myTestApp_Test/widget/contents/contents_cart.dart';
 import 'package:myTestApp_Test/widget/list_tile/cart_list.dart';

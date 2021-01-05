@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:myTestApp_Test/model/model_menu.dart';
+import 'package:myTestApp_Test/model/model_food.dart';
 import 'package:myTestApp_Test/provider/provider_menu.dart';
 import 'package:myTestApp_Test/widget/image_widget/positioned/positioned_image.dart';
 import 'package:provider/provider.dart';
