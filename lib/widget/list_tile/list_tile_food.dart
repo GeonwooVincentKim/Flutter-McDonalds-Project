@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
-import 'package:myTestApp_Test/provider/provider_menu.dart';
+import 'package:myTestApp_Test/provider/provider_food.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/shared/style/text.dart';
 import 'package:provider/provider.dart';
 
 
-class ListTileMenu extends StatelessWidget{
-  final FoodModel menuContents;
-  ListTileMenu({@required this.menuContents});
+class ListTileFood extends StatelessWidget{
+  final FoodModel foodContents;
+  ListTileFood({@required this.foodContents});
 
   Widget _buildMenuImage(){
     return Container(
       child: Image.asset(
-        menuContents.image,
+        foodContents.image,
         fit: BoxFit.fill
       )
     );
@@ -26,17 +26,17 @@ class ListTileMenu extends StatelessWidget{
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           TextDesign(
-            basicText: menuContents.menuTitle,
+            basicText: foodContents.foodTitle,
             textStyle: mainListSize
           ),
           Divider(height: 5, color: Colors.transparent),
           TextDesign(
-            basicText: menuContents.prices.toString() + "KRW",
+            basicText: foodContents.prices.toString() + "KRW",
             textStyle: subListSize
           ),
           Divider(height: 5, color: Colors.transparent),
           TextDesign(
-            basicText: menuContents.releaseDate.toString(),
+            basicText: foodContents.releaseDate.toString(),
             textStyle: subListSize
           )
           // TextDesign(
@@ -54,8 +54,8 @@ class ListTileMenu extends StatelessWidget{
     return Container(
       child: GestureDetector(
         onTap: (){
-          Provider.of<ProviderMenu>(context, listen: false).selectMenu(menuContents);
-          Navigator.pushNamed(context, "/detail/${menuContents.id}");
+          Provider.of<ProviderFood>(context, listen: false).selectMenu(foodContents);
+          Navigator.pushNamed(context, "/detail/${foodContents.id}");
         },
         child: Card(
           child: Column(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
-import 'package:myTestApp_Test/provider/provider_menu.dart';
+import 'package:myTestApp_Test/provider/provider_food.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
 import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
 import 'package:myTestApp_Test/shared/style/divider.dart';
@@ -11,31 +11,31 @@ import 'package:provider/provider.dart';
 
 
 class Details extends StatefulWidget {
-  final String menuID;
-  Details({@required this.menuID});
+  final String foodID;
+  Details({@required this.foodID});
 
   @override
   _DetailsState createState() => _DetailsState();
 }
 
 class _DetailsState extends State<Details> {
-  FoodModel detailMenu;
+  FoodModel detailFood;
   int countNum = 0;
   final _formDetailKey = GlobalKey<FormState>();
 
   @override
   void initState(){
-    detailMenu = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
-    if(detailMenu == null){
-      final List<FoodModel> detailTitle = Provider.of<ProviderMenu>(context, listen: false).menuList.toList();
-      detailMenu = detailTitle.firstWhere((menu) => menu.id == widget.menuID);
+    detailFood = Provider.of<ProviderFood>(context, listen: false).menuDetail;
+    if(detailFood == null){
+      final List<FoodModel> detailTitle = Provider.of<ProviderFood>(context, listen: false).foodList.toList();
+      detailFood = detailTitle.firstWhere((food) => food.id == widget.foodID);
     }
     super.initState();
   }
 
   Widget _buildDetailAppBar(){
     return AppBar(
-      title: Text(detailMenu.menuTitle),
+      title: Text(detailFood.foodTitle),
       centerTitle: true,
       actions: [
         IconButton(
@@ -54,8 +54,8 @@ class _DetailsState extends State<Details> {
         padding: EdgeInsets.symmetric(vertical: 30),
         child: Column(
           children: <Widget>[
-            Text(detailMenu.menuTitle, style: menuTitleSize, textAlign: TextAlign.center,),
-            Text("${detailMenu.prices.toString()} KRW", style: detailTitleSize)
+            Text(detailFood.foodTitle, style: menuTitleSize, textAlign: TextAlign.center,),
+            Text("${detailFood.prices.toString()} KRW", style: detailTitleSize)
           ],
         )
       ),
@@ -71,7 +71,7 @@ class _DetailsState extends State<Details> {
         overflow: Overflow.visible,
         children: <Widget>[
           PositionedImage(selection: 1, bottom: centerLength * 2, left: centerLength),
-          PositionedImage(selection: 0, bottom: basicLength, left: centerLength * 2, imagePath: detailMenu.image),
+          PositionedImage(selection: 0, bottom: basicLength, left: centerLength * 2, imagePath: detailFood.image),
         ],
       )
     );
@@ -132,7 +132,7 @@ class _DetailsState extends State<Details> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text("Do you want to order \n${detailMenu.menuTitle}\n into your Cart?", textAlign: TextAlign.center, ),
+                  Text("Do you want to order \n${detailFood.foodTitle}\n into your Cart?", textAlign: TextAlign.center, ),
                   TransparentDivider(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -153,7 +153,7 @@ class _DetailsState extends State<Details> {
   void _buildSubmitForm(BuildContext context){
     if(!_formDetailKey.currentState.validate()) return;
     _formDetailKey.currentState.save();
-    Provider.of<ProviderMenu>(context).addToCart(detailMenu);
+    Provider.of<ProviderFood>(context).addToCart(detailFood);
     Navigator.of(context).pop();
     Navigator.pushNamed(context, "/cart");
   }

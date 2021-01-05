@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_category.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
 import 'package:myTestApp_Test/provider/provider_category.dart';
-import 'package:myTestApp_Test/provider/provider_menu.dart';
+import 'package:myTestApp_Test/provider/provider_food.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/shared/style/text.dart';
 import 'package:provider/provider.dart';
@@ -44,7 +44,7 @@ class ListTileCategory extends StatelessWidget {
     return Container(
       child: GestureDetector(
         onTap: (){
-          // Provider.of<ProviderMenu>(context, listen: false).selectCategory(cate);
+          // Provider.of<ProviderFood>(context, listen: false).selectCategory(cate);
           Provider.of<ProviderCategory>(context, listen: false).selectMenu(cate);
           // Navigator.pushNamed(context, "/food/${cate.id}");
           Navigator.pushNamed(context, "/food/${cate.categoryID}");

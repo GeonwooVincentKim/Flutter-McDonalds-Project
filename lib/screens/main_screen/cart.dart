@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
-import 'package:myTestApp_Test/provider/provider_menu.dart';
+import 'package:myTestApp_Test/provider/provider_food.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
 import 'package:myTestApp_Test/shared/style/divider.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
@@ -28,7 +28,7 @@ class _CartState extends State<Cart> {
 
   @override
   void initState(){
-    cartMenu = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
+    cartMenu = Provider.of<ProviderFood>(context, listen: false).menuDetail;
     super.initState();
   }
 
@@ -47,7 +47,7 @@ class _CartState extends State<Cart> {
       padding: EdgeInsets.symmetric(horizontal: basicPadding, vertical: basicPadding),
       color: Theme.of(context).primaryColor,
       child: SingleChildScrollView(
-        child: Consumer<ProviderMenu>(
+        child: Consumer<ProviderFood>(
           builder: (ctx, orderMenu, child){
             final List<FoodModel> cartList = orderMenu.cartList.toList();
             return Column(
@@ -78,7 +78,7 @@ class _CartState extends State<Cart> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: basicPadding, vertical: basicPadding),
       color: Theme.of(context).primaryColor,
-      child: Consumer<ProviderMenu>(
+      child: Consumer<ProviderFood>(
           builder: (ctx, totalPrice, child){
             return Column(
               children: [
@@ -154,14 +154,14 @@ class _CartState extends State<Cart> {
   }
 
   void _buildSubmitForm(BuildContext context){
-    // Provider.of<ProviderMenu>(context, listen: false).orderList;
-    // Provider.of<ProviderMenu>(context, listen: false).cartList.clear();
-    Provider.of<ProviderMenu>(context, listen: false).addToOrder(cartMenu);
+    // Provider.of<ProviderFood>(context, listen: false).orderList;
+    // Provider.of<ProviderFood>(context, listen: false).cartList.clear();
+    Provider.of<ProviderFood>(context, listen: false).addToOrder(cartMenu);
     Navigator.pushNamed(context, "/orders");
   }
 
   void _buildResetForm(BuildContext context){
-    Provider.of<ProviderMenu>(context, listen: false).deleteCartMenu(cartMenu);
+    Provider.of<ProviderFood>(context, listen: false).deleteCartMenu(cartMenu);
     print(cartMenu);
   }
 }

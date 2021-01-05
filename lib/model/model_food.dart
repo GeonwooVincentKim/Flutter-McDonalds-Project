@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class FoodModel{
   final String id;
-  final String menuTitle;
+  final String foodTitle;
   final String image;
   final int prices;
   int type;
@@ -15,7 +15,7 @@ class FoodModel{
 
   FoodModel({
     @required this.id,
-    @required this.menuTitle,
+    @required this.foodTitle,
     @required this.image,
     this.isInCart,
     this.prices,
@@ -26,31 +26,31 @@ class FoodModel{
     this.childList
   });
 
-  factory FoodModel.fromFoodModelInfo(FoodModel menu){
+  factory FoodModel.fromFoodModelInfo(FoodModel food){
     return FoodModel(
-      id: menu.id ?? '',
-      menuTitle: menu.menuTitle ?? '',
-      image: menu.image ?? '',
-      prices: menu.prices ?? 0,
-      // type: menu.type ?? '',
-      releaseDate: menu.releaseDate ?? '',
-      // releaseYear: menu.releaseYear ?? '',
-      // releaseMonth: menu.releaseMonth ?? '',
-      childList: menu.childList ?? []
+      id: food.id ?? '',
+      foodTitle: food.foodTitle ?? '',
+      image: food.image ?? '',
+      prices: food.prices ?? 0,
+      // type: food.type ?? '',
+      releaseDate: food.releaseDate ?? '',
+      // releaseYear: food.releaseYear ?? '',
+      // releaseMonth: food.releaseMonth ?? '',
+      childList: food.childList ?? []
     );
   }
 
-  factory FoodModel.fromFoodModelMapInfo(Map<String, dynamic> menuMap){
+  factory FoodModel.fromFoodModelMapInfo(Map<String, dynamic> foodMap){
     return FoodModel(
-      id: menuMap['id'] ?? '',
-      menuTitle: menuMap['menuTitle'] ?? '',
-      image: menuMap['image'] ?? '',
-      prices: menuMap['prices'] ?? 0,
-      // type: menuMap['type'] ?? 0,
-      releaseDate: menuMap['releaseYearMonth'] ?? '',
-      // releaseYear: menuMap['releaseYear'] ?? '',
-      // releaseMonth: menuMap['releaseMonth'] ?? '',
-      childList: menuMap['childList'] ?? []
+      id: foodMap['id'] ?? '',
+      foodTitle: foodMap['foodTitle'] ?? '',
+      image: foodMap['image'] ?? '',
+      prices: foodMap['prices'] ?? 0,
+      // type: foodMap['type'] ?? 0,
+      releaseDate: foodMap['releaseYearMonth'] ?? '',
+      // releaseYear: foodMap['releaseYear'] ?? '',
+      // releaseMonth: foodMap['releaseMonth'] ?? '',
+      childList: foodMap['childList'] ?? []
     );
   }
 
@@ -58,7 +58,7 @@ class FoodModel{
   factory FoodModel.initialData(){
     return FoodModel(
       id: '',
-      menuTitle: '',
+      foodTitle: '',
       image: '',
       prices: 0,
       // type: 0,

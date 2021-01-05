@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
-import 'package:myTestApp_Test/provider/provider_menu.dart';
+import 'package:myTestApp_Test/provider/provider_food.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
 import 'package:myTestApp_Test/shared/helpers/functions.dart';
 import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
@@ -36,9 +36,9 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
   };
   @override
   void initState(){
-    // newMenu = Provider.of<ProviderMenu>(context, listen: false).menu;
+    // newMenu = Provider.of<ProviderFood>(context, listen: false).menu;
     // mainMenuList = menuContentList.map((mainMenu) => mainMenu.menuTitle).toList();    
-    // FoodModel showMenu = Provider.of<ProviderMenu>(context, listen: false).selectedMenu;
+    // FoodModel showMenu = Provider.of<ProviderFood>(context, listen: false).selectedMenu;
     super.initState();
   }
 
@@ -165,8 +165,8 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
     final String month = formatNumberForDate(int.parse(newMenu['releaseMonth']));
     final String day = formatNumberForDate(int.parse(newMenu['releaseDay']));
     newMenu['releaseYearMonth'] = '${newMenu['releaseYear']}/$month/$day';
-    // Provider.of<ProviderMenu>(context).createSubMenu(newMenuList);
-    Provider.of<ProviderMenu>(context).createMenu(newMenu);
+    // Provider.of<ProviderFood>(context).createSubMenu(newMenuList);
+    Provider.of<ProviderFood>(context).createMenu(newMenu);
     Navigator.pushNamed(context, "/");
   }
 }
