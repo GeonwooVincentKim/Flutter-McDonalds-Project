@@ -39,11 +39,6 @@ class ListTileFood extends StatelessWidget{
             basicText: foodContents.releaseDate.toString(),
             textStyle: subListSize
           )
-          // TextDesign(
-          //   basicText: menuContents.releaseYear.toString() + "/"
-          //   + menuContents.releaseMonth.toString(),
-          //   textStyle: subListSize
-          // ),
         ]
       )
     );

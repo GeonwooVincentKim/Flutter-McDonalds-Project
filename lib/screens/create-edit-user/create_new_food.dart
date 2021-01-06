@@ -145,7 +145,7 @@ class _CreateNewFoodState extends State<CreateNewFood> {
     return DropDownDateFormat(
       yearmonthKey: _formKey,
       // menuModelYearMonth: newMenu
-      menuYearMonthMap: newMenu,
+      foodYearMonthMap: newMenu,
     );
   }
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/dummy/dummy_detail_food.dart';
-import 'package:myTestApp_Test/model/dummy/dummy_special_menu.dart';
+import 'package:myTestApp_Test/model/dummy/dummy_special_food.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
 // import 'package:myTestApp_Test/model/dummy/dummy_unified_menu.dart';
 import 'package:myTestApp_Test/shared/helpers/functions.dart';
