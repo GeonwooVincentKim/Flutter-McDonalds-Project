@@ -55,15 +55,15 @@ class MyApp extends StatelessWidget{
               if(pathElements[0] != '') return null;
               if(pathElements[1] == 'food'){
                 String foodID = pathElements[2];
-                return MaterialPageRoute(builder: (BuildContext context) => Menu(menuID: foodID));
+                return MaterialPageRoute(builder: (BuildContext context) => Food(foodID: foodID));
               }else if(pathElements[1] == 'detail'){
                 String foodID = pathElements[2];
-                return MaterialPageRoute(builder: (BuildContext context) => Details(menuID: foodID));
+                return MaterialPageRoute(builder: (BuildContext context) => Details(foodID: foodID));
               }else if(pathElements[1] == 'filter'){
                 return MaterialPageRoute(builder: (BuildContext context) => Filter(settings.arguments));
               }else if(pathElements[1] == 'specialMenu'){
                 String specialID = pathElements[2];
-                return MaterialPageRoute(builder: (BuildContext context) => Details(menuID: specialID));
+                return MaterialPageRoute(builder: (BuildContext context) => Details(foodID: specialID));
               }else if(pathElements[1] == 'home'){
                 String homeID = pathElements[2];
                 return MaterialPageRoute(builder: (BuildContext context) => NotExist(title: "Page does not exist"));
@@ -101,15 +101,15 @@ class MyAppSub extends StatelessWidget{
         if(pathElements[0] != '') return null;
         if(pathElements[1] == 'food'){
           String foodID = pathElements[2];
-          return MaterialPageRoute(builder: (BuildContext context) => Menu(menuID: foodID));
+          return MaterialPageRoute(builder: (BuildContext context) => Food(foodID: foodID));
         }else if(pathElements[1] == 'detail'){
           String foodID = pathElements[2];
-          return MaterialPageRoute(builder: (BuildContext context) => Details(menuID: foodID));
+          return MaterialPageRoute(builder: (BuildContext context) => Details(foodID: foodID));
         }else if(pathElements[1] == 'filter'){
           return MaterialPageRoute(builder: (BuildContext context) => Filter(settings.arguments));
         }else if(pathElements[1] == 'specialMenu'){
           String specialID = pathElements[2];
-          return MaterialPageRoute(builder: (BuildContext context) => Details(menuID: specialID));
+          return MaterialPageRoute(builder: (BuildContext context) => Details(foodID: specialID));
         }else if(pathElements[1] == 'home'){
           String homeID = pathElements[2];
           return MaterialPageRoute(builder: (BuildContext context) => NotExist(title: "Page does not exist"));

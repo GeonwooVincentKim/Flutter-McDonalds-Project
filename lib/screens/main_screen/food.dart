@@ -9,59 +9,59 @@ import 'package:myTestApp_Test/widget/list_tile/list_tile_food.dart';
 import 'package:provider/provider.dart';
 
 
-class Menu extends StatefulWidget {
-  final String menuID;
-  Menu({@required this.menuID});
+class Food extends StatefulWidget {
+  final String foodID;
+  Food({@required this.foodID});
   @override
-  _MenuState createState() => _MenuState();
+  _FoodState createState() => _FoodState();
 }
 
-class _MenuState extends State<Menu> {
+class _FoodState extends State<Food> {
   CategoryModel cate;
 
   @override
   void initState(){
     cate = Provider.of<ProviderCategory>(context, listen: false).category;
     // if(cate == null){
-      // final List<CategoryModel> menu = Provider.of<ProviderCategory>(context, listen: false).categoryList.toList();
-      // Get one item from menuID.
-      // If menuID matches to menuList, then shows the category what the User selected.
-      // cate = menu.firstWhere((menuTitle) => menuTitle.categoryID == widget.menuID);
+      // final List<CategoryModel> food = Provider.of<ProviderCategory>(context, listen: false).categoryList.toList();
+      // Get one item from foodID.
+      // If foodID matches to foodList, then shows the category what the User selected.
+      // cate = food.firstWhere((foodTitle) => foodTitle.categoryID == widget.foodID);
     // }
     super.initState();
   }
 
-  Widget _buildMenuAppBar(){
+  Widget _buildfoodAppBar(){
     return AppBar(
       title: Text(cate.name),
       centerTitle: true,
     );
   }
 
-  Widget _buildMenuBody(){
+  Widget _buildfoodBody(){
     return Container(
       padding: EdgeInsets.symmetric(vertical: basicPadding, horizontal: basicPadding / 2),
       margin: EdgeInsets.all(basicMargin),
       child: Consumer<ProviderFood>(
-        builder: (ctx, menu, child){
-          // final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
+        builder: (ctx, food, child){
+          // final Map<String, dynamic> foodFilter = Provider.of<FilterProvider>(context).orderFilters;
           // Get all items of list that match to CategoryList's type.
-          List<FoodModel> menuList = [];
-          menuList = menu.foodList.where((menu) => menu.id.contains(cate.categoryID)).toList();
-          // menuList = menu.menuList.where((menu) => menu.type == cate.type).toList();
+          List<FoodModel> foodList = [];
+          foodList = food.foodList.where((food) => food.id.contains(cate.categoryID)).toList();
+          // foodList = food.foodList.where((food) => food.type == cate.type).toList();
 
-          return menuList.length == 0 || menuList.length == null ?
+          return foodList.length == 0 || foodList.length == null ?
             Center(child: Text("NOO!!!")) :
             GridView.builder(
               shrinkWrap: true,
-              itemCount: menuList.length,
+              itemCount: foodList.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 0.75,
                 crossAxisSpacing: 30.0,
                 mainAxisSpacing: 30.0
               ),
-              itemBuilder: (context, index) => ListTileFood(foodContents: menuList[index]),
+              itemBuilder: (context, index) => ListTileFood(foodContents: foodList[index]),
             );
         }
       )
@@ -71,8 +71,8 @@ class _MenuState extends State<Menu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildMenuAppBar(),
-      body: _buildMenuBody(),
+      appBar: _buildfoodAppBar(),
+      body: _buildfoodBody(),
       drawer: SideMenu(),
     );
   }
