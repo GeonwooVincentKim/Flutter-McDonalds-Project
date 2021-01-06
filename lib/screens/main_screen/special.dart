@@ -27,7 +27,7 @@ class _SpecialState extends State<Special> {
             IconMoon.ipencil,
             color: Theme.of(context).cardColor,
           ),
-          onPressed: () => Navigator.pushNamed(context, "/mainMenu/createMenu")
+          onPressed: () => Navigator.pushNamed(context, "/mainFood/createFood")
         )
       ],
     );

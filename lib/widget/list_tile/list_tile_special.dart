@@ -55,7 +55,7 @@ class ListTileSpecial extends StatelessWidget{
       child: GestureDetector(
         onTap: (){
           Provider.of<ProviderFood>(context, listen: false).selectMenu(spFoodList);
-          Navigator.pushNamed(context, "/specialMenu/${spFoodList.id}");
+          Navigator.pushNamed(context, "/specialFood/${spFoodList.id}");
         },
         child: Card(
           child: Column(
