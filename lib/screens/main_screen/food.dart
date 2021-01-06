@@ -31,14 +31,14 @@ class _FoodState extends State<Food> {
     super.initState();
   }
 
-  Widget _buildfoodAppBar(){
+  Widget _buildFoodAppBar(){
     return AppBar(
       title: Text(cate.name),
       centerTitle: true,
     );
   }
 
-  Widget _buildfoodBody(){
+  Widget _buildFoodBody(){
     return Container(
       padding: EdgeInsets.symmetric(vertical: basicPadding, horizontal: basicPadding / 2),
       margin: EdgeInsets.all(basicMargin),
@@ -71,8 +71,8 @@ class _FoodState extends State<Food> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildfoodAppBar(),
-      body: _buildfoodBody(),
+      appBar: _buildFoodAppBar(),
+      body: _buildFoodBody(),
       drawer: SideMenu(),
     );
   }
