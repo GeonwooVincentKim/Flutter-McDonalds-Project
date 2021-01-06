@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
-import 'package:myTestApp_Test/provider/provider_menu.dart';
+import 'package:myTestApp_Test/provider/provider_cart.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/shared/style/text.dart';
 import 'package:provider/provider.dart';
@@ -54,7 +54,7 @@ class ListTileMenu extends StatelessWidget{
     return Container(
       child: GestureDetector(
         onTap: (){
-          Provider.of<ProviderMenu>(context, listen: false).selectMenu(menuContents);
+          Provider.of<ProviderFood>(context, listen: false).selectMenu(menuContents);
           Navigator.pushNamed(context, "/detail/${menuContents.id}");
         },
         child: Card(

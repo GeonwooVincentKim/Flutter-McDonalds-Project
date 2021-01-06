@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
 import 'package:myTestApp_Test/provider/provider_filter.dart';
-import 'package:myTestApp_Test/provider/provider_menu.dart';
+import 'package:myTestApp_Test/provider/provider_cart.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
 import 'package:myTestApp_Test/shared/helpers/functions.dart';
 import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
@@ -28,7 +28,7 @@ class _OrdersState extends State<Orders> {
 
   @override
   void initState(){
-    orderedMenu = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
+    orderedMenu = Provider.of<ProviderFood>(context, listen: false).menuDetail;
     super.initState();
   }
 
@@ -55,7 +55,7 @@ class _OrdersState extends State<Orders> {
       padding: EdgeInsets.symmetric(horizontal: basicPadding, vertical: basicPadding),
       color: Theme.of(context).primaryColor,
       child: SingleChildScrollView(
-        child: Consumer<ProviderMenu>(
+        child: Consumer<ProviderFood>(
           builder: (ctx, orderMenu, child){
             final Map<String, dynamic> orderFilter = Provider.of<FilterProvider>(context).orderFilters;
             final List<FoodModel> orderList = orderMenu.orderList.where((ordered) => checkFilter(ordered, orderFilter)).toList();

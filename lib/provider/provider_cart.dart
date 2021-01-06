@@ -6,7 +6,7 @@ import 'package:myTestApp_Test/model/model_food.dart';
 import 'package:myTestApp_Test/shared/helpers/functions.dart';
 
 
-class ProviderMenu extends ChangeNotifier{
+class ProviderFood extends ChangeNotifier{
   FoodModel category;
   FoodModel menuDetail;
   FoodModel specialMenu;

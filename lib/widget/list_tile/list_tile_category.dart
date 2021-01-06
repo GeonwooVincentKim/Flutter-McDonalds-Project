@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_category.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
 import 'package:myTestApp_Test/provider/provider_category.dart';
-import 'package:myTestApp_Test/provider/provider_menu.dart';
+import 'package:myTestApp_Test/provider/provider_cart.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/shared/style/text.dart';
 import 'package:provider/provider.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
-import 'package:myTestApp_Test/provider/provider_menu.dart';
+import 'package:myTestApp_Test/provider/provider_cart.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
 import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
 import 'package:myTestApp_Test/shared/style/divider.dart';
@@ -25,9 +25,9 @@ class _DetailsState extends State<Details> {
 
   @override
   void initState(){
-    detailMenu = Provider.of<ProviderMenu>(context, listen: false).menuDetail;
+    detailMenu = Provider.of<ProviderFood>(context, listen: false).menuDetail;
     if(detailMenu == null){
-      final List<FoodModel> detailTitle = Provider.of<ProviderMenu>(context, listen: false).menuList.toList();
+      final List<FoodModel> detailTitle = Provider.of<ProviderFood>(context, listen: false).menuList.toList();
       detailMenu = detailTitle.firstWhere((menu) => menu.id == widget.menuID);
     }
     super.initState();
@@ -153,7 +153,7 @@ class _DetailsState extends State<Details> {
   void _buildSubmitForm(BuildContext context){
     if(!_formDetailKey.currentState.validate()) return;
     _formDetailKey.currentState.save();
-    Provider.of<ProviderMenu>(context).addToCart(detailMenu);
+    Provider.of<ProviderFood>(context).addToCart(detailMenu);
     Navigator.of(context).pop();
     Navigator.pushNamed(context, "/cart");
   }

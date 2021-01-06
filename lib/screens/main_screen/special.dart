@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
 import 'package:myTestApp_Test/provider/provider_filter.dart';
-import 'package:myTestApp_Test/provider/provider_menu.dart';
+import 'package:myTestApp_Test/provider/provider_cart.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
 import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
@@ -37,7 +37,7 @@ class _SpecialState extends State<Special> {
     return Container(
       padding: EdgeInsets.symmetric(vertical: basicPadding, horizontal: basicPadding / 2),
       margin: EdgeInsets.all(basicMargin),
-      child: Consumer<ProviderMenu>(
+      child: Consumer<ProviderFood>(
         builder: (ctx, menu, child){
           // final Map<String, dynamic> specialFilter = Provider.of<FilterProvider>(context, listen: false).orderFilters;
           // FoodModel specialMenu = Provider.of<ProviderMenu>(context, listen: false).selectedSpecialMenu;

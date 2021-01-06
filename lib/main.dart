@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/provider/provider_category.dart';
 import 'package:myTestApp_Test/provider/provider_filter.dart';
 import 'package:myTestApp_Test/provider/provider_home.dart';
-import 'package:myTestApp_Test/provider/provider_menu.dart';
+import 'package:myTestApp_Test/provider/provider_cart.dart';
 import 'package:myTestApp_Test/provider/provider_theme.dart';
 import 'package:myTestApp_Test/provider/provider_user.dart';
 import 'package:myTestApp_Test/screens/body.dart';
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget{
       providers: [
         ChangeNotifierProvider(create: (_) => UserProvider()),
         ChangeNotifierProvider(create: (_) => ProviderCategory()),
-        ChangeNotifierProvider(create: (_) => ProviderMenu()),
+        ChangeNotifierProvider(create: (_) => ProviderFood()),
         ChangeNotifierProvider(create: (_) => FilterProvider()),
         ChangeNotifierProvider(create: (_) => ProviderThemeDynamic()),
         ChangeNotifierProvider(create: (_) => ProviderHome()),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
-import 'package:myTestApp_Test/provider/provider_menu.dart';
+import 'package:myTestApp_Test/provider/provider_cart.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
 import 'package:myTestApp_Test/shared/helpers/functions.dart';
 import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
@@ -166,7 +166,7 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
     final String day = formatNumberForDate(int.parse(newMenu['releaseDay']));
     newMenu['releaseYearMonth'] = '${newMenu['releaseYear']}/$month/$day';
     // Provider.of<ProviderMenu>(context).createSubMenu(newMenuList);
-    Provider.of<ProviderMenu>(context).createMenu(newMenu);
+    Provider.of<ProviderFood>(context).createMenu(newMenu);
     Navigator.pushNamed(context, "/");
   }
 }
