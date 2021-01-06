@@ -54,7 +54,7 @@ class _DetailsState extends State<Details> {
         padding: EdgeInsets.symmetric(vertical: 30),
         child: Column(
           children: <Widget>[
-            Text(detailMenu.foodTitle, style: menuTitleSize, textAlign: TextAlign.center,),
+            Text(detailMenu.foodTitle, style: foodTitleSize, textAlign: TextAlign.center,),
             Text("${detailMenu.prices.toString()} KRW", style: detailTitleSize)
           ],
         )

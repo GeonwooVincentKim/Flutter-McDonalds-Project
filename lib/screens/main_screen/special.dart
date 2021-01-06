@@ -55,7 +55,7 @@ class _SpecialState extends State<Special> {
                 crossAxisSpacing: 30.0,
                 mainAxisSpacing: 30.0,
               ),
-              itemBuilder: (context, index) => ListTileSpecial(spMenuList: listSpecial[index])
+              itemBuilder: (context, index) => ListTileSpecial(spFoodList: listSpecial[index])
             );
         }
       )

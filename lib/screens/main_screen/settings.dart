@@ -69,7 +69,7 @@ class Settings extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text("Your Account Info".toUpperCase(), style: menuTitleSize),
+          Text("Your Account Info".toUpperCase(), style: foodTitleSize),
           TransparentDivider(),
           ContentsTitle(ctxTitle: "First Name", ctxContents: user.firstName, marginBottom: basicPadding / 2),
           ContentsTitle(ctxTitle: "Last Name", ctxContents: user.lastName),

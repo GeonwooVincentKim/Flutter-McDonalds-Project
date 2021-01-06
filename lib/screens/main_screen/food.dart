@@ -5,7 +5,7 @@ import 'package:myTestApp_Test/provider/provider_category.dart';
 import 'package:myTestApp_Test/provider/provider_food.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
-import 'package:myTestApp_Test/widget/list_tile/list_tile_menu.dart';
+import 'package:myTestApp_Test/widget/list_tile/list_tile_food.dart';
 import 'package:provider/provider.dart';
 
 
@@ -61,7 +61,7 @@ class _MenuState extends State<Menu> {
                 crossAxisSpacing: 30.0,
                 mainAxisSpacing: 30.0
               ),
-              itemBuilder: (context, index) => ListTileMenu(menuContents: menuList[index]),
+              itemBuilder: (context, index) => ListTileFood(foodContents: menuList[index]),
             );
         }
       )

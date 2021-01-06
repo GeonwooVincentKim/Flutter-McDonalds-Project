@@ -8,7 +8,7 @@ import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
 import 'package:myTestApp_Test/shared/style/divider.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/widget/contents/contents_orders.dart';
-import 'package:myTestApp_Test/widget/list_tile/list_tile_menu.dart';
+import 'package:myTestApp_Test/widget/list_tile/list_tile_food.dart';
 import 'package:provider/provider.dart';
 
 
@@ -74,7 +74,7 @@ class _OrdersState extends State<Orders> {
                   physics: NeverScrollableScrollPhysics(),
                   separatorBuilder: (context, index) => TransparentDivider(),
                   itemCount: orderList.length,
-                  itemBuilder: (context, index) => ListTileMenu(menuContents: orderList[index])
+                  itemBuilder: (context, index) => ListTileFood(foodContents: orderList[index])
                 ) : Center(child: Text("No recent Order List")),
                 TransparentDivider(),
               ],
