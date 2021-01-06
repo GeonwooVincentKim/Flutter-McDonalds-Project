@@ -44,7 +44,6 @@ class _FoodState extends State<Food> {
       margin: EdgeInsets.all(basicMargin),
       child: Consumer<ProviderFood>(
         builder: (ctx, food, child){
-          
           // final Map<String, dynamic> FoodFilter = Provider.of<FilterProvider>(context).orderFilters;
           // Get all items of list that match to CategoryList's type.
           List<FoodModel> foodList = [];
