@@ -25,7 +25,7 @@ class _DetailsState extends State<Details> {
 
   @override
   void initState(){
-    detailMenu = Provider.of<ProviderFood>(context, listen: false).menuDetail;
+    detailMenu = Provider.of<ProviderFood>(context, listen: false).foodDetail;
     if(detailMenu == null){
       final List<FoodModel> detailTitle = Provider.of<ProviderFood>(context, listen: false).foodList.toList();
       detailMenu = detailTitle.firstWhere((menu) => menu.id == widget.menuID);

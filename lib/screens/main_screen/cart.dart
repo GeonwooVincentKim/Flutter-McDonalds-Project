@@ -28,7 +28,7 @@ class _CartState extends State<Cart> {
 
   @override
   void initState(){
-    cartMenu = Provider.of<ProviderFood>(context, listen: false).menuDetail;
+    cartMenu = Provider.of<ProviderFood>(context, listen: false).foodDetail;
     super.initState();
   }
 

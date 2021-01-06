@@ -6,7 +6,7 @@ import 'package:myTestApp_Test/provider/provider_food.dart';
 import 'package:myTestApp_Test/provider/provider_theme.dart';
 import 'package:myTestApp_Test/provider/provider_user.dart';
 import 'package:myTestApp_Test/screens/body.dart';
-import 'package:myTestApp_Test/screens/create-edit-user/create_new_menu.dart';
+import 'package:myTestApp_Test/screens/create-edit-user/create_new_food.dart';
 import 'package:myTestApp_Test/screens/create-edit-user/edit_user.dart';
 import 'package:myTestApp_Test/screens/create-edit-user/filter.dart';
 import 'package:myTestApp_Test/screens/main_screen/cart.dart';
@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget{
               '/settings/modify': (context) => EditUser(title: "Modify"),
               '/cart': (context) => Cart(title: "Cart"),
               '/orders': (context) => Orders(title: "Orders"),
-              '/mainMenu/createMenu': (context) => CreateNewMenu(title: "Menu"),
+              '/mainMenu/createMenu': (context) => CreateNewFood(title: "Menu"),
               '/special': (context) => Special(title: "Special"),
             },
             onGenerateRoute: (settings) {
@@ -93,7 +93,7 @@ class MyAppSub extends StatelessWidget{
         '/settings/modify': (context) => EditUser(title: "Modify"),
         '/cart': (context) => Cart(title: "Cart"),
         '/orders': (context) => Orders(title: "Orders"),
-        '/mainMenu/createMenu': (context) => CreateNewMenu(title: "Menu"),
+        '/mainMenu/createMenu': (context) => CreateNewFood(title: "Menu"),
         '/special': (context) => Special(title: "Special"),
       },
       onGenerateRoute: (settings) {

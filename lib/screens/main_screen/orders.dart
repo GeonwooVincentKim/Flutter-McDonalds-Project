@@ -28,7 +28,7 @@ class _OrdersState extends State<Orders> {
 
   @override
   void initState(){
-    orderedMenu = Provider.of<ProviderFood>(context, listen: false).menuDetail;
+    orderedMenu = Provider.of<ProviderFood>(context, listen: false).foodDetail;
     super.initState();
   }
 

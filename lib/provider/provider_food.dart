@@ -8,8 +8,8 @@ import 'package:myTestApp_Test/shared/helpers/functions.dart';
 
 class ProviderFood extends ChangeNotifier{
   FoodModel category;
-  FoodModel menuDetail;
-  FoodModel specialMenu;
+  FoodModel foodDetail;
+  FoodModel specialFood;
   int sum = 0;
 
   List<FoodModel> _addCartItems = [];
@@ -28,11 +28,11 @@ class ProviderFood extends ChangeNotifier{
   List<FoodModel> get orderList => [..._addOrderedItems];
 
   // Bring the Category
-  FoodModel get selectedMenu => menuDetail != null ? FoodModel.fromFoodModelInfo(selectedMenu) : '';
+  FoodModel get selectedMenu => foodDetail != null ? FoodModel.fromFoodModelInfo(selectedMenu) : '';
   int get totalPrices => cartList.fold(0, (sum, current) => sum + current.prices);
 
   void selectMenu(FoodModel menuContent){
-    menuDetail = menuContent;
+    foodDetail = menuContent;
     notifyListeners();
   }
 

@@ -11,14 +11,14 @@ import 'package:myTestApp_Test/widget/list_tile/card_tile_edit_user.dart';
 import 'package:provider/provider.dart';
 
 
-class CreateNewMenu extends StatefulWidget {
+class CreateNewFood extends StatefulWidget {
   final String title;
-  CreateNewMenu({@required this.title});
+  CreateNewFood({@required this.title});
   @override
-  _CreateNewMenuState createState() => _CreateNewMenuState();
+  _CreateNewFoodState createState() => _CreateNewFoodState();
 }
 
-class _CreateNewMenuState extends State<CreateNewMenu> {
+class _CreateNewFoodState extends State<CreateNewFood> {
   final _formKey = GlobalKey<FormState>();
   List<FoodModel> menuContentList = [];
 
