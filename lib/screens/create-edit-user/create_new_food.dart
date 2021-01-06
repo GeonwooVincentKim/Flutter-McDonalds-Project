@@ -25,8 +25,8 @@ class _CreateNewFoodState extends State<CreateNewFood> {
   List<String> mainMenuList = [];
   final List<String> year = [];
   final List<String> month = [];
-  // FoodModel newMenu = FoodModel(id: null, menuTitle: null, image: null, prices: null, releaseYear: null, releaseMonth: null);
-  Map<String, dynamic> newMenu = {
+  // FoodModel newFood = FoodModel(id: null, menuTitle: null, image: null, prices: null, releaseYear: null, releaseMonth: null);
+  Map<String, dynamic> newFood = {
     'foodTitle': '',
     'image': '',
     'prices': '',
@@ -36,7 +36,7 @@ class _CreateNewFoodState extends State<CreateNewFood> {
   };
   @override
   void initState(){
-    // newMenu = Provider.of<ProviderFood>(context, listen: false).menu;
+    // newFood = Provider.of<ProviderMenu>(context, listen: false).menu;
     // mainMenuList = menuContentList.map((mainMenu) => mainMenu.menuTitle).toList();    
     // FoodModel showMenu = Provider.of<ProviderFood>(context, listen: false).selectedMenu;
     super.initState();
@@ -94,10 +94,10 @@ class _CreateNewFoodState extends State<CreateNewFood> {
               if(value.isEmpty) return 'Please input any text';
               return null;
             },
-            onSaved: (String value){newMenu['foodTitle'] = value;}
-            // onSaved: (String value){newMenu.menuTitle = value;},
+            onSaved: (String value){newFood['foodTitle'] = value;}
+            // onSaved: (String value){newFood.menuTitle = value;},
           )
-          // _buildAddInfo(newMenuList[1], 1)
+          // _buildAddInfo(newFoodList[1], 1)
         ],
       )
     );
@@ -109,10 +109,10 @@ class _CreateNewFoodState extends State<CreateNewFood> {
         children: [
           Text("Image"),
           TextFormField(
-            // onSaved: (String value) {newMenu.image = value;},
-            onSaved: (String value){newMenu['image'] = value;}
+            // onSaved: (String value) {newFood.image = value;},
+            onSaved: (String value){newFood['image'] = value;}
           )
-          // _buildAddInfo(newMenuList[2], 2)
+          // _buildAddInfo(newFoodList[2], 2)
         ],
       )
     );
@@ -128,10 +128,10 @@ class _CreateNewFoodState extends State<CreateNewFood> {
               if(value.isEmpty) return 'Please input the number of costs';
               return null;
             },
-            onSaved: (String value) {newMenu['prices'] = int.parse(value);}
-            // onSaved: (String value){newMenu.prices = int.parse(value);}
+            onSaved: (String value) {newFood['prices'] = int.parse(value);}
+            // onSaved: (String value){newFood.prices = int.parse(value);}
           )
-          // _buildAddInfo(newMenuList[3], 3)
+          // _buildAddInfo(newFoodList[3], 3)
         ],
       )
     );
@@ -140,12 +140,12 @@ class _CreateNewFoodState extends State<CreateNewFood> {
   Widget _buildYearMonthList(){
     // return DropDownDateFormatMap(
     //   yearmonthKey: _formKey,
-    //   menuYearMonthMap: newMenu,
+    //   menuYearMonthMap: newFood,
     // );
     return DropDownDateFormat(
       yearmonthKey: _formKey,
-      // menuModelYearMonth: newMenu
-      foodYearMonthMap: newMenu,
+      // menuModelYearMonth: newFood
+      foodYearMonthMap: newFood,
     );
   }
 
@@ -162,10 +162,11 @@ class _CreateNewFoodState extends State<CreateNewFood> {
     if(!_formKey.currentState.validate()) return;
     _formKey.currentState.save();
 
-    final String month = formatNumberForDate(int.parse(newMenu['releaseMonth']));
-    final String day = formatNumberForDate(int.parse(newMenu['releaseDay']));
-    newMenu['releaseYearMonth'] = '${newMenu['releaseYear']}/$month/$day';
-    Provider.of<ProviderFood>(context).createMenu(newMenu);
+    final String month = formatNumberForDate(int.parse(newFood['releaseMonth']));
+    final String day = formatNumberForDate(int.parse(newFood['releaseDay']));
+    newFood['releaseYearMonth'] = '${newFood['releaseYear']}/$month/$day';
+    // Provider.of<ProviderMenu>(context).createSubMenu(newFoodList);
+    Provider.of<ProviderFood>(context).createMenu(newFood);
     Navigator.pushNamed(context, "/");
   }
 }
