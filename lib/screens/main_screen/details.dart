@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
-import 'package:myTestApp_Test/provider/provider_cart.dart';
+import 'package:myTestApp_Test/provider/provider_food.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
 import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
 import 'package:myTestApp_Test/shared/style/divider.dart';
@@ -27,7 +27,7 @@ class _DetailsState extends State<Details> {
   void initState(){
     detailMenu = Provider.of<ProviderFood>(context, listen: false).menuDetail;
     if(detailMenu == null){
-      final List<FoodModel> detailTitle = Provider.of<ProviderFood>(context, listen: false).menuList.toList();
+      final List<FoodModel> detailTitle = Provider.of<ProviderFood>(context, listen: false).foodList.toList();
       detailMenu = detailTitle.firstWhere((menu) => menu.id == widget.menuID);
     }
     super.initState();
@@ -35,7 +35,7 @@ class _DetailsState extends State<Details> {
 
   Widget _buildDetailAppBar(){
     return AppBar(
-      title: Text(detailMenu.menuTitle),
+      title: Text(detailMenu.foodTitle),
       centerTitle: true,
       actions: [
         IconButton(
@@ -54,7 +54,7 @@ class _DetailsState extends State<Details> {
         padding: EdgeInsets.symmetric(vertical: 30),
         child: Column(
           children: <Widget>[
-            Text(detailMenu.menuTitle, style: menuTitleSize, textAlign: TextAlign.center,),
+            Text(detailMenu.foodTitle, style: menuTitleSize, textAlign: TextAlign.center,),
             Text("${detailMenu.prices.toString()} KRW", style: detailTitleSize)
           ],
         )
@@ -132,7 +132,7 @@ class _DetailsState extends State<Details> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text("Do you want to order \n${detailMenu.menuTitle}\n into your Cart?", textAlign: TextAlign.center, ),
+                  Text("Do you want to order \n${detailMenu.foodTitle}\n into your Cart?", textAlign: TextAlign.center, ),
                   TransparentDivider(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,

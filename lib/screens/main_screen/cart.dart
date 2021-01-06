@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
-import 'package:myTestApp_Test/provider/provider_cart.dart';
+import 'package:myTestApp_Test/provider/provider_food.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
 import 'package:myTestApp_Test/shared/style/divider.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';

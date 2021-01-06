@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
-import 'package:myTestApp_Test/provider/provider_cart.dart';
+import 'package:myTestApp_Test/provider/provider_food.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/shared/style/text.dart';
 import 'package:provider/provider.dart';
@@ -26,7 +26,7 @@ class ListTileMenu extends StatelessWidget{
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           TextDesign(
-            basicText: menuContents.menuTitle,
+            basicText: menuContents.foodTitle,
             textStyle: mainListSize
           ),
           Divider(height: 5, color: Colors.transparent),

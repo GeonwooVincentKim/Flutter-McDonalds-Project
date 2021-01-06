@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
-import 'package:myTestApp_Test/provider/provider_cart.dart';
+import 'package:myTestApp_Test/provider/provider_food.dart';
 import 'package:myTestApp_Test/widget/image_widget/positioned/positioned_image.dart';
 import 'package:provider/provider.dart';
 
@@ -37,7 +37,7 @@ class CartList extends StatelessWidget{
                     child: PositionedImage(selection: 0, imagePath: orderMenu.image,),
                     foregroundColor: Colors.white,
                   ),
-                  title: Text(orderMenu.menuTitle),
+                  title: Text(orderMenu.foodTitle),
                   subtitle: Text(orderMenu.prices.toString() + " ￦"),
                 ),
               ),

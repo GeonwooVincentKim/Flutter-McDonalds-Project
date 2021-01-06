@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
-import 'package:myTestApp_Test/provider/provider_cart.dart';
+import 'package:myTestApp_Test/provider/provider_food.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
 import 'package:myTestApp_Test/shared/helpers/functions.dart';
 import 'package:myTestApp_Test/shared/helpers/icomoon.dart';
@@ -27,7 +27,7 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
   final List<String> month = [];
   // FoodModel newMenu = FoodModel(id: null, menuTitle: null, image: null, prices: null, releaseYear: null, releaseMonth: null);
   Map<String, dynamic> newMenu = {
-    'menuTitle': '',
+    'foodTitle': '',
     'image': '',
     'prices': '',
     'releaseYear': '',
@@ -94,7 +94,7 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
               if(value.isEmpty) return 'Please input any text';
               return null;
             },
-            onSaved: (String value){newMenu['menuTitle'] = value;}
+            onSaved: (String value){newMenu['foodTitle'] = value;}
             // onSaved: (String value){newMenu.menuTitle = value;},
           )
           // _buildAddInfo(newMenuList[1], 1)

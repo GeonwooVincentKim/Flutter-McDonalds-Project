@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_category.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
 import 'package:myTestApp_Test/provider/provider_category.dart';
-import 'package:myTestApp_Test/provider/provider_cart.dart';
+import 'package:myTestApp_Test/provider/provider_food.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/widget/list_tile/list_tile_menu.dart';
@@ -47,7 +47,7 @@ class _MenuState extends State<Menu> {
           // final Map<String, dynamic> menuFilter = Provider.of<FilterProvider>(context).orderFilters;
           // Get all items of list that match to CategoryList's type.
           List<FoodModel> menuList = [];
-          menuList = menu.menuList.where((menu) => menu.id.contains(cate.categoryID)).toList();
+          menuList = menu.foodList.where((menu) => menu.id.contains(cate.categoryID)).toList();
           // menuList = menu.menuList.where((menu) => menu.type == cate.type).toList();
 
           return menuList.length == 0 || menuList.length == null ?

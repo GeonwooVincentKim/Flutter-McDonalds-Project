@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class FoodModel{
   final String id;
-  final String menuTitle;
+  final String foodTitle;
   final String image;
   final int prices;
   int type;
@@ -15,7 +15,7 @@ class FoodModel{
 
   FoodModel({
     @required this.id,
-    @required this.menuTitle,
+    @required this.foodTitle,
     @required this.image,
     this.isInCart,
     this.prices,
@@ -29,7 +29,7 @@ class FoodModel{
   factory FoodModel.fromFoodModelInfo(FoodModel menu){
     return FoodModel(
       id: menu.id ?? '',
-      menuTitle: menu.menuTitle ?? '',
+      foodTitle: menu.foodTitle ?? '',
       image: menu.image ?? '',
       prices: menu.prices ?? 0,
       // type: menu.type ?? '',
@@ -43,7 +43,7 @@ class FoodModel{
   factory FoodModel.fromFoodModelMapInfo(Map<String, dynamic> menuMap){
     return FoodModel(
       id: menuMap['id'] ?? '',
-      menuTitle: menuMap['menuTitle'] ?? '',
+      foodTitle: menuMap['foodTitle'] ?? '',
       image: menuMap['image'] ?? '',
       prices: menuMap['prices'] ?? 0,
       // type: menuMap['type'] ?? 0,
@@ -58,7 +58,7 @@ class FoodModel{
   factory FoodModel.initialData(){
     return FoodModel(
       id: '',
-      menuTitle: '',
+      foodTitle: '',
       image: '',
       prices: 0,
       // type: 0,
