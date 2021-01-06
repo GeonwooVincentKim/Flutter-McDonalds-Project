@@ -39,11 +39,6 @@ class ListTileFood extends StatelessWidget{
             basicText: foodContents.releaseDate.toString(),
             textStyle: subListSize
           )
-          // TextDesign(
-          //   basicText: menuContents.releaseYear.toString() + "/"
-          //   + menuContents.releaseMonth.toString(),
-          //   textStyle: subListSize
-          // ),
         ]
       )
     );
@@ -55,7 +50,7 @@ class ListTileFood extends StatelessWidget{
       child: GestureDetector(
         onTap: (){
           Provider.of<ProviderFood>(context, listen: false).selectMenu(foodContents);
-          Navigator.pushNamed(context, "/detail/${foodContents.id}");
+          Navigator.pushNamed(context, "/detailFood/${foodContents.id}");
         },
         child: Card(
           child: Column(

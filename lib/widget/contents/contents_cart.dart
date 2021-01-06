@@ -11,7 +11,7 @@ class ContentsCart extends StatelessWidget{
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        child: Text(title.toUpperCase(), style: menuTitleSize),
+        child: Text(title.toUpperCase(), style: foodTitleSize),
       ),
     );
   }

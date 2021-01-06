@@ -28,7 +28,7 @@ class _CartState extends State<Cart> {
 
   @override
   void initState(){
-    cartMenu = Provider.of<ProviderFood>(context, listen: false).menuDetail;
+    cartMenu = Provider.of<ProviderFood>(context, listen: false).foodDetail;
     super.initState();
   }
 
@@ -154,8 +154,6 @@ class _CartState extends State<Cart> {
   }
 
   void _buildSubmitForm(BuildContext context){
-    // Provider.of<ProviderFood>(context, listen: false).orderList;
-    // Provider.of<ProviderFood>(context, listen: false).cartList.clear();
     Provider.of<ProviderFood>(context, listen: false).addToOrder(cartMenu);
     Navigator.pushNamed(context, "/orders");
   }

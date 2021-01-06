@@ -25,9 +25,9 @@ class _DetailsState extends State<Details> {
 
   @override
   void initState(){
-    detailFood = Provider.of<ProviderFood>(context, listen: false).menuDetail;
+    detailFood = Provider.of<ProviderFood>(context, listen: false).foodDetail;
     if(detailFood == null){
-      final List<FoodModel> detailTitle = Provider.of<ProviderFood>(context, listen: false).foodItemList.toList();
+      final List<FoodModel> detailTitle = Provider.of<ProviderFood>(context, listen: false).foodList.toList();
       detailFood = detailTitle.firstWhere((food) => food.id == widget.foodID);
     }
     super.initState();
@@ -54,7 +54,7 @@ class _DetailsState extends State<Details> {
         padding: EdgeInsets.symmetric(vertical: 30),
         child: Column(
           children: <Widget>[
-            Text(detailFood.foodTitle, style: menuTitleSize, textAlign: TextAlign.center,),
+            Text(detailFood.foodTitle, style: foodTitleSize, textAlign: TextAlign.center,),
             Text("${detailFood.prices.toString()} KRW", style: detailTitleSize)
           ],
         )

@@ -11,14 +11,14 @@ import 'package:myTestApp_Test/widget/list_tile/card_tile_edit_user.dart';
 import 'package:provider/provider.dart';
 
 
-class CreateNewMenu extends StatefulWidget {
+class CreateNewFood extends StatefulWidget {
   final String title;
-  CreateNewMenu({@required this.title});
+  CreateNewFood({@required this.title});
   @override
-  _CreateNewMenuState createState() => _CreateNewMenuState();
+  _CreateNewFoodState createState() => _CreateNewFoodState();
 }
 
-class _CreateNewMenuState extends State<CreateNewMenu> {
+class _CreateNewFoodState extends State<CreateNewFood> {
   final _formKey = GlobalKey<FormState>();
   List<FoodModel> menuContentList = [];
 
@@ -27,7 +27,7 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
   final List<String> month = [];
   // FoodModel newMenu = FoodModel(id: null, menuTitle: null, image: null, prices: null, releaseYear: null, releaseMonth: null);
   Map<String, dynamic> newMenu = {
-    'menuTitle': '',
+    'foodTitle': '',
     'image': '',
     'prices': '',
     'releaseYear': '',
@@ -94,7 +94,7 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
               if(value.isEmpty) return 'Please input any text';
               return null;
             },
-            onSaved: (String value){newMenu['menuTitle'] = value;}
+            onSaved: (String value){newMenu['foodTitle'] = value;}
             // onSaved: (String value){newMenu.menuTitle = value;},
           )
           // _buildAddInfo(newMenuList[1], 1)
@@ -145,7 +145,7 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
     return DropDownDateFormat(
       yearmonthKey: _formKey,
       // menuModelYearMonth: newMenu
-      menuYearMonthMap: newMenu,
+      foodYearMonthMap: newMenu,
     );
   }
 
@@ -165,7 +165,6 @@ class _CreateNewMenuState extends State<CreateNewMenu> {
     final String month = formatNumberForDate(int.parse(newMenu['releaseMonth']));
     final String day = formatNumberForDate(int.parse(newMenu['releaseDay']));
     newMenu['releaseYearMonth'] = '${newMenu['releaseYear']}/$month/$day';
-    // Provider.of<ProviderFood>(context).createSubMenu(newMenuList);
     Provider.of<ProviderFood>(context).createMenu(newMenu);
     Navigator.pushNamed(context, "/");
   }

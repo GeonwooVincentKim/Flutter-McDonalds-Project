@@ -13,7 +13,7 @@ class ContentsOrder extends StatelessWidget{
       child: Container(
         child: Column(
           children: <Widget>[
-            Text(title.toUpperCase(), style: menuTitleSize),
+            Text(title.toUpperCase(), style: foodTitleSize),
             TransparentDivider(),
           ],
         )

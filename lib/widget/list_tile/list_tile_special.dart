@@ -7,8 +7,8 @@ import 'package:provider/provider.dart';
 
 
 class ListTileSpecial extends StatelessWidget{
-  final FoodModel spMenuList;
-  ListTileSpecial({@required this.spMenuList});
+  final FoodModel spFoodList;
+  ListTileSpecial({@required this.spFoodList});
 
   // If there is no name of image, then shows the 'McDonaldsLogo.jpg' file.
   Widget _displayMedia(String media){
@@ -18,7 +18,7 @@ class ListTileSpecial extends StatelessWidget{
         return Image.asset(media, fit : BoxFit.fill);
       }
   }
-  Widget _buildSpecialImage() => Container(child: _displayMedia(spMenuList.image));
+  Widget _buildSpecialImage() => Container(child: _displayMedia(spFoodList.image));
   Widget _buildSpecialBody(BuildContext context){
     return Container(
       width: MediaQuery.of(context).size.width,
@@ -27,17 +27,17 @@ class ListTileSpecial extends StatelessWidget{
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextDesign(
-            basicText: spMenuList.foodTitle,
+            basicText: spFoodList.foodTitle,
             textStyle: mainListSize
           ),
           Divider(height: 10, color: Colors.transparent),
           TextDesign(
-            basicText: spMenuList.prices.toString() + "KRW",
+            basicText: spFoodList.prices.toString() + "KRW",
             textStyle: subListSize
           ),
           Divider(height: 10, color: Colors.transparent),
           TextDesign(
-            basicText: spMenuList.releaseDate.toString(),
+            basicText: spFoodList.releaseDate.toString(),
             textStyle: subListSize
           )
           // TextDesign(
@@ -54,8 +54,8 @@ class ListTileSpecial extends StatelessWidget{
     return Container(
       child: GestureDetector(
         onTap: (){
-          Provider.of<ProviderFood>(context, listen: false).selectMenu(spMenuList);
-          Navigator.pushNamed(context, "/specialMenu/${spMenuList.id}");
+          Provider.of<ProviderFood>(context, listen: false).selectMenu(spFoodList);
+          Navigator.pushNamed(context, "/specialFood/${spFoodList.id}");
         },
         child: Card(
           child: Column(

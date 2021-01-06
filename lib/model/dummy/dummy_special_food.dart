@@ -8,7 +8,7 @@ var DUMMY_SPECIAL = [
     prices: 8500,
     // releaseYear: '2020',
     // releaseMonth: '12',
-    releaseDate: '2020/12'
+    releaseDate: '2020/12/12'
   ),
   FoodModel(
     id: 'sp02',
@@ -17,6 +17,6 @@ var DUMMY_SPECIAL = [
     prices: 8900,
     // releaseYear: '2020',
     // releaseMonth: '12',
-    releaseDate: '2020/12'
+    releaseDate: '2020/12/12'
   )
 ];

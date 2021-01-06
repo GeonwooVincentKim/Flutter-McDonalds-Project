@@ -6,11 +6,11 @@ import 'package:myTestApp_Test/widget/drop_down/drop_down.dart';
 
 class DropDownDateFormat extends StatefulWidget {
   final GlobalKey<FormState> yearmonthKey;
-  Map<String, dynamic> menuYearMonthMap;
+  Map<String, dynamic> foodYearMonthMap;
 
   DropDownDateFormat({
     @required this.yearmonthKey,
-    this.menuYearMonthMap
+    this.foodYearMonthMap
   });
 
   @override
@@ -36,22 +36,22 @@ class _DropDownDateFormatState extends State<DropDownDateFormat> {
     }
 
     // When it is map
-    if(widget.menuYearMonthMap['releaseYear'] == '')
-      widget.menuYearMonthMap['releaseYear'] = yearList[yearList.length - 1];
-    if(widget.menuYearMonthMap['releaseMonth'] == '')
-      widget.menuYearMonthMap['releaseMonth'] = monthList[monthList.length - 1];
-    if(widget.menuYearMonthMap['releaseDay'] == '')
-      widget.menuYearMonthMap['releaseDay'] = dayList[dayList.length - 1];
+    if(widget.foodYearMonthMap['releaseYear'] == '')
+      widget.foodYearMonthMap['releaseYear'] = yearList[yearList.length - 1];
+    if(widget.foodYearMonthMap['releaseMonth'] == '')
+      widget.foodYearMonthMap['releaseMonth'] = monthList[monthList.length - 1];
+    if(widget.foodYearMonthMap['releaseDay'] == '')
+      widget.foodYearMonthMap['releaseDay'] = dayList[dayList.length - 1];
 
     super.initState();
   }
 
   Widget _buildYearList(){
     return DropDownWidget(
-      value: widget.menuYearMonthMap['releaseYear'],
+      value: widget.foodYearMonthMap['releaseYear'],
       onChanged: (String value){
         setState(() {
-          widget.menuYearMonthMap['releaseYear'] = value;
+          widget.foodYearMonthMap['releaseYear'] = value;
           print(value);
         });
       },
@@ -61,10 +61,10 @@ class _DropDownDateFormatState extends State<DropDownDateFormat> {
 
   Widget _buildMonthList(){
     return DropDownWidget(
-      value: widget.menuYearMonthMap['releaseMonth'],
+      value: widget.foodYearMonthMap['releaseMonth'],
       onChanged: (String value){
         setState(() {
-          widget.menuYearMonthMap['releaseMonth'] = value;
+          widget.foodYearMonthMap['releaseMonth'] = value;
           print(value);
         });
       },

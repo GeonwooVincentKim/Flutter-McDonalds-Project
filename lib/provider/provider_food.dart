@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myTestApp_Test/model/dummy/dummy_detail_menu.dart';
-import 'package:myTestApp_Test/model/dummy/dummy_special_menu.dart';
+import 'package:myTestApp_Test/model/dummy/dummy_detail_food.dart';
+import 'package:myTestApp_Test/model/dummy/dummy_special_food.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
 // import 'package:myTestApp_Test/model/dummy/dummy_unified_food.dart';
 import 'package:myTestApp_Test/shared/helpers/functions.dart';
@@ -8,31 +8,31 @@ import 'package:myTestApp_Test/shared/helpers/functions.dart';
 
 class ProviderFood extends ChangeNotifier{
   FoodModel category;
-  FoodModel menuDetail;
-  FoodModel specialMenu;
+  FoodModel foodDetail;
+  FoodModel specialFood;
   int sum = 0;
 
   List<FoodModel> _addCartItems = [];
   List<FoodModel> _addOrderedItems = [];
   List<FoodModel> _addSpecialItems = [];
 
-  // Import DUMMY_food list and DUMMY_SPECIAL list.
-  List<FoodModel> _foodItemsList = DUMMY_MENU.toList();
+  // Import DUMMY_MENU list and DUMMY_SPECIAL list.
+  List<FoodModel> _foodItems = DUMMY_FOOD.toList();
   List<FoodModel> _foodSpecialItems = DUMMY_SPECIAL.toList();
 
-  // Get _foodItems which already involves
-  // DUMMY_food list and DUMMY_SPECIAL list to List.
-  List<FoodModel> get foodItemList => [..._foodItemsList];
-  List<FoodModel> get specialMenuList => [..._foodSpecialItems];
+  // Get _menuItems which already involves
+  // DUMMY_MENU list and DUMMY_SPECIAL list to List.
+  List<FoodModel> get foodList => [..._foodItems];
+  List<FoodModel> get specialFoodList => [..._foodSpecialItems];
   List<FoodModel> get cartList => [..._addCartItems];
   List<FoodModel> get orderList => [..._addOrderedItems];
 
   // Bring the Category
-  FoodModel get selectedMenu => menuDetail != null ? FoodModel.fromFoodModelInfo(selectedMenu) : '';
+  FoodModel get selectedMenu => foodDetail != null ? FoodModel.fromFoodModelInfo(selectedMenu) : '';
   int get totalPrices => cartList.fold(0, (sum, current) => sum + current.prices);
 
   void selectMenu(FoodModel menuContent){
-    menuDetail = menuContent;
+    foodDetail = menuContent;
     notifyListeners();
   }
 

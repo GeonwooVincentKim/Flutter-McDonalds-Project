@@ -31,7 +31,7 @@ class _SideMenuState extends State<SideMenu> {
           ListTile(title: Text("Cart"), onTap: (){Navigator.pushNamed(context, "/cart");}),
           ListTile(title: Text("Settings"), onTap: () => Navigator.pushNamed(context, "/settings")),
           ListTile(title: Text("Orders"), onTap: (){Navigator.pushNamed(context, "/orders");}),
-          ListTile(title: Text("Create New Menu"), onTap: () => Navigator.pushNamed(context, "/mainMenu/createMenu")),
+          ListTile(title: Text("Create New Menu"), onTap: () => Navigator.pushNamed(context, "/mainFood/createFood")),
           ListTile(title: Text("Filter"), onTap: (){Navigator.pushNamed(context, "/filter", arguments: 'orders');}),
           ListTile(title: Text("Special Menu"), onTap: (){Navigator.pushNamed(context, "/special");}),
           // ListTile(

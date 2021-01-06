@@ -1,7 +1,7 @@
 import 'package:myTestApp_Test/model/model_food.dart';
 
 
-var DUMMY_MENU = [
+var DUMMY_FOOD = [
   FoodModel(
     id: 'ham01',
     foodTitle: '1955 HashBrown',

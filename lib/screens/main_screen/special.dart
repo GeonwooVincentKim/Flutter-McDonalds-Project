@@ -27,7 +27,7 @@ class _SpecialState extends State<Special> {
             IconMoon.ipencil,
             color: Theme.of(context).cardColor,
           ),
-          onPressed: () => Navigator.pushNamed(context, "/mainMenu/createMenu")
+          onPressed: () => Navigator.pushNamed(context, "/mainFood/createFood")
         )
       ],
     );
@@ -40,8 +40,8 @@ class _SpecialState extends State<Special> {
       child: Consumer<ProviderFood>(
         builder: (ctx, menu, child){
           // final Map<String, dynamic> specialFilter = Provider.of<FilterProvider>(context, listen: false).orderFilters;
-          // FoodModel specialMenu = Provider.of<ProviderFood>(context, listen: false).selectedSpecialMenu;
-          final List<FoodModel> listSpecial = menu.specialMenuList.toList();
+          // FoodModel specialMenu = Provider.of<ProviderMenu>(context, listen: false).selectedSpecialMenu;
+          final List<FoodModel> listSpecial = menu.specialFoodList.toList();
           // specialList = listSpecial.toList();
 
           return listSpecial.length == 0 ?
@@ -55,7 +55,7 @@ class _SpecialState extends State<Special> {
                 crossAxisSpacing: 30.0,
                 mainAxisSpacing: 30.0,
               ),
-              itemBuilder: (context, index) => ListTileSpecial(spMenuList: listSpecial[index])
+              itemBuilder: (context, index) => ListTileSpecial(spFoodList: listSpecial[index])
             );
         }
       )

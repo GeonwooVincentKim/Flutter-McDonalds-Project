@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myTestApp_Test/model/model_category.dart';
 import 'package:myTestApp_Test/model/model_food.dart';
 import 'package:myTestApp_Test/provider/provider_category.dart';
-import 'package:myTestApp_Test/provider/provider_Food.dart';
+import 'package:myTestApp_Test/provider/provider_food.dart';
 import 'package:myTestApp_Test/screens/sidemenu.dart';
 import 'package:myTestApp_Test/shared/style/style.dart';
 import 'package:myTestApp_Test/widget/list_tile/list_tile_food.dart';
@@ -23,10 +23,10 @@ class _FoodState extends State<Food> {
   void initState(){
     cate = Provider.of<ProviderCategory>(context, listen: false).category;
     // if(cate == null){
-      // final List<CategoryModel> Food = Provider.of<ProviderCategory>(context, listen: false).categoryList.toList();
-      // Get one item from FoodID.
-      // If FoodID matches to FoodList, then shows the category what the User selected.
-      // cate = Food.firstWhere((FoodTitle) => FoodTitle.categoryID == widget.FoodID);
+      // final List<CategoryModel> food = Provider.of<ProviderCategory>(context, listen: false).categoryList.toList();
+      // Get one item from foodID.
+      // If foodID matches to foodList, then shows the category what the User selected.
+      // cate = food.firstWhere((foodTitle) => foodTitle.categoryID == widget.foodID);
     // }
     super.initState();
   }
@@ -44,12 +44,11 @@ class _FoodState extends State<Food> {
       margin: EdgeInsets.all(basicMargin),
       child: Consumer<ProviderFood>(
         builder: (ctx, food, child){
-          // final Map<String, dynamic> FoodFilter = Provider.of<FilterProvider>(context).orderFilters;
+          // final Map<String, dynamic> foodFilter = Provider.of<FilterProvider>(context).orderFilters;
           // Get all items of list that match to CategoryList's type.
           List<FoodModel> foodList = [];
-          foodList= food.foodItemList.toList();
-          // foodList = food.foodItemList.where((food) => food.id.contains(cate.categoryID)).toList();
-          // FoodList = Food.FoodList.where((Food) => Food.type == cate.type).toList();
+          foodList = food.foodList.where((food) => food.id.contains(cate.categoryID)).toList();
+          // foodList = food.foodList.where((food) => food.type == cate.type).toList();
 
           return foodList.length == 0 || foodList.length == null ?
             Center(child: Text("NOO!!!")) :

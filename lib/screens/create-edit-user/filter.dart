@@ -107,7 +107,7 @@ class _FilterState extends State<Filter> {
               children: <Widget>[
                 DropDownDateFormat(
                   yearmonthKey: _formKey,
-                  menuYearMonthMap: _currentOrdersFilters,
+                  foodYearMonthMap: _currentOrdersFilters,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
