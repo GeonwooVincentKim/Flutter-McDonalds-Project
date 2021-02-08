@@ -20,7 +20,6 @@ class ListTileFood extends StatelessWidget{
   }
 
   Widget _buildMenuBody(BuildContext context){
-    
     return Container(
       width: MediaQuery.of(context).size.width,
       child: Column(
